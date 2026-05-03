@@ -1,22 +1,33 @@
 [gd_scene format=3 uid="uid://dvjf7p8brxwms"]
 
-[ext_resource type="Texture2D" uid="uid://fg2mb6kmdc7q" path="res://assets/sprites/image.png" id="1_j2dth"]
+[ext_resource type="Texture2D" uid="uid://d1yphhqhygyhi" path="res://assets/sprites/faces/Idle_MagicalGirl1.png" id="1_qo8ms"]
 [ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://ball.tscn" id="1_v51hx"]
+[ext_resource type="Texture2D" uid="uid://digod202xa3i4" path="res://assets/sprites/faces/Mad_MagicalGirl1.png" id="2_gcrwl"]
 [ext_resource type="Script" uid="uid://d0ltkrnea0nrj" path="res://testing/test_rolling_angle.gd" id="2_j2dth"]
+[ext_resource type="Script" uid="uid://dbyu7ac7b1qfh" path="res://texture_portrait.gd" id="2_jykvi"]
+[ext_resource type="Texture2D" uid="uid://dnb1juon5ub04" path="res://assets/sprites/faces/Tsundere_MagicalGirl1.png" id="3_jykvi"]
 [ext_resource type="Script" uid="uid://boego6qwp0oki" path="res://testing/toggle_ball_rolll.gd" id="3_v51hx"]
 [ext_resource type="Script" uid="uid://duw36oee4dk8j" path="res://testing/test_rolling_speed.gd" id="5_bk1t7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2dth"]
-atlas = ExtResource("1_j2dth")
-region = Rect2(106, 60, 191, 191)
+[ext_resource type="Script" uid="uid://df2tm0cxeppyh" path="res://testing/testing_emotions.gd" id="5_jykvi"]
 
 [node name="RollTesting" type="Node2D" unique_id=1050997631]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=597980903]
-offset_right = 191.0
-offset_bottom = 191.0
-scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_j2dth")
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=419945395]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer2" unique_id=421101109 node_paths=PackedStringArray("portrait")]
+layout_mode = 2
+script = ExtResource("5_jykvi")
+portrait = NodePath("../Texture_Portrait")
+
+[node name="Texture_Portrait" type="TextureRect" parent="VBoxContainer2" unique_id=2064069261]
+layout_mode = 2
+stretch_mode = 5
+script = ExtResource("2_jykvi")
+idle = ExtResource("1_qo8ms")
+mad = ExtResource("2_gcrwl")
+blushing = ExtResource("3_jykvi")
 
 [node name="Node2D" parent="." unique_id=560479732 instance=ExtResource("1_v51hx")]
 position = Vector2(172, 56)

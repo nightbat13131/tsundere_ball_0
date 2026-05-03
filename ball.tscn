@@ -510,7 +510,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=560479732]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gchj4"]
+radius = 16.0
+
+[node name="Node2D" type="CharacterBody2D" unique_id=2014796492]
+motion_mode = 1
 script = ExtResource("1_x8fbi")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
@@ -518,3 +522,6 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_hgol0")
 frame_progress = 1.0
 script = ExtResource("5_n5601")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]
+shape = SubResource("CircleShape2D_gchj4")

@@ -29,7 +29,6 @@ GUIDE="*uid://p2jwrgjcbexr"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/energy_saving/keep_screen_on=false
-window/stretch/scale=2.0
 
 [editor]
 
