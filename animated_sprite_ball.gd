@@ -15,16 +15,18 @@ var is_rolling := false:
 		else:
 			pause()
 
-var speed: float = 0.0:
+var speed: float = -0.1:
 	set(value):
+		#print(self, value)
+		value = abs(value)
 		if value == speed:
 			return
 		speed = value
 		speed_scale = speed / AVERAGE_SPEED
 
-func _ready() -> void:
-	#animation_looped.connect(_on_animation_looped)
-	pass
+func set_velocity(velocity: Vector2) -> void:
+	roll_direction(velocity.angle())
+	speed = velocity.length()
 
 func roll_direction(radian: float) -> void:
 	is_rolling = true
@@ -41,7 +43,12 @@ func roll_direction(radian: float) -> void:
 	elif direction.x < 0:
 		animation_ += "w"
 	#prints(direction, animation_)
+	var current_frame = get_frame()
+	var current_progress = get_frame_progress()
 	play(animation_)
+	set_frame_and_progress(current_frame, current_progress)
+
+	
 
 #func _on_animation_looped() -> void:
 	#if !is_rolling:
