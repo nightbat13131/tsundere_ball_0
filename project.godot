@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Tsundere Ball"
+config/tags=PackedStringArray("2d", "physics")
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bovp5ykd2qs8j"
 
 [autoload]
 
