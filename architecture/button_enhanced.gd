@@ -2,14 +2,14 @@ class_name ButtonSelf extends Button
 
 var sfx_sound: AudioStream
 
-@export var mouse_cursor: CustomMouse
+#@export var mouse_cursor: CustomMouse
 
 func _ready() -> void:
-	if mouse_cursor:
-		mouse_cursor.apply_to(self)
-	set_z_index(Utility.UI_OVER_APPERANCE)
+	#if mouse_cursor:
+	#	mouse_cursor.apply_to(self)
+	#set_z_index(Utility.UI_OVER_APPERANCE)
 	set_z_as_relative(false)
-	set_default_cursor_shape(CustomMouse.BUTTONS as Control.CursorShape)
+	#set_default_cursor_shape(CustomMouse.BUTTONS as Control.CursorShape)
 	if !Engine.is_editor_hint():
 		pressed.connect(self._on_pressed)
 		pressed.connect(self._press_sound)

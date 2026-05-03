@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Tsundere Ball"
 config/tags=PackedStringArray("2d", "physics")
+run/main_scene="uid://dvjf7p8brxwms"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +23,13 @@ buses/default_bus_layout="uid://bovp5ykd2qs8j"
 [autoload]
 
 GUIDE="*uid://p2jwrgjcbexr"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/energy_saving/keep_screen_on=false
+window/stretch/scale=2.0
 
 [editor]
 
@@ -44,6 +52,7 @@ folder_colors={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
