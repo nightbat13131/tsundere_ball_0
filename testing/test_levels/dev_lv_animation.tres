@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://dl8vkdlsw1m4u"]
+
+[ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/level_info.gd" id="1_11nac"]
+
+[resource]
+script = ExtResource("1_11nac")
+level_name = "Animation"
+level_uid = "uid://dvjf7p8brxwms"
+metadata/_custom_type_script = "uid://dnatdka25e2wd"

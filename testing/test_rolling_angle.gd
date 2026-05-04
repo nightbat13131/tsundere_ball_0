@@ -1,14 +1,14 @@
 extends SpinBox
 
-@export var ball : Ball
+@export var ball : AnimatedSprite_Ball
 
 func _ready() -> void:
 	value_changed.connect(_on_value_changed)
 
-func _on_value_changed(value: float) -> void:
+func _on_value_changed(value_: float) -> void:
 	queue_redraw()
 	if ball:
-		ball.roll_direction(deg_to_rad(value))
+		ball._roll_direction(deg_to_rad(value_))
 
 
 func _draw() -> void:

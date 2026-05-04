@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://caexciavr6ck0"]
+
+[ext_resource type="Script" uid="uid://2nmqlmxy5xa6" path="res://architecture/level_select.gd" id="1_hu3iy"]
+[ext_resource type="Script" uid="uid://bq7rglvho084a" path="res://architecture/button_level_select.gd" id="1_jcfkq"]
+[ext_resource type="Resource" uid="uid://dqhajfx1g1p2o" path="res://testing/test_levels/dev_lv_1.tres" id="3_e8ohy"]
+[ext_resource type="Texture2D" uid="uid://cnkeb4slm4gd2" path="res://icon.svg" id="3_okj6e"]
+[ext_resource type="Resource" uid="uid://dl8vkdlsw1m4u" path="res://testing/test_levels/dev_lv_animation.tres" id="4_fmbur"]
+[ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
+[ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
+
+[node name="LevelSelect" type="Node2D" unique_id=408408737]
+script = ExtResource("1_hu3iy")
+
+[node name="Dev" type="Node2D" parent="." unique_id=1644073359]
+
+[node name="ButtonSelf" type="Button" parent="Dev" unique_id=1182240644]
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 25.0
+offset_bottom = 18.0
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("3_e8ohy")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="ButtonSelf2" type="Button" parent="Dev" unique_id=1184419666]
+offset_left = 39.0
+offset_top = 35.0
+offset_right = 47.0
+offset_bottom = 43.0
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("4_fmbur")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="ButtonSelf3" type="Button" parent="Dev" unique_id=619276617]
+offset_left = 92.0
+offset_top = 7.0
+offset_right = 100.0
+offset_bottom = 15.0
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("5_080af")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="ButtonSelf4" type="Button" parent="Dev" unique_id=286954603]
+offset_left = 136.0
+offset_top = 35.0
+offset_right = 144.0
+offset_bottom = 43.0
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("6_fmbur")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866578568]
+unique_name_in_owner = true
+position = Vector2(96, 155)
+texture = ExtResource("3_okj6e")

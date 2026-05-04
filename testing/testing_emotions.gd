@@ -1,6 +1,6 @@
 extends OptionButton
 
-@export var portrait: Portrait
+#@export var portrait: Portrait
 
 func _ready() -> void:
 	item_selected.connect(_on_item_selected)
@@ -8,5 +8,6 @@ func _ready() -> void:
 		add_item(str(each_), Portrait.Emotions[each_] )
 
 func _on_item_selected(index) -> void:
-	if portrait:
-		portrait.request_emotion(get_item_id(index) as Portrait.Emotions)
+	#if portrait:
+	#	portrait.request_emotion(get_item_id(index) as Portrait.Emotions)
+	Portrait.request_emotion(get_item_id(index) as Portrait.Emotions)

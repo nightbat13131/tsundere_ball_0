@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://rbe8nihyrmi"]
+
+[ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/level_info.gd" id="1_oeodk"]
+
+[resource]
+script = ExtResource("1_oeodk")
+level_name = "Pool"
+level_uid = "uid://mge6kkp0nbuh"
+metadata/_custom_type_script = "uid://dnatdka25e2wd"

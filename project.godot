@@ -12,9 +12,9 @@ config_version=5
 
 config/name="Tsundere Ball"
 config/tags=PackedStringArray("2d", "physics")
-run/main_scene="uid://cd3pbg6rdw583"
+run/main_scene="uid://eu5gp7dvev6e"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dnb1juon5ub04"
 
 [audio]
 
@@ -42,13 +42,17 @@ enabled=PackedStringArray("res://addons/guide/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray"
+"res://addons/": "gray",
+"res://balls/": "purple",
+"res://character/": "pink",
+"res://guide/": "teal"
 }
 
 [physics]
 
 3d/physics_engine="Jolt Physics"
 2d/default_gravity=0.0
+2d/default_angular_damp=100.0
 
 [rendering]
 

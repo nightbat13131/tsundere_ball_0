@@ -1,38 +1,26 @@
 class_name AnimatedSprite_Ball extends AnimatedSprite2D
 
-
 const snap_float = TAU / 8
 const STILL = &"default"
 const AVERAGE_SPEED = 50.0
 
-var is_rolling := false:
-	set(value):
-		if value == is_rolling:
-			return
-		is_rolling = value
-		if is_rolling:
-			play()
-		else:
-			pause()
+var _speed: float = -0.1: set = _set_speed
 
-var speed: float = -0.1:
-	set(value):
-		#print(self, value)
-		value = abs(value)
-		if value == speed:
-			return
-		speed = value
-		speed_scale = speed / AVERAGE_SPEED
+func _set_speed(speed: float) -> void:
+	speed = abs(speed)
+	if _speed == speed:
+		return
+	_speed = speed
+	speed_scale = _speed / AVERAGE_SPEED
 
 func set_velocity(velocity: Vector2) -> void:
-	roll_direction(velocity.angle())
-	speed = velocity.length()
+	_roll_direction(velocity.angle())
+	_set_speed(velocity.length())
 
-func roll_direction(radian: float) -> void:
-	is_rolling = true
+func _roll_direction(radian: float) -> void:
+
 	var direction := Vector2.from_angle(radian).normalized()
 	direction = direction.snappedf(snap_float)
-	
 	var animation_ := ""
 	if direction.y > 0:
 		animation_ += "s"
@@ -42,14 +30,7 @@ func roll_direction(radian: float) -> void:
 		animation_ += "e"
 	elif direction.x < 0:
 		animation_ += "w"
-	#prints(direction, animation_)
 	var current_frame = get_frame()
 	var current_progress = get_frame_progress()
 	play(animation_)
 	set_frame_and_progress(current_frame, current_progress)
-
-	
-
-#func _on_animation_looped() -> void:
-	#if !is_rolling:
-		#play(STILL)

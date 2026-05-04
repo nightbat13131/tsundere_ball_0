@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cd3pbg6rdw583"]
 
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://ball.tscn" id="1_ereme"]
-[ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://ball_npc.tscn" id="2_2bk2c"]
+[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="1_ereme"]
+[ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_psj2v"]
+[ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_2bk2c"]
+[ext_resource type="Script" uid="uid://seumawif655e" path="res://static_body_enhanced.gd" id="2_peypa"]
 [ext_resource type="Texture2D" uid="uid://cnkeb4slm4gd2" path="res://icon.svg" id="3_8g47c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
@@ -11,8 +13,12 @@ size = Vector2(20, 381)
 size = Vector2(661.5, 22.5)
 
 [node name="Node2D" type="Node2D" unique_id=1783182777]
+script = ExtResource("1_psj2v")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=128297516]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_peypa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1556347873]
 position = Vector2(0, 180.5)

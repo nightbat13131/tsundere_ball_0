@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://dliw4w4otyrq5"]
 
-[ext_resource type="Script" uid="uid://clqttb74g2p4r" path="res://ball_npc.gd" id="1_p3w87"]
+[ext_resource type="PhysicsMaterial" uid="uid://uhv6c8s0ul7g" path="res://ball_npc_physics_material.tres" id="1_3uik4"]
+[ext_resource type="Script" uid="uid://clqttb74g2p4r" path="res://balls/ball_npc.gd" id="1_p3w87"]
 [ext_resource type="Texture2D" uid="uid://73xkxsrg31yj" path="res://assets/sprites/balls/TsundereMiniDiag_Purp-Sheet.png" id="2_501ce"]
 [ext_resource type="Texture2D" uid="uid://qq7a83p8ddd4" path="res://assets/sprites/balls/TsundereMiniLeft_Purp-Sheet.png" id="3_j0ee2"]
 [ext_resource type="Texture2D" uid="uid://cgu5ooxixoyba" path="res://assets/sprites/balls/TsundereMiniUp_Purp-Sheet.png" id="4_6fetv"]
 [ext_resource type="Texture2D" uid="uid://c6wixdv0s2u86" path="res://assets/sprites/balls/TsundereMiniOtherDiag_Purp-Sheet.png" id="5_j0yk3"]
-[ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://animated_sprite_ball.gd" id="6_1fx13"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3w87"]
-bounce = 0.83
+[ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="6_1fx13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgx5"]
 atlas = ExtResource("2_501ce")
@@ -518,7 +516,7 @@ radius = 16.0
 
 [node name="Ball_NPC" type="RigidBody2D" unique_id=964760348]
 modulate = Color(0.5970352, 0.35308948, 0.44339135, 1)
-physics_material_override = SubResource("PhysicsMaterial_p3w87")
+physics_material_override = ExtResource("1_3uik4")
 script = ExtResource("1_p3w87")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
@@ -528,4 +526,5 @@ frame_progress = 1.0
 script = ExtResource("6_1fx13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]
+visible = false
 shape = SubResource("CircleShape2D_gchj4")
