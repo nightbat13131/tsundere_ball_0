@@ -77,7 +77,7 @@ shape = SubResource("RectangleShape2D_180vy")
 position = Vector2(318, 403)
 shape = SubResource("RectangleShape2D_180vy")
 
-[node name="Ball" parent="." unique_id=2041115718 instance=ExtResource("3_mreg6")]
+[node name="Ball_Player" parent="." unique_id=2041115718 instance=ExtResource("3_mreg6")]
 position = Vector2(420, 187)
 
 [node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("4_fttlu")]
@@ -96,12 +96,10 @@ position = Vector2(126, 158)
 
 [node name="Ball_NPC5" parent="." unique_id=498313899 instance=ExtResource("4_fttlu")]
 position = Vector2(119.99999, 114)
-rotation = 3.1211872
 _npc_type = 1
 
 [node name="Ball_NPC6" parent="." unique_id=729655933 instance=ExtResource("4_fttlu")]
 position = Vector2(124.99999, 207)
-rotation = 3.1211872
 _npc_type = 1
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=668040495 node_paths=PackedStringArray("ball")]
@@ -110,4 +108,4 @@ offset_top = 2.0
 offset_right = 433.0
 offset_bottom = 22.0
 script = ExtResource("5_1katg")
-ball = NodePath("../Ball")
+ball = NodePath("../Ball_Player")

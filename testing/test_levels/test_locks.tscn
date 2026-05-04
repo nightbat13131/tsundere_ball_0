@@ -26,7 +26,7 @@ position = Vector2(322, -207)
 shape = SubResource("RectangleShape2D_lah46")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Cushions_player_npc" unique_id=1281235321]
-position = Vector2(308, 591)
+position = Vector2(306, 568)
 shape = SubResource("RectangleShape2D_lah46")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Cushions_player_npc" unique_id=909712974]
@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_lah46")
 
 [node name="Ball" parent="." unique_id=2041115718 instance=ExtResource("2_lah46")]
 position = Vector2(420, 187)
-control_type = 2
+control_type = 5
 
 [node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("3_5lu7s")]
 position = Vector2(202, 154)
@@ -74,7 +74,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_5lu7s")
 
 [node name="Area2D_S" type="Area2D" parent="." unique_id=1813367336 node_paths=PackedStringArray("dependency")]
-position = Vector2(293, 305)
+position = Vector2(286, 278)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("5_lah46")

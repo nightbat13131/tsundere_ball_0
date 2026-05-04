@@ -516,6 +516,7 @@ radius = 16.0
 
 [node name="Ball_NPC" type="RigidBody2D" unique_id=964760348]
 modulate = Color(0.5970352, 0.35308948, 0.44339135, 1)
+mass = 1.1
 physics_material_override = ExtResource("1_3uik4")
 script = ExtResource("1_p3w87")
 

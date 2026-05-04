@@ -12,7 +12,6 @@ const LAYER_NPC_RED = 3
 const LAYER_NPC_YELLOW = 4
 const LAYER_NPC_BLUE = 5
 
-
 @onready var animated_sprite_ball: AnimatedSprite_Ball = %AnimatedSprite_Ball
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 

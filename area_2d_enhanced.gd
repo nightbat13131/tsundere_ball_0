@@ -27,7 +27,7 @@ func _hybernate() -> void:
 	set_process_mode.call_deferred(Node.PROCESS_MODE_DISABLED)
 	queue_redraw()
 
-func _on_unlock(ball: Ball)-> void: 
+func _on_unlock(_ball: Ball)-> void: 
 	is_locked = false
 	set_process_mode.call_deferred(Node.PROCESS_MODE_INHERIT)
 	queue_redraw()

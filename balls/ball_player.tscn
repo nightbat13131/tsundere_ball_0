@@ -525,7 +525,7 @@ collision_mask = 0
 mass = 2.0
 physics_material_override = ExtResource("1_kx6oe")
 lock_rotation = true
-linear_damp = 0.75
+linear_damp = 0.5
 script = ExtResource("1_7o23g")
 pc_controler_context = ExtResource("3_j4p71")
 action_cancle_ball = ExtResource("4_cg7cr")
@@ -540,6 +540,7 @@ frame_progress = 1.0
 script = ExtResource("6_2vls1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]
+unique_name_in_owner = true
 visible = false
 shape = SubResource("CircleShape2D_gchj4")
 

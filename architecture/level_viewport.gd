@@ -33,4 +33,5 @@ func configure_for_2d() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	## overcomes the viewport seemily blocking mouse movement problems I was having for 3D and suddnely 2D..
-	GUIDE.inject_input(event)
+	#GUIDE.inject_input(event)
+	pass

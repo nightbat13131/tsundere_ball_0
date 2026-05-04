@@ -8,10 +8,7 @@ func _ready() -> void:
 	super._ready()
 	set_z_index(UTILITIES.Z_Indexes.BALL_NPC as int)
 	set_collision_layer_value(Ball.LAYER_NPC, true)
-	#set_collision_mask_value(Ball.LAYER_NPC, true)
-	
 	set_collision_layer_value(get_ball_collision_layer(_npc_type), true)
-	#set_collision_mask_value(get_ball_collision_layer(_npc_type), true)
 	set_collision_mask_value(Ball.LAYER_NPC_WALL, true)
 	set_modulate(get_color(_npc_type))
 

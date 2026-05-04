@@ -3,7 +3,7 @@ class_name Portrait extends TextureRect
 
 enum Emotions {IDLE = 0, MAD = 1, BLUSHING = 2}
 
-const BASE_DURATION = 1.0
+const BASE_DURATION = 2.0
 
 static var _instance : Portrait
 
