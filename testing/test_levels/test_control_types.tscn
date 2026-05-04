@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://bhgfs1uhnct23"]
+[gd_scene format=3 uid="uid://cng2pdigo8kvs"]
 
-[ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_e84c6"]
-[ext_resource type="Script" uid="uid://seumawif655e" path="res://static_body_enhanced.gd" id="2_e84c6"]
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="2_lah46"]
-[ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="3_5lu7s"]
+[ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_oia65"]
+[ext_resource type="Script" uid="uid://seumawif655e" path="res://static_body_enhanced.gd" id="2_1katg"]
+[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="3_mreg6"]
+[ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="4_fttlu"]
+[ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/test_levels/options_control_type.gd" id="5_1katg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h57c2"]
 size = Vector2(246.375, 481.75)
@@ -11,13 +12,13 @@ size = Vector2(246.375, 481.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_180vy"]
 size = Vector2(670, 108)
 
-[node name="PoolTable" type="Node2D" unique_id=1493675185]
-script = ExtResource("1_e84c6")
+[node name="ControlTypes" type="Node2D" unique_id=1493675185]
+script = ExtResource("1_oia65")
 
 [node name="Cushions_player_npc" type="StaticBody2D" parent="." unique_id=1583193909]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("2_e84c6")
+script = ExtResource("2_1katg")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cushions_player_npc" unique_id=1614647754]
@@ -55,7 +56,7 @@ shape = SubResource("RectangleShape2D_h57c2")
 [node name="Cushions_Player" type="StaticBody2D" parent="." unique_id=534590736]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("2_e84c6")
+script = ExtResource("2_1katg")
 block_npc = false
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -76,30 +77,37 @@ shape = SubResource("RectangleShape2D_180vy")
 position = Vector2(318, 403)
 shape = SubResource("RectangleShape2D_180vy")
 
-[node name="Ball" parent="." unique_id=2041115718 instance=ExtResource("2_lah46")]
+[node name="Ball" parent="." unique_id=2041115718 instance=ExtResource("3_mreg6")]
 position = Vector2(420, 187)
-control_type = 3
 
-[node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("3_5lu7s")]
+[node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("4_fttlu")]
 position = Vector2(202, 154)
 
-[node name="Ball_NPC2" parent="." unique_id=271365691 instance=ExtResource("3_5lu7s")]
+[node name="Ball_NPC2" parent="." unique_id=271365691 instance=ExtResource("4_fttlu")]
 position = Vector2(165, 135)
 _npc_type = 2
 
-[node name="Ball_NPC3" parent="." unique_id=80667406 instance=ExtResource("3_5lu7s")]
+[node name="Ball_NPC3" parent="." unique_id=80667406 instance=ExtResource("4_fttlu")]
 position = Vector2(166, 173)
 _npc_type = 2
 
-[node name="Ball_NPC4" parent="." unique_id=1180238328 instance=ExtResource("3_5lu7s")]
+[node name="Ball_NPC4" parent="." unique_id=1180238328 instance=ExtResource("4_fttlu")]
 position = Vector2(126, 158)
 
-[node name="Ball_NPC5" parent="." unique_id=498313899 instance=ExtResource("3_5lu7s")]
+[node name="Ball_NPC5" parent="." unique_id=498313899 instance=ExtResource("4_fttlu")]
 position = Vector2(119.99999, 114)
 rotation = 3.1211872
 _npc_type = 1
 
-[node name="Ball_NPC6" parent="." unique_id=729655933 instance=ExtResource("3_5lu7s")]
+[node name="Ball_NPC6" parent="." unique_id=729655933 instance=ExtResource("4_fttlu")]
 position = Vector2(124.99999, 207)
 rotation = 3.1211872
 _npc_type = 1
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=668040495 node_paths=PackedStringArray("ball")]
+offset_left = 401.0
+offset_top = 2.0
+offset_right = 433.0
+offset_bottom = 22.0
+script = ExtResource("5_1katg")
+ball = NodePath("../Ball")

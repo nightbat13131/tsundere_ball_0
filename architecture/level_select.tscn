@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://dqhajfx1g1p2o" path="res://testing/test_levels/dev_lv_1.tres" id="3_e8ohy"]
 [ext_resource type="Texture2D" uid="uid://cnkeb4slm4gd2" path="res://icon.svg" id="3_okj6e"]
 [ext_resource type="Resource" uid="uid://dl8vkdlsw1m4u" path="res://testing/test_levels/dev_lv_animation.tres" id="4_fmbur"]
+[ext_resource type="Resource" uid="uid://hb8f0ycya01h" path="res://testing/test_levels/dev_lv_pc_control.tres" id="5_0hgg1"]
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
 
@@ -14,37 +15,46 @@ script = ExtResource("1_hu3iy")
 [node name="Dev" type="Node2D" parent="." unique_id=1644073359]
 
 [node name="ButtonSelf" type="Button" parent="Dev" unique_id=1182240644]
-offset_left = 17.0
-offset_top = 10.0
-offset_right = 25.0
-offset_bottom = 18.0
+offset_left = 170.0
+offset_top = 11.0
+offset_right = 178.0
+offset_bottom = 19.0
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("3_e8ohy")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="ButtonSelf2" type="Button" parent="Dev" unique_id=1184419666]
-offset_left = 39.0
-offset_top = 35.0
-offset_right = 47.0
-offset_bottom = 43.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 16.0
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("4_fmbur")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
+[node name="ButtonSelf5" type="Button" parent="Dev" unique_id=612662584]
+offset_left = 7.0
+offset_top = 36.0
+offset_right = 15.0
+offset_bottom = 44.0
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("5_0hgg1")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
 [node name="ButtonSelf3" type="Button" parent="Dev" unique_id=619276617]
-offset_left = 92.0
-offset_top = 7.0
-offset_right = 100.0
-offset_bottom = 15.0
+offset_left = 174.0
+offset_top = 43.0
+offset_right = 182.0
+offset_bottom = 51.0
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("5_080af")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="ButtonSelf4" type="Button" parent="Dev" unique_id=286954603]
-offset_left = 136.0
-offset_top = 35.0
-offset_right = 144.0
-offset_bottom = 43.0
+offset_left = 174.0
+offset_top = 73.0
+offset_right = 182.0
+offset_bottom = 81.0
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("6_fmbur")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"

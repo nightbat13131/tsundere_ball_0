@@ -5,9 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://73xkxsrg31yj" path="res://assets/sprites/balls/TsundereMiniDiag_Purp-Sheet.png" id="2_kx6oe"]
 [ext_resource type="Texture2D" uid="uid://qq7a83p8ddd4" path="res://assets/sprites/balls/TsundereMiniLeft_Purp-Sheet.png" id="3_4dsm2"]
 [ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_j4p71"]
+[ext_resource type="Resource" uid="uid://be67e4dk073h3" path="res://guide/cancle_ball.tres" id="4_cg7cr"]
 [ext_resource type="Texture2D" uid="uid://cgu5ooxixoyba" path="res://assets/sprites/balls/TsundereMiniUp_Purp-Sheet.png" id="4_j4p71"]
+[ext_resource type="Resource" uid="uid://bpm3aexupleax" path="res://guide/mouse_pos.tres" id="4_nki0t"]
+[ext_resource type="Resource" uid="uid://ea2hf73e3e0a" path="res://guide/mouse_click.tres" id="5_2vls1"]
 [ext_resource type="Texture2D" uid="uid://c6wixdv0s2u86" path="res://assets/sprites/balls/TsundereMiniOtherDiag_Purp-Sheet.png" id="5_nki0t"]
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="6_2vls1"]
+[ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="6_cg7cr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgx5"]
 atlas = ExtResource("2_kx6oe")
@@ -520,10 +524,14 @@ collision_layer = 0
 collision_mask = 0
 mass = 2.0
 physics_material_override = ExtResource("1_kx6oe")
+lock_rotation = true
 linear_damp = 0.75
-angular_damp = 100.0
 script = ExtResource("1_7o23g")
 pc_controler_context = ExtResource("3_j4p71")
+action_cancle_ball = ExtResource("4_cg7cr")
+action_mouse_location = ExtResource("4_nki0t")
+action_mouse_pressed = ExtResource("5_2vls1")
+action_mouse_release = ExtResource("6_cg7cr")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
 unique_name_in_owner = true
@@ -537,5 +545,5 @@ shape = SubResource("CircleShape2D_gchj4")
 
 [node name="NPC_Finder" type="RayCast2D" parent="." unique_id=428651814]
 unique_name_in_owner = true
-target_position = Vector2(0, 500)
+target_position = Vector2(2000, 0)
 collision_mask = 0
