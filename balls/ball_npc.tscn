@@ -526,5 +526,6 @@ frame_progress = 1.0
 script = ExtResource("6_1fx13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]
+unique_name_in_owner = true
 visible = false
 shape = SubResource("CircleShape2D_gchj4")

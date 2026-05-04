@@ -4,6 +4,7 @@ extends StaticBody2D
 @export var block_npc := true
 
 func _ready() -> void:
+	set_z_index(UTILITIES.Z_Indexes.TRAPS as int)
 	set_collision_layer_value(Ball.LAYER_NPC_WALL, block_npc)
 	set_collision_mask_value(Ball.LAYER_NPC, block_npc)
 	

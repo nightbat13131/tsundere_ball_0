@@ -18,7 +18,8 @@ var cancle_pause := 0.0
 @export var control_type := ContolerType.BALL_POINTER: 
 	set(value):
 		control_type = value
-		npc_finder.visible = control_type in [ContolerType.LongDistance]
+		if npc_finder:
+			npc_finder.visible = control_type in [ContolerType.LongDistance]
 			
 @export_category("G.U.I.D.E.")
 @export var pc_controler_context: GUIDEMappingContext
@@ -35,6 +36,7 @@ var mouse_end := DEFAULT_POS
 
 func _ready() -> void:
 	super._ready()
+	set_z_index(UTILITIES.Z_Indexes.BALL_PLAYER as int)
 	control_type = control_type
 	if pc_controler_context:
 		GUIDE.enable_mapping_context(pc_controler_context)
@@ -58,7 +60,6 @@ func _get_power() -> float:
 			return npc_finder.get_collision_point().length() * 5
 	return 50.0
 
-
 func _process(delta: float) -> void:
 	super._process(delta)
 	if action_cancle_ball.is_triggered():
@@ -76,7 +77,7 @@ func _process(delta: float) -> void:
 		ContolerType.LongDistance:
 			_longdistance_0(delta)
 
-func _any_drag_0(delta) -> void:
+func _any_drag_0(_delta) -> void:
 	queue_redraw()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		mouse_end = get_local_mouse_position()
@@ -90,7 +91,7 @@ func _any_drag_0(delta) -> void:
 			mouse_start = DEFAULT_POS
 			mouse_end = DEFAULT_POS
 
-func _longdistance_0(delta) -> void:
+func _longdistance_0(_delta) -> void:
 	queue_redraw()
 	#power is related to the distance to the target ball - father stronger 
 	npc_finder.set_rotation(to_local(action_mouse_location.value_axis_2d).angle())
@@ -143,7 +144,6 @@ func _draw() -> void:
 				draw_line(Vector2.ZERO, mouse_start - mouse_end, COLOR_POWER, 2)
 		ContolerType.LongDistance:
 			var angle = npc_finder.rotation
-			print(visable_power)
 			draw_polygon(
 				[ Vector2.from_angle(angle) * visable_power, Vector2.from_angle(angle - (PI*.5)) * visable_power * .5, Vector2.from_angle(angle + (PI*.5)) * visable_power * .5 ]
 				, [COLOR_POWER])
