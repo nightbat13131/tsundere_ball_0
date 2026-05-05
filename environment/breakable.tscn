@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b50uft1l60r8r"]
+
+[ext_resource type="Script" uid="uid://pnl5p1h6410k" path="res://testing/test_levels/breakable.gd" id="1_xctav"]
+[ext_resource type="Resource" uid="uid://f7mdud4u1t7h" path="res://environment/goals/test_goal_0.tres" id="2_g0v8s"]
+[ext_resource type="SpriteFrames" uid="uid://rj0iuik3og1n" path="res://environment/goals/test_breaking.tres" id="3_xctav"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sv8n"]
+size = Vector2(32, 32)
+
+[node name="Breakable" type="StaticBody2D" unique_id=190911682]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_vdhqd")
+script = ExtResource("1_xctav")
+goal = ExtResource("2_g0v8s")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173216956]
+shape = SubResource("RectangleShape2D_6sv8n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
+unique_name_in_owner = true
+sprite_frames = ExtResource("3_xctav")
+animation = &"broke"

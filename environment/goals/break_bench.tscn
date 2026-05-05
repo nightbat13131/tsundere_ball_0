@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://booei1p76ainp"]
+
+[ext_resource type="Script" uid="uid://pnl5p1h6410k" path="res://testing/test_levels/breakable.gd" id="1_dtqqo"]
+[ext_resource type="Resource" uid="uid://w34kn8r36ukl" path="res://goal_don't_bench.tres" id="2_dtqqo"]
+[ext_resource type="SpriteFrames" uid="uid://c8y0q7riyiw3j" path="res://environment/goals/frames_breakable_bench.tres" id="3_belqf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqqo"]
+size = Vector2(42, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_belqf"]
+size = Vector2(6, 9)
+
+[node name="Breakable_Bench" type="StaticBody2D" unique_id=190911682]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_vdhqd")
+script = ExtResource("1_dtqqo")
+goal = ExtResource("2_dtqqo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
+unique_name_in_owner = true
+sprite_frames = ExtResource("3_belqf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173216956]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_dtqqo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=298781952]
+position = Vector2(-18, 0.5)
+shape = SubResource("RectangleShape2D_belqf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1216171781]
+position = Vector2(18, 1)
+shape = SubResource("RectangleShape2D_belqf")

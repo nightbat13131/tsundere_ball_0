@@ -20,6 +20,10 @@ func _show_level(level: PackedScene) -> void:
 	activate()
 	level_viewport.add_level(level.instantiate())
 
+static func try_deactivate() -> void:
+	if get_instance():
+			get_instance().deactivate()
+
 static func get_instance() -> GameLevelUI: return _instance
 
 static func show_level(level: PackedScene) -> void:

@@ -1,4 +1,4 @@
-class_name LevelSelect extends Node2D
+class_name LevelSelect extends CanvasLayer
 
 # https://docs.godotengine.org/en/stable/tutorials/io/background_loading.html
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 func activate() -> void:
 	set_physics_process(true)
 	sprite_2d.hide()
-	GameLevelUI.get_instance().deactivate.call_deferred()
+	GameLevelUI.try_deactivate.call_deferred()
 	show()
 
 func deactivate() -> void:

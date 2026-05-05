@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://dliw4w4otyrq5"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://uhv6c8s0ul7g" path="res://ball_npc_physics_material.tres" id="1_3uik4"]
+[ext_resource type="PhysicsMaterial" uid="uid://uhv6c8s0ul7g" path="res://balls/ball_npc_physics_material.tres" id="1_3uik4"]
+[ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://balls/interactive_item_shader.gdshader" id="1_bjos4"]
 [ext_resource type="Script" uid="uid://clqttb74g2p4r" path="res://balls/ball_npc.gd" id="1_p3w87"]
 [ext_resource type="Texture2D" uid="uid://73xkxsrg31yj" path="res://assets/sprites/balls/TsundereMiniDiag_Purp-Sheet.png" id="2_501ce"]
 [ext_resource type="Texture2D" uid="uid://qq7a83p8ddd4" path="res://assets/sprites/balls/TsundereMiniLeft_Purp-Sheet.png" id="3_j0ee2"]
 [ext_resource type="Texture2D" uid="uid://cgu5ooxixoyba" path="res://assets/sprites/balls/TsundereMiniUp_Purp-Sheet.png" id="4_6fetv"]
 [ext_resource type="Texture2D" uid="uid://c6wixdv0s2u86" path="res://assets/sprites/balls/TsundereMiniOtherDiag_Purp-Sheet.png" id="5_j0yk3"]
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="6_1fx13"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twlnt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjos4"]
+shader = ExtResource("1_bjos4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgx5"]
 atlas = ExtResource("2_501ce")
@@ -515,16 +521,20 @@ animations = [{
 radius = 16.0
 
 [node name="Ball_NPC" type="RigidBody2D" unique_id=964760348]
-modulate = Color(0.5970352, 0.35308948, 0.44339135, 1)
+material = SubResource("ShaderMaterial_twlnt")
+mass = 1.1
 physics_material_override = ExtResource("1_3uik4")
 script = ExtResource("1_p3w87")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bjos4")
 sprite_frames = SubResource("SpriteFrames_hgol0")
-frame_progress = 1.0
+animation = &"nw"
+frame_progress = 0.1181907
 script = ExtResource("6_1fx13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]
+unique_name_in_owner = true
 visible = false
 shape = SubResource("CircleShape2D_gchj4")

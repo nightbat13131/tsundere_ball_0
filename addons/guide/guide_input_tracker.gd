@@ -15,7 +15,9 @@ static func _instrument(viewport:Viewport):
 	
 ## Catches unhandled input and forwards it to GUIDE
 func _unhandled_input(event:InputEvent):
+	# nhaynie changed on 5-4, disabling below did not fix my Control still allowing mouse triggers problem
 	GUIDE.inject_input(event)
+	
 
 ## Some ... creative code ... to catch events from popup windows
 ## that are spawned by Godot's control nodes.

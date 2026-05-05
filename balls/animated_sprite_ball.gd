@@ -18,7 +18,6 @@ func set_velocity(velocity: Vector2) -> void:
 	_set_speed(velocity.length())
 
 func _roll_direction(radian: float) -> void:
-
 	var direction := Vector2.from_angle(radian).normalized()
 	direction = direction.snappedf(snap_float)
 	var animation_ := ""
@@ -34,3 +33,5 @@ func _roll_direction(radian: float) -> void:
 	var current_progress = get_frame_progress()
 	play(animation_)
 	set_frame_and_progress(current_frame, current_progress)
+
+func freeze() -> void: pause()

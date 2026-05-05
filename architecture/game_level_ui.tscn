@@ -3,7 +3,30 @@
 [ext_resource type="Script" uid="uid://cdmrdduas5aaf" path="res://architecture/game_level_ui.gd" id="1_ut0wp"]
 [ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/level_viewport.gd" id="2_jgkem"]
 [ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_m7fyu"]
+[ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/test_levels/options_control_type.gd" id="3_fqrik"]
+[ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_qpwan"]
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/tilemap.png" id="4_56b18"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="4_m7fyu"]
+[ext_resource type="Texture2D" uid="uid://ccbqt8vcom4po" path="res://assets/sheet_white1x.png" id="4_sb4yo"]
+[ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_pojhi"]
+[ext_resource type="Script" uid="uid://tjdvvki3df43" path="res://architecture/ui/button_restart_level.gd" id="5_ppoab"]
+[ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="6_qpwan"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
+atlas = ExtResource("4_56b18")
+region = Rect2(2, 153, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqrik"]
+atlas = ExtResource("4_sb4yo")
+region = Rect2(208, 59, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppoab"]
+atlas = ExtResource("4_sb4yo")
+region = Rect2(258, 306, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb4yo"]
+atlas = ExtResource("4_sb4yo")
+region = Rect2(7, 308, 36, 36)
 
 [node name="GameLevelUI" type="CanvasLayer" unique_id=290767530]
 script = ExtResource("1_ut0wp")
@@ -24,20 +47,73 @@ grow_vertical = 2
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=2074390954]
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/CenterContainer" unique_id=592241813]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=1430320388]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1397219220]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer" unique_id=2141971462]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer" unique_id=1889964907]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 0
+
+[node name="VBoxContainer2" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=874604160 instance=ExtResource("2_m7fyu")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="GoalTracker" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1614772457]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_qpwan")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/GoalTracker" unique_id=2143513147]
+layout_mode = 2
+texture = SubResource("AtlasTexture_pojhi")
+stretch_mode = 4
+script = ExtResource("5_pojhi")
+
+[node name="Control" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=337516986]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="LevelViewport" type="SubViewport" parent="MarginContainer/CenterContainer/SubViewportContainer" unique_id=1958433274]
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=394613439]
+layout_mode = 2
+script = ExtResource("3_fqrik")
+
+[node name="TextureButton_RestartLevel" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1585120608]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_fqrik")
+script = ExtResource("5_ppoab")
+
+[node name="TextureButton_Map" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1953487193]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ppoab")
+script = ExtResource("6_qpwan")
+
+[node name="TextureButton_SoundSettings" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1779933336]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_sb4yo")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=592241813]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+mouse_filter = 0
+
+[node name="LevelViewport" type="SubViewport" parent="MarginContainer/CenterContainer/VBoxContainer/SubViewportContainer" unique_id=1958433274]
 unique_name_in_owner = true
 handle_input_locally = false
-size = Vector2i(640, 360)
+size = Vector2i(640, 364)
 render_target_update_mode = 4
 script = ExtResource("2_jgkem")
-
-[node name="VBoxContainer2" parent="MarginContainer" unique_id=874604160 instance=ExtResource("2_m7fyu")]
-layout_mode = 2
 
 [node name="GuideDebugger" parent="." unique_id=676886905 instance=ExtResource("4_m7fyu")]
 visible = false
