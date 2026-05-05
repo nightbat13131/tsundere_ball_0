@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://j2a5a483t7sl"]
 
-[ext_resource type="Script" uid="uid://wtir4bo0cs3k" path="res://architecture/audio_manager.gd" id="1_kovmt"]
+[ext_resource type="Script" uid="uid://wtir4bo0cs3k" path="res://architecture/settings/audio_manager.gd" id="1_kovmt"]
 [ext_resource type="Script" uid="uid://iyi2xeten28r" path="res://architecture/settings/h_slider_enhansed.gd" id="2_omht2"]
 
 [node name="AudioManager" type="Control" unique_id=2119366650]

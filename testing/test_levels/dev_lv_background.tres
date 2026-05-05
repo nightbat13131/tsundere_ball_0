@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ccaqy")
-level_name = "Control Types"
+level_name = "Background"
 level_uid = "uid://cng2pdigo8kvs"
 metadata/_custom_type_script = "uid://dnatdka25e2wd"

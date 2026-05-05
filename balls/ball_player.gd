@@ -5,8 +5,8 @@ class_name Ball_Player extends Ball
 ## if I insit on a walking mode, doing "Freeze Mode Kinimatic" might help
 
 const DEFAULT_POS := Vector2.INF
-const COLOR_POWER = Color(Color.RED, .75)
-const COLOR_OTHER = Color(Color.AQUA, .75)
+#const COLOR_POWER = Color(Color.RED, .75)
+const COLOR_OTHER = Color(Color.GRAY, .50)
 
 const CANCLE_PAUSE_DURATION := .5
 const MAX_POWER := 1600.0
@@ -16,6 +16,8 @@ enum ControlerType {NONE, BALL_POINTER, ANY_DRAG_LOCAL, LongDistance, ANY_DRAG_G
 
 var cancle_pause := 0.0
 var cycle_mod := 1
+
+static var _instance : Ball_Player
 
 @export var control_type := ControlerType.BALL_POINTER: 
 	set(value):
@@ -45,6 +47,7 @@ var mouse_end := DEFAULT_POS
 
 func _ready() -> void:
 	super._ready()
+	_instance = self
 	set_z_index(UTILITIES.Z_Indexes.BALL_PLAYER as int)
 	control_type = control_type
 	if pc_controler_context:
@@ -58,17 +61,23 @@ func _ready() -> void:
 	set_collision_layer_value(Ball.LAYER_PC, true)
 	set_collision_mask_value(Ball.LAYER_PC_WALL, true)
 	npc_finder.set_collision_mask_value(Ball.LAYER_NPC, true)
+	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
+	_set_shader_parameter(UTILITIES.SHADER_MODULATE_COLOR, UTILITIES.COLOR_PLAYER) 
 
 func _get_usable_power() -> float:
-	var out : float #return MAX_POWER
+	var out : float 
 	if control_type in [ControlerType.BALL_POINTER, ControlerType.ANY_DRAG_GLOBAL_CYCLE]: 
 		out = _power
 	elif control_type in [ControlerType.ANY_DRAG_GLOBAL, ControlerType.ANY_DRAG_LOCAL]: 
-		out = (mouse_start - mouse_end).length() *25
+		out = (mouse_start - mouse_end).length() * 12
 	elif control_type == ControlerType.LongDistance:
 		if npc_finder.is_colliding():
 			out = npc_finder.get_collision_point().length() * 5
 	return clampf(out, MIN_POWER, MAX_POWER)
+
+func _get_power_ratio() -> float: 
+	#prints(_power, _get_usable_power(),  MAX_POWER, _get_usable_power() / MAX_POWER)
+	return _get_usable_power() / MAX_POWER
 
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -160,10 +169,13 @@ func _cancle_shoot() -> void:
 func _draw() -> void:
 	if cancle_pause > 0.0:
 		return
-	var visable_power = _get_usable_power()  *.2
+	var visable_power = _get_usable_power()  * sin(_get_power_ratio()) * .1
+	if visable_power == NAN:
+		return
 	if visable_power > .1:
 		visable_power = max(30, visable_power)
-		
+	var color_power = Color.from_hsv( (1.0-_get_power_ratio()) *.33, 1.0, 1.0, .5)
+
 	match control_type:
 		ControlerType.NONE:
 			return
@@ -174,23 +186,29 @@ func _draw() -> void:
 			draw_line(Vector2.ZERO, mouse_end, COLOR_OTHER, 2 )
 			draw_polygon(
 				[ Vector2.from_angle(angle) * visable_power, Vector2.from_angle(angle - (PI*.5)) * visable_power * .5, Vector2.from_angle(angle + (PI*.5)) * visable_power * .5 ]
-				, [COLOR_POWER])
-			#draw_line(Vector2.ZERO, Vector2.from_angle((get_local_mouse_position()*-1).angle()) *40,Color.RED, )
+				, [color_power])
 		ControlerType.ANY_DRAG_LOCAL:
 			if mouse_start != DEFAULT_POS and mouse_end != DEFAULT_POS:
 				var angle = (mouse_start - mouse_end).angle()
 				draw_line(mouse_start, mouse_end, COLOR_OTHER, 2 )
-				draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, COLOR_POWER, 2)
+				draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, color_power, 2)
 		ControlerType.LongDistance:
 			var angle = npc_finder.rotation
 			draw_polygon(
 				[ Vector2.from_angle(angle) * visable_power, Vector2.from_angle(angle - (PI*.5)) * visable_power * .5, Vector2.from_angle(angle + (PI*.5)) * visable_power * .5 ]
-				, [COLOR_POWER])
+				, [color_power])
 		ControlerType.ANY_DRAG_GLOBAL:
 			var angle = (mouse_start - mouse_end).angle()
-			draw_line(to_local(mouse_start), to_local(mouse_end), COLOR_OTHER, 2 )
-			draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, COLOR_POWER, 2)
+			draw_line(to_local(mouse_start), to_local(mouse_end), COLOR_OTHER, 2) # mouse line
+			draw_polygon(
+				[Vector2.from_angle(angle)*visable_power, Vector2.from_angle(angle - PI*.5)*BALL_RADIUS, Vector2.from_angle(angle + PI*.5)*BALL_RADIUS,  ], [color_power]
+			)
 		ControlerType.ANY_DRAG_GLOBAL_CYCLE :
 			var angle = (mouse_start - mouse_end).angle()
 			draw_line(to_local(mouse_start), to_local(mouse_end), COLOR_OTHER, 2 )
-			draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, COLOR_POWER, 2)
+			draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, color_power, 2)
+
+static func set_control_type(controler_type: ControlerType) -> void:
+	if _instance:
+		_instance.control_type = controler_type
+		

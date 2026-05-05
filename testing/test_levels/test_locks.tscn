@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://bhgfs1uhnct23"]
 
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_e84c6"]
-[ext_resource type="Script" uid="uid://seumawif655e" path="res://static_body_enhanced.gd" id="2_e84c6"]
+[ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_e84c6"]
 [ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="2_lah46"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="3_5lu7s"]
-[ext_resource type="Script" uid="uid://fphumk603iwn" path="res://area_2d_enhanced.gd" id="5_lah46"]
+[ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="5_5lu7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lah46"]
 size = Vector2(705.09375, 481.75)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5lu7s"]
-radius = 30.0
 
 [node name="Locks" type="Node2D" unique_id=1493675185]
 script = ExtResource("1_e84c6")
@@ -39,7 +36,7 @@ shape = SubResource("RectangleShape2D_lah46")
 
 [node name="Ball" parent="." unique_id=2041115718 instance=ExtResource("2_lah46")]
 position = Vector2(420, 187)
-control_type = 5
+control_type = 4
 
 [node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("3_5lu7s")]
 position = Vector2(202, 154)
@@ -63,59 +60,29 @@ _npc_type = 1
 position = Vector2(124.99999, 207)
 _npc_type = 1
 
-[node name="Area2D_SW" type="Area2D" parent="." unique_id=1576450376]
-position = Vector2(50, 274)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("5_lah46")
-metadata/_edit_group_ = true
+[node name="Trap" parent="." unique_id=531650769 instance=ExtResource("5_5lu7s")]
+position = Vector2(57, 72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_SW" unique_id=261445884]
-shape = SubResource("CircleShape2D_5lu7s")
-
-[node name="Area2D_S" type="Area2D" parent="." unique_id=1813367336 node_paths=PackedStringArray("dependency")]
-position = Vector2(286, 278)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("5_lah46")
-dependency = NodePath("../Area2D_SW")
-_trap_mode = 0
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_S" unique_id=589108829]
-shape = SubResource("CircleShape2D_5lu7s")
-
-[node name="Area2D_NW" type="Area2D" parent="." unique_id=528132042]
-position = Vector2(53, 78)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("5_lah46")
-npc_type = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_NW" unique_id=1071614398]
-shape = SubResource("CircleShape2D_5lu7s")
-
-[node name="Area2D_N" type="Area2D" parent="." unique_id=1133187902 node_paths=PackedStringArray("dependency")]
-position = Vector2(279, 52)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("5_lah46")
-dependency = NodePath("../Area2D_NW")
-_trap_mode = 0
-npc_type = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_N" unique_id=1895939731]
-shape = SubResource("CircleShape2D_5lu7s")
-
-[node name="Area2D_W" type="Area2D" parent="." unique_id=1167994040]
-position = Vector2(56, 169)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("5_lah46")
+[node name="Trap2" parent="." unique_id=1224580622 instance=ExtResource("5_5lu7s")]
+position = Vector2(58, 158)
 npc_type = 1
-metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_W" unique_id=1725278538]
-shape = SubResource("CircleShape2D_5lu7s")
+[node name="Trap3" parent="." unique_id=1187322105 instance=ExtResource("5_5lu7s")]
+position = Vector2(56, 265)
+npc_type = 2
+
+[node name="Trap4" parent="." unique_id=74356621 node_paths=PackedStringArray("dependency") instance=ExtResource("5_5lu7s")]
+position = Vector2(533, 168)
+dependency = NodePath("../Trap2")
+npc_type = 1
+
+[node name="Trap6" parent="." unique_id=747781223 node_paths=PackedStringArray("dependency") instance=ExtResource("5_5lu7s")]
+position = Vector2(291, 264)
+dependency = NodePath("../Trap3")
+_trap_mode = 0
+npc_type = 2
+
+[node name="Trap5" parent="." unique_id=702837653 node_paths=PackedStringArray("dependency") instance=ExtResource("5_5lu7s")]
+position = Vector2(277, 67)
+dependency = NodePath("../Trap")
+_trap_mode = 0

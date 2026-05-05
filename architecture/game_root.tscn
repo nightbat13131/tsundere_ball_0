@@ -8,5 +8,6 @@
 script = ExtResource("1_ur1xq")
 
 [node name="GameLevelUI" parent="." unique_id=290767530 instance=ExtResource("3_n0w4j")]
+visible = false
 
 [node name="LevelSelect" parent="." unique_id=408408737 instance=ExtResource("2_2uli3")]

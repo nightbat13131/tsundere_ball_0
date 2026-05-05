@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://bwrdkqplj5q4q"]
+
+[ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/level_info.gd" id="1_j3wql"]
+
+[resource]
+script = ExtResource("1_j3wql")
+level_name = "Goals"
+level_uid = "uid://cvrjsh5naxu7j"
+metadata/_custom_type_script = "uid://dnatdka25e2wd"

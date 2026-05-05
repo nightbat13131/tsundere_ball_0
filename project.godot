@@ -14,6 +14,7 @@ config/name="Tsundere Ball"
 config/tags=PackedStringArray("2d", "physics")
 run/main_scene="uid://eu5gp7dvev6e"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.4627451, 0.25882354, 0.5411765, 1)
 config/icon="uid://dnb1juon5ub04"
 
 [audio]
@@ -27,7 +28,7 @@ GUIDE="*uid://p2jwrgjcbexr"
 [display]
 
 window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_height=400
 window/energy_saving/keep_screen_on=false
 
 [editor]
@@ -55,7 +56,8 @@ folder_colors={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.74509805, 0.9254902, 0.70980394, 1)

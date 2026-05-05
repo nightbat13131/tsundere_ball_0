@@ -5,7 +5,11 @@ enum Modes {NA = 0, _2D = 2, _3D = 3 }
 var _sub_viewport_container: SubViewportContainer
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		size.x = ProjectSettings.get_setting('display/window/size/viewport_width')
+		size.y = ProjectSettings.get_setting('display/window/size/viewport_height')
 	configure_for_2d()
+	
 	if get_parent() is SubViewportContainer:
 		# Fixing this anit-practive would just move this code up one level
 		_sub_viewport_container = get_parent()

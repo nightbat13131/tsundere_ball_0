@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://di4y5x1g6hx6n"]
+
+[ext_resource type="Script" uid="uid://fphumk603iwn" path="res://environment/area_2d_enhanced.gd" id="1_7thvy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7thvy"]
+radius = 30.0
+
+[node name="Trap" type="Area2D" unique_id=531650769]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_7thvy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=200930861]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_7thvy")

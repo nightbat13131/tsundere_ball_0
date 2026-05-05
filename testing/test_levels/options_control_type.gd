@@ -1,6 +1,6 @@
 extends OptionButton
 
-@export var ball: Ball_Player
+#@export var ball: Ball_Player
 
 func _ready() -> void:
 	item_selected.connect(_on_item_selected)
@@ -9,5 +9,4 @@ func _ready() -> void:
 	_on_item_selected.call_deferred(0)
 
 func _on_item_selected(index) -> void:
-	if ball:
-		ball.control_type = get_item_id(index) as Ball_Player.ControlerType
+	Ball_Player.set_control_type(get_item_id(index) as Ball_Player.ControlerType)
