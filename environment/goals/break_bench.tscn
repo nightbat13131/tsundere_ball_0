@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://booei1p76ainp"]
 
 [ext_resource type="Script" uid="uid://pnl5p1h6410k" path="res://testing/test_levels/breakable.gd" id="1_dtqqo"]
-[ext_resource type="Resource" uid="uid://dux8fo0i6ce8e" path="res://goal_don't_break_pant.tres" id="2_belqf"]
-[ext_resource type="SpriteFrames" uid="uid://hxxuidnlqsed" path="res://environment/goals/frames_breakable_potted_plant.tres" id="3_413bc"]
+[ext_resource type="Resource" uid="uid://w34kn8r36ukl" path="res://goal_don't_bench.tres" id="2_dtqqo"]
+[ext_resource type="SpriteFrames" uid="uid://c8y0q7riyiw3j" path="res://environment/goals/frames_breakable_bench.tres" id="3_belqf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]
 absorbent = true
@@ -14,16 +14,17 @@ radius = 9.0
 radius = 6.0
 height = 16.0
 
-[node name="Breakable_PottedPlant" type="StaticBody2D" unique_id=190911682]
+[node name="Breakable_Bench" type="StaticBody2D" unique_id=190911682]
 collision_layer = 0
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_vdhqd")
 script = ExtResource("1_dtqqo")
-goal = ExtResource("2_belqf")
+goal = ExtResource("2_dtqqo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
 unique_name_in_owner = true
-sprite_frames = ExtResource("3_413bc")
+sprite_frames = ExtResource("3_belqf")
+animation = &"broke"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173216956]
 position = Vector2(0, -6)

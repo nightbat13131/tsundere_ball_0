@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c8y0q7riyiw3j"]
+
+[ext_resource type="Texture2D" uid="uid://cm6igwnll4jsb" path="res://assets/Furniture/Breakables/WoodenBenchBroken.png" id="1_aw0af"]
+[ext_resource type="Texture2D" uid="uid://cy48jtugwtq4m" path="res://assets/Furniture/Breakables/WoodenBench.png" id="2_1xppw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aw0af")
+}],
+"loop": true,
+"name": &"broke",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1xppw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

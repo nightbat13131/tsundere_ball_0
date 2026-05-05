@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://w34kn8r36ukl"]
+
+[ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_2uo5g"]
+[ext_resource type="Texture2D" uid="uid://cm6igwnll4jsb" path="res://assets/Furniture/Breakables/WoodenBenchBroken.png" id="2_b4irp"]
+[ext_resource type="Texture2D" uid="uid://cy48jtugwtq4m" path="res://assets/Furniture/Breakables/WoodenBench.png" id="3_gwpkh"]
+
+[resource]
+script = ExtResource("1_2uo5g")
+ui_icon_init = ExtResource("3_gwpkh")
+ui_icon_failed = ExtResource("2_b4irp")
+metadata/_custom_type_script = "uid://dggw7ue6r5ma3"
