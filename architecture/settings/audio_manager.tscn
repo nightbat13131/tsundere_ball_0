@@ -2,20 +2,107 @@
 
 [ext_resource type="Script" uid="uid://wtir4bo0cs3k" path="res://architecture/settings/audio_manager.gd" id="1_kovmt"]
 [ext_resource type="Script" uid="uid://iyi2xeten28r" path="res://architecture/settings/h_slider_enhansed.gd" id="2_omht2"]
+[ext_resource type="Texture2D" uid="uid://cqklqd2qa8cjh" path="res://assets/sheet_white2x.png" id="2_vbxqb"]
+[ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://architecture/texture_button_enhanced.gd" id="3_1u8gx"]
 
-[node name="AudioManager" type="Control" unique_id=2119366650]
-layout_mode = 3
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ef83"]
+atlas = ExtResource("2_vbxqb")
+region = Rect2(6, 711, 84, 85)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xh3dk"]
+load_path = "res://.godot/imported/sheet_white2x.png-ecff2b70dea2507e6c204598df5a534d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyx8"]
+atlas = SubResource("CompressedTexture2D_xh3dk")
+region = Rect2(0, 805, 79, 97)
+
+[node name="AudioManager" type="CanvasLayer" unique_id=2013367331]
+script = ExtResource("1_kovmt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1221517187]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kovmt")
 
-[node name="HSlider" type="HSlider" parent="." unique_id=1887038403]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 16.0
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1705260922]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer" unique_id=1292477032]
+layout_mode = 2
+
+[node name="Min_Width" type="Control" parent="PanelContainer/CenterContainer/MarginContainer" unique_id=353141579]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer" unique_id=1498627574]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="master" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1353273447]
+layout_mode = 2
+
+[node name="MuteAll" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/master" unique_id=108600423]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_2ef83")
+texture_pressed = SubResource("AtlasTexture_tuyx8")
+stretch_mode = 4
+script = ExtResource("3_1u8gx")
+metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+
+[node name="HSliderMasterVolume" type="HSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/master" unique_id=1887038403]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 script = ExtResource("2_omht2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=365180193]
+[node name="music" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=290550524]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music" unique_id=609330088]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_1u8gx")
+metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+
+[node name="HSliderMusicVolume" type="HSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music" unique_id=1544815741]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_omht2")
+
+[node name="music2" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1032982221]
+layout_mode = 2
+
+[node name="TextureButton_Enhanced" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music2" unique_id=1412704354]
+layout_mode = 2
+script = ExtResource("3_1u8gx")
+metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+
+[node name="HSliderSFXVolume" type="HSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music2" unique_id=1081166681]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_omht2")
+
+[node name="AudioStreamPlayer_BGMusic" type="AudioStreamPlayer" parent="." unique_id=365180193]
+unique_name_in_owner = true
+
+[node name="SFXPlayers" type="Node" parent="." unique_id=868182985]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer_sfx0" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=542177160]
+
+[node name="AudioStreamPlayer_sfx1" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=978423674]
+
+[node name="AudioStreamPlayer_sfx2" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=946331152]
+
+[node name="AudioStreamPlayer_sfx3" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=235579627]
+
+[node name="AudioStreamPlayer_sfx4" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=790009556]
+
+[node name="AudioStreamPlayer_sfx5" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=1511030997]

@@ -1,14 +1,14 @@
-class_name SoundManager extends Control
+class_name SoundManager extends CanvasLayer
 
 @export var sound_sfx_changed : AudioStream 
 
-@onready var mute_all: CheckBox = %"Mute All"
+@onready var mute_all: TextureButton_Enhanced = %MuteAll
+
 @onready var h_slider_master_volume: HSlider = %HSliderMasterVolume
 @onready var h_slider_music_volume: HSlider = %HSliderMusicVolume
 @onready var h_slider_sfx_volume: HSlider = %HSliderSFXVolume
 @onready var audio_stream_player_bg_music: AudioStreamPlayer = %AudioStreamPlayer_BGMusic
 @onready var sfx_players: Node = %SFXPlayers
-
 
 @onready var _master_index := AudioServer.get_bus_index(&"Master")
 @onready var _music_index := AudioServer.get_bus_index(&"Music")
@@ -29,7 +29,7 @@ func _ready() -> void:
 	h_slider_master_volume.value_changed.connect(_on_master_volume_change)
 	h_slider_music_volume.value_changed.connect(_on_music_volume_change)
 	h_slider_sfx_volume.value_changed.connect(_on_sfx_volume_change)
-	#_set_values(SaveFileResource.new())
+	_set_values(SaveFileResource.new())
 
 func _on_master_volume_change(new_percent: float) -> void: AudioServer.set_bus_volume_db(_master_index, linear_to_db(new_percent))
 
@@ -72,7 +72,7 @@ func _set_values(data: SaveFileResource) -> void:
 	h_slider_music_volume.set_value(data.sound_music)
 	_on_music_volume_change(data.sound_music)
 	h_slider_sfx_volume.set_value_no_signal(data.sound_sfx) 
-	# _on_sfx_volume_change(data.sound_sfx) # plays a sound
+	_on_sfx_volume_change(data.sound_sfx) # plays a sound
 	AudioServer.set_bus_volume_db(_sfx_index, linear_to_db(data.sound_sfx))
 
 #region SaveLoad

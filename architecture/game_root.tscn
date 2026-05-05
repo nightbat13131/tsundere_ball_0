@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://bn64xn4h4g54l" path="res://architecture/game_root.gd" id="1_ur1xq"]
 [ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/level_select.tscn" id="2_2uli3"]
 [ext_resource type="PackedScene" uid="uid://cr8i3ltlsxyoy" path="res://architecture/game_level_ui.tscn" id="3_n0w4j"]
+[ext_resource type="PackedScene" uid="uid://j2a5a483t7sl" path="res://architecture/settings/audio_manager.tscn" id="4_50a1j"]
 
 [node name="GameRoot" type="Node2D" unique_id=984261104]
 script = ExtResource("1_ur1xq")
 
 [node name="GameLevelUI" parent="." unique_id=290767530 instance=ExtResource("3_n0w4j")]
-visible = false
 
 [node name="LevelSelect" parent="." unique_id=408408737 instance=ExtResource("2_2uli3")]
+
+[node name="AudioManager" parent="." unique_id=2119366650 instance=ExtResource("4_50a1j")]
+unique_name_in_owner = true
+visible = false

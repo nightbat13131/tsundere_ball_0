@@ -117,5 +117,3 @@ script = ExtResource("2_jgkem")
 
 [node name="GuideDebugger" parent="." unique_id=676886905 instance=ExtResource("4_m7fyu")]
 visible = false
-
-[node name="Settings" type="CanvasLayer" parent="." unique_id=357751214]

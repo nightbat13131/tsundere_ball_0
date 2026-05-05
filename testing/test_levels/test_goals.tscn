@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="4_5wcy7"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="5_skqak"]
 [ext_resource type="PackedScene" uid="uid://b50uft1l60r8r" path="res://environment/breakable.tscn" id="6_mhdii"]
+[ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="7_turru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lah46"]
 size = Vector2(705.09375, 481.75)
@@ -96,3 +97,12 @@ position = Vector2(419, 85)
 
 [node name="Breakable3" parent="." unique_id=1385027090 instance=ExtResource("6_mhdii")]
 position = Vector2(386, 264)
+
+[node name="Breakable4" parent="." unique_id=682703911 instance=ExtResource("7_turru")]
+position = Vector2(46, 213)
+
+[node name="Breakable6" parent="." unique_id=1635496473 instance=ExtResource("7_turru")]
+position = Vector2(416, 135)
+
+[node name="Breakable5" parent="." unique_id=817596315 instance=ExtResource("7_turru")]
+position = Vector2(32, 115)

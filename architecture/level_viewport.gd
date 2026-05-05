@@ -35,7 +35,7 @@ func configure_for_2d() -> void:
 	set_physics_object_picking(false) # otherwise mouse scrolling not recognized in viewport
 	pass
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	## overcomes the viewport seemily blocking mouse movement problems I was having for 3D and suddnely 2D..
-	#GUIDE.inject_input(event)
+	#GUIDE.inject_input(_event)
 	pass
