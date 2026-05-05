@@ -67,6 +67,7 @@ func _set_values(data: SaveFileResource) -> void:
 	if data == null:
 		data = SaveFileResource.new()
 	mute_all.set_pressed(data.sound_mute_all)
+	_on_mute_change(data.sound_mute_all)
 	h_slider_master_volume.set_value(data.sound_master)
 	_on_master_volume_change(data.sound_master)
 	h_slider_music_volume.set_value(data.sound_music)

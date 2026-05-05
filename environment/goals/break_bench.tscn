@@ -7,12 +7,11 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]
 absorbent = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h535n"]
-radius = 9.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqqo"]
+size = Vector2(42, 6)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uk06a"]
-radius = 6.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_belqf"]
+size = Vector2(6, 9)
 
 [node name="Breakable_Bench" type="StaticBody2D" unique_id=190911682]
 collision_layer = 0
@@ -24,12 +23,15 @@ goal = ExtResource("2_dtqqo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
 unique_name_in_owner = true
 sprite_frames = ExtResource("3_belqf")
-animation = &"broke"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173216956]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_h535n")
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_dtqqo")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=646616601]
-position = Vector2(0, 6)
-shape = SubResource("CapsuleShape2D_uk06a")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=298781952]
+position = Vector2(-18, 0.5)
+shape = SubResource("RectangleShape2D_belqf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1216171781]
+position = Vector2(18, 1)
+shape = SubResource("RectangleShape2D_belqf")

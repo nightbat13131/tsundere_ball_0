@@ -43,6 +43,7 @@ func _ready() -> void:
 			shape.size = Vector2.ONE * SIDE_LENGTH
 			collision_shape.set_shape(shape)
 	if Engine.is_editor_hint():
+		position = position.snapped(Vector2.ONE*4)
 		return
 	set_collision_mask_value(Ball_NPC.get_ball_collision_layer(npc_type), true)
 

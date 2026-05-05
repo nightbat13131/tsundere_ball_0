@@ -4,71 +4,128 @@
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_psj2v"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_2bk2c"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_peypa"]
-[ext_resource type="Texture2D" uid="uid://cnkeb4slm4gd2" path="res://icon.svg" id="3_8g47c"]
+[ext_resource type="Texture2D" uid="uid://b56hngtrhmacu" path="res://assets/room.png" id="5_peypa"]
+[ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_6f48a"]
+[ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="9_k00hl"]
+[ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="12_p2h7p"]
+[ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="13_g7jxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
-size = Vector2(20, 381)
+size = Vector2(15, 126.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peypa"]
+size = Vector2(31.25, 126.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aiegb"]
-size = Vector2(661.5, 22.5)
+size = Vector2(124.75, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls632"]
+size = Vector2(124.75, 73.25)
 
 [node name="Node2D" type="Node2D" unique_id=1783182777]
 script = ExtResource("1_psj2v")
+
+[node name="Visual" type="Node2D" parent="." unique_id=597906288]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Room" type="Sprite2D" parent="Visual" unique_id=1857241179]
+position = Vector2(160, 200)
+texture = ExtResource("5_peypa")
+
+[node name="Room2" type="Sprite2D" parent="Visual" unique_id=883473588]
+position = Vector2(480, 200)
+texture = ExtResource("5_peypa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=128297516]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_peypa")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1556347873]
-position = Vector2(0, 180.5)
+position = Vector2(8, 105)
 shape = SubResource("RectangleShape2D_x60sr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=243778056]
-position = Vector2(642, 184)
+position = Vector2(8, 296)
 shape = SubResource("RectangleShape2D_x60sr")
 
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1467480225]
+position = Vector2(632, 296)
+shape = SubResource("RectangleShape2D_x60sr")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=331849060]
+position = Vector2(633, 104)
+shape = SubResource("RectangleShape2D_x60sr")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=869479955]
+position = Vector2(320.375, 105)
+shape = SubResource("RectangleShape2D_peypa")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=2001215777]
+position = Vector2(320, 296)
+shape = SubResource("RectangleShape2D_peypa")
+
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1119078163]
-position = Vector2(320.5, 3)
+position = Vector2(255, 355)
+shape = SubResource("RectangleShape2D_aiegb")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=2131770591]
+position = Vector2(385, 356)
+shape = SubResource("RectangleShape2D_aiegb")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=514123478]
+position = Vector2(575, 356)
+shape = SubResource("RectangleShape2D_aiegb")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1324046309]
+position = Vector2(65, 355)
 shape = SubResource("RectangleShape2D_aiegb")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2132457234]
-position = Vector2(321, 362)
-shape = SubResource("RectangleShape2D_aiegb")
+position = Vector2(65, 66.625)
+shape = SubResource("RectangleShape2D_ls632")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=402009359]
-position = Vector2(309, 194)
-rotation = 0.53234786
-shape = SubResource("RectangleShape2D_aiegb")
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=841620640]
+position = Vector2(256, 67)
+shape = SubResource("RectangleShape2D_ls632")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=2097051410]
+position = Vector2(385, 67)
+shape = SubResource("RectangleShape2D_ls632")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=255932365]
+position = Vector2(575, 67)
+shape = SubResource("RectangleShape2D_ls632")
 
 [node name="Ball" parent="." unique_id=2014796492 instance=ExtResource("1_ereme")]
-position = Vector2(146, 42)
+position = Vector2(452, 191)
 
 [node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("2_2bk2c")]
-position = Vector2(211, 39)
+position = Vector2(258, 193)
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1700640144]
-position = Vector2(-1, 182)
-scale = Vector2(0.1640625, 2.96875)
-texture = ExtResource("3_8g47c")
+[node name="Trap" parent="." unique_id=531650769 instance=ExtResource("7_6f48a")]
+position = Vector2(32, 200)
+_trap_mode = 0
 
-[node name="Icon2" type="Sprite2D" parent="." unique_id=1751090352]
-position = Vector2(642.99994, 182)
-scale = Vector2(0.1640625, 2.96875)
-texture = ExtResource("3_8g47c")
+[node name="Door_North2" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
+position = Vector2(160, 80)
+dependency = NodePath("../Trap")
 
-[node name="Icon3" type="Sprite2D" parent="." unique_id=405507227]
-position = Vector2(321.5, -39.999992)
-scale = Vector2(5.1796875, 0.82812494)
-texture = ExtResource("3_8g47c")
+[node name="Door_South" parent="." unique_id=1293223859 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
+position = Vector2(160, 352)
+dependency = NodePath("../Trap")
 
-[node name="Icon4" type="Sprite2D" parent="." unique_id=1438164713]
-position = Vector2(317, 361)
-scale = Vector2(5.1796875, 0.171875)
-texture = ExtResource("3_8g47c")
+[node name="Breakable_PottedPlant" parent="." unique_id=190911682 instance=ExtResource("9_k00hl")]
+position = Vector2(345, 158)
 
-[node name="Icon5" type="Sprite2D" parent="." unique_id=1785310891]
-position = Vector2(308.99994, 194)
-rotation = 0.5235988
-scale = Vector2(5.1796875, 0.171875)
-texture = ExtResource("3_8g47c")
+[node name="Breakable_PottedPlant2" parent="." unique_id=1993800526 instance=ExtResource("9_k00hl")]
+position = Vector2(297, 156)
+
+[node name="Breakable_PottedPlant3" parent="." unique_id=1915903203 instance=ExtResource("9_k00hl")]
+position = Vector2(297, 232)
+
+[node name="Breakable_PottedPlant4" parent="." unique_id=296753471 instance=ExtResource("9_k00hl")]
+position = Vector2(342, 232)

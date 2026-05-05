@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name StaticBody2d_Enhanced extends StaticBody2D
 
 @export var block_player := true
 @export var block_npc := true

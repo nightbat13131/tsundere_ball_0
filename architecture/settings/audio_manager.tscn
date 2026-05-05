@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://iyi2xeten28r" path="res://architecture/settings/h_slider_enhansed.gd" id="2_omht2"]
 [ext_resource type="Texture2D" uid="uid://cqklqd2qa8cjh" path="res://assets/sheet_white2x.png" id="2_vbxqb"]
 [ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://architecture/texture_button_enhanced.gd" id="3_1u8gx"]
+[ext_resource type="AudioStream" uid="uid://cound3vvjt37r" path="res://assets/sounds/music/progress_2026_05_05(1).wav" id="5_1u8gx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ef83"]
 atlas = ExtResource("2_vbxqb")
@@ -58,6 +59,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
 script = ExtResource("2_omht2")
 
 [node name="music" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=290550524]
@@ -73,6 +76,8 @@ metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
 script = ExtResource("2_omht2")
 
 [node name="music2" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1032982221]
@@ -87,10 +92,14 @@ metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
 script = ExtResource("2_omht2")
 
 [node name="AudioStreamPlayer_BGMusic" type="AudioStreamPlayer" parent="." unique_id=365180193]
 unique_name_in_owner = true
+stream = ExtResource("5_1u8gx")
+bus = &"Music"
 
 [node name="SFXPlayers" type="Node" parent="." unique_id=868182985]
 unique_name_in_owner = true
