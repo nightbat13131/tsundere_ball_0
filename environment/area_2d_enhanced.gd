@@ -7,7 +7,7 @@ signal used(ball: Ball)
 
 const RADIUS = 30.0
 const SIDE_LENGTH = 50 # 53.178943201233324
-const THICKNESS = 3.0
+const THICKNESS = 4.0
 
 ## Pillar: Captures ball and holds it IN the way
 ## Hole: Captures's ball and moves it OUT of the way.

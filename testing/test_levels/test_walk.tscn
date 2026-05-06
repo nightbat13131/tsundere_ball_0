@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="5_y8v4k"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="6_6olak"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/ball_player_withwalk.tscn" id="6_233xa"]
+[ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="7_e2rpv"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_vphd7"]
 [ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="8_d6t2t"]
 [ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="9_whcpq"]
@@ -60,6 +61,7 @@ position = Vector2(136, 193)
 
 [node name="BallPlayer_WithWalk" parent="." unique_id=2041115718 instance=ExtResource("6_233xa")]
 position = Vector2(456, 262)
+action_mouse_release = ExtResource("7_e2rpv")
 
 [node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("6_6olak")]
 position = Vector2(39, 268)

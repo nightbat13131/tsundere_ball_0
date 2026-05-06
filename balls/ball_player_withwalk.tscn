@@ -2,8 +2,11 @@
 
 [ext_resource type="PhysicsMaterial" uid="uid://d1ysseoxs0rkq" path="res://balls/ball_pc_physics_material.tres" id="1_hqs55"]
 [ext_resource type="Script" uid="uid://ddwrkpxur6bsg" path="res://balls/ball_player_withwalk.gd" id="2_qes8h"]
+[ext_resource type="Resource" uid="uid://b4ps3lkdc5ahp" path="res://guide/ball_walk_wasd.tres" id="3_m4fh1"]
 [ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_xiy0a"]
 [ext_resource type="Resource" uid="uid://be67e4dk073h3" path="res://guide/cancle_ball.tres" id="4_myekv"]
+[ext_resource type="Resource" uid="uid://ea2hf73e3e0a" path="res://guide/mouse_click.tres" id="5_gw41h"]
+[ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="6_0xn1p"]
 [ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://balls/interactive_item_shader.gdshader" id="7_nlgnb"]
 [ext_resource type="SpriteFrames" uid="uid://bk4vswvw51080" path="res://balls/sprite_frames_hero_ball.tres" id="8_d3fxg"]
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="9_g3x7m"]
@@ -23,7 +26,10 @@ lock_rotation = true
 linear_damp = 0.5
 script = ExtResource("2_qes8h")
 pc_controler_context = ExtResource("3_xiy0a")
+action_walking = ExtResource("3_m4fh1")
 action_cancle_ball = ExtResource("4_myekv")
+action_mouse_pressed = ExtResource("5_gw41h")
+action_mouse_release = ExtResource("6_0xn1p")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
 unique_name_in_owner = true
@@ -39,8 +45,3 @@ script = ExtResource("9_g3x7m")
 unique_name_in_owner = true
 visible = false
 shape = SubResource("CircleShape2D_gchj4")
-
-[node name="NPC_Finder" type="RayCast2D" parent="." unique_id=428651814]
-unique_name_in_owner = true
-target_position = Vector2(2000, 0)
-collision_mask = 0

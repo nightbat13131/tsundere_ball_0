@@ -22,12 +22,14 @@ var fastest : float = 0
 func _ready() -> void:
 	set_collision_layer_value(LAYER_BALL, true)
 	set_collision_mask_value(LAYER_BALL, true)
+	
 	## needed for _on_body_entered to report collisions
 	set_contact_monitor(true)
 	set_max_contacts_reported(5)
 	body_entered.connect(_on_body_entered)
+	##
 
-func toggle_rolling() -> void: animated_sprite_ball.is_rolling = !animated_sprite_ball.is_rolling
+#func toggle_rolling() -> void: animated_sprite_ball.is_rolling = !animated_sprite_ball.is_rolling
 
 func _process(_delta: float) -> void:
 	animated_sprite_ball.set_velocity(linear_velocity)
