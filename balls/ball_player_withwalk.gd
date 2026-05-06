@@ -1,0 +1,1 @@
+class_name Ball_Player_Walking extends Ball_Player

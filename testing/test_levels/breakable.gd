@@ -22,7 +22,7 @@ func _ready() -> void:
 		goal = goal.duplicate(false)
 		GoalTracker.goal_check_in.call_deferred(goal)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var collision = move_and_collide(Vector2.ZERO, true)
 	if _break_next_frame:
 		_break()

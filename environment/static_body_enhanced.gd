@@ -5,6 +5,8 @@ class_name StaticBody2d_Enhanced extends StaticBody2D
 
 func _ready() -> void:
 	set_z_index(UTILITIES.Z_Indexes.TRAPS as int)
+	set_z_as_relative(false)
+	set_y_sort_enabled(false) 
 	set_collision_layer_value(Ball.LAYER_NPC_WALL, block_npc)
 	set_collision_mask_value(Ball.LAYER_NPC, block_npc)
 	

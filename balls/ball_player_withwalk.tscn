@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cnxywuptrsndj"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://d1ysseoxs0rkq" path="res://balls/ball_pc_physics_material.tres" id="1_hqs55"]
+[ext_resource type="Script" uid="uid://ddwrkpxur6bsg" path="res://balls/ball_player_withwalk.gd" id="2_qes8h"]
+[ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_xiy0a"]
+[ext_resource type="Resource" uid="uid://be67e4dk073h3" path="res://guide/cancle_ball.tres" id="4_myekv"]
+[ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://balls/interactive_item_shader.gdshader" id="7_nlgnb"]
+[ext_resource type="SpriteFrames" uid="uid://bk4vswvw51080" path="res://balls/sprite_frames_hero_ball.tres" id="8_d3fxg"]
+[ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="9_g3x7m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vls1"]
+shader = ExtResource("7_nlgnb")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gchj4"]
+radius = 16.0
+
+[node name="BallPlayer_WithWalk" type="RigidBody2D" unique_id=2041115718]
+collision_layer = 0
+collision_mask = 0
+mass = 2.0
+physics_material_override = ExtResource("1_hqs55")
+lock_rotation = true
+linear_damp = 0.5
+script = ExtResource("2_qes8h")
+pc_controler_context = ExtResource("3_xiy0a")
+action_cancle_ball = ExtResource("4_myekv")
+
+[node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2vls1")
+instance_shader_parameters/modulate = Color(1, 1, 1, 1)
+instance_shader_parameters/new_background = Color(1, 0.22000003, 0.22000003, 1)
+sprite_frames = ExtResource("8_d3fxg")
+animation = &"w"
+frame_progress = 0.41712752
+script = ExtResource("9_g3x7m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]
+unique_name_in_owner = true
+visible = false
+shape = SubResource("CircleShape2D_gchj4")
+
+[node name="NPC_Finder" type="RayCast2D" parent="." unique_id=428651814]
+unique_name_in_owner = true
+target_position = Vector2(2000, 0)
+collision_mask = 0

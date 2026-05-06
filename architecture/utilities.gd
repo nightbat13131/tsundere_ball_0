@@ -1,6 +1,6 @@
 class_name UTILITIES extends RefCounted
 
-enum Z_Indexes { BALL_PLAYER = 10, BALL_NPC = 9 , TRAPS = 5 , IN_TRAP = 4 , GROUND = 3}
+enum Z_Indexes { BALL_PLAYER = 10, BALL_NPC = 9 , TRAPS = 5 , IN_TRAP = 4 , GROUND = 3, OVERLAY = 20}
 
 
 const LOCKED_COLOR = Color.WEB_GRAY

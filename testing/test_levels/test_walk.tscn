@@ -1,19 +1,20 @@
-[gd_scene format=4 uid="uid://cd3pbg6rdw583"]
+[gd_scene format=4 uid="uid://jkwa6be5tsv5"]
 
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="1_ereme"]
-[ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_psj2v"]
-[ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_2bk2c"]
-[ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_peypa"]
-[ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_qwnuw"]
-[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="3_7kpc6"]
-[ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_6f48a"]
-[ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="9_k00hl"]
-[ext_resource type="Texture2D" uid="uid://c5mwk3nfvdkx4" path="res://assets/Furniture/CouchNorth.png" id="11_g7jxt"]
-[ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="11_qwnuw"]
-[ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="12_0as1x"]
-[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="12_g7jxt"]
-[ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="12_p2h7p"]
-[ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="13_g7jxt"]
+[ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_mdpv1"]
+[ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_233xa"]
+[ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="3_e2rpv"]
+[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="4_7h0lp"]
+[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="5_y8v4k"]
+[ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="6_6olak"]
+[ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/ball_player_withwalk.tscn" id="6_233xa"]
+[ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_vphd7"]
+[ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="8_d6t2t"]
+[ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="9_whcpq"]
+[ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="10_m5gqm"]
+[ext_resource type="Texture2D" uid="uid://c5mwk3nfvdkx4" path="res://assets/Furniture/CouchNorth.png" id="11_cq5jd"]
+[ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="12_mtfkr"]
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="13_wmsif"]
+[ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="14_30rtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
 size = Vector2(15, 126.75)
@@ -28,92 +29,95 @@ size = Vector2(124.75, 22.5)
 size = Vector2(124, 74)
 
 [node name="Node2D" type="Node2D" unique_id=1783182777]
-script = ExtResource("1_psj2v")
+script = ExtResource("1_mdpv1")
 
 [node name="Floor" type="TextureRect" parent="." unique_id=2134588563]
-offset_right = 728.0
-offset_bottom = 484.0
+offset_right = 641.0
+offset_bottom = 362.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("2_qwnuw")
+texture = ExtResource("2_233xa")
 expand_mode = 1
 stretch_mode = 1
 
 [node name="TileMapLayer_WallsUnder" type="TileMapLayer" parent="." unique_id=1576620419]
 z_as_relative = false
 tile_map_data = PackedByteArray("AAAAAAkAAQAFAAAAAAAAAAgAAQABAAEAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQABAAEAAAAAAAQAAQABAAEAAAAAAAMAAQABAAEAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQABAAAAAAAYAAIAAQABAAAAAAAZAAIAAQABAAAAAAAaAAIAAQABAAAAAAAbAAIAAQABAAAAAAAgAAIAAQABAAAAAAAhAAIAAQABAAAAAAAiAAIAAQABAAAAAAAjAAIAAQABAAAAAAAkAAIAAQABAAAAAAAlAAIAAQABAAAAAAAmAAIAAQABAAAAAAAnAAIAAQAEAAAAAAAnAAMAAQABAAEAAAAnAAQAAQABAAEAAAAnAAUAAQABAAEAAAAnAAYAAQABAAEAAAAnAAcAAQABAAEAAAAnAAgAAQABAAEAAAAnAAkAAQAGAAAAAAAUAAkAAQACAAEAAAAUAAcAAQABAAEAAAAUAAYAAQABAAEAAAAUAAUAAQABAAEAAAAUAAQAAQABAAEAAAAUAAMAAQABAAEAAAATAAkAAQAAAAEAAAATAAgAAQABAAEAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAEAAAATAAQAAQABAAEAAAATAAMAAQABAAEAAAAAABUAAQADAAEAAAAAABQAAQABAAEAAAAAABMAAQABAAEAAAAAABIAAQABAAEAAAAAABEAAQABAAEAAAAAABAAAQABAAEAAAAAAA8AAQABAAEAAAAAAA4AAQAFAAEAAAAnABUAAQACAAEAAAAmABUAAQABAAAAAAAlABUAAQABAAAAAAAkABUAAQABAAAAAAAjABUAAQABAAAAAAAiABUAAQABAAAAAAAhABUAAQABAAAAAAAgABUAAQAKAAEAAAAbABUAAQAJAAEAAAAaABUAAQABAAAAAAAZABUAAQABAAAAAAAYABUAAQABAAAAAAAXABUAAQABAAAAAAAWABUAAQABAAAAAAAVABUAAQABAAAAAAAUABUAAQAIAAAAAAATABUAAQAIAAAAAAASABUAAQABAAAAAAARABUAAQABAAAAAAAQABUAAQABAAAAAAAPABUAAQABAAAAAAAOABUAAQABAAAAAAANABUAAQABAAAAAAAGABUAAQABAAAAAAAFABUAAQABAAAAAAAEABUAAQABAAAAAAADABUAAQABAAAAAAACABUAAQABAAAAAAABABUAAQABAAAAAAAnABQAAQABAAEAAAAnABMAAQABAAEAAAAnABIAAQABAAEAAAAnABEAAQABAAEAAAAnABAAAQABAAEAAAAnAA8AAQABAAEAAAAnAA4AAQAGAAEAAAAUABQAAQABAAEAAAAUABMAAQABAAEAAAAUABIAAQABAAEAAAAUABEAAQABAAEAAAAUABAAAQABAAEAAAATABQAAQABAAEAAAATABMAAQABAAEAAAATABIAAQABAAEAAAATABEAAQABAAEAAAATABAAAQABAAEAAAAGAAUAAQAVAAEAAAAGAAQAAQAWAAEAAAAGAAMAAQAWAAEAAAAFAAUAAQAVAAEAAAAFAAQAAQAWAAEAAAAFAAMAAQAWAAEAAAAEAAUAAQAVAAEAAAAEAAQAAQAWAAEAAAAEAAMAAQAWAAEAAAADAAUAAQAVAAEAAAADAAQAAQAWAAEAAAADAAMAAQAWAAEAAAACAAUAAQAVAAEAAAACAAQAAQAWAAEAAAACAAMAAQAWAAEAAAABAAUAAQAVAAEAAAABAAQAAQAWAAEAAAABAAMAAQAWAAEAAAASAAUAAQAVAAEAAAASAAQAAQAWAAEAAAASAAMAAQAWAAEAAAARAAUAAQAVAAEAAAARAAQAAQAWAAEAAAARAAMAAQAWAAEAAAAQAAUAAQAVAAEAAAAQAAQAAQAWAAEAAAAQAAMAAQAWAAEAAAAPAAUAAQAVAAEAAAAPAAQAAQAWAAEAAAAPAAMAAQAWAAEAAAAOAAUAAQAVAAEAAAAOAAQAAQAWAAEAAAAOAAMAAQAWAAEAAAANAAUAAQAVAAEAAAAUAAIAAQAHAAAAAAASAAIAAQABAAAAAAARAAIAAQABAAAAAAAQAAIAAQABAAAAAAAPAAIAAQABAAAAAAAOAAIAAQABAAAAAAANAAIAAQABAAAAAAAGAAIAAQABAAAAAAAFAAIAAQABAAAAAAAEAAIAAQABAAAAAAADAAIAAQABAAAAAAACAAIAAQABAAAAAAABAAIAAQABAAAAAAAAAAIAAQADAAAAAAAgAAMAAQAXAAAAAAAgAAQAAQATAAEAAAAgAAUAAQAXAAEAAAAbAAMAAQAUAAAAAAAbAAQAAQATAAAAAAAbAAUAAQAUAAEAAAAhAAMAAQAWAAEAAAAhAAQAAQAWAAEAAAAhAAUAAQAVAAEAAAAiAAMAAQAWAAEAAAAiAAQAAQAWAAEAAAAiAAUAAQAVAAEAAAAjAAMAAQAWAAEAAAAjAAQAAQAWAAEAAAAjAAUAAQAVAAEAAAAkAAMAAQAWAAEAAAAkAAQAAQAWAAEAAAAkAAUAAQAVAAEAAAAlAAMAAQAWAAEAAAAlAAQAAQAWAAEAAAAlAAUAAQAVAAEAAAAmAAMAAQAWAAEAAAAmAAQAAQAWAAEAAAAmAAUAAQAVAAEAAAAVAAMAAQAWAAEAAAAVAAQAAQAWAAEAAAAVAAUAAQAVAAEAAAAWAAMAAQAWAAEAAAAWAAQAAQAWAAEAAAAWAAUAAQAVAAEAAAAXAAMAAQAWAAEAAAAXAAQAAQAWAAEAAAAXAAUAAQAVAAEAAAAYAAMAAQAWAAEAAAAYAAQAAQAWAAEAAAAYAAUAAQAVAAEAAAAZAAMAAQAWAAEAAAAZAAQAAQAWAAEAAAAZAAUAAQAVAAEAAAAaAAMAAQAWAAEAAAAaAAQAAQAWAAEAAAAaAAUAAQAVAAEAAAAUAAgAAQABAAEAAAATAA4AAQAAAAAAAAATAA8AAQABAAEAAAAUAA4AAQACAAAAAAAUAA8AAQABAAEAAAATAAIAAQAHAAAAAAAHAAIAAQABAAAAAAAHAAMAAQAUAAAAAAAHAAQAAQATAAAAAAAHAAUAAQAUAAEAAAAMAAIAAQABAAAAAAAMAAMAAQAXAAAAAAAMAAQAAQATAAEAAAAMAAUAAQAXAAEAAAANAAMAAQAWAAEAAAANAAQAAQAWAAEAAAAHABUAAQAJAAEAAAAMABUAAQAKAAEAAAA=")
-tile_set = ExtResource("11_qwnuw")
+tile_set = ExtResource("3_e2rpv")
 navigation_enabled = false
-script = ExtResource("12_g7jxt")
+script = ExtResource("4_7h0lp")
 
 [node name="TileMapLayer_WallsOver" type="TileMapLayer" parent="." unique_id=1556340826]
 z_as_relative = false
 tile_map_data = PackedByteArray("AAAcAAIAAQABAAAAAQAdAAIAAQABAAAAAQAeAAIAAQABAAAAAQAfAAIAAQABAAAAAQAcAAMAAQAVAAAAAAAdAAMAAQAVAAAAAAAeAAMAAQAVAAAAAAAfAAMAAQAVAAAAAAAIAAIAAQABAAAAAQAIAAMAAQAVAAAAAAAJAAIAAQABAAAAAQAJAAMAAQAVAAAAAAAKAAIAAQABAAAAAQAKAAMAAQAVAAAAAAALAAIAAQABAAAAAQALAAMAAQAVAAAAAAA=")
-tile_set = ExtResource("11_qwnuw")
+tile_set = ExtResource("3_e2rpv")
 navigation_enabled = false
-script = ExtResource("12_g7jxt")
+script = ExtResource("4_7h0lp")
 _tile_type = 1
 
-[node name="Ball" parent="." unique_id=2014796492 instance=ExtResource("1_ereme")]
-position = Vector2(480, 200)
+[node name="Ball" parent="." unique_id=2014796492 instance=ExtResource("5_y8v4k")]
+position = Vector2(136, 193)
 
-[node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("2_2bk2c")]
-position = Vector2(257, 184)
+[node name="BallPlayer_WithWalk" parent="." unique_id=2041115718 instance=ExtResource("6_233xa")]
+position = Vector2(456, 262)
 
-[node name="Trap" parent="." unique_id=531650769 instance=ExtResource("7_6f48a")]
+[node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("6_6olak")]
+position = Vector2(39, 268)
+
+[node name="Trap" parent="." unique_id=531650769 instance=ExtResource("7_vphd7")]
 position = Vector2(32, 192)
 _trap_mode = 0
 
-[node name="Door_North" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
+[node name="Door_North" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("8_d6t2t")]
 z_as_relative = false
 position = Vector2(160, 72)
 dependency = NodePath("../Trap")
 
-[node name="Door_North2" parent="." unique_id=1753686542 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
+[node name="Door_North2" parent="." unique_id=1753686542 node_paths=PackedStringArray("dependency") instance=ExtResource("8_d6t2t")]
 z_as_relative = false
 position = Vector2(480, 72)
 dependency = NodePath("../Trap")
 
-[node name="Door_South" parent="." unique_id=1293223859 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
+[node name="Door_South" parent="." unique_id=1293223859 node_paths=PackedStringArray("dependency") instance=ExtResource("9_whcpq")]
 z_as_relative = false
 position = Vector2(160, 344)
 dependency = NodePath("../Trap")
 
-[node name="Door_South2" parent="." unique_id=1419732550 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
+[node name="Door_South2" parent="." unique_id=1419732550 node_paths=PackedStringArray("dependency") instance=ExtResource("9_whcpq")]
 z_as_relative = false
 position = Vector2(480, 344)
 dependency = NodePath("../Trap")
 
-[node name="Breakable_PottedPlant" parent="." unique_id=190911682 instance=ExtResource("9_k00hl")]
+[node name="Breakable_PottedPlant" parent="." unique_id=190911682 instance=ExtResource("10_m5gqm")]
 position = Vector2(344, 149)
 
-[node name="Breakable_PottedPlant2" parent="." unique_id=1993800526 instance=ExtResource("9_k00hl")]
+[node name="Breakable_PottedPlant2" parent="." unique_id=1993800526 instance=ExtResource("10_m5gqm")]
 position = Vector2(296, 147)
 
-[node name="Breakable_PottedPlant3" parent="." unique_id=1915903203 instance=ExtResource("9_k00hl")]
+[node name="Breakable_PottedPlant3" parent="." unique_id=1915903203 instance=ExtResource("10_m5gqm")]
 position = Vector2(296, 223)
 
-[node name="Breakable_PottedPlant4" parent="." unique_id=296753471 instance=ExtResource("9_k00hl")]
+[node name="Breakable_PottedPlant4" parent="." unique_id=296753471 instance=ExtResource("10_m5gqm")]
 position = Vector2(341, 223)
 
 [node name="CouchNorth" type="Sprite2D" parent="." unique_id=726553363]
 position = Vector2(574, 98)
-texture = ExtResource("11_g7jxt")
+texture = ExtResource("11_cq5jd")
 
 [node name="CouchNorth2" type="Sprite2D" parent="." unique_id=109645111]
 position = Vector2(392, 91)
-texture = ExtResource("11_g7jxt")
+texture = ExtResource("11_cq5jd")
 
 [node name="SmallBrownTable" type="Sprite2D" parent="." unique_id=1512384117]
 position = Vector2(575, 136)
-texture = ExtResource("12_0as1x")
+texture = ExtResource("12_mtfkr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=128297516]
 visible = false
 collision_layer = 0
 collision_mask = 0
-physics_material_override = ExtResource("3_7kpc6")
-script = ExtResource("2_peypa")
+physics_material_override = ExtResource("13_wmsif")
+script = ExtResource("14_30rtw")
 block_player = false
 block_npc = false
 

@@ -1,22 +1,34 @@
 class_name Ball_NPC extends Ball
 
 @export var _npc_type:= NPCType.RED
+@export var red_sprites : SpriteFrames
+@export var blue_sprites : SpriteFrames
+@export var yellow_sprites : SpriteFrames
 
 var _is_trapped := false
 
 func _ready() -> void:
 	super._ready()
 	set_z_index(UTILITIES.Z_Indexes.BALL_NPC as int)
+	set_z_as_relative(false)
+	set_y_sort_enabled(false) 
 	set_collision_layer_value(Ball.LAYER_NPC, true)
 	set_collision_layer_value(get_ball_collision_layer(_npc_type), true)
 	set_collision_mask_value(Ball.LAYER_NPC_WALL, true)
 	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
-	_set_shader_parameter(UTILITIES.SHADER_MODULATE_COLOR, get_color(_npc_type)) 
+	match _npc_type:
+		NPCType.RED:
+			animated_sprite_ball.set_sprite_frames(red_sprites)
+		NPCType.YELLOW:
+			animated_sprite_ball.set_sprite_frames(yellow_sprites)
+		NPCType.BLUE:
+			animated_sprite_ball.set_sprite_frames(blue_sprites)
 
 func get_captured(trap_mode: Area2D_Enhanced.TrapModes) -> bool:
 	if _is_trapped: # first trap takes priority 
 		return false
 	set_z_index(UTILITIES.Z_Indexes.IN_TRAP as int)
+	
 	set_freeze_enabled.call_deferred(true)
 	animated_sprite_ball.freeze()
 	set_freeze_mode(RigidBody2D.FREEZE_MODE_KINEMATIC)

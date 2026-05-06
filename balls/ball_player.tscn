@@ -33,10 +33,11 @@ action_mouse_release = ExtResource("6_cg7cr")
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_2vls1")
-instance_shader_parameters/modulate = Color(0.65505123, 0.4920277, 0.5294361, 1)
-instance_shader_parameters/new_background = Color(0.5568628, 0.5568628, 0, 0.5137255)
+instance_shader_parameters/modulate = Color(1, 1, 1, 1)
+instance_shader_parameters/new_background = Color(1, 0.22000003, 0.22000003, 1)
 sprite_frames = ExtResource("8_nki0t")
-frame_progress = 1.0
+animation = &"w"
+frame_progress = 0.41712752
 script = ExtResource("6_2vls1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216139889]

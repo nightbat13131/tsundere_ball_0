@@ -49,6 +49,9 @@ func _ready() -> void:
 	super._ready()
 	_instance = self
 	set_z_index(UTILITIES.Z_Indexes.BALL_PLAYER as int)
+	set_z_as_relative(false)
+	set_y_sort_enabled(false) 
+
 	control_type = control_type
 	if pc_controler_context:
 		GUIDE.enable_mapping_context(pc_controler_context)
