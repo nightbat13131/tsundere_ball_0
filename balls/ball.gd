@@ -19,10 +19,13 @@ const LAYER_NPC_BLUE = 5
 
 var fastest : float = 0
 
-
 func _ready() -> void:
 	set_collision_layer_value(LAYER_BALL, true)
 	set_collision_mask_value(LAYER_BALL, true)
+	## needed for _on_body_entered to report collisions
+	set_contact_monitor(true)
+	set_max_contacts_reported(5)
+	body_entered.connect(_on_body_entered)
 
 func toggle_rolling() -> void: animated_sprite_ball.is_rolling = !animated_sprite_ball.is_rolling
 
@@ -32,11 +35,8 @@ func _process(_delta: float) -> void:
 	if linear_velocity.length() > fastest:
 		fastest = linear_velocity.length()
 
-
-
 func _set_shader_parameter(param: StringName, value: Variant) -> void:
 	#print(get_material_override().get_shader_parameter(param))
-	#get_material_override().
 	animated_sprite_ball.set_instance_shader_parameter(param, value)
 
 static func get_color(npc_type: NPCType) -> Color:
@@ -48,3 +48,7 @@ static func get_color(npc_type: NPCType) -> Color:
 		NPCType.BLUE:
 			return UTILITIES.COLOR_NPC_BLUE
 	return UTILITIES.COLOR_PLAYER
+
+func _on_body_entered(body: Node) -> void:
+	if body is Breakable:
+		body.remote_hit(self)

@@ -8,9 +8,9 @@ const LOCKED_COLOR = Color.WEB_GRAY
 const SHADER_MODULATE_COLOR = 'modulate'
 const SHADER_OUTLINE_COLOR = 'new_background'
 
-const COLOR_NPC_RED = Color.RED
-const COLOR_NPC_YELLOW = Color.YELLOW
-const COLOR_NPC_BLUE = Color.BLUE
+const COLOR_NPC_RED = Color("#f72796") # Color.RED
+const COLOR_NPC_YELLOW = Color("#15e445") # Color.YELLOW
+const COLOR_NPC_BLUE = Color("#23c8fa") # Color.BLUE
 const COLOR_PLAYER = Color.WHITE
 const DARKEN_HOLE = .25
 
