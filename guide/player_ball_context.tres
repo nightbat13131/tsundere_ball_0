@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://bl8rjl4oaldje" path="res://addons/guide/modifiers/guide_modifier.gd" id="5_ymxr3"]
 [ext_resource type="Script" uid="uid://vho2v7ax07ef" path="res://addons/guide/modifiers/guide_modifier_canvas_coordinates.gd" id="6_v8aoh"]
 [ext_resource type="Script" uid="uid://x74mnwgr08a7" path="res://addons/guide/triggers/guide_trigger.gd" id="7_usyr7"]
-[ext_resource type="Script" uid="uid://b4cdrn4paoj3i" path="res://addons/guide/triggers/guide_trigger_down.gd" id="8_2a7cp"]
 [ext_resource type="Resource" uid="uid://ea2hf73e3e0a" path="res://guide/mouse_click.tres" id="8_ymxr3"]
 [ext_resource type="Script" uid="uid://vgjlx6p007lp" path="res://addons/guide/inputs/guide_input_mouse_button.gd" id="9_v8aoh"]
 [ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="11_usyr7"]
@@ -40,14 +39,13 @@ input_mappings = Array[ExtResource("3_h5rjt")]([SubResource("Resource_5j74t")])
 [sub_resource type="Resource" id="Resource_jasfq"]
 script = ExtResource("9_v8aoh")
 
-[sub_resource type="Resource" id="Resource_ht32p"]
-script = ExtResource("8_2a7cp")
-actuation_threshold = 0.05
+[sub_resource type="Resource" id="Resource_gj4h0"]
+script = ExtResource("14_5j74t")
 
 [sub_resource type="Resource" id="Resource_cupiq"]
 script = ExtResource("3_h5rjt")
 input = SubResource("Resource_jasfq")
-triggers = Array[ExtResource("7_usyr7")]([SubResource("Resource_ht32p")])
+triggers = Array[ExtResource("7_usyr7")]([SubResource("Resource_gj4h0")])
 
 [sub_resource type="Resource" id="Resource_lctq5"]
 script = ExtResource("1_bfxsy")

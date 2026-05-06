@@ -102,7 +102,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-mouse_filter = 0
 
 [node name="LevelViewport" type="SubViewport" parent="MarginContainer/CenterContainer/VBoxContainer/SubViewportContainer" unique_id=1958433274]
 unique_name_in_owner = true
@@ -112,4 +111,3 @@ render_target_update_mode = 4
 script = ExtResource("2_jgkem")
 
 [node name="GuideDebugger" parent="." unique_id=676886905 instance=ExtResource("4_m7fyu")]
-visible = false
