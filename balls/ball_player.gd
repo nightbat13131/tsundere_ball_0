@@ -103,7 +103,8 @@ func _process(delta: float) -> void:
 
 func _any_drag_2(delta: float) -> void:
 	queue_redraw()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_action_pressed("left_click"):
+	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		mouse_end = get_global_mouse_position()
 		_power += delta * cycle_mod * 1000
 		if mouse_start == DEFAULT_POS:

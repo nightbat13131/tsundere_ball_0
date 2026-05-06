@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://eu5gp7dvev6e"]
+[gd_scene format=3 uid="uid://bmx1qrxrnr065"]
 
 [ext_resource type="Script" uid="uid://bn64xn4h4g54l" path="res://architecture/game_root.gd" id="1_ur1xq"]
 [ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/level_select.tscn" id="2_2uli3"]
@@ -13,5 +13,3 @@ script = ExtResource("1_ur1xq")
 [node name="LevelSelect" parent="." unique_id=408408737 instance=ExtResource("2_2uli3")]
 
 [node name="AudioManager" parent="." unique_id=2119366650 instance=ExtResource("4_50a1j")]
-unique_name_in_owner = true
-visible = false

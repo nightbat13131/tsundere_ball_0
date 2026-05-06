@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://cd3pbg6rdw583"]
+[gd_scene format=4 uid="uid://cd3pbg6rdw583"]
 
 [ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="1_ereme"]
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_psj2v"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_2bk2c"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_peypa"]
-[ext_resource type="Texture2D" uid="uid://b56hngtrhmacu" path="res://assets/room.png" id="5_peypa"]
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="3_7kpc6"]
+[ext_resource type="Texture2D" uid="uid://b56hngtrhmacu" path="res://assets/tileset/room.png" id="5_peypa"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_6f48a"]
 [ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="9_k00hl"]
+[ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="11_qwnuw"]
+[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="12_g7jxt"]
 [ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="12_p2h7p"]
 [ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="13_g7jxt"]
 
@@ -26,106 +29,118 @@ size = Vector2(124.75, 73.25)
 script = ExtResource("1_psj2v")
 
 [node name="Visual" type="Node2D" parent="." unique_id=597906288]
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
+visible = false
 
 [node name="Room" type="Sprite2D" parent="Visual" unique_id=1857241179]
-position = Vector2(160, 200)
+position = Vector2(168, 200)
 texture = ExtResource("5_peypa")
 
 [node name="Room2" type="Sprite2D" parent="Visual" unique_id=883473588]
-position = Vector2(480, 200)
+position = Vector2(488, 200)
 texture = ExtResource("5_peypa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=128297516]
+visible = false
 collision_layer = 0
 collision_mask = 0
+physics_material_override = ExtResource("3_7kpc6")
 script = ExtResource("2_peypa")
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1556347873]
-position = Vector2(8, 105)
+position = Vector2(7, 96)
 shape = SubResource("RectangleShape2D_x60sr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=243778056]
-position = Vector2(8, 296)
+position = Vector2(7, 287)
 shape = SubResource("RectangleShape2D_x60sr")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1467480225]
-position = Vector2(632, 296)
+position = Vector2(631, 287)
 shape = SubResource("RectangleShape2D_x60sr")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=331849060]
-position = Vector2(633, 104)
+position = Vector2(632, 95)
 shape = SubResource("RectangleShape2D_x60sr")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=869479955]
-position = Vector2(320.375, 105)
+position = Vector2(319.375, 96)
 shape = SubResource("RectangleShape2D_peypa")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=2001215777]
-position = Vector2(320, 296)
+position = Vector2(319, 287)
 shape = SubResource("RectangleShape2D_peypa")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1119078163]
-position = Vector2(255, 355)
+position = Vector2(254, 346)
 shape = SubResource("RectangleShape2D_aiegb")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=2131770591]
-position = Vector2(385, 356)
+position = Vector2(384, 347)
 shape = SubResource("RectangleShape2D_aiegb")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=514123478]
-position = Vector2(575, 356)
+position = Vector2(574, 347)
 shape = SubResource("RectangleShape2D_aiegb")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1324046309]
-position = Vector2(65, 355)
+position = Vector2(64, 346)
 shape = SubResource("RectangleShape2D_aiegb")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2132457234]
-position = Vector2(65, 66.625)
+position = Vector2(64, 57.625)
 shape = SubResource("RectangleShape2D_ls632")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=841620640]
-position = Vector2(256, 67)
+position = Vector2(255, 58)
 shape = SubResource("RectangleShape2D_ls632")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=2097051410]
-position = Vector2(385, 67)
+position = Vector2(384, 58)
 shape = SubResource("RectangleShape2D_ls632")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=255932365]
-position = Vector2(575, 67)
+position = Vector2(574, 58)
 shape = SubResource("RectangleShape2D_ls632")
 
 [node name="Ball" parent="." unique_id=2014796492 instance=ExtResource("1_ereme")]
-position = Vector2(452, 191)
+position = Vector2(451, 182)
 
 [node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("2_2bk2c")]
-position = Vector2(258, 193)
+position = Vector2(257, 184)
 
 [node name="Trap" parent="." unique_id=531650769 instance=ExtResource("7_6f48a")]
-position = Vector2(32, 200)
+position = Vector2(32, 192)
 _trap_mode = 0
 
-[node name="Door_North2" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
-position = Vector2(160, 80)
+[node name="Door_North" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
+position = Vector2(160, 72)
+dependency = NodePath("../Trap")
+
+[node name="Door_North2" parent="." unique_id=1753686542 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
+position = Vector2(480, 72)
 dependency = NodePath("../Trap")
 
 [node name="Door_South" parent="." unique_id=1293223859 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
-position = Vector2(160, 352)
+position = Vector2(160, 344)
+dependency = NodePath("../Trap")
+
+[node name="Door_South2" parent="." unique_id=1419732550 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
+position = Vector2(480, 344)
 dependency = NodePath("../Trap")
 
 [node name="Breakable_PottedPlant" parent="." unique_id=190911682 instance=ExtResource("9_k00hl")]
-position = Vector2(345, 158)
+position = Vector2(344, 149)
 
 [node name="Breakable_PottedPlant2" parent="." unique_id=1993800526 instance=ExtResource("9_k00hl")]
-position = Vector2(297, 156)
+position = Vector2(296, 147)
 
 [node name="Breakable_PottedPlant3" parent="." unique_id=1915903203 instance=ExtResource("9_k00hl")]
-position = Vector2(297, 232)
+position = Vector2(296, 223)
 
 [node name="Breakable_PottedPlant4" parent="." unique_id=296753471 instance=ExtResource("9_k00hl")]
-position = Vector2(342, 232)
+position = Vector2(341, 223)
+
+[node name="TileMapLayer_Enhanced" type="TileMapLayer" parent="." unique_id=1576620419]
+tile_map_data = PackedByteArray("AAAAAAkAAQAFAAAAAAAAAAgAAQABAAEAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQABAAEAAAAAAAQAAQABAAEAAAAAAAMAAQABAAEAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQABAAAAAAAYAAIAAQABAAAAAAAZAAIAAQABAAAAAAAaAAIAAQABAAAAAAAbAAIAAQABAAAAAAAcAAIAAQABAAAAAAAdAAIAAQABAAAAAAAeAAIAAQABAAAAAAAfAAIAAQABAAAAAAAgAAIAAQABAAAAAAAhAAIAAQABAAAAAAAiAAIAAQABAAAAAAAjAAIAAQABAAAAAAAkAAIAAQABAAAAAAAlAAIAAQABAAAAAAAmAAIAAQABAAAAAAAnAAIAAQAEAAAAAAAnAAMAAQADAAAAAAAnAAQAAQADAAAAAAAnAAUAAQADAAAAAAAnAAYAAQADAAAAAAAnAAcAAQADAAAAAAAnAAgAAQADAAAAAAAnAAkAAQAGAAAAAAAUAAkAAQACAAEAAAAUAAcAAQABAAEAAAAUAAYAAQABAAEAAAAUAAUAAQABAAEAAAAUAAQAAQABAAEAAAAUAAMAAQABAAEAAAATAAkAAQAAAAEAAAATAAgAAQABAAEAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAEAAAATAAQAAQABAAEAAAATAAMAAQABAAEAAAAAABUAAQADAAEAAAAAABQAAQABAAEAAAAAABMAAQABAAEAAAAAABIAAQABAAEAAAAAABEAAQABAAEAAAAAABAAAQABAAEAAAAAAA8AAQABAAEAAAAAAA4AAQAFAAEAAAAnABUAAQACAAEAAAAmABUAAQABAAAAAAAlABUAAQABAAAAAAAkABUAAQABAAAAAAAjABUAAQABAAAAAAAiABUAAQABAAAAAAAhABUAAQABAAAAAAAgABUAAQABAAAAAAAfABUAAQABAAAAAAAeABUAAQABAAAAAAAdABUAAQABAAAAAAAcABUAAQABAAAAAAAbABUAAQABAAAAAAAaABUAAQABAAAAAAAZABUAAQABAAAAAAAYABUAAQABAAAAAAAXABUAAQABAAAAAAAWABUAAQABAAAAAAAVABUAAQABAAAAAAAUABUAAQAIAAAAAAATABUAAQAIAAAAAAASABUAAQABAAAAAAARABUAAQABAAAAAAAQABUAAQABAAAAAAAPABUAAQABAAAAAAAOABUAAQABAAAAAAANABUAAQABAAAAAAAGABUAAQABAAAAAAAFABUAAQABAAAAAAAEABUAAQABAAAAAAADABUAAQABAAAAAAACABUAAQABAAAAAAABABUAAQABAAAAAAAnABQAAQABAAEAAAAnABMAAQABAAEAAAAnABIAAQABAAEAAAAnABEAAQABAAEAAAAnABAAAQABAAEAAAAnAA8AAQABAAEAAAAnAA4AAQAGAAEAAAAUABQAAQABAAEAAAAUABMAAQABAAEAAAAUABIAAQABAAEAAAAUABEAAQABAAEAAAAUABAAAQABAAEAAAATABQAAQABAAEAAAATABMAAQABAAEAAAATABIAAQABAAEAAAATABEAAQABAAEAAAATABAAAQABAAEAAAAGAAUAAQAVAAEAAAAGAAQAAQAWAAEAAAAGAAMAAQAWAAEAAAAFAAUAAQAVAAEAAAAFAAQAAQAWAAEAAAAFAAMAAQAWAAEAAAAEAAUAAQAVAAEAAAAEAAQAAQAWAAEAAAAEAAMAAQAWAAEAAAADAAUAAQAVAAEAAAADAAQAAQAWAAEAAAADAAMAAQAWAAEAAAACAAUAAQAVAAEAAAACAAQAAQAWAAEAAAACAAMAAQAWAAEAAAABAAUAAQAVAAEAAAABAAQAAQAWAAEAAAABAAMAAQAWAAEAAAASAAUAAQAVAAEAAAASAAQAAQAWAAEAAAASAAMAAQAWAAEAAAARAAUAAQAVAAEAAAARAAQAAQAWAAEAAAARAAMAAQAWAAEAAAAQAAUAAQAVAAEAAAAQAAQAAQAWAAEAAAAQAAMAAQAWAAEAAAAPAAUAAQAVAAEAAAAPAAQAAQAWAAEAAAAPAAMAAQAWAAEAAAAOAAUAAQAVAAEAAAAOAAQAAQAWAAEAAAAOAAMAAQAWAAEAAAANAAUAAQAVAAEAAAAUAAIAAQAHAAAAAAASAAIAAQABAAAAAAARAAIAAQABAAAAAAAQAAIAAQABAAAAAAAPAAIAAQABAAAAAAAOAAIAAQABAAAAAAANAAIAAQABAAAAAAAGAAIAAQABAAAAAAAFAAIAAQABAAAAAAAEAAIAAQABAAAAAAADAAIAAQABAAAAAAACAAIAAQABAAAAAAABAAIAAQABAAAAAAAAAAIAAQADAAAAAAAcAAMAAQAVAAAAAAAdAAMAAQAVAAAAAAAeAAMAAQAVAAAAAAAfAAMAAQAVAAAAAAAgAAMAAQAXAAAAAAAgAAQAAQATAAEAAAAgAAUAAQAXAAEAAAAbAAMAAQAUAAAAAAAbAAQAAQATAAAAAAAbAAUAAQAUAAEAAAAhAAMAAQAWAAEAAAAhAAQAAQAWAAEAAAAhAAUAAQAVAAEAAAAiAAMAAQAWAAEAAAAiAAQAAQAWAAEAAAAiAAUAAQAVAAEAAAAjAAMAAQAWAAEAAAAjAAQAAQAWAAEAAAAjAAUAAQAVAAEAAAAkAAMAAQAWAAEAAAAkAAQAAQAWAAEAAAAkAAUAAQAVAAEAAAAlAAMAAQAWAAEAAAAlAAQAAQAWAAEAAAAlAAUAAQAVAAEAAAAmAAMAAQAWAAEAAAAmAAQAAQAWAAEAAAAmAAUAAQAVAAEAAAAVAAMAAQAWAAEAAAAVAAQAAQAWAAEAAAAVAAUAAQAVAAEAAAAWAAMAAQAWAAEAAAAWAAQAAQAWAAEAAAAWAAUAAQAVAAEAAAAXAAMAAQAWAAEAAAAXAAQAAQAWAAEAAAAXAAUAAQAVAAEAAAAYAAMAAQAWAAEAAAAYAAQAAQAWAAEAAAAYAAUAAQAVAAEAAAAZAAMAAQAWAAEAAAAZAAQAAQAWAAEAAAAZAAUAAQAVAAEAAAAaAAMAAQAWAAEAAAAaAAQAAQAWAAEAAAAaAAUAAQAVAAEAAAAUAAgAAQABAAEAAAATAA4AAQAAAAAAAAATAA8AAQABAAEAAAAUAA4AAQACAAAAAAAUAA8AAQABAAEAAAATAAIAAQAHAAAAAAAHAAIAAQABAAAAAAAHAAMAAQAUAAAAAAAHAAQAAQATAAAAAAAHAAUAAQAUAAEAAAAIAAIAAQABAAAAAAAIAAMAAQAVAAAAAAAJAAIAAQABAAAAAAAJAAMAAQAVAAAAAAAKAAIAAQABAAAAAAAKAAMAAQAVAAAAAAALAAIAAQABAAAAAAALAAMAAQAVAAAAAAAMAAIAAQABAAAAAAAMAAMAAQAXAAAAAAAMAAQAAQATAAEAAAAMAAUAAQAXAAEAAAANAAMAAQAWAAEAAAANAAQAAQAWAAEAAAAHABUAAQAJAAEAAAAMABUAAQAKAAEAAAA=")
+tile_set = ExtResource("11_qwnuw")
+script = ExtResource("12_g7jxt")

@@ -24,6 +24,7 @@ physics_material_override = ExtResource("1_kx6oe")
 lock_rotation = true
 linear_damp = 0.5
 script = ExtResource("1_7o23g")
+control_type = 4
 pc_controler_context = ExtResource("3_j4p71")
 action_cancle_ball = ExtResource("4_cg7cr")
 action_mouse_pressed = ExtResource("5_2vls1")

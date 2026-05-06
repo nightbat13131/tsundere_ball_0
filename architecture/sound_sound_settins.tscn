@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://onpe1c4uu171"]
+
+[ext_resource type="Texture2D" uid="uid://ccbqt8vcom4po" path="res://assets/sheet_white1x.png" id="1_pnspq"]
+[ext_resource type="Script" uid="uid://b6ubxfey7ybve" path="res://architecture/button_sound_settings.gd" id="2_h5xio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb4yo"]
+atlas = ExtResource("1_pnspq")
+region = Rect2(359, 59, 34, 34)
+
+[node name="TextureButton_SoundSettings" type="TextureButton" unique_id=124607973]
+offset_right = 36.0
+offset_bottom = 36.0
+size_flags_horizontal = 4
+texture_normal = SubResource("AtlasTexture_sb4yo")
+script = ExtResource("2_h5xio")
+metadata/_custom_type_script = "uid://cyxqjjbt3vlh"

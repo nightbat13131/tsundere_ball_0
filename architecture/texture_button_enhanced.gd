@@ -1,6 +1,6 @@
 class_name TextureButton_Enhanced extends TextureButton
 
-var sfx_sound: AudioStream
+static var sfx_sound: AudioStream = load('uid://dtgqshvkyd15n')
 
 #@export var mouse_cursor: CustomMouse
 
@@ -18,8 +18,9 @@ func _ready() -> void:
 func _press_sound() ->void: SoundManager.request_sfx(sfx_sound)
 
 func _on_pressed() -> void: 
-	printerr("ButtonSelf has been pressed, but _on_pressed() not overrode. Name:" , self.name)
-	#pressed.emit() # many extentions do a special emint or function
+	#printerr("ButtonSelf has been pressed, but _on_pressed() not overrode. Name:" , self.name)
+	#pressed.emit() # Children need to do a special emit or function
+	pass
 
 
 func remote_press() -> void: 

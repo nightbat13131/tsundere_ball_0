@@ -6,8 +6,8 @@ enum TileType {WALLS, FLOOR}
 
 func _ready() -> void:
 	if _tile_type == TileType.WALLS:
-		get_tile_set().set_physics_layer_collision_mask(Ball.LAYER_BALL, true)
+		get_tile_set().set_physics_layer_collision_mask(0, Ball.LAYER_BALL)
 		#get_tile_set().set_physics_layer_collision_mask(Ball.LAYER_NPC_WALL, true)
 	
-		get_tile_set().set_physics_layer_collision_layer(Ball.LAYER_NPC_WALL, true)
-		get_tile_set().set_physics_layer_collision_layer(Ball.LAYER_PC_WALL, true)
+		get_tile_set().set_physics_layer_collision_layer(0, Ball.LAYER_NPC_WALL)
+		get_tile_set().set_physics_layer_collision_layer(0, Ball.LAYER_PC_WALL)

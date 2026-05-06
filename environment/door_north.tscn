@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwivnxda2gprc"]
 
 [ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/door.gd" id="1_drm7c"]
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="1_rupfc"]
 [ext_resource type="SpriteFrames" uid="uid://c7wnf1mfqdrl1" path="res://environment/spriteframes_door_north.tres" id="2_h8em1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f48a"]
@@ -10,6 +11,7 @@ size = Vector2(64, 41)
 z_index = 5
 collision_layer = 3073
 collision_mask = 3
+physics_material_override = ExtResource("1_rupfc")
 script = ExtResource("1_drm7c")
 metadata/_custom_type_script = "uid://seumawif655e"
 metadata/_edit_group_ = true

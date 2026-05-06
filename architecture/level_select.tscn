@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
+[ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=656451208]
 script = ExtResource("1_hu3iy")
@@ -58,6 +59,9 @@ layout_mode = 2
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("8_0hgg1")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="TextureButton_SoundSettings" parent="Dev/VBoxContainer" unique_id=124607973 instance=ExtResource("9_2xmtt")]
+layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866578568]
 unique_name_in_owner = true

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Tsundere Ball"
 config/tags=PackedStringArray("2d", "physics")
-run/main_scene="uid://eu5gp7dvev6e"
+run/main_scene="uid://bmx1qrxrnr065"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.4627451, 0.25882354, 0.5411765, 1)
 config/icon="uid://dnb1juon5ub04"
@@ -47,6 +47,14 @@ folder_colors={
 "res://balls/": "purple",
 "res://character/": "pink",
 "res://guide/": "teal"
+}
+
+[input]
+
+left_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(207, 9),"global_position":Vector2(216, 57),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
 }
 
 [physics]

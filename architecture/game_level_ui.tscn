@@ -4,13 +4,14 @@
 [ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/level_viewport.gd" id="2_jgkem"]
 [ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_m7fyu"]
 [ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/test_levels/options_control_type.gd" id="3_fqrik"]
-[ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_qpwan"]
+[ext_resource type="Script" path="res://architecture/goal_tracker.gd" id="3_qpwan"]
 [ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/tilemap.png" id="4_56b18"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="4_m7fyu"]
 [ext_resource type="Texture2D" uid="uid://ccbqt8vcom4po" path="res://assets/sheet_white1x.png" id="4_sb4yo"]
-[ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_pojhi"]
+[ext_resource type="Script" path="res://architecture/texture_goal.gd" id="5_pojhi"]
 [ext_resource type="Script" uid="uid://tjdvvki3df43" path="res://architecture/ui/button_restart_level.gd" id="5_ppoab"]
 [ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="6_qpwan"]
+[ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
 atlas = ExtResource("4_56b18")
@@ -23,10 +24,6 @@ region = Rect2(208, 59, 36, 36)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppoab"]
 atlas = ExtResource("4_sb4yo")
 region = Rect2(258, 306, 35, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sb4yo"]
-atlas = ExtResource("4_sb4yo")
-region = Rect2(7, 308, 36, 36)
 
 [node name="GameLevelUI" type="CanvasLayer" unique_id=290767530]
 script = ExtResource("1_ut0wp")
@@ -98,9 +95,8 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ppoab")
 script = ExtResource("6_qpwan")
 
-[node name="TextureButton_SoundSettings" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1779933336]
+[node name="TextureButton_SoundSettings" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=581849171 instance=ExtResource("10_pojhi")]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_sb4yo")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=592241813]
 layout_mode = 2
