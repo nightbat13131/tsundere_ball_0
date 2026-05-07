@@ -1,5 +1,3 @@
 extends TextureButton_Enhanced
 
-func _on_pressed() -> void:
-	LevelSelect.request_activate()
-	GameLevelUI.request_deactivate()
+func _on_pressed() -> void: GameRoot.request_map_view()

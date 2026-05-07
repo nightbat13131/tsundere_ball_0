@@ -20,6 +20,7 @@ const EVENT_CANCLE_SHOOT = &'cancle_shoot'
 const EVENT_SHOOT_COMPLETE = &"shot_done"
 const EVENT_WALKING_WASD = &'walk_around_wasd'
 const EVENT_WALKING_JOYSTICK = &'walk_around_joystick'
+const EVENT_CAPTURED = &'captured'
 
 const EVENT_JOYSTICK_AIMING = &'joystick_aiming'
 const EVENT_CANCLE_JOYSTICK_AIM = &'cancle_joystick_aiming'
@@ -105,6 +106,11 @@ static func request_pause(is_pause) -> void:
 func _process(delta: float) -> void:
 	super._process(delta)
 	animated_sprite_feet.set_velocity(linear_velocity)
+
+func _set_trap_mode(mode: Trap.TrapModes) -> void:
+	super._set_trap_mode(mode)
+	if is_trapped():
+		_send_event(EVENT_CAPTURED)
 
 func _get_usable_power() -> float:
 	var out : float 

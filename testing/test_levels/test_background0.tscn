@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_3dgcs"]
 [ext_resource type="Texture2D" uid="uid://bnwln8br1jeqe" path="res://assets/background test.png" id="2_xsfuh"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="3_lrqux"]
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/player/ball_player_before_walking.tscn" id="4_ttkfh"]
+[ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="5_3dgcs"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="5_v8yvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h57c2"]
@@ -56,9 +56,6 @@ shape = SubResource("RectangleShape2D_180vy")
 position = Vector2(389, -176)
 shape = SubResource("RectangleShape2D_h57c2")
 
-[node name="Ball_Player" parent="." unique_id=2041115718 instance=ExtResource("4_ttkfh")]
-position = Vector2(386, 138)
-
 [node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("5_v8yvx")]
 position = Vector2(202, 154)
 
@@ -80,3 +77,6 @@ _npc_type = 1
 [node name="Ball_NPC6" parent="." unique_id=729655933 instance=ExtResource("5_v8yvx")]
 position = Vector2(85, 182)
 _npc_type = 1
+
+[node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("5_3dgcs")]
+position = Vector2(338, 144)

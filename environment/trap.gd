@@ -3,6 +3,7 @@ class_name Trap extends Area2D_Enhanced
 
 
 signal used(ball: Ball)
+signal complete(ball: Ball)
 
 const RADIUS = 30.0
 const SIDE_LENGTH = 50 # 53.178943201233324
@@ -14,7 +15,7 @@ const FRAME_ACITVE = 1
 ## Pillar: Captures ball and holds it IN the way
 ## Hole: Captures's ball and moves it OUT of the way.
 ## Release the ball when the release trigger happens. 
-enum TrapModes {PILLAR, HOLE, CLAW_HOLE, CLAW_PILLAR}
+enum TrapModes {PILLAR, HOLE, CLAW_HOLE, CLAW_PILLAR, NONE}
 
 var _used := false # prevent triggering multiple times in the same frame
 
@@ -27,7 +28,6 @@ var _used := false # prevent triggering multiple times in the same frame
 @export var _blue_icons: CompressedTexture2D
 
 @export var _trap_mode := TrapModes.HOLE
-
 
 @onready var collision_shape: CollisionShape2D = %CollisionShape
 @onready var sprite_2d: Sprite2D = %Sprite2D
@@ -77,23 +77,26 @@ func _on_unlock(_ball: Ball)-> void:
 func _on_body_entered(body: Node2D) -> void:
 	if _used:
 		return
-	if body is Ball_NPC:
-		_used = body.get_captured(_trap_mode)
-		if !_used: # trapping for this body failed
-			return
-		used.emit(body)
-		Portrait.request_emotion(Portrait.Emotions.BLUSHING)
-		_hybernate()
-		#suck to center
-		var tween_pos = get_tree().create_tween()
-		tween_pos.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-		tween_pos.tween_property(body, "global_position", global_position, 1.0)
-		if _trap_mode == TrapModes.HOLE:
-			var tween_scale = get_tree().create_tween()
-			tween_scale.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-			tween_scale.set_ease(Tween.EASE_IN_OUT)
-			tween_scale.set_trans(Tween.TRANS_BOUNCE)
-			tween_scale.tween_property(body.animated_sprite_ball, "scale", Vector2(.8, .8), 1.0)
+	if !body is Ball:
+		push_warning("Trap ", self, "triggered for a ", body, " instead of a ball.")
+		return
+	_used = body.get_captured(_trap_mode)
+	if !_used: # trapping for this body failed
+		return
+	used.emit(body)
+	Portrait.request_emotion(Portrait.Emotions.BLUSHING)
+	_hybernate()
+	#suck to center
+	var tween_pos = get_tree().create_tween()
+	tween_pos.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	tween_pos.tween_property(body, "global_position", global_position, 1.0)
+	if _trap_mode == TrapModes.HOLE:
+		var tween_scale = get_tree().create_tween()
+		tween_scale.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		tween_scale.set_ease(Tween.EASE_IN_OUT)
+		tween_scale.set_trans(Tween.TRANS_BOUNCE)
+		tween_scale.tween_property(body.animated_sprite_ball, "scale", Vector2(.8, .8), 1.0)
+	tween_pos.tween_callback(complete.emit.bind(body))
 
 func _process(_delta: float) -> void: queue_redraw()
 

@@ -3,11 +3,18 @@ class_name Level extends Node2D
 
 static var _instance
 
+@export var level_end : Trap
+
 func _ready() -> void:
 	_instance = self
 	if Engine.is_editor_hint():
 		return
 	GoalTracker.level_start()
+	if level_end:
+		level_end.used.connect(_on_level_end_start)
+		level_end.complete.connect(_on_level_end_complete)
+	else:
+		push_error(self, "has no level_end")
 
 func _draw() -> void:
 	var win_scale : float = ProjectSettings.get_setting('display/window/stretch/scale')
@@ -27,3 +34,16 @@ func _draw() -> void:
 static func request_pause(is_pause) -> void:
 	if _instance:
 		_instance.get_tree().paused = is_pause
+
+func _on_level_end_start(thing: Ball) -> void:
+	if thing is Ball_Player:
+		Portrait.request_emotion(Portrait.Emotions.BLUSHING)
+	else:
+		push_error(thing, "triggered Level._on_level_end_start instead of a Ball_Player")
+	
+
+func _on_level_end_complete(thing: Ball) -> void:
+	if thing is Ball_Player:
+		GameRoot.request_map_view()
+	else:
+		push_error(thing, "triggered Level._on_level_end_start instead of a Ball_Player")

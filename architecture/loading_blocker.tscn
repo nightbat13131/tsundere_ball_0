@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ds30stwln1k53"]
+
+[ext_resource type="Shader" uid="uid://b8o61n7qh3us4" path="res://architecture/luminance_mask_transition.gdshader" id="1_4yrww"]
+[ext_resource type="Script" uid="uid://dr7k5srs5b36u" path="res://architecture/loading_blocker.gd" id="1_wk00j"]
+[ext_resource type="Texture2D" uid="uid://lhvt3838yv3n" path="res://assets/Blue-Gradient-Spiral-Background-Graphics-1-1-580x387.jpg" id="3_4yrww"]
+[ext_resource type="Texture2D" uid="uid://cb3r2vssw3m8r" path="res://assets/red-spiral-15868539218z7.jpg" id="3_sciqi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpjgo"]
+shader = ExtResource("1_4yrww")
+shader_parameter/invert = true
+shader_parameter/mask_texture = ExtResource("3_sciqi")
+shader_parameter/display_texture = ExtResource("3_4yrww")
+
+[node name="LoadingBlocker" type="CanvasLayer" unique_id=1282637796]
+script = ExtResource("1_wk00j")
+
+[node name="Panel" type="Panel" parent="." unique_id=1367941406]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_xpjgo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

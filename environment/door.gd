@@ -31,4 +31,4 @@ func _unlock() -> void:
 
 func _draw() -> void:
 	if Engine.is_editor_hint() and dependency:
-		draw_line(Vector2.ZERO, to_local(dependency.position), Color.GRAY, Area2D_Enhanced.THICKNESS)
+		draw_line(Vector2.ZERO, to_local(dependency.position), Color.GRAY, Trap.THICKNESS)

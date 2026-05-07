@@ -171,7 +171,6 @@ func _cancle_shoot() -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	return
 	if cancle_pause > 0.0:
 		return
 	var visable_power = _get_usable_power()  * sin(_get_power_ratio()) * .1

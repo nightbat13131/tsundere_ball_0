@@ -48,6 +48,7 @@ action_start_mouse_aim = ExtResource("5_gw41h")
 action_joystick_aim = ExtResource("8_g3x7m")
 action_try_roll_mouse = ExtResource("6_0xn1p")
 action_try_roll_controler = ExtResource("9_ndsjn")
+_npc_type = 3
 
 [node name="AnimatedSprite_Feet" type="AnimatedSprite2D" parent="." unique_id=758807694]
 unique_name_in_owner = true
@@ -84,6 +85,10 @@ metadata/_custom_type_script = "uid://couw105c3bde4"
 script = ExtResource("12_gw41h")
 initial_state = NodePath("RollMode")
 metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Captured" type="Node" parent="StateChart/CompoundState" unique_id=832757018]
+script = ExtResource("13_gw41h")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
 [node name="WalkMode" type="Node" parent="StateChart/CompoundState" unique_id=1165991015]
 unique_name_in_owner = true
@@ -193,6 +198,12 @@ delay_in_seconds = "0.0"
 
 [node name="MouseTryRoll" type="Node" parent="StateChart/CompoundState/RollMode/Aiming/Mouse" unique_id=27954402]
 script = ExtResource("13_gw41h")
+
+[node name="ToCaptured" type="Node" parent="StateChart/CompoundState" unique_id=1121964734]
+script = ExtResource("14_0xn1p")
+to = NodePath("../Captured")
+event = &"captured"
+delay_in_seconds = "0.0"
 
 [connection signal="state_entered" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_entered"]
 [connection signal="state_processing" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_processing"]

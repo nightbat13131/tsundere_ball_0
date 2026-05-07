@@ -11,14 +11,24 @@
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
+[ext_resource type="PackedScene" uid="uid://ds30stwln1k53" path="res://architecture/loading_blocker.tscn" id="12_iudv4"]
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=656451208]
 process_mode = 3
 script = ExtResource("1_hu3iy")
 
 [node name="Dev" type="HBoxContainer" parent="." unique_id=757718319]
-offset_right = 8.0
-offset_bottom = 56.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -47.0
+offset_right = 23.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Dev" type="VBoxContainer" parent="Dev" unique_id=767689092]
 layout_mode = 2
@@ -75,3 +85,6 @@ layout_mode = 2
 unique_name_in_owner = true
 position = Vector2(96, 155)
 texture = ExtResource("3_okj6e")
+
+[node name="LoadingBlocker" parent="." unique_id=30920926 instance=ExtResource("12_iudv4")]
+unique_name_in_owner = true

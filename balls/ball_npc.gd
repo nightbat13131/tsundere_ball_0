@@ -1,14 +1,16 @@
 class_name Ball_NPC extends Ball
 
-@export var _npc_type:= NPCType.RED
+
 @export var red_sprites : SpriteFrames
 @export var blue_sprites : SpriteFrames
 @export var yellow_sprites : SpriteFrames
 
-var _is_trapped := false
+
 
 func _ready() -> void:
 	super._ready()
+	if _npc_type == Ball.NPCType.PLAYER:
+		push_error(self, " NPC type not set correclty")
 	set_z_index(UTILITIES.Z_Indexes.BALL_NPC as int)
 	set_z_as_relative(false)
 	set_y_sort_enabled(false) 
@@ -24,24 +26,6 @@ func _ready() -> void:
 		NPCType.BLUE:
 			animated_sprite_ball.set_sprite_frames(blue_sprites)
 
-func get_captured(trap_mode: Trap.TrapModes) -> bool:
-	if _is_trapped: # first trap takes priority 
-		return false
-	set_z_index(UTILITIES.Z_Indexes.IN_TRAP as int)
-	
-	set_freeze_enabled.call_deferred(true)
-	animated_sprite_ball.freeze()
-	set_freeze_mode(RigidBody2D.FREEZE_MODE_KINEMATIC)
-	match trap_mode:
-		Trap.TrapModes.PILLAR:
-			_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_OBSTICAL)
-		Trap.TrapModes.HOLE:
-			_set_shader_parameter(UTILITIES.SHADER_MODULATE_COLOR, get_color(_npc_type).darkened(UTILITIES.DARKEN_HOLE))
-			_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_NON_ENTITIY)
-			collision_shape_2d.set_disabled.call_deferred(true)
-			pass
-	return true
-
 static func get_ball_collision_layer(npc_type: NPCType) -> int:
 	match npc_type:
 		NPCType.RED:
@@ -50,4 +34,6 @@ static func get_ball_collision_layer(npc_type: NPCType) -> int:
 			return LAYER_NPC_YELLOW
 		NPCType.BLUE:
 			return LAYER_NPC_BLUE
+		NPCType.PLAYER:
+			return LAYER_PC
 	return LAYER_NPC

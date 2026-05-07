@@ -11,7 +11,7 @@ const SHADER_OUTLINE_COLOR = 'new_background'
 const COLOR_NPC_RED = Color("#f72796") # Color.RED
 const COLOR_NPC_YELLOW = Color("#15e445") # Color.YELLOW
 const COLOR_NPC_BLUE = Color("#23c8fa") # Color.BLUE
-const COLOR_PLAYER = Color.WHITE
+const COLOR_PLAYER = Color("#d8a4ec") #Color.WHITE
 const DARKEN_HOLE = .25
 
 const COLOR_BORDER_BOUNCY = Color.WHITE
