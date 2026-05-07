@@ -20,6 +20,7 @@ atlas = SubResource("CompressedTexture2D_xh3dk")
 region = Rect2(0, 805, 79, 97)
 
 [node name="AudioManager" type="CanvasLayer" unique_id=2013367331]
+process_mode = 3
 script = ExtResource("1_kovmt")
 sound_sfx_changed = ExtResource("2_2ef83")
 
@@ -32,6 +33,7 @@ grow_vertical = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1705260922]
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer" unique_id=1292477032]
 layout_mode = 2
@@ -102,7 +104,6 @@ script = ExtResource("2_omht2")
 
 [node name="TextureButton_SoundSettings" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=124607973 instance=ExtResource("6_xh3dk")]
 layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="AudioStreamPlayer_BGMusic" type="AudioStreamPlayer" parent="." unique_id=365180193]
 unique_name_in_owner = true

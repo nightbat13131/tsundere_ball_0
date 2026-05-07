@@ -17,7 +17,6 @@ class_name SoundManager extends CanvasLayer
 @onready var _music_index := AudioServer.get_bus_index(&"Music")
 @onready var _sfx_index := AudioServer.get_bus_index(&"Effects")
 
-
 var _sfx_player_index := 0: 
 	set(value): _sfx_player_index = value % sfx_players.get_child_count()
 
@@ -41,6 +40,7 @@ func activate() -> void: _set_acitve(true)
 func deactivate() -> void: _set_acitve(false)
 
 func _set_acitve(turn_on: bool) -> void:
+	GameRoot.request_pause(turn_on)
 	set_visible(turn_on)
 	for each_slider: HSlider_Enhanced in h_sliders: 
 		each_slider.set_editable(turn_on)
@@ -98,6 +98,11 @@ static func toggle_audio_settings() -> void:
 			_current_manager.deactivate()
 		else:
 			_current_manager.activate()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_active():
+		if event.is_action_pressed("ui_cancel"):
+			deactivate()
 
 #region SaveLoad
 

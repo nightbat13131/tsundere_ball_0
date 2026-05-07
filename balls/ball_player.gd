@@ -48,10 +48,10 @@ var mouse_end := DEFAULT_POS
 func _ready() -> void:
 	super._ready()
 	_instance = self
+	tree_exiting.connect(_on_tree_exiting)
 	set_z_index(UTILITIES.Z_Indexes.BALL_PLAYER as int)
 	set_z_as_relative(false)
 	set_y_sort_enabled(false) 
-
 	control_type = control_type
 	if pc_controler_context:
 		GUIDE.enable_mapping_context(pc_controler_context)
@@ -171,6 +171,7 @@ func _cancle_shoot() -> void:
 	queue_redraw()
 
 func _draw() -> void:
+	return
 	if cancle_pause > 0.0:
 		return
 	var visable_power = _get_usable_power()  * sin(_get_power_ratio()) * .1
@@ -211,6 +212,10 @@ func _draw() -> void:
 			var angle = (mouse_start - mouse_end).angle()
 			draw_line(to_local(mouse_start), to_local(mouse_end), COLOR_OTHER, 2 )
 			draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, color_power, 2)
+
+func _on_tree_exiting() -> void:
+	if _instance == self:
+		_instance = null
 
 static func set_control_type(controler_type: ControlerType) -> void:
 	if _instance:

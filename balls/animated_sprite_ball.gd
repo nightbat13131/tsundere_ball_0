@@ -5,6 +5,13 @@ const STILL = &"default"
 const AVERAGE_SPEED = 50.0
 
 var _speed: float = -0.1: set = _set_speed
+var _is_frozen := false
+
+static var _instances : Array[AnimatedSprite_Ball]
+
+func _ready() -> void:
+	_instances.append(self)
+	tree_exiting.connect(_instances.erase.bind(self))
 
 func _set_speed(speed: float) -> void:
 	speed = abs(speed)
@@ -34,4 +41,18 @@ func _roll_direction(radian: float) -> void:
 	play(animation_)
 	set_frame_and_progress(current_frame, current_progress)
 
-func freeze() -> void: pause()
+func freeze() -> void: 
+	if _is_frozen:
+		return
+	_is_frozen = true
+	pause()
+
+func _request_pause() -> void:
+	if !_is_frozen:
+		pause()
+
+static func request_pause(_is_pause) -> void:
+	# TODO: not working
+	for each in _instances: 
+		each._request_pause()
+	

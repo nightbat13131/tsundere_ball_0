@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=656451208]
+process_mode = 3
 script = ExtResource("1_hu3iy")
 
 [node name="Dev" type="HBoxContainer" parent="." unique_id=757718319]

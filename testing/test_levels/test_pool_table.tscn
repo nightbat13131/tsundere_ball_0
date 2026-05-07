@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://mge6kkp0nbuh"]
 
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="1_14sri"]
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_utiqs"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_phy6d"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_utiqs"]
+[ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/ball_player_withwalk.tscn" id="4_phy6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h57c2"]
 size = Vector2(246.375, 481.75)
@@ -76,9 +76,6 @@ shape = SubResource("RectangleShape2D_180vy")
 position = Vector2(318, 403)
 shape = SubResource("RectangleShape2D_180vy")
 
-[node name="Ball" parent="." unique_id=2041115718 instance=ExtResource("1_14sri")]
-position = Vector2(420, 187)
-
 [node name="Ball_NPC1" parent="." unique_id=964760348 instance=ExtResource("2_utiqs")]
 position = Vector2(202, 154)
 
@@ -102,3 +99,30 @@ _npc_type = 1
 position = Vector2(124.99999, 207)
 rotation = 3.1211872
 _npc_type = 1
+
+[node name="Ball_NPC7" parent="." unique_id=1775580340 instance=ExtResource("2_utiqs")]
+position = Vector2(371, 234)
+
+[node name="Ball_NPC8" parent="." unique_id=823732673 instance=ExtResource("2_utiqs")]
+position = Vector2(334, 215)
+_npc_type = 2
+
+[node name="Ball_NPC9" parent="." unique_id=2107048128 instance=ExtResource("2_utiqs")]
+position = Vector2(335, 253)
+_npc_type = 2
+
+[node name="Ball_NPC10" parent="." unique_id=2052340131 instance=ExtResource("2_utiqs")]
+position = Vector2(295, 238)
+
+[node name="Ball_NPC11" parent="." unique_id=744411754 instance=ExtResource("2_utiqs")]
+position = Vector2(289, 194)
+rotation = 3.1211872
+_npc_type = 1
+
+[node name="Ball_NPC12" parent="." unique_id=1697927719 instance=ExtResource("2_utiqs")]
+position = Vector2(294, 287)
+rotation = 3.1211872
+_npc_type = 1
+
+[node name="BallPlayer_WithWalk" parent="." unique_id=2041115718 instance=ExtResource("4_phy6d")]
+position = Vector2(416, 159)

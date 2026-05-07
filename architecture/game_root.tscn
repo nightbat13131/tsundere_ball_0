@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://j2a5a483t7sl" path="res://architecture/settings/audio_manager.tscn" id="4_50a1j"]
 
 [node name="GameRoot" type="Node2D" unique_id=984261104]
+process_mode = 3
 script = ExtResource("1_ur1xq")
 
 [node name="GameLevelUI" parent="." unique_id=290767530 instance=ExtResource("3_n0w4j")]

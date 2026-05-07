@@ -1,7 +1,11 @@
 @tool
 class_name Level extends Node2D
 
+static var _instance
+
+
 func _ready() -> void:
+	_instance = self
 	if Engine.is_editor_hint():
 		return
 	GoalTracker.level_start()
@@ -21,4 +25,7 @@ func _draw() -> void:
 		
 		draw_polyline(points, Color.RED, 4
 	)
-	
+
+static func request_pause(is_pause) -> void:
+	if _instance:
+		_instance.get_tree().paused = is_pause

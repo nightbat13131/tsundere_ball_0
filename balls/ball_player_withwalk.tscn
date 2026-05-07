@@ -9,8 +9,11 @@
 [ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="6_0xn1p"]
 [ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://balls/interactive_item_shader.gdshader" id="7_nlgnb"]
 [ext_resource type="SpriteFrames" uid="uid://bk4vswvw51080" path="res://balls/sprite_frames_hero_ball.tres" id="8_d3fxg"]
+[ext_resource type="Resource" uid="uid://026m7ugoctoq" path="res://guide/joystick_role_aiming.tres" id="8_g3x7m"]
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="9_g3x7m"]
+[ext_resource type="Script" uid="uid://dksap5bvgpa7t" path="res://balls/animated_sprite_feet.gd" id="10_g3x7m"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="11_myekv"]
+[ext_resource type="SpriteFrames" uid="uid://1yl8e6wbw1i0" path="res://balls/player/feet_sprite_frames.tres" id="11_nlgnb"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="12_gw41h"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="13_gw41h"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="14_0xn1p"]
@@ -32,8 +35,17 @@ script = ExtResource("2_qes8h")
 pc_controler_context = ExtResource("3_xiy0a")
 action_walking = ExtResource("3_m4fh1")
 action_cancle_ball = ExtResource("4_myekv")
-action_mouse_pressed = ExtResource("5_gw41h")
-action_mouse_release = ExtResource("6_0xn1p")
+action_start_mouse_aim = ExtResource("5_gw41h")
+action_try_shoot = ExtResource("6_0xn1p")
+action_joystick_aim = ExtResource("8_g3x7m")
+
+[node name="AnimatedSprite_Feet" type="AnimatedSprite2D" parent="." unique_id=758807694]
+unique_name_in_owner = true
+sprite_frames = ExtResource("11_nlgnb")
+animation = &"walking"
+autoplay = "walking"
+offset = Vector2(20, 0)
+script = ExtResource("10_g3x7m")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
 unique_name_in_owner = true
@@ -57,21 +69,25 @@ metadata/_custom_type_script = "uid://couw105c3bde4"
 
 [node name="CompoundState" type="Node" parent="StateChart" unique_id=1255905680]
 script = ExtResource("12_gw41h")
-initial_state = NodePath("WalkMode")
+initial_state = NodePath("RollMode")
 metadata/_custom_type_script = "uid://jk2jm1g6q853"
 
-[node name="WalkMode" type="Node" parent="StateChart/CompoundState" unique_id=481869402]
-script = ExtResource("12_gw41h")
-initial_state = NodePath("Waiting_Walk")
-metadata/_custom_type_script = "uid://jk2jm1g6q853"
-
-[node name="Waiting_Walk" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=487754366]
+[node name="WalkMode" type="Node" parent="StateChart/CompoundState" unique_id=1165991015]
+unique_name_in_owner = true
 script = ExtResource("13_gw41h")
 metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
-[node name="Walking" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=80789323]
-script = ExtResource("13_gw41h")
-metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+[node name="ToMouseAiming" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=1716810053]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../RollMode/Aiming/AimingMouse")
+event = &"mouse_pressed"
+delay_in_seconds = "0.0"
+
+[node name="ToAimingJoystick" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=402319930]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../RollMode/Aiming/AimingJoystick")
+event = &"joystick_aiming"
+delay_in_seconds = "0.0"
 
 [node name="RollMode" type="Node" parent="StateChart/CompoundState" unique_id=887483662]
 script = ExtResource("12_gw41h")
@@ -82,21 +98,65 @@ metadata/_custom_type_script = "uid://jk2jm1g6q853"
 script = ExtResource("13_gw41h")
 metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
-[node name="AimStarted" type="Node" parent="StateChart/CompoundState/RollMode/Waiting_Roll" unique_id=1976205796]
+[node name="AimingJoystickStarted" type="Node" parent="StateChart/CompoundState/RollMode/Waiting_Roll" unique_id=1045772211]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../Aiming/AimingJoystick")
+event = &"joystick_aiming"
+delay_in_seconds = "0.0"
+
+[node name="AimMouseStarted" type="Node" parent="StateChart/CompoundState/RollMode/Waiting_Roll" unique_id=1976205796]
 script = ExtResource("14_0xn1p")
 to = NodePath("../../Aiming")
 event = &"mouse_pressed"
 delay_in_seconds = "0.0"
 
-[node name="Aiming" type="Node" parent="StateChart/CompoundState/RollMode" unique_id=1978259913]
+[node name="ToWalking" type="Node" parent="StateChart/CompoundState/RollMode/Waiting_Roll" unique_id=707872642]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../../WalkMode")
+event = &"walk_around"
+delay_in_seconds = "0.0"
+
+[node name="Aiming" type="Node" parent="StateChart/CompoundState/RollMode" unique_id=525694106]
+unique_name_in_owner = true
+script = ExtResource("12_gw41h")
+initial_state = NodePath("AimingMouse")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Shoot" type="Node" parent="StateChart/CompoundState/RollMode/Aiming" unique_id=1170748588]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../TryShoot")
+event = &"try_shoot"
+delay_in_seconds = "0.0"
+
+[node name="CancleShoot" type="Node" parent="StateChart/CompoundState/RollMode/Aiming" unique_id=1585944610]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../Waiting_Roll")
+event = &"cancle_shoot"
+delay_in_seconds = "0.0"
+
+[node name="AimingMouse" type="Node" parent="StateChart/CompoundState/RollMode/Aiming" unique_id=1902068610]
+unique_name_in_owner = true
 script = ExtResource("13_gw41h")
-metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="AimingJoystick" type="Node" parent="StateChart/CompoundState/RollMode/Aiming" unique_id=1115570571]
+unique_name_in_owner = true
+script = ExtResource("13_gw41h")
 
 [node name="TryShoot" type="Node" parent="StateChart/CompoundState/RollMode" unique_id=1432282487]
 script = ExtResource("13_gw41h")
 metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
-[connection signal="state_processing" from="StateChart/CompoundState/WalkMode/Waiting_Walk" to="." method="_on_waiting_walk_state_processing"]
-[connection signal="state_processing" from="StateChart/CompoundState/RollMode/Waiting_Roll" to="." method="_on_waiting_roll_state_processing"]
+[node name="ShotDone" type="Node" parent="StateChart/CompoundState/RollMode/TryShoot" unique_id=1105506660]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../Waiting_Roll")
+event = &"shot_done"
+delay_in_seconds = "0.0"
+
+[connection signal="state_entered" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_entered"]
+[connection signal="state_processing" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_processing"]
+[connection signal="state_entered" from="StateChart/CompoundState/RollMode" to="." method="_on_roll_mode_state_entered"]
+[connection signal="state_exited" from="StateChart/CompoundState/RollMode" to="." method="_on_roll_mode_state_exited"]
+[connection signal="state_entered" from="StateChart/CompoundState/RollMode/Waiting_Roll" to="." method="_on_waiting_roll_state_entered"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Aiming" to="." method="_on_aiming_state_entered"]
-[connection signal="state_exited" from="StateChart/CompoundState/RollMode/Aiming" to="." method="_on_aiming_state_exited"]
+[connection signal="state_processing" from="StateChart/CompoundState/RollMode/Aiming" to="." method="_on_aiming_state_processing"]
+[connection signal="state_entered" from="StateChart/CompoundState/RollMode/TryShoot" to="." method="_on_try_shoot_state_entered"]
