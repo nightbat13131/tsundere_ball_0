@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwfem7u8kwbqe"]
 
-[ext_resource type="Script" uid="uid://bec8oqa51nbbk" path="res://balls/ball_player.gd" id="1_7o23g"]
+[ext_resource type="Script" uid="uid://bec8oqa51nbbk" path="res://balls/ball_player_before_walking.gd" id="1_7o23g"]
 [ext_resource type="PhysicsMaterial" uid="uid://d1ysseoxs0rkq" path="res://balls/ball_pc_physics_material.tres" id="1_kx6oe"]
 [ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_j4p71"]
 [ext_resource type="Resource" uid="uid://be67e4dk073h3" path="res://guide/cancle_ball.tres" id="4_cg7cr"]

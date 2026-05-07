@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqklqd2qa8cjh" path="res://assets/sheet_white2x.png" id="2_vbxqb"]
 [ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://architecture/texture_button_enhanced.gd" id="3_1u8gx"]
 [ext_resource type="AudioStream" uid="uid://cound3vvjt37r" path="res://assets/sounds/music/progress_2026_05_05(1).wav" id="5_1u8gx"]
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/tilemap.png" id="6_tuyx8"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="6_xh3dk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ef83"]
@@ -18,6 +19,17 @@ load_path = "res://.godot/imported/sheet_white2x.png-ecff2b70dea2507e6c204598df5
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyx8"]
 atlas = SubResource("CompressedTexture2D_xh3dk")
 region = Rect2(0, 805, 79, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pibu4"]
+atlas = ExtResource("6_tuyx8")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp11o"]
+load_path = "res://.godot/imported/tilemap.png-5e61b4f08267e3455a4ee95d454c23fa.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k23nc"]
+atlas = SubResource("CompressedTexture2D_yp11o")
+region = Rect2(64, 32, 16, 16)
 
 [node name="AudioManager" type="CanvasLayer" unique_id=2013367331]
 process_mode = 3
@@ -47,18 +59,19 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 14
 
-[node name="master" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1353273447]
-layout_mode = 2
-
-[node name="MuteAll" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/master" unique_id=108600423]
+[node name="MuteAll" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=108600423]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_2ef83")
 texture_pressed = SubResource("AtlasTexture_tuyx8")
 stretch_mode = 4
 script = ExtResource("3_1u8gx")
 metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+
+[node name="master" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1353273447]
+layout_mode = 2
 
 [node name="HSliderMasterVolume" type="HSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/master" unique_id=1887038403]
 unique_name_in_owner = true
@@ -72,11 +85,9 @@ script = ExtResource("2_omht2")
 [node name="music" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=290550524]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music" unique_id=609330088]
-unique_name_in_owner = true
+[node name="Texture" type="TextureRect" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music" unique_id=1651829022]
 layout_mode = 2
-script = ExtResource("3_1u8gx")
-metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+texture = SubResource("AtlasTexture_pibu4")
 
 [node name="HSliderMusicVolume" type="HSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music" unique_id=1544815741]
 unique_name_in_owner = true
@@ -89,10 +100,9 @@ script = ExtResource("2_omht2")
 [node name="music2" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1032982221]
 layout_mode = 2
 
-[node name="TextureButton_Enhanced" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music2" unique_id=1412704354]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music2" unique_id=1698363305]
 layout_mode = 2
-script = ExtResource("3_1u8gx")
-metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+texture = SubResource("AtlasTexture_k23nc")
 
 [node name="HSliderSFXVolume" type="HSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/music2" unique_id=1081166681]
 unique_name_in_owner = true

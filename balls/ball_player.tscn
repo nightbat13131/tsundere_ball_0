@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnxywuptrsndj"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://d1ysseoxs0rkq" path="res://balls/ball_pc_physics_material.tres" id="1_hqs55"]
-[ext_resource type="Script" uid="uid://ddwrkpxur6bsg" path="res://balls/ball_player_withwalk.gd" id="2_qes8h"]
+[ext_resource type="Script" uid="uid://ddwrkpxur6bsg" path="res://balls/ball_player.gd" id="2_qes8h"]
 [ext_resource type="Resource" uid="uid://b4ps3lkdc5ahp" path="res://guide/ball_walk_wasd.tres" id="3_m4fh1"]
 [ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_xiy0a"]
 [ext_resource type="Resource" uid="uid://be67e4dk073h3" path="res://guide/cancle_ball.tres" id="4_myekv"]
@@ -32,7 +32,7 @@ script = ExtResource("20_iodpe")
 expression = "RollCoolDown <= 0.0"
 metadata/_custom_type_script = "uid://le5w1cm0ul8p"
 
-[node name="BallPlayer_WithWalk" type="RigidBody2D" unique_id=2041115718]
+[node name="BallPlayer" type="RigidBody2D" unique_id=2041115718]
 collision_layer = 0
 collision_mask = 0
 mass = 2.0
@@ -174,12 +174,6 @@ to = NodePath("../../../../Waiting_Roll")
 event = &"cancle_joystick_aiming"
 delay_in_seconds = "0.0"
 
-[node name="ToJoystickWalk" type="Node" parent="StateChart/CompoundState/RollMode/Aiming/Joystick/JoystickAiming" unique_id=46544140]
-script = ExtResource("14_0xn1p")
-to = NodePath("../../../../../WalkMode")
-event = &"walk_around_joystick"
-delay_in_seconds = "0.0"
-
 [node name="JoystickTryRoll" type="Node" parent="StateChart/CompoundState/RollMode/Aiming/Joystick" unique_id=375756418]
 script = ExtResource("13_gw41h")
 
@@ -207,6 +201,7 @@ script = ExtResource("13_gw41h")
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Waiting_Roll" to="." method="_on_waiting_roll_state_entered"]
 [connection signal="state_processing" from="StateChart/CompoundState/RollMode/Waiting_Roll" to="." method="_on_waiting_roll_state_processing"]
 [connection signal="state_processing" from="StateChart/CompoundState/RollMode/Aiming" to="." method="_on_aiming_state_processing"]
+[connection signal="state_processing" from="StateChart/CompoundState/RollMode/Aiming/Joystick/JoystickAiming" to="." method="_on_joystick_aiming_state_processing"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Aiming/Joystick/JoystickTryRoll" to="." method="_on_try_roll_state_entered"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Aiming/Mouse/MouseAiming" to="." method="_on_mouse_aiming_state_entered"]
 [connection signal="state_processing" from="StateChart/CompoundState/RollMode/Aiming/Mouse/MouseAiming" to="." method="_on_mouse_aiming_state_processing"]

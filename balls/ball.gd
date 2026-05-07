@@ -51,4 +51,5 @@ static func get_color(npc_type: NPCType) -> Color:
 
 func _on_body_entered(body: Node) -> void:
 	if body is Breakable:
-		body.remote_hit(self)
+		if get_mass() > Ball_Player.MASS_WALKING:  # precent player in walk mode from triggering the break
+			body.remote_hit(self)

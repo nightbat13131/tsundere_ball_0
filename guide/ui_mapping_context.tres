@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="GUIDEMappingContext" format=3 uid="uid://dfq3cxang5y2f"]
+
+[ext_resource type="Script" uid="uid://cpplm41b5bt6m" path="res://addons/guide/guide_action_mapping.gd" id="1_f7klq"]
+[ext_resource type="Resource" uid="uid://qdn0c5g8wo1o" path="res://guide/press_settings.tres" id="2_564h0"]
+[ext_resource type="Script" uid="uid://dsa1dnifd6w32" path="res://addons/guide/guide_mapping_context.gd" id="2_r4ro6"]
+[ext_resource type="Script" uid="uid://mtx1unc2aqn7" path="res://addons/guide/guide_input_mapping.gd" id="3_y6ua8"]
+[ext_resource type="Script" uid="uid://rvttn472ix6v" path="res://addons/guide/inputs/guide_input_joy_button.gd" id="4_0iiyt"]
+[ext_resource type="Script" uid="uid://bl8rjl4oaldje" path="res://addons/guide/modifiers/guide_modifier.gd" id="5_d53j8"]
+[ext_resource type="Script" uid="uid://x74mnwgr08a7" path="res://addons/guide/triggers/guide_trigger.gd" id="6_sxfg3"]
+[ext_resource type="Script" uid="uid://b52rqq28tuqpg" path="res://addons/guide/triggers/guide_trigger_pressed.gd" id="7_52hnk"]
+
+[sub_resource type="Resource" id="Resource_fu816"]
+script = ExtResource("4_0iiyt")
+button = 6
+
+[sub_resource type="Resource" id="Resource_8ltgt"]
+script = ExtResource("7_52hnk")
+
+[sub_resource type="Resource" id="Resource_s1qu0"]
+script = ExtResource("3_y6ua8")
+input = SubResource("Resource_fu816")
+triggers = Array[ExtResource("6_sxfg3")]([SubResource("Resource_8ltgt")])
+
+[sub_resource type="Resource" id="Resource_anhcr"]
+script = ExtResource("4_0iiyt")
+button = 3
+
+[sub_resource type="Resource" id="Resource_kgbey"]
+script = ExtResource("7_52hnk")
+
+[sub_resource type="Resource" id="Resource_fetao"]
+script = ExtResource("3_y6ua8")
+input = SubResource("Resource_anhcr")
+triggers = Array[ExtResource("6_sxfg3")]([SubResource("Resource_kgbey")])
+
+[sub_resource type="Resource" id="Resource_6p1ay"]
+script = ExtResource("1_f7klq")
+action = ExtResource("2_564h0")
+input_mappings = Array[ExtResource("3_y6ua8")]([SubResource("Resource_s1qu0"), SubResource("Resource_fetao")])
+metadata/_guide_input_mappings_collapsed = false
+
+[resource]
+script = ExtResource("2_r4ro6")
+mappings = Array[ExtResource("1_f7klq")]([SubResource("Resource_6p1ay")])
+metadata/_custom_type_script = "uid://dsa1dnifd6w32"

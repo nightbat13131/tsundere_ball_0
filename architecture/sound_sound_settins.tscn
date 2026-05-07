@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ccbqt8vcom4po" path="res://assets/sheet_white1x.png" id="1_pnspq"]
 [ext_resource type="Script" uid="uid://b6ubxfey7ybve" path="res://architecture/button_sound_settings.gd" id="2_h5xio"]
+[ext_resource type="Resource" uid="uid://qdn0c5g8wo1o" path="res://guide/press_settings.tres" id="3_7w3t6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sb4yo"]
 atlas = ExtResource("1_pnspq")
@@ -13,4 +14,5 @@ offset_bottom = 36.0
 size_flags_horizontal = 4
 texture_normal = SubResource("AtlasTexture_sb4yo")
 script = ExtResource("2_h5xio")
+action_remote_press = ExtResource("3_7w3t6")
 metadata/_custom_type_script = "uid://cyxqjjbt3vlh"

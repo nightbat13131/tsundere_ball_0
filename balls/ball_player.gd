@@ -1,49 +1,65 @@
-class_name Ball_Player_BeforeWalking extends Ball
+class_name Ball_Player extends Ball
+## when aiming with mouse, chaning to walking is blocked
+
+
 # https://www.youtube.com/watch?v=tgrDkFdEK0I
 ## there was a problem with Ball_Player going odd directions if shot while moving, but turning off rotation seems to have solved this problem.
 
-## if I insit on a walking mode, doing "Freeze Mode Kinimatic" might help
-
 const DEFAULT_POS := Vector2.INF
-#const COLOR_POWER = Color(Color.RED, .75)
 const COLOR_OTHER = Color(Color.GRAY, .50)
 
 const CANCLE_PAUSE_DURATION := .5
 const MAX_POWER := 1600.0
 const MIN_POWER := MAX_POWER * .05
 
-enum ControlerType {NONE, BALL_POINTER, ANY_DRAG_LOCAL, LongDistance, ANY_DRAG_GLOBAL, ANY_DRAG_GLOBAL_CYCLE}
+const KEY_ROLL_COOLDOWN = &'RollCoolDown'
 
-var cancle_pause := 0.0
-var cycle_mod := 1
+const EVENT_MOUSE_PRESSED = &'mouse_pressed'
+const EVENT_TRY_ROLL = &'try_shoot'
+const EVENT_CANCLE_SHOOT = &'cancle_shoot'
+const EVENT_SHOOT_COMPLETE = &"shot_done"
+const EVENT_WALKING_WASD = &'walk_around_wasd'
+const EVENT_WALKING_JOYSTICK = &'walk_around_joystick'
 
-static var _instance : Ball_Player_BeforeWalking
+const EVENT_JOYSTICK_AIMING = &'joystick_aiming'
+const EVENT_CANCLE_JOYSTICK_AIM = &'cancle_joystick_aiming'
 
-@export var control_type := ControlerType.BALL_POINTER: 
-	set(value):
-		control_type = value
-		if npc_finder:
-			npc_finder.visible = control_type in [ControlerType.LongDistance]
-			cancle_pause = CANCLE_PAUSE_DURATION
+const MASS_ROLLING := 2.0 # push around the other balls, (I think NPC balls have a mass of 1.0)
+const MASS_WALKING := .01 # get bullied by the other balls
+const DAMP_ROLLING := .5 # drift around before coming to a stop
+const DAMP_WALKING := 4 # come to a stop relatively quick
+
+static var _instance : Ball_Player
+
+var global_mouse_start := DEFAULT_POS
+var global_mouse_end := DEFAULT_POS
+
+var _screen_center := Vector2.ONE * 100.0 # TODO udpate on screen resize
+
+const DEFAULT_ROLL_COOLDONW := .50
+var remaining_roll_cooldown := 0.0
+
+@onready var state_chart: StateChart = %StateChart
+@onready var state_walk: AtomicState = %WalkMode
+@onready var state_aiming: CompoundState = %Aiming
+@onready var state_aiming_mouse: CompoundState = %Mouse
+@onready var state_aiming_joystick: CompoundState =  %Joystick
+
+@onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
 
 @export_category("G.U.I.D.E.")
 @export var pc_controler_context: GUIDEMappingContext
+
+@export var action_walking_wasd: GUIDEAction
+@export var action_walking_controler: GUIDEAction
+
 @export var action_cancle_ball: GUIDEAction
-@export var action_mouse_pressed : GUIDEAction
-@export var action_mouse_release : GUIDEAction
 
-@onready var npc_finder: RayCast2D = %NPC_Finder
+@export var action_start_mouse_aim : GUIDEAction
+@export var action_joystick_aim : GUIDEAction
 
-var _power := MIN_POWER :
-	set(value):
-		_power = value
-		if _power > MAX_POWER and cycle_mod == 1:
-			cycle_mod = -1
-		elif _power < MIN_POWER and cycle_mod == -1:
-			cycle_mod = 1
-
-var mouse_start := DEFAULT_POS
-var mouse_end := DEFAULT_POS
+@export var action_try_roll_mouse : GUIDEAction
+@export var action_try_roll_controler : GUIDEAction
 
 func _ready() -> void:
 	super._ready()
@@ -52,172 +68,178 @@ func _ready() -> void:
 	set_z_index(UTILITIES.Z_Indexes.BALL_PLAYER as int)
 	set_z_as_relative(false)
 	set_y_sort_enabled(false) 
-	control_type = control_type
 	if pc_controler_context:
 		GUIDE.enable_mapping_context(pc_controler_context)
-		if action_mouse_pressed == null:
-			push_error("no action_mouse_pressed")
-		if action_mouse_release == null:
-			push_error("no action_mouse_release")
-		if action_cancle_ball == null:
-			push_error("no action_cancle_ball")
+		if action_start_mouse_aim:
+			action_start_mouse_aim.triggered.connect(_send_event.bind(EVENT_MOUSE_PRESSED))
+		if action_joystick_aim:
+			action_joystick_aim.triggered.connect(_send_event.bind(EVENT_JOYSTICK_AIMING))
+
+		if action_try_roll_mouse:
+			action_try_roll_mouse.triggered.connect(_send_event.bind(EVENT_TRY_ROLL))
+		if action_try_roll_controler:
+			action_try_roll_controler.triggered.connect(_send_event.bind(EVENT_TRY_ROLL))
+
+		if action_cancle_ball:
+			action_cancle_ball.triggered.connect(_send_event.bind(EVENT_CANCLE_SHOOT))
+
+		if action_walking_wasd:
+			action_walking_wasd.triggered.connect(_send_event.bind(EVENT_WALKING_WASD))
+		if action_walking_controler:
+			action_walking_controler.triggered.connect(_send_event.bind(EVENT_WALKING_JOYSTICK))
+			
+	get_viewport().size_changed.connect(_on_viewport_size_changed)
+	_on_viewport_size_changed()
 	set_collision_layer_value(Ball.LAYER_PC, true)
 	set_collision_mask_value(Ball.LAYER_PC_WALL, true)
-	npc_finder.set_collision_mask_value(Ball.LAYER_NPC, true)
 	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
 	_set_shader_parameter(UTILITIES.SHADER_MODULATE_COLOR, UTILITIES.COLOR_PLAYER) 
 
-func _get_usable_power() -> float:
-	var out : float 
-	if control_type in [ControlerType.BALL_POINTER, ControlerType.ANY_DRAG_GLOBAL_CYCLE]: 
-		out = _power
-	elif control_type in [ControlerType.ANY_DRAG_GLOBAL, ControlerType.ANY_DRAG_LOCAL]: 
-		out = (mouse_start - mouse_end).length() * 12
-	elif control_type == ControlerType.LongDistance:
-		if npc_finder.is_colliding():
-			out = npc_finder.get_collision_point().length() * 5
-	return clampf(out, MIN_POWER, MAX_POWER)
-
-func _get_power_ratio() -> float: 
-	#prints(_power, _get_usable_power(),  MAX_POWER, _get_usable_power() / MAX_POWER)
-	return _get_usable_power() / MAX_POWER
+static func request_pause(is_pause) -> void:
+	if _instance:
+		if is_pause:
+			GUIDE.disable_mapping_context(_instance.pc_controler_context)
+		else:
+			GUIDE.enable_mapping_context(_instance.pc_controler_context)
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	if action_cancle_ball.is_triggered():
-		_cancle_shoot()
-		return
-	if cancle_pause > 0.0:
-		cancle_pause -= delta
-		return
-	match control_type:
-		ControlerType.NONE:
-			return
-		ControlerType.BALL_POINTER:
-			_ball_pointer(delta)
-		ControlerType.ANY_DRAG_LOCAL:
-			_any_drag_0(delta)
-		ControlerType.LongDistance:
-			_longdistance_0(delta)
-		ControlerType.ANY_DRAG_GLOBAL:
-			_any_drag_1(delta)
-		ControlerType.ANY_DRAG_GLOBAL_CYCLE:
-			_any_drag_2(delta)
+	animated_sprite_feet.set_velocity(linear_velocity)
 
-func _any_drag_2(delta: float) -> void:
-	queue_redraw()
-	if Input.is_action_pressed("left_click"):
-	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		mouse_end = get_global_mouse_position()
-		_power += delta * cycle_mod * 1000
-		if mouse_start == DEFAULT_POS:
-			mouse_start = mouse_end
-	else:
-		if mouse_start != DEFAULT_POS and mouse_end != DEFAULT_POS:
-			_shoot_0(mouse_start - mouse_end)
+func _get_usable_power() -> float:
+	var out : float 
+	if state_aiming_mouse.active:
+		out = (global_mouse_start - global_mouse_end).length() 
+		if out < BALL_RADIUS:
+			return 0.0
+		out -= BALL_RADIUS
+		out *= 12
+	elif state_aiming_joystick.active:
+		if action_joystick_aim.is_triggered():
+			out = action_joystick_aim.value_axis_2d.length() * MAX_POWER
+			prints(action_joystick_aim.value_axis_2d, out)
+	## short doesn't count
+	
+	
+	return clampf(out, MIN_POWER, MAX_POWER)
 
-func _any_drag_1(_delta) -> void:
-	queue_redraw()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		mouse_end = get_global_mouse_position()
-		if mouse_start == DEFAULT_POS:
-			mouse_start = mouse_end
-	else:
-		if mouse_start != DEFAULT_POS and mouse_end != DEFAULT_POS:
-			_shoot_0(mouse_start - mouse_end)
+func _get_power_ratio() -> float: return (_get_usable_power()-MIN_POWER) / (MAX_POWER - MIN_POWER)
 
-func _any_drag_0(_delta) -> void:
-	queue_redraw()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		mouse_end = get_local_mouse_position()
-		if mouse_start == DEFAULT_POS:
-			mouse_start = mouse_end
-	else:
-		if mouse_start != DEFAULT_POS and mouse_end != DEFAULT_POS:
-			_power = mouse_start.distance_to(mouse_end)*10
-			_shoot_0(mouse_start - mouse_end)
-			mouse_start = DEFAULT_POS
-			mouse_end = DEFAULT_POS
-
-func _longdistance_0(_delta) -> void:
-	#power is related to the distance to the target ball - father stronger 
-	queue_redraw()
-	# not using GUIDE for mouse location because local was not working how I wanted
-	npc_finder.set_rotation(get_local_mouse_position().angle())
-	if action_mouse_release.is_triggered():
-		_shoot_0(Vector2.from_angle(npc_finder.rotation))
-
-func _ball_pointer(delta: float) -> void:
-	queue_redraw()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		_power += delta *1000
-		mouse_end = get_local_mouse_position()
-	else:
-		if _power > MIN_POWER + .01:
-			_shoot_0(mouse_end*-1)
-			mouse_end = DEFAULT_POS
-
-func _shoot_0(direction: Vector2) -> void:
-	apply_central_impulse(direction.normalized() * _get_usable_power())
-	_power = MIN_POWER
-	mouse_start = DEFAULT_POS
-	mouse_end = DEFAULT_POS
-
-func _cancle_shoot() -> void:
-	_power = 0.0
-	mouse_end = DEFAULT_POS
-	mouse_start = DEFAULT_POS
-	cancle_pause = CANCLE_PAUSE_DURATION
-	queue_redraw()
+func get_shot_angle_vector() -> Vector2:
+	if state_aiming_mouse.active:
+		if global_mouse_start != DEFAULT_POS and global_mouse_end != DEFAULT_POS:
+			return global_mouse_start - global_mouse_end
+	elif state_aiming_joystick.active:
+		if action_joystick_aim.triggered:
+			return action_joystick_aim.value_axis_2d
+	return DEFAULT_POS
 
 func _draw() -> void:
-	return
-	if cancle_pause > 0.0:
-		return
-	var visable_power = _get_usable_power()  * sin(_get_power_ratio()) * .1
-	if visable_power == NAN:
-		return
-	if visable_power > .1:
-		visable_power = max(30, visable_power)
-	var color_power = Color.from_hsv( (1.0-_get_power_ratio()) *.33, 1.0, 1.0, .5)
+	if state_aiming.active: 
+		_draw_power_indicator() 
+		if state_aiming_mouse.active:
+			_draw_mouse_aim()
+		elif state_aiming_joystick.active:
+			_draw_joystick_aim()
 
-	match control_type:
-		ControlerType.NONE:
-			return
-		ControlerType.BALL_POINTER: 
-			if is_equal_approx(_power, 0.0):
-				return
-			var angle = (mouse_end*-1).angle()
-			draw_line(Vector2.ZERO, mouse_end, COLOR_OTHER, 2 )
-			draw_polygon(
-				[ Vector2.from_angle(angle) * visable_power, Vector2.from_angle(angle - (PI*.5)) * visable_power * .5, Vector2.from_angle(angle + (PI*.5)) * visable_power * .5 ]
-				, [color_power])
-		ControlerType.ANY_DRAG_LOCAL:
-			if mouse_start != DEFAULT_POS and mouse_end != DEFAULT_POS:
-				var angle = (mouse_start - mouse_end).angle()
-				draw_line(mouse_start, mouse_end, COLOR_OTHER, 2 )
-				draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, color_power, 2)
-		ControlerType.LongDistance:
-			var angle = npc_finder.rotation
-			draw_polygon(
-				[ Vector2.from_angle(angle) * visable_power, Vector2.from_angle(angle - (PI*.5)) * visable_power * .5, Vector2.from_angle(angle + (PI*.5)) * visable_power * .5 ]
-				, [color_power])
-		ControlerType.ANY_DRAG_GLOBAL:
-			var angle = (mouse_start - mouse_end).angle()
-			draw_line(to_local(mouse_start), to_local(mouse_end), COLOR_OTHER, 2) # mouse line
-			draw_polygon(
-				[Vector2.from_angle(angle)*visable_power, Vector2.from_angle(angle - PI*.5)*BALL_RADIUS, Vector2.from_angle(angle + PI*.5)*BALL_RADIUS,  ], [color_power]
-			)
-		ControlerType.ANY_DRAG_GLOBAL_CYCLE :
-			var angle = (mouse_start - mouse_end).angle()
-			draw_line(to_local(mouse_start), to_local(mouse_end), COLOR_OTHER, 2 )
-			draw_line(Vector2.ZERO, Vector2.from_angle(angle)*visable_power, color_power, 2)
+func _draw_power_indicator() -> void:
+	var visable_power := _get_power_ratio()
+	if is_equal_approx(visable_power, 0.0):
+		return
+	visable_power *= sin(_get_power_ratio())
+	visable_power =  BALL_RADIUS + (visable_power * BALL_RADIUS*8)
+	var direction = get_shot_angle_vector()
+	if direction == DEFAULT_POS:
+		return
+	direction = direction.normalized()
+	var color_power = Color.from_hsv( (1.0-_get_power_ratio()) *.33, 1.0, 1.0, .5)
+	draw_polygon(
+		[direction*visable_power, direction.rotated(- PI*.5)*BALL_RADIUS, direction.rotated( PI*.5)*BALL_RADIUS,  ], [color_power]
+			) 
+
+func _draw_joystick_aim() -> void:
+	var primary_center := to_local( Vector2.ONE * BALL_RADIUS * 1.5)  #  to_local(_screen_center)
+	draw_circle(primary_center, BALL_RADIUS, COLOR_OTHER, false, 5)
+	
+	if !action_joystick_aim.is_triggered():
+		return
+	var direction = get_shot_angle_vector()
+	if direction == DEFAULT_POS:
+		return
+	draw_circle(primary_center + direction * _get_power_ratio() * BALL_RADIUS * 1.25, BALL_RADIUS * .75, COLOR_OTHER, true)
+
+func _draw_mouse_aim() -> void:
+	var local_start : Vector2 = to_local(global_mouse_start)
+	draw_circle(local_start, BALL_RADIUS, COLOR_OTHER, false, 5)
+	var direction = get_shot_angle_vector()
+	if direction == DEFAULT_POS:
+		return
+	direction = direction.normalized()
+	## Mouse line
+	draw_line(local_start - direction*BALL_RADIUS, 
+		to_local(global_mouse_end), 
+		COLOR_OTHER, 2)
+
+func _send_event(event: String) -> void:
+	queue_redraw()
+	prints(event)
+	if state_chart:
+		state_chart.send_event(event)
+	else:
+		push_error(self, " has no State Chart")
+
+func _on_walk_mode_state_entered() -> void: 
+	set_mass(MASS_WALKING)
+	set_linear_damp(DAMP_WALKING)
+
+func _on_walk_mode_state_processing(_delta: float) -> void:
+	if state_walk.active:
+		# spliting the wasd and joystick walks allows for joystick sensitivity  
+		var direction := DEFAULT_POS
+		if action_walking_wasd.is_triggered():
+			direction = action_walking_wasd.value_axis_2d.normalized()
+		elif action_walking_controler.is_triggered():
+			direction = action_walking_controler.value_axis_2d
+		if direction != DEFAULT_POS:
+			apply_central_impulse(direction * get_mass() * 10.0)
+
+func _on_roll_mode_state_entered() -> void: 
+	animated_sprite_feet.hide()
+	set_mass(MASS_ROLLING)
+	set_linear_damp(DAMP_ROLLING)
+
+func _on_roll_mode_state_exited() -> void: animated_sprite_feet.show()
+
+func _on_waiting_roll_state_entered() -> void:
+	global_mouse_end = DEFAULT_POS
+	global_mouse_start = DEFAULT_POS
+	queue_redraw()
+
+func _on_waiting_roll_state_processing(delta: float) -> void:
+	remaining_roll_cooldown -= delta
+	state_chart.set_expression_property(KEY_ROLL_COOLDOWN, remaining_roll_cooldown)
+
+func _on_aiming_state_processing(_delta: float) -> void: queue_redraw()
+
+func _on_mouse_aiming_state_entered() -> void: global_mouse_start = get_global_mouse_position()
+
+func _on_mouse_aiming_state_processing(_delta: float) -> void: global_mouse_end = get_global_mouse_position()
+
+func _on_joystick_aiming_state_processing(delta: float) -> void:
+	if !action_joystick_aim.is_triggered():
+		_send_event(EVENT_CANCLE_JOYSTICK_AIM)
+
+func _on_try_roll_state_entered() -> void: 
+	var _power = _get_usable_power()
+	_send_event(EVENT_SHOOT_COMPLETE) # so far no conflict with calling this before applying the impulse
+	if is_equal_approx(_power, 0.0):
+		return
+	remaining_roll_cooldown = DEFAULT_ROLL_COOLDONW
+	state_chart.set_expression_property(KEY_ROLL_COOLDOWN, remaining_roll_cooldown)
+	apply_central_impulse(get_shot_angle_vector().normalized() * _power)
 
 func _on_tree_exiting() -> void:
 	if _instance == self:
 		_instance = null
 
-static func set_control_type(controler_type: ControlerType) -> void:
-	if _instance:
-		_instance.control_type = controler_type
-		
+func _on_viewport_size_changed() -> void: _screen_center = get_viewport_rect().get_center()

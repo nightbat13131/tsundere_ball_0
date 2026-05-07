@@ -46,6 +46,8 @@ func _set_acitve(turn_on: bool) -> void:
 		each_slider.set_editable(turn_on)
 	for each_button: TextureButton_Enhanced in [mute_all]:
 		each_button.set_disabled(!turn_on)
+	if turn_on:
+		mute_all.grab_focus()
 
 func is_active() -> bool: return is_visible()
 
