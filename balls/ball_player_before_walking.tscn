@@ -16,7 +16,7 @@ shader = ExtResource("7_j4p71")
 [sub_resource type="CircleShape2D" id="CircleShape2D_gchj4"]
 radius = 16.0
 
-[node name="BallPlayer" type="RigidBody2D" unique_id=2041115718]
+[node name="BallPlayer_beforewalking" type="RigidBody2D" unique_id=2041115718]
 collision_layer = 0
 collision_mask = 0
 mass = 2.0

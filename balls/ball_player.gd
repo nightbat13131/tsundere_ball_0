@@ -1,4 +1,4 @@
-class_name Ball_Player extends Ball
+class_name Ball_Player_BeforeWalking extends Ball
 # https://www.youtube.com/watch?v=tgrDkFdEK0I
 ## there was a problem with Ball_Player going odd directions if shot while moving, but turning off rotation seems to have solved this problem.
 
@@ -17,7 +17,7 @@ enum ControlerType {NONE, BALL_POINTER, ANY_DRAG_LOCAL, LongDistance, ANY_DRAG_G
 var cancle_pause := 0.0
 var cycle_mod := 1
 
-static var _instance : Ball_Player
+static var _instance : Ball_Player_BeforeWalking
 
 @export var control_type := ControlerType.BALL_POINTER: 
 	set(value):

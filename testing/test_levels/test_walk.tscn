@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_233xa"]
 [ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="3_e2rpv"]
 [ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="4_7h0lp"]
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="5_y8v4k"]
+[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player_before_walking.tscn" id="5_y8v4k"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="6_6olak"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/ball_player_withwalk.tscn" id="6_233xa"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_vphd7"]
@@ -61,7 +61,6 @@ position = Vector2(136, 193)
 
 [node name="BallPlayer_WithWalk" parent="." unique_id=2041115718 instance=ExtResource("6_233xa")]
 position = Vector2(456, 262)
-action_walking = null
 
 [node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("6_6olak")]
 position = Vector2(39, 268)

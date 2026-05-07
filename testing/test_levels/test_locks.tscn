@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_e84c6"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_e84c6"]
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player.tscn" id="2_lah46"]
+[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player_before_walking.tscn" id="2_lah46"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="3_5lu7s"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="5_5lu7s"]
 
