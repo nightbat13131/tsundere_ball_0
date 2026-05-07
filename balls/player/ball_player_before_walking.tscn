@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bwfem7u8kwbqe"]
 
-[ext_resource type="Script" uid="uid://bec8oqa51nbbk" path="res://balls/ball_player_before_walking.gd" id="1_7o23g"]
-[ext_resource type="PhysicsMaterial" uid="uid://d1ysseoxs0rkq" path="res://balls/ball_pc_physics_material.tres" id="1_kx6oe"]
+[ext_resource type="Script" uid="uid://bec8oqa51nbbk" path="res://balls/player/ball_player_before_walking.gd" id="1_7o23g"]
+[ext_resource type="PhysicsMaterial" uid="uid://d1ysseoxs0rkq" path="res://balls/player/ball_pc_physics_material.tres" id="1_kx6oe"]
 [ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_j4p71"]
 [ext_resource type="Resource" uid="uid://be67e4dk073h3" path="res://guide/cancle_ball.tres" id="4_cg7cr"]
 [ext_resource type="Resource" uid="uid://ea2hf73e3e0a" path="res://guide/mouse_click.tres" id="5_2vls1"]
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="6_2vls1"]
 [ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="6_cg7cr"]
-[ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://balls/interactive_item_shader.gdshader" id="7_j4p71"]
-[ext_resource type="SpriteFrames" uid="uid://bk4vswvw51080" path="res://balls/sprite_frames_hero_ball.tres" id="8_nki0t"]
+[ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://assets/interactive_item_shader.gdshader" id="7_j4p71"]
+[ext_resource type="SpriteFrames" uid="uid://bk4vswvw51080" path="res://balls/player/sprite_frames_hero_ball.tres" id="8_nki0t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vls1"]
 shader = ExtResource("7_j4p71")

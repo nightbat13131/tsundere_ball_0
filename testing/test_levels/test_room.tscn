@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://cd3pbg6rdw583"]
 
-[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/ball_player_before_walking.tscn" id="1_ereme"]
+[ext_resource type="PackedScene" uid="uid://bwfem7u8kwbqe" path="res://balls/player/ball_player_before_walking.tscn" id="1_ereme"]
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_psj2v"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_2bk2c"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_peypa"]
 [ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_qwnuw"]
-[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="3_7kpc6"]
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="3_7kpc6"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_6f48a"]
 [ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="9_k00hl"]
 [ext_resource type="Texture2D" uid="uid://c5mwk3nfvdkx4" path="res://assets/Furniture/CouchNorth.png" id="11_g7jxt"]

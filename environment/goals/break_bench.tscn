@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://booei1p76ainp"]
 
 [ext_resource type="Script" uid="uid://pnl5p1h6410k" path="res://testing/test_levels/breakable.gd" id="1_dtqqo"]
-[ext_resource type="Resource" uid="uid://w34kn8r36ukl" path="res://goal_don't_bench.tres" id="2_dtqqo"]
+[ext_resource type="Resource" uid="uid://w34kn8r36ukl" path="res://environment/goals/goal_don't_bench.tres" id="2_dtqqo"]
 [ext_resource type="SpriteFrames" uid="uid://c8y0q7riyiw3j" path="res://environment/goals/frames_breakable_bench.tres" id="3_belqf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]

@@ -1,7 +1,7 @@
 class_name Ball extends RigidBody2D
 
 
-enum NPCType {RED, YELLOW, BLUE}
+enum NPCType {RED, YELLOW, BLUE, PLAYER}
 
 const BALL_RADIUS = 16.0
 

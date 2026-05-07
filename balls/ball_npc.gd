@@ -24,7 +24,7 @@ func _ready() -> void:
 		NPCType.BLUE:
 			animated_sprite_ball.set_sprite_frames(blue_sprites)
 
-func get_captured(trap_mode: Area2D_Enhanced.TrapModes) -> bool:
+func get_captured(trap_mode: Trap.TrapModes) -> bool:
 	if _is_trapped: # first trap takes priority 
 		return false
 	set_z_index(UTILITIES.Z_Indexes.IN_TRAP as int)
@@ -33,9 +33,9 @@ func get_captured(trap_mode: Area2D_Enhanced.TrapModes) -> bool:
 	animated_sprite_ball.freeze()
 	set_freeze_mode(RigidBody2D.FREEZE_MODE_KINEMATIC)
 	match trap_mode:
-		Area2D_Enhanced.TrapModes.PILLAR:
+		Trap.TrapModes.PILLAR:
 			_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_OBSTICAL)
-		Area2D_Enhanced.TrapModes.HOLE:
+		Trap.TrapModes.HOLE:
 			_set_shader_parameter(UTILITIES.SHADER_MODULATE_COLOR, get_color(_npc_type).darkened(UTILITIES.DARKEN_HOLE))
 			_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_NON_ENTITIY)
 			collision_shape_2d.set_disabled.call_deferred(true)

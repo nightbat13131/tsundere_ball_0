@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnyw3lh7dacsp"]
 
 [ext_resource type="Script" uid="uid://pnl5p1h6410k" path="res://testing/test_levels/breakable.gd" id="1_qfk6k"]
-[ext_resource type="Resource" uid="uid://dux8fo0i6ce8e" path="res://goal_don't_break_pant.tres" id="2_qfk6k"]
+[ext_resource type="Resource" uid="uid://dux8fo0i6ce8e" path="res://environment/goals/goal_don't_break_pant.tres" id="2_qfk6k"]
 [ext_resource type="SpriteFrames" uid="uid://hxxuidnlqsed" path="res://environment/goals/frames_breakable_potted_plant.tres" id="3_6pqkw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]

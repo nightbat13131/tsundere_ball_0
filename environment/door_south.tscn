@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmnbhfayf278q"]
 
 [ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/door.gd" id="1_k4ko8"]
-[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="1_n2bwx"]
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="1_n2bwx"]
 [ext_resource type="SpriteFrames" uid="uid://bg7ayeag3a3la" path="res://environment/spriteframes_door_south.tres" id="2_28vk8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f48a"]

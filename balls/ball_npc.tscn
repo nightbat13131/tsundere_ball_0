@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dliw4w4otyrq5"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://uhv6c8s0ul7g" path="res://balls/ball_npc_physics_material.tres" id="1_3uik4"]
-[ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://balls/interactive_item_shader.gdshader" id="1_bjos4"]
+[ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://assets/interactive_item_shader.gdshader" id="1_bjos4"]
 [ext_resource type="Script" uid="uid://clqttb74g2p4r" path="res://balls/ball_npc.gd" id="1_p3w87"]
 [ext_resource type="SpriteFrames" uid="uid://bl0r4o8hcjweg" path="res://balls/sprite_frames_blue_ball.tres" id="4_3uik4"]
 [ext_resource type="SpriteFrames" uid="uid://cmkwdonx4022u" path="res://balls/sprite_frames_pink_ball.tres" id="4_ot6ls"]

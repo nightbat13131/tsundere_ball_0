@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="5_8sxv3"]
 [ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="6_ukfl4"]
 [ext_resource type="PackedScene" uid="uid://booei1p76ainp" path="res://environment/goals/break_bench.tscn" id="7_dnonl"]
-[ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/ball_player.tscn" id="7_i1xka"]
+[ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="7_i1xka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lah46"]
 size = Vector2(705.09375, 481.75)

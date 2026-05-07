@@ -225,7 +225,7 @@ func _on_mouse_aiming_state_entered() -> void: global_mouse_start = get_global_m
 
 func _on_mouse_aiming_state_processing(_delta: float) -> void: global_mouse_end = get_global_mouse_position()
 
-func _on_joystick_aiming_state_processing(delta: float) -> void:
+func _on_joystick_aiming_state_processing(_delta: float) -> void:
 	if !action_joystick_aim.is_triggered():
 		_send_event(EVENT_CANCLE_JOYSTICK_AIM)
 
