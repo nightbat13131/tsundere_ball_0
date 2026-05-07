@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="12_mtfkr"]
 [ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://physics_material_walls.tres" id="13_wmsif"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="14_30rtw"]
-[ext_resource type="Script" uid="uid://dg2yj6s2lfa4j" path="res://testing/test_levels/test_pause.gd" id="16_e2rpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
 size = Vector2(15, 126.75)
@@ -179,11 +178,3 @@ shape = SubResource("RectangleShape2D_ls632")
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=255932365]
 position = Vector2(574, 58)
 shape = SubResource("RectangleShape2D_ls632")
-
-[node name="ButtonSelf" type="Button" parent="." unique_id=1118732391 node_paths=PackedStringArray("node")]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Pause"
-script = ExtResource("16_e2rpv")
-node = NodePath("..")
-metadata/_custom_type_script = "uid://dij1pecfcavpi"

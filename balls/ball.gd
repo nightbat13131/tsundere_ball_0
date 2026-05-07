@@ -29,8 +29,6 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	##
 
-#func toggle_rolling() -> void: animated_sprite_ball.is_rolling = !animated_sprite_ball.is_rolling
-
 func _process(_delta: float) -> void:
 	animated_sprite_ball.set_velocity(linear_velocity)
 	animated_sprite_ball.rotation = rotation *- 1

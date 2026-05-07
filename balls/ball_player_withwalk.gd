@@ -64,10 +64,12 @@ func _ready() -> void:
 			action_try_shoot.triggered.connect(_send_event.bind(EVENT_TRY_SHOOT))
 		if action_cancle_ball:
 			action_cancle_ball.triggered.connect(_send_event.bind(EVENT_CANCLE_SHOOT))
+		if action_joystick_aim:
+			action_joystick_aim.triggered.connect(_send_event.bind(EVENT_JOYSTICK_AIMING))
 		if action_walking:
 			action_walking.triggered.connect(_on_action_walking_triggered)
-		if action_joystick_aim:
-			pass #TODO
+	get_viewport().size_changed.connect(_on_viewport_size_changed)
+	_on_viewport_size_changed()
 	set_collision_layer_value(Ball.LAYER_PC, true)
 	set_collision_mask_value(Ball.LAYER_PC_WALL, true)
 	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
@@ -112,10 +114,11 @@ func _draw() -> void:
 		_draw_power_indicator() 
 		if state_aiming_mouse.active:
 			_draw_mouse_aim()
+		elif state_aiming_joystick.active:
+			_draw_joystick_aim()
 
 func _draw_power_indicator() -> void:
 	var local_start : Vector2 = to_local(global_mouse_start)
-	draw_circle(local_start, BALL_RADIUS, COLOR_OTHER, false, 5)
 	var visable_power := _get_power_ratio()
 	if is_equal_approx(visable_power, 0.0):
 		return
@@ -125,15 +128,13 @@ func _draw_power_indicator() -> void:
 	if direction == DEFAULT_POS:
 		return
 	direction = direction.normalized()
-
-	## Power triangle
 	var color_power = Color.from_hsv( (1.0-_get_power_ratio()) *.33, 1.0, 1.0, .5)
 	draw_polygon(
 		[direction*visable_power, direction.rotated(- PI*.5)*BALL_RADIUS, direction.rotated( PI*.5)*BALL_RADIUS,  ], [color_power]
 			) 
 
 func _draw_joystick_aim() -> void:
-	var local_start := _screen_center
+	var local_start := to_local(_screen_center)
 	draw_circle(local_start, BALL_RADIUS, COLOR_OTHER, false, 5)
 
 func _draw_mouse_aim() -> void:
@@ -149,7 +150,7 @@ func _draw_mouse_aim() -> void:
 		COLOR_OTHER, 2)
 
 func _send_event(event: String) -> void:
-	prints(event, state_chart )
+	prints(event)
 	if state_chart:
 		state_chart.send_event(event)
 	else:
@@ -194,3 +195,5 @@ func _on_walk_mode_state_entered() -> void:
 func _on_tree_exiting() -> void:
 	if _instance == self:
 		_instance = null
+
+func _on_viewport_size_changed() -> void: _screen_center = get_viewport_rect().get_center()

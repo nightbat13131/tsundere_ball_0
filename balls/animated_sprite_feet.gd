@@ -6,7 +6,6 @@ const WALK = &'walking'
 const AVERAGE_SPEED = 100.0
 
 var _speed: float = -0.1: set = _set_speed
-var _is_frozen := false
 
 static var _instances : Array[AnimatedSprite_Feet]
 

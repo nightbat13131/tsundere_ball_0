@@ -9,6 +9,9 @@ const RADIUS = 30.0
 const SIDE_LENGTH = 50 # 53.178943201233324
 const THICKNESS = 4.0
 
+const FRAME_INACITVE = 0
+const FRAME_ACITVE = 1
+
 ## Pillar: Captures ball and holds it IN the way
 ## Hole: Captures's ball and moves it OUT of the way.
 ## Release the ball when the release trigger happens. 
@@ -19,10 +22,16 @@ var _used := false # prevent triggering multiple times in the same frame
 @export var dependency : Area2D_Enhanced
 @export var release_trigger : Area2D_Enhanced
 
+@export_category("Icons")
+@export var _red_icons: CompressedTexture2D
+@export var _yellow_icons: CompressedTexture2D
+@export var _blue_icons: CompressedTexture2D
+
 @export var _trap_mode := TrapModes.HOLE
 @export var npc_type : Ball_NPC.NPCType
 
 @onready var collision_shape: CollisionShape2D = %CollisionShape
+@onready var sprite_2d: Sprite2D = %Sprite2D
 
 var is_locked := false
 
@@ -31,6 +40,10 @@ func _ready() -> void:
 		_hybernate()
 		dependency.used.connect(_on_unlock)
 		is_locked = true
+	if is_locked:
+		sprite_2d.set_frame(FRAME_INACITVE)
+	else:
+		sprite_2d.set_frame(FRAME_ACITVE)
 	body_entered.connect(_on_body_entered)
 	var shape: Shape2D
 	match _trap_mode:
@@ -42,6 +55,13 @@ func _ready() -> void:
 			shape = RectangleShape2D.new()
 			shape.size = Vector2.ONE * SIDE_LENGTH
 			collision_shape.set_shape(shape)
+	match npc_type:
+		Ball.NPCType.RED:
+			sprite_2d.set_texture(_red_icons)
+		Ball.LAYER_NPC_BLUE:
+			sprite_2d.set_texture(_blue_icons)
+		Ball.NPCType.YELLOW:
+			sprite_2d.set_texture(_yellow_icons)
 	if Engine.is_editor_hint():
 		position = position.snapped(Vector2.ONE*4)
 		return
@@ -57,6 +77,7 @@ func _on_unlock(_ball: Ball)-> void:
 	is_locked = false
 	set_process_mode.call_deferred(Node.PROCESS_MODE_INHERIT)
 	queue_redraw()
+	sprite_2d.set_frame(FRAME_ACITVE)
 
 func _on_body_entered(body: Node2D) -> void:
 	if _used:
@@ -79,8 +100,7 @@ func _on_body_entered(body: Node2D) -> void:
 			tween_scale.set_trans(Tween.TRANS_BOUNCE)
 			tween_scale.tween_property(body.animated_sprite_ball, "scale", Vector2(.8, .8), 1.0)
 
-func _process(_delta: float) -> void:
-	queue_redraw()
+func _process(_delta: float) -> void: queue_redraw()
 
 func _draw() -> void:
 	var color = Ball_NPC.get_color(npc_type)
@@ -96,10 +116,11 @@ func _draw() -> void:
 		TrapModes.HOLE:
 			row_thickness = RADIUS / float(row_count)
 			draw_circle(Vector2.ZERO, RADIUS, color, false, THICKNESS)
-
+			
 			if is_locked:
 				draw_circle(Vector2.ZERO, RADIUS + THICKNESS*.5, UTILITIES.LOCKED_COLOR, false, THICKNESS)
 			else: 
+				color = color.darkened(.20)
 				for row_num : int in range(row_count): 
 					draw_circle(Vector2.ZERO, (row_thickness * row_num) + (row_thickness * row_mod) , color, false, THICKNESS*.5)
 		TrapModes.PILLAR:
@@ -109,5 +130,6 @@ func _draw() -> void:
 			if is_locked:
 				draw_polyline( UTILITIES.get_square_points(half_length + THICKNESS*.5), UTILITIES.LOCKED_COLOR, THICKNESS)
 			else:
+				color = color.darkened(.20)
 				for row_num : int in range(row_count): 
 					draw_polyline( UTILITIES.get_square_points((row_thickness * row_num) + (row_thickness * row_mod)), color, THICKNESS*.5)
