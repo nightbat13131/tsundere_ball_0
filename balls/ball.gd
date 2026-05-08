@@ -3,6 +3,10 @@ class_name Ball extends RigidBody2D
 @export var _npc_type:= NPCType.RED
 enum NPCType {RED, YELLOW, BLUE, PLAYER}
 
+@export_category("Sounds")
+@export var ball_hit : AudioStream
+@export var wall_hit : AudioStream
+
 const BALL_RADIUS = 16.0
 
 const LAYER_BALL = 32
@@ -74,6 +78,11 @@ static func get_color(npc_type: NPCType) -> Color:
 	return UTILITIES.COLOR_PLAYER
 
 func _on_body_entered(body: Node) -> void:
-	if body is Breakable:
+	if body is Breakable: # has it's own sound to play
 		if get_mass() > Ball_Player.MASS_WALKING:  # precent player in walk mode from triggering the break
 			body.remote_hit(self)
+	elif body is Ball:
+		if ball_hit:
+			SoundManager.request_sfx(ball_hit)
+	else:
+		SoundManager.request_sfx(wall_hit)

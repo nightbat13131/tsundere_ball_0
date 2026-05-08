@@ -20,15 +20,11 @@ signal curtain_closed
 signal curtain_open
 
 var _closed_percent := 0.0 : set = _set_closed_percent
-
-#static var _instance : LoadingScreen
-
 @onready var panel: Panel = %Panel
 
 const DEFAULT_DURATION := 1.0
 
 var _tween: Tween
-
 
 func _setup_tween() -> void:
 	if _tween:
@@ -45,7 +41,6 @@ func close_curtain() -> void:
 func open_curtain() -> void:
 	_setup_tween()
 	_tween.tween_method(_set_closed_percent, _closed_percent, SHADER_OPEN, DURATION)
-	
 
 func force_closed() -> void:
 	_set_closed_percent(SHADER_CLOSED)
@@ -60,9 +55,8 @@ func _set_closed_percent(value: float) -> void:
 		curtain_open.emit()
 
 func on_app_load() -> void:
-	await get_tree().create_timer(.5)
 	force_closed()
-	
+	await get_tree().create_timer(.25).timeout
 	open_curtain()
 
 #func _set_shader_parameter(param: StringName, value: Variant) -> void:

@@ -15,8 +15,10 @@ static func goal_check_in(goal: Goal_Info) -> void:
 	goals.append(goal)
 	if _instance:
 		var holder := TextureRect_Goal.new()
+		var parent := CenterContainer.new()
 		holder.apply_goal(goal)
-		_instance.add_child(holder)
+		parent.add_child(holder)
+		_instance.add_child(parent)
 
 static func level_start() -> void:
 	goals = []

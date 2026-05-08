@@ -9,6 +9,7 @@ signal update_icon(texture)
 # lower number goes first
 @export var ui_icon_success: Texture2D
 @export var sort_order := 1
+@export var fail_sound : AudioStream
 
 var _is_success := true
 
@@ -18,3 +19,4 @@ func get_goal_icon() -> Texture2D:
 func broke() -> void:
 	_is_success = false
 	update_icon.emit(ui_icon_failed)
+	SoundManager.request_sfx(fail_sound)

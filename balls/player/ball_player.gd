@@ -48,6 +48,8 @@ var remaining_roll_cooldown := 0.0
 
 @onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
 
+
+
 @export_category("G.U.I.D.E.")
 @export var pc_controler_context: GUIDEMappingContext
 
@@ -188,7 +190,6 @@ func _draw_mouse_aim() -> void:
 
 func _send_event(event: String) -> void:
 	queue_redraw()
-	prints(event)
 	if state_chart:
 		state_chart.send_event(event)
 	else:

@@ -27,8 +27,9 @@ size = Vector2(124.75, 22.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls632"]
 size = Vector2(124, 74)
 
-[node name="Node2D" type="Node2D" unique_id=1783182777]
+[node name="Node2D" type="Node2D" unique_id=1783182777 node_paths=PackedStringArray("level_end")]
 script = ExtResource("1_psj2v")
+level_end = NodePath("Trap")
 
 [node name="Floor" type="TextureRect" parent="." unique_id=2134588563]
 offset_right = 728.0
