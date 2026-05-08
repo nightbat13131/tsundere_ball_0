@@ -16,9 +16,12 @@ func _ready() -> void:
 	else:
 		push_error("LevelViewport has a non SubViewportContainer parent")
 
-func add_level(level: Level) -> void:
+func clear_old_level() -> void:
 	for old in get_children():
 		old.queue_free()
+
+func add_level(level: Level) -> void:
+	clear_old_level()
 	add_child(level)
 
 func deactivate() -> void:

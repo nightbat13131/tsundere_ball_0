@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cd05pvf8yj4o0"]
+
+[ext_resource type="Script" uid="uid://e20dqfvp06ev" path="res://environment/trap.gd" id="1_b24b0"]
+[ext_resource type="Texture2D" uid="uid://cy68fa31pnlis" path="res://assets/Pinwheel.png" id="2_ivl5a"]
+[ext_resource type="Texture2D" uid="uid://cqd10kb34o6j3" path="res://assets/Cookie.png" id="3_cpvol"]
+[ext_resource type="Texture2D" uid="uid://dalcnpagcfni0" path="res://assets/Bunny.png" id="4_as8vi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b24b0"]
+size = Vector2(50, 50)
+
+[node name="Trap_Player" type="Area2D" unique_id=531650769]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_b24b0")
+_red_icons = ExtResource("2_ivl5a")
+_yellow_icons = ExtResource("3_cpvol")
+_blue_icons = ExtResource("4_as8vi")
+_trap_mode = 0
+npc_type = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=200930861]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_b24b0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=526299596]
+unique_name_in_owner = true
+hframes = 2
+frame = 1

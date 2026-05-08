@@ -31,14 +31,15 @@ func _process(_delta: float) -> void:
 	if status == ResourceLoader.ThreadLoadStatus.THREAD_LOAD_IN_PROGRESS:
 		pass
 	elif status == ResourceLoader.ThreadLoadStatus.THREAD_LOAD_LOADED:
-		GameLevelUI.show_level(ResourceLoader.load_threaded_get(_level_to_load.get_level_path()))
-		_loading_done()
+		## wait untill after curtain is closed to make change
+		if LoadingCurtain.is_closed():
+			GameLevelUI.show_level(ResourceLoader.load_threaded_get(_level_to_load.get_level_path()))
+			LoadingCurtain.request_open()
+			_loading_done()
 
-func _loading_started() -> void:
-	sprite_2d.show()
+func _loading_started(): pass 
 
 func _loading_done() -> void:
-	sprite_2d.hide()
 	_last_laoded = _level_to_load
 	_level_to_load = null
 	deactivate()
@@ -53,6 +54,7 @@ static func request_level(level_info: LevelInfo) -> void:
 		_level_to_load = level_info
 		ResourceLoader.load_threaded_request(_level_to_load.get_level_path())
 		get_instance()._loading_started()
+		LoadingCurtain.request_close()
 	else:
 		push_warning("no loader instance to enact thing")
 

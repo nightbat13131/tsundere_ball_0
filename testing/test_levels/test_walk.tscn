@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="12_mtfkr"]
 [ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="13_wmsif"]
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="14_30rtw"]
+[ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/player_traps.tscn" id="15_233xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
 size = Vector2(15, 126.75)
@@ -30,7 +31,7 @@ size = Vector2(124, 74)
 [node name="Level" type="Node2D" unique_id=1783182777 node_paths=PackedStringArray("level_end")]
 process_mode = 1
 script = ExtResource("1_mdpv1")
-level_end = NodePath("EndTrap")
+level_end = NodePath("Trap_Player")
 
 [node name="Floor" type="TextureRect" parent="." unique_id=2134588563]
 offset_right = 641.0
@@ -62,10 +63,6 @@ position = Vector2(39, 268)
 [node name="Trap" parent="." unique_id=531650769 instance=ExtResource("7_vphd7")]
 position = Vector2(32, 192)
 _trap_mode = 0
-
-[node name="EndTrap" parent="." unique_id=1751553824 instance=ExtResource("7_vphd7")]
-position = Vector2(164, 60)
-npc_type = 3
 
 [node name="Door_North" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("8_d6t2t")]
 z_as_relative = false
@@ -178,3 +175,6 @@ shape = SubResource("RectangleShape2D_ls632")
 
 [node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("6_233xa")]
 position = Vector2(430, 190)
+
+[node name="Trap_Player" parent="." unique_id=1434384558 instance=ExtResource("15_233xa")]
+position = Vector2(160, 65)

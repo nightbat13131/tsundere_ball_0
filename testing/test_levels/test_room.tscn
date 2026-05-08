@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="12_p2h7p"]
 [ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="13_g7jxt"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="14_g7jxt"]
+[ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/player_traps.tscn" id="15_0as1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
 size = Vector2(15, 126.75)
@@ -29,7 +30,7 @@ size = Vector2(124, 74)
 
 [node name="Node2D" type="Node2D" unique_id=1783182777 node_paths=PackedStringArray("level_end")]
 script = ExtResource("1_psj2v")
-level_end = NodePath("Trap")
+level_end = NodePath("Trap_Player")
 
 [node name="Floor" type="TextureRect" parent="." unique_id=2134588563]
 offset_right = 728.0
@@ -173,3 +174,6 @@ shape = SubResource("RectangleShape2D_ls632")
 
 [node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("14_g7jxt")]
 position = Vector2(461, 239)
+
+[node name="Trap_Player" parent="." unique_id=35800403 instance=ExtResource("15_0as1x")]
+position = Vector2(163, 67)

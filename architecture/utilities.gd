@@ -1,6 +1,6 @@
 class_name UTILITIES extends RefCounted
 
-enum Z_Indexes { BALL_PLAYER = 10, BALL_NPC = 9 , TRAPS = 5 , IN_TRAP = 4 , GROUND = 3, OVERLAY = 20}
+enum Z_Indexes { BALL_PLAYER = 10, BALL_NPC = 9 , TRAPS = 5 , IN_TRAP = 6 , GROUND = 3, OVERLAY = 20}
 
 
 const LOCKED_COLOR = Color.WEB_GRAY
@@ -23,3 +23,8 @@ static func get_square_points(half_side_leng: float) -> Array[Vector2]:
 	var points: Array[Vector2] = [Vector2(1,1)*half_side_leng, Vector2(1,-1)*half_side_leng, Vector2(-1,-1)*half_side_leng, Vector2(-1,1)*half_side_leng]
 	points.append(points[0])
 	return points
+
+static func apply_z_layer(node: Node2D, layer: Z_Indexes) -> void:
+	node.set_z_index(layer as int)
+	node.set_z_as_relative(false)
+	node.set_y_sort_enabled(false)

@@ -52,6 +52,7 @@ func get_captured(trap_mode: Trap.TrapModes) -> bool:
 	if is_trapped(): # first trap takes priority 
 		return false
 	_set_trap_mode(trap_mode)
+	
 	set_z_index(UTILITIES.Z_Indexes.IN_TRAP as int)
 	
 	set_freeze_enabled.call_deferred(true)

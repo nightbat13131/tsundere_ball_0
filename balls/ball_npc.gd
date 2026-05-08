@@ -11,9 +11,7 @@ func _ready() -> void:
 	super._ready()
 	if _npc_type == Ball.NPCType.PLAYER:
 		push_error(self, " NPC type not set correclty")
-	set_z_index(UTILITIES.Z_Indexes.BALL_NPC as int)
-	set_z_as_relative(false)
-	set_y_sort_enabled(false) 
+	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.BALL_NPC)
 	set_collision_layer_value(Ball.LAYER_NPC, true)
 	set_collision_layer_value(get_ball_collision_layer(_npc_type), true)
 	set_collision_mask_value(Ball.LAYER_NPC_WALL, true)

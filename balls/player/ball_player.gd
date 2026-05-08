@@ -1,6 +1,6 @@
 class_name Ball_Player extends Ball
-## when aiming with mouse, chaning to walking is blocked
-
+## if mouse is being pressed when walking stopps being pressed, 
+## swtiched to aiming mode 
 
 # https://www.youtube.com/watch?v=tgrDkFdEK0I
 ## there was a problem with Ball_Player going odd directions if shot while moving, but turning off rotation seems to have solved this problem.
@@ -49,7 +49,6 @@ var remaining_roll_cooldown := 0.0
 @onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
 
 
-
 @export_category("G.U.I.D.E.")
 @export var pc_controler_context: GUIDEMappingContext
 
@@ -68,9 +67,7 @@ func _ready() -> void:
 	super._ready()
 	_instance = self
 	tree_exiting.connect(_on_tree_exiting)
-	set_z_index(UTILITIES.Z_Indexes.BALL_PLAYER as int)
-	set_z_as_relative(false)
-	set_y_sort_enabled(false) 
+	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.BALL_PLAYER)
 	if pc_controler_context:
 		GUIDE.enable_mapping_context(pc_controler_context)
 		if action_start_mouse_aim:
@@ -143,6 +140,8 @@ func get_shot_angle_vector() -> Vector2:
 	return DEFAULT_POS
 
 func _draw() -> void:
+	if get_tree().paused:
+		return
 	if state_aiming.active: 
 		_draw_power_indicator() 
 		if state_aiming_mouse.active:
@@ -190,6 +189,7 @@ func _draw_mouse_aim() -> void:
 
 func _send_event(event: String) -> void:
 	queue_redraw()
+	#print(event)
 	if state_chart:
 		state_chart.send_event(event)
 	else:

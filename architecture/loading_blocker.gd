@@ -1,4 +1,4 @@
-class_name LoadingScreen extends CanvasLayer
+class_name LoadingCurtain extends CanvasLayer
 
 ## load level
 ### Blue spiral gradiant
@@ -19,32 +19,52 @@ const SHADER_CLOSED = 1.0
 signal curtain_closed
 signal curtain_open
 
+static var _instance: LoadingCurtain
+
+
 var _closed_percent := 0.0 : set = _set_closed_percent
 @onready var panel: Panel = %Panel
 
-const DEFAULT_DURATION := 1.0
+static func is_open() -> bool:
+	if _instance:
+		return is_equal_approx(_instance._closed_percent , SHADER_OPEN)
+	return true
 
-var _tween: Tween
+static func is_closed() -> bool:
+	if _instance:
+		prints(_instance._closed_percent, SHADER_CLOSED)
+		return is_equal_approx(_instance._closed_percent , SHADER_CLOSED)
+	return true
 
-func _setup_tween() -> void:
-	if _tween:
-		if _tween.is_valid():
-			_tween.kill()
+func _ready() -> void:
+	_instance = self
+
+func _get_tween() -> Tween:
+	var _tween: Tween
 	_tween = get_tree().create_tween()
 	_tween.set_ease(Tween.EASE_IN_OUT)
 	_tween.set_trans(Tween.TRANS_CUBIC)
+	return _tween
+
+static func request_close() -> void:
+	if _instance:
+		_instance.close_curtain()
 
 func close_curtain() -> void:
-	_setup_tween()
+	var _tween: Tween = _get_tween()
 	_tween.tween_method(_set_closed_percent, _closed_percent, SHADER_CLOSED, DURATION)
+	_tween.tween_callback(curtain_closed.emit)
+
+static func request_open() -> void:
+	if _instance:
+		_instance.open_curtain()
 
 func open_curtain() -> void:
-	_setup_tween()
+	var _tween: Tween = _get_tween()
 	_tween.tween_method(_set_closed_percent, _closed_percent, SHADER_OPEN, DURATION)
 
 func force_closed() -> void:
 	_set_closed_percent(SHADER_CLOSED)
-	#panel.set_mouse_filter(Control.MOUSE_FILTER_STOP)
 
 func _set_closed_percent(value: float) -> void:
 	_closed_percent = value
@@ -58,7 +78,3 @@ func on_app_load() -> void:
 	force_closed()
 	await get_tree().create_timer(.25).timeout
 	open_curtain()
-
-#func _set_shader_parameter(param: StringName, value: Variant) -> void:
-	##print(get_material_override().get_shader_parameter(param))
-	#panel.set_instance_shader_parameter(param, value)

@@ -26,6 +26,7 @@ var _used := false # prevent triggering multiple times in the same frame
 @export var _red_icons: CompressedTexture2D
 @export var _yellow_icons: CompressedTexture2D
 @export var _blue_icons: CompressedTexture2D
+@export var _player_icons : CompressedTexture2D
 
 @export var _trap_mode := TrapModes.HOLE
 
@@ -61,6 +62,8 @@ func _ready() -> void:
 			sprite_2d.set_texture(_blue_icons)
 		Ball.NPCType.YELLOW:
 			sprite_2d.set_texture(_yellow_icons)
+		Ball.NPCType.PLAYER:
+			sprite_2d.set_texture(_player_icons)
 
 func _hybernate() -> void:
 	if Engine.is_editor_hint():

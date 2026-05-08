@@ -13,7 +13,7 @@ size = Vector2(705.09375, 481.75)
 
 [node name="Breaks" type="Node2D" unique_id=1493675185 node_paths=PackedStringArray("level_end")]
 script = ExtResource("1_i1xka")
-level_end = NodePath("Trap7")
+level_end = NodePath("Trap_player")
 
 [node name="Cushions_player_npc" type="StaticBody2D" parent="." unique_id=1583193909]
 position = Vector2(9, -12)
@@ -75,7 +75,7 @@ position = Vector2(532, 168)
 dependency = NodePath("../Trap2")
 npc_type = 1
 
-[node name="Trap7" parent="." unique_id=1065119669 node_paths=PackedStringArray("dependency") instance=ExtResource("5_8sxv3")]
+[node name="Trap_player" parent="." unique_id=1065119669 node_paths=PackedStringArray("dependency") instance=ExtResource("5_8sxv3")]
 position = Vector2(576, 68)
 dependency = NodePath("../Trap6")
 npc_type = 3

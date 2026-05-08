@@ -31,16 +31,11 @@ func _draw() -> void:
 		draw_polyline(points, Color.RED, 4
 	)
 
-static func request_pause(is_pause) -> void:
-	if _instance:
-		_instance.get_tree().paused = is_pause
-
 func _on_level_end_start(thing: Ball) -> void:
 	if thing is Ball_Player:
 		Portrait.request_emotion(Portrait.Emotions.BLUSHING)
 	else:
 		push_error(thing, "triggered Level._on_level_end_start instead of a Ball_Player")
-	
 
 func _on_level_end_complete(thing: Ball) -> void:
 	if thing is Ball_Player:

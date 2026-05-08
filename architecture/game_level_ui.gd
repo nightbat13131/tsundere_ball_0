@@ -20,6 +20,9 @@ func _show_level(level: PackedScene) -> void:
 	activate()
 	level_viewport.add_level(level.instantiate())
 
+func _clear_old_level() -> void:
+	level_viewport.clear_old_level()
+
 static func try_deactivate() -> void:
 	if get_instance():
 			get_instance().deactivate()
@@ -32,6 +35,11 @@ static func show_level(level: PackedScene) -> void:
 	else: 
 		if get_instance():
 			get_instance()._show_level(level)
+			GameRoot.request_pause.call_deferred(false)
+
+static func clear_old_level() -> void:
+	if get_instance():
+		get_instance()._clear_old_level()
 
 static func request_deactivate() -> void:
 	if get_instance():

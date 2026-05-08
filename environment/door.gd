@@ -4,6 +4,9 @@ class_name door extends StaticBody2d_Enhanced
 const ANIMATION_CLOSED = &"default"
 const ANIMATION_OPENING = &"opening"
 
+const SOUND_PATH = 'uid://domubmw5gl2m0'
+static var sound : AudioStream
+
 @export var dependency : CollisionObject2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
@@ -25,9 +28,15 @@ func _on_dependency_used(_node: Node2D) -> void:
 	_unlock.call_deferred()
 
 func _unlock() -> void:
-	animated_sprite_2d.play(ANIMATION_OPENING)
-	#set_physics_process.call_deferred(false)
 	set_process_mode.call_deferred(Node.PROCESS_MODE_DISABLED)
+	animated_sprite_2d.play(ANIMATION_OPENING)
+	_play_sound()
+
+func _play_sound() -> void:
+	if sound == null:
+		sound = load(SOUND_PATH)
+	SoundManager.request_sfx(sound)
+
 
 func _draw() -> void:
 	if Engine.is_editor_hint() and dependency:

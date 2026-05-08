@@ -13,7 +13,7 @@ func _ready() -> void:
 	set_y_sort_enabled(false) 
 	match _tile_type:
 		TileType.WALLS:
-			set_z_index(UTILITIES.Z_Indexes.GROUND as int)
+			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.GROUND)
 			## just doing all layers for now
 			#get_tile_set().set_physics_layer_collision_mask(0, Ball.LAYER_BALL)
 			#get_tile_set().set_physics_layer_collision_mask(Ball.LAYER_NPC_WALL, true)
@@ -22,4 +22,4 @@ func _ready() -> void:
 			#get_tile_set().set_physics_layer_collision_layer(0, Ball.LAYER_PC_WALL)
 			pass
 		TileType.WALLS_OVER:
-			set_z_index(UTILITIES.Z_Indexes.OVERLAY as int)
+			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.OVERLAY)
