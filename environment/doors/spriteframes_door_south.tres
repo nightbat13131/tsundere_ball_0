@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bg7ayeag3a3la"]
+
+[ext_resource type="Texture2D" uid="uid://3da6xv2v03an" path="res://assets/Furniture/Animated/Door/southslidingdoor-Sheet.png" id="1_hovmx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjvsb"]
+atlas = ExtResource("1_hovmx")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn1xn"]
+atlas = ExtResource("1_hovmx")
+region = Rect2(64, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhghk"]
+atlas = ExtResource("1_hovmx")
+region = Rect2(128, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn54p"]
+atlas = ExtResource("1_hovmx")
+region = Rect2(192, 0, 64, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjvsb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn1xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhghk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn54p")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]

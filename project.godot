@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Tsundere Ball"
+config/name="Magical Girl Ball"
 config/tags=PackedStringArray("2d", "physics")
 run/main_scene="uid://bmx1qrxrnr065"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.4627451, 0.25882354, 0.5411765, 1)
-config/icon="uid://dnb1juon5ub04"
+boot_splash/use_filter=false
 
 [audio]
 
@@ -30,8 +30,6 @@ GUIDE="*uid://p2jwrgjcbexr"
 window/size/viewport_width=1280
 window/size/viewport_height=800
 window/energy_saving/keep_screen_on=false
-window/stretch/scale=2.0
-window/stretch/scale_mode="integer"
 
 [editor]
 
@@ -46,10 +44,14 @@ enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://a
 
 folder_colors={
 "res://addons/": "gray",
-"res://balls/": "purple",
 "res://character/": "pink",
-"res://guide/": "teal"
+"res://guide/": "teal",
+"res://levels/": "purple"
 }
+
+[gui]
+
+theme/custom="uid://cn7hspecfe725"
 
 [input]
 

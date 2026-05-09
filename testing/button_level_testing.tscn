@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://o66r7jpbpfah"]
+
+[ext_resource type="Script" uid="uid://b3rwvfnmyhmt0" path="res://architecture/ui/button_level.gd" id="1_ktq03"]
+[ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/sprites/faces/texture_face.tres" id="2_whbme"]
+[ext_resource type="Script" uid="uid://bq7rglvho084a" path="res://architecture/ui/button_level_select.gd" id="2_y3yqr"]
+[ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://architecture/texture_button_enhanced.gd" id="3_x2sr8"]
+
+[sub_resource type="Gradient" id="Gradient_x2sr8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_y3yqr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivv8m"]
+width = 46
+height = 46
+noise = SubResource("FastNoiseLite_y3yqr")
+color_ramp = SubResource("Gradient_x2sr8")
+
+[sub_resource type="Gradient" id="Gradient_a8dmy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_whbme"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x2sr8"]
+width = 40
+height = 40
+noise = SubResource("FastNoiseLite_whbme")
+color_ramp = SubResource("Gradient_a8dmy")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x2sr8"]
+
+[node name="ButtonSelf" type="Button" unique_id=2132950070]
+offset_left = 25.0
+offset_top = -7.0
+offset_right = 65.0
+offset_bottom = 33.0
+icon = ExtResource("2_whbme")
+script = ExtResource("2_y3yqr")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2144001588]
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 46.0
+script = ExtResource("1_ktq03")
+face = ExtResource("2_whbme")
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer" unique_id=1721519388]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("NoiseTexture2D_ivv8m")
+texture_hover = SubResource("NoiseTexture2D_x2sr8")
+script = ExtResource("3_x2sr8")
+metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=2036106354]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_x2sr8")
+
+[node name="ButtonLevelSelect" type="Button" parent="." unique_id=1298118570]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 166.0
+offset_right = 81.0
+offset_bottom = 177.0
+icon = ExtResource("2_whbme")
+script = ExtResource("2_y3yqr")
+metadata/_custom_type_script = "uid://bq7rglvho084a"

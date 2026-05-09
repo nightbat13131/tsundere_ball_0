@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://digod202xa3i4"
-path="res://.godot/imported/Mad_MagicalGirl1.png-da303ba6917946bf2acf2ff1ffc8e50c.ctex"
+uid="uid://xb8h7x61g4v2"
+path="res://.godot/imported/eastslidingdoor-Sheet.png-baef8eb1780cc7821c80cf1d7e2a428e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/faces/Mad_MagicalGirl1.png"
-dest_files=["res://.godot/imported/Mad_MagicalGirl1.png-da303ba6917946bf2acf2ff1ffc8e50c.ctex"]
+source_file="res://assets/Furniture/Animated/Door/eastslidingdoor-Sheet.png"
+dest_files=["res://.godot/imported/eastslidingdoor-Sheet.png-baef8eb1780cc7821c80cf1d7e2a428e.ctex"]
 
 [params]
 

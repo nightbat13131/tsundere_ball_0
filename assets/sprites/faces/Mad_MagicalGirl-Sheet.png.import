@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1yphhqhygyhi"
-path="res://.godot/imported/Idle_MagicalGirl1.png-50244b760d7b3142c18b94c1a13ef7cd.ctex"
+uid="uid://um4llrfoh6ra"
+path="res://.godot/imported/Mad_MagicalGirl-Sheet.png-a5d722af63536d3a1448007bec151f7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/faces/Idle_MagicalGirl1.png"
-dest_files=["res://.godot/imported/Idle_MagicalGirl1.png-50244b760d7b3142c18b94c1a13ef7cd.ctex"]
+source_file="res://assets/sprites/faces/Mad_MagicalGirl-Sheet.png"
+dest_files=["res://.godot/imported/Mad_MagicalGirl-Sheet.png-a5d722af63536d3a1448007bec151f7e.ctex"]
 
 [params]
 

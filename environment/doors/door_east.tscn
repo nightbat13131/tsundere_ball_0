@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c82ypbmc8wqa8"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="1_t8gb7"]
+[ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/doors/door.gd" id="2_idaad"]
+[ext_resource type="SpriteFrames" uid="uid://b14i32hfyhxnv" path="res://environment/doors/spriteframes_door_east.tres" id="3_t8gb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f48a"]
+size = Vector2(16, 64)
+
+[node name="Door_East" type="StaticBody2D" unique_id=244446843]
+z_index = 5
+z_as_relative = false
+collision_layer = 3073
+collision_mask = 3
+physics_material_override = ExtResource("1_t8gb7")
+script = ExtResource("2_idaad")
+metadata/_custom_type_script = "uid://seumawif655e"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1158324650]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_6f48a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1782710565]
+unique_name_in_owner = true
+position = Vector2(1.5, 0)
+sprite_frames = ExtResource("3_t8gb7")

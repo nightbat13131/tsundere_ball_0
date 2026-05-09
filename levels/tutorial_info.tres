@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://o0orihev6fn8"]
+
+[ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/progress_save_stuff/level_info.gd" id="1_64qaq"]
+
+[resource]
+script = ExtResource("1_64qaq")
+level_uid = "uid://bhkrgawj5tv0g"
+_always_unlocked = true
+metadata/_custom_type_script = "uid://dnatdka25e2wd"

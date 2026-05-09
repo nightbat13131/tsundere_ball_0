@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2nmqlmxy5xa6" path="res://architecture/level_select.gd" id="1_hu3iy"]
 [ext_resource type="Script" uid="uid://bq7rglvho084a" path="res://architecture/ui/button_level_select.gd" id="1_jcfkq"]
+[ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/tutorial_info.tres" id="3_bagxp"]
 [ext_resource type="Resource" uid="uid://dqhajfx1g1p2o" path="res://testing/test_levels/dev_lv_1.tres" id="3_e8ohy"]
 [ext_resource type="Texture2D" uid="uid://cnkeb4slm4gd2" path="res://icon.svg" id="3_okj6e"]
 [ext_resource type="Resource" uid="uid://dl8vkdlsw1m4u" path="res://testing/test_levels/dev_lv_animation.tres" id="4_fmbur"]
@@ -16,6 +17,15 @@
 [node name="LevelSelect" type="CanvasLayer" unique_id=656451208]
 process_mode = 3
 script = ExtResource("1_hu3iy")
+
+[node name="ButtonSelf6" type="Button" parent="." unique_id=1433954292]
+offset_left = 760.0
+offset_top = 372.0
+offset_right = 794.0
+offset_bottom = 384.0
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("3_bagxp")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="Dev" type="HBoxContainer" parent="." unique_id=757718319]
 anchors_preset = 8

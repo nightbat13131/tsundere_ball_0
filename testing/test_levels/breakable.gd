@@ -49,6 +49,6 @@ func _hit_by(thing: Node2D) -> void:
 		used.emit(thing)
 
 func _break() -> void:
-	Portrait.request_emotion(Portrait.Emotions.MAD)
+	Portrait.request_emotion(FaceTexture.Emotions.MAD)
 	set_process_mode.call_deferred(Node.PROCESS_MODE_DISABLED)
 	animated_sprite_2d.play(ANIMATION_BREAK)

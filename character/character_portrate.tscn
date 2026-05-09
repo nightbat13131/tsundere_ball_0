@@ -1,22 +1,13 @@
 [gd_scene format=3 uid="uid://b7xdoygf4wxa3"]
 
-[ext_resource type="Texture2D" uid="uid://d1yphhqhygyhi" path="res://assets/sprites/faces/Idle_MagicalGirl1.png" id="2_vsppm"]
+[ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/sprites/faces/texture_face.tres" id="2_otlxg"]
 [ext_resource type="Script" uid="uid://dbyu7ac7b1qfh" path="res://character/texture_portrait.gd" id="3_euii2"]
-[ext_resource type="Texture2D" uid="uid://digod202xa3i4" path="res://assets/sprites/faces/Mad_MagicalGirl1.png" id="4_7ronw"]
-[ext_resource type="Texture2D" uid="uid://dnb1juon5ub04" path="res://assets/sprites/faces/Tsundere_MagicalGirl1.png" id="5_43yyj"]
 
-[node name="VBoxContainer2" type="VBoxContainer" unique_id=874604160]
+[node name="Texture_Portrait" type="TextureRect" unique_id=1248651943]
 offset_right = 32.0
 offset_bottom = 32.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="Texture_Portrait" type="TextureRect" parent="." unique_id=1248651943]
-layout_mode = 2
 mouse_filter = 0
-texture = ExtResource("2_vsppm")
+texture = ExtResource("2_otlxg")
 stretch_mode = 5
 script = ExtResource("3_euii2")
-idle = ExtResource("2_vsppm")
-mad = ExtResource("4_7ronw")
-blushing = ExtResource("5_43yyj")
+face_image = ExtResource("2_otlxg")

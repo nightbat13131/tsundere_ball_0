@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnb1juon5ub04"
-path="res://.godot/imported/Tsundere_MagicalGirl1.png-5774e59c6ecc8b4db67dc01c05759531.ctex"
+uid="uid://dl4kd0vdp7t3a"
+path="res://.godot/imported/SlidingDoorNorth0.png-f47275bfdcd18baeebd67ea1ff2f7c23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/faces/Tsundere_MagicalGirl1.png"
-dest_files=["res://.godot/imported/Tsundere_MagicalGirl1.png-5774e59c6ecc8b4db67dc01c05759531.ctex"]
+source_file="res://assets/Furniture/Animated/Door/SlidingDoorNorth0.png"
+dest_files=["res://.godot/imported/SlidingDoorNorth0.png-f47275bfdcd18baeebd67ea1ff2f7c23.ctex"]
 
 [params]
 

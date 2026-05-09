@@ -1,0 +1,10 @@
+[gd_resource type="AtlasTexture" script_class="FaceTexture" format=3 uid="uid://dp6bw3nvdfa4g"]
+
+[ext_resource type="Script" uid="uid://c4b1eromyv6ef" path="res://assets/sprites/faces/ball_face.gd" id="1_g5k41"]
+[ext_resource type="Texture2D" uid="uid://um4llrfoh6ra" path="res://assets/sprites/faces/Mad_MagicalGirl-Sheet.png" id="1_vsm3a"]
+
+[resource]
+atlas = ExtResource("1_vsm3a")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("1_g5k41")
+metadata/_custom_type_script = "uid://c4b1eromyv6ef"

@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://onpe1c4uu171"]
 
-[ext_resource type="Texture2D" uid="uid://ccbqt8vcom4po" path="res://assets/sheet_white1x.png" id="1_pnspq"]
+[ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/Modern_UI_Style_1.png" id="1_7w3t6"]
 [ext_resource type="Script" uid="uid://b6ubxfey7ybve" path="res://architecture/button_sound_settings.gd" id="2_h5xio"]
 [ext_resource type="Resource" uid="uid://qdn0c5g8wo1o" path="res://guide/press_settings.tres" id="3_7w3t6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sb4yo"]
-atlas = ExtResource("1_pnspq")
-region = Rect2(359, 59, 34, 34)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aycrh"]
+atlas = ExtResource("1_7w3t6")
+region = Rect2(157, 183, 20, 20)
 
-[node name="TextureButton_SoundSettings" type="TextureButton" unique_id=124607973]
-offset_right = 36.0
-offset_bottom = 36.0
+[node name="Button_SoundSettings" type="Button" unique_id=922504962]
+offset_right = 26.0
+offset_bottom = 32.0
 size_flags_horizontal = 4
-texture_normal = SubResource("AtlasTexture_sb4yo")
+icon = SubResource("AtlasTexture_aycrh")
 script = ExtResource("2_h5xio")
 action_remote_press = ExtResource("3_7w3t6")
-metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+metadata/_custom_type_script = "uid://dij1pecfcavpi"

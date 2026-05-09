@@ -20,3 +20,5 @@ func broke() -> void:
 	_is_success = false
 	update_icon.emit(ui_icon_failed)
 	SoundManager.request_sfx(fail_sound)
+
+func is_failed() -> bool: return !_is_success

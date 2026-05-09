@@ -1,43 +1,41 @@
-@tool
 class_name Portrait extends TextureRect
-
-enum Emotions {IDLE = 0, MAD = 1, BLUSHING = 2}
 
 const BASE_DURATION = 2.0
 
 static var _instance : Portrait
 
-@export var idle: CompressedTexture2D
-@export var mad: CompressedTexture2D
-@export var blushing: CompressedTexture2D
+@export var face_image : FaceTexture
 
 var emote_remaining := 0.0
 
 func _ready() -> void:
 	_instance = self
-	request_emotion(Emotions.IDLE)
+	face_image.init()
+	set_texture(face_image)
 
 func _process(delta: float) -> void:
 	if emote_remaining > 0.0:
 		emote_remaining -= delta
 		if emote_remaining <= 0.0:
-			_request_emotion(Emotions.IDLE)
+			_to_idle()
 
-func _request_emotion(emotion: Emotions) -> void:
-	var tex : CompressedTexture2D
-	match emotion:
-		Emotions.MAD:
-			if mad:
-				tex = mad
-		Emotions.BLUSHING:
-			if blushing:
-				tex = blushing
-	emote_remaining = BASE_DURATION
-	if tex == null:
-		tex = idle
+func _to_idle() -> void:
+	var results : FaceTexture.Emotions = GoalTracker.get_score().get_emotion()
+	if results == null:
+		results = FaceTexture.Emotions.IDLE
+	_request_emotion(	results, true)
+
+func _request_emotion(emotion: FaceTexture.Emotions, is_idle:= false) -> void:
+	face_image.set_emotion(emotion)
+	if is_idle:
 		emote_remaining = 0.0
-	set_texture(tex)
+	else: 
+		emote_remaining = BASE_DURATION
 
-static func request_emotion(emotion: Emotions) -> void:
+static func request_emotion(emotion: FaceTexture.Emotions) -> void:
 	if _instance:
 		_instance._request_emotion(emotion)
+
+static func level_start() -> void:
+	if _instance:
+		_instance._to_idle.call_deferred()

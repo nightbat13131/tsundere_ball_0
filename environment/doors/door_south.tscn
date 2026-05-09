@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dmnbhfayf278q"]
 
-[ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/door.gd" id="1_k4ko8"]
+[ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/doors/door.gd" id="1_k4ko8"]
 [ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="1_n2bwx"]
-[ext_resource type="SpriteFrames" uid="uid://bg7ayeag3a3la" path="res://environment/spriteframes_door_south.tres" id="2_28vk8"]
+[ext_resource type="SpriteFrames" uid="uid://bg7ayeag3a3la" path="res://environment/doors/spriteframes_door_south.tres" id="2_28vk8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f48a"]
-size = Vector2(64, 31.5)
+size = Vector2(64, 16)
 
 [node name="Door_South" type="StaticBody2D" unique_id=244446843]
 z_index = 5
+z_as_relative = false
 collision_layer = 3073
 collision_mask = 3
 physics_material_override = ExtResource("1_n2bwx")
@@ -17,12 +18,9 @@ metadata/_custom_type_script = "uid://seumawif655e"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1158324650]
-position = Vector2(0, 7.75)
 shape = SubResource("RectangleShape2D_6f48a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1782710565]
 unique_name_in_owner = true
 process_mode = 3
-position = Vector2(0, 4.5)
 sprite_frames = ExtResource("2_28vk8")
-animation = &"opening"

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cwivnxda2gprc"]
 
-[ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/door.gd" id="1_drm7c"]
+[ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/doors/door.gd" id="1_drm7c"]
 [ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="1_rupfc"]
-[ext_resource type="SpriteFrames" uid="uid://c7wnf1mfqdrl1" path="res://environment/spriteframes_door_north.tres" id="2_h8em1"]
+[ext_resource type="SpriteFrames" uid="uid://c7wnf1mfqdrl1" path="res://environment/doors/spriteframes_door_north.tres" id="2_h8em1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f48a"]
 size = Vector2(64, 41)
@@ -25,6 +25,3 @@ shape = SubResource("RectangleShape2D_6f48a")
 unique_name_in_owner = true
 position = Vector2(0, 3.5)
 sprite_frames = ExtResource("2_h8em1")
-animation = &"opening"
-frame = 2
-frame_progress = 1.0

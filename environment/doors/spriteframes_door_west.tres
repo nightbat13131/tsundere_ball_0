@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxuytpax7uofq"]
+
+[ext_resource type="Texture2D" uid="uid://dw6vc5tlo2764" path="res://assets/Furniture/Animated/Door/westslidingdoor-Sheet.png" id="1_yqajw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hlqq"]
+atlas = ExtResource("1_yqajw")
+region = Rect2(0, 0, 5, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w7is"]
+atlas = ExtResource("1_yqajw")
+region = Rect2(5, 0, 5, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccj0a"]
+atlas = ExtResource("1_yqajw")
+region = Rect2(10, 0, 5, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upw0o"]
+atlas = ExtResource("1_yqajw")
+region = Rect2(15, 0, 5, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hlqq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccj0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upw0o")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]

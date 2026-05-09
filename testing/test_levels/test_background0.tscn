@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="3_lrqux"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="5_3dgcs"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="5_v8yvx"]
-[ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/player_traps.tscn" id="6_xsfuh"]
+[ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/doors/player_traps.tscn" id="6_xsfuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h57c2"]
 size = Vector2(228.1875, 481.75)

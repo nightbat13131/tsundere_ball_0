@@ -32,7 +32,6 @@ static func is_open() -> bool:
 
 static func is_closed() -> bool:
 	if _instance:
-		prints(_instance._closed_percent, SHADER_CLOSED)
 		return is_equal_approx(_instance._closed_percent , SHADER_CLOSED)
 	return true
 

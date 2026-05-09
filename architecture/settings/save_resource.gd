@@ -18,11 +18,15 @@ var sound_master := .75
 var sound_music := .75
 var sound_sfx := .75
 var completed_levels : Array[String]
-
+var level_scores : Dictionary[String, Score.Scores] = {}
 
 func level_completed(level_id: String) -> void:
 	if !completed_levels.has(level_id):
 		completed_levels.append(level_id)
+
+func update_level_score(level_id: String, score: Score.Scores) -> void:
+	#var old = level_scores.get(level_id, Score.Scores.LOCKED)
+	level_scores[level_id] = score # as int
 
 func to_dict() -> Dictionary:
 	var _data : Dictionary = {}

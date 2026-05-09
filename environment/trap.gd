@@ -87,7 +87,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if !_used: # trapping for this body failed
 		return
 	used.emit(body)
-	Portrait.request_emotion(Portrait.Emotions.BLUSHING)
+	Portrait.request_emotion(FaceTexture.Emotions.BLUSHING)
 	_hybernate()
 	#suck to center
 	var tween_pos = get_tree().create_tween()

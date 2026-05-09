@@ -2,7 +2,7 @@ class_name GoalTracker extends HBoxContainer
 
 static var _instance : GoalTracker
 
-static var goals : Array[Goal_Info]
+static var score : Score
 
 func _ready() -> void:
 	_instance = self
@@ -12,7 +12,8 @@ func _clear_goals() -> void:
 		each_child.queue_free()
 
 static func goal_check_in(goal: Goal_Info) -> void:
-	goals.append(goal)
+	score.add_goal(goal)
+	#goals.append(goal)
 	if _instance:
 		var holder := TextureRect_Goal.new()
 		var parent := CenterContainer.new()
@@ -21,10 +22,10 @@ static func goal_check_in(goal: Goal_Info) -> void:
 		_instance.add_child(parent)
 
 static func level_start() -> void:
-	goals = []
+	score = Score.new()# goals = []
 	if _instance:
 		_instance._clear_goals()
 
-static func level_end() -> float:
 
-	return 1
+
+static func get_score() -> Score: return score

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfsr36jy8njik"
-path="res://.godot/imported/SlidingDoorNorth2.png-6024595b6cd0cb5c0402cb622fb0a482.ctex"
+uid="uid://bx336mmd5xyxr"
+path="res://.godot/imported/SlidingDoorNorth1.png-8bdbd8ee12ecc95c620e61eebd6025c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Furniture/Animated/NorthDoor/SlidingDoorNorth2.png"
-dest_files=["res://.godot/imported/SlidingDoorNorth2.png-6024595b6cd0cb5c0402cb622fb0a482.ctex"]
+source_file="res://assets/Furniture/Animated/Door/SlidingDoorNorth1.png"
+dest_files=["res://.godot/imported/SlidingDoorNorth1.png-8bdbd8ee12ecc95c620e61eebd6025c6.ctex"]
 
 [params]
 

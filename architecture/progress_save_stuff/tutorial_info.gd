@@ -1,0 +1,1 @@
+class_name LevelInfo_Tutorial extends LevelInfo

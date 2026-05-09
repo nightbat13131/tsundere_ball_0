@@ -1,3 +1,4 @@
+@tool
 class_name LevelViewport extends SubViewport
 
 enum Modes {NA = 0, _2D = 2, _3D = 3 }
@@ -6,8 +7,10 @@ var _sub_viewport_container: SubViewportContainer
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
-		size.x = ProjectSettings.get_setting('display/window/size/viewport_width')
-		size.y = ProjectSettings.get_setting('display/window/size/viewport_height')
+		size = get_viewport_size()
+		#size.x = ProjectSettings.get_setting('display/window/size/viewport_width')
+		#size.y = ProjectSettings.get_setting('display/window/size/viewport_height') - GameLevelUI.UI_BANNER_HEIGHT
+		return
 	configure_for_2d()
 	
 	if get_parent() is SubViewportContainer:
@@ -42,3 +45,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 	## overcomes the viewport seemily blocking mouse movement problems I was having for 3D and suddnely 2D..
 	#GUIDE.inject_input(_event)
 	pass
+
+static func get_viewport_size() -> Vector2: 
+	var a = Vector2.ONE
+	a.x = ProjectSettings.get_setting('display/window/size/viewport_width') - 10
+	a.y = ProjectSettings.get_setting('display/window/size/viewport_height') - GameLevelUI.UI_BANNER_HEIGHT
+	return a

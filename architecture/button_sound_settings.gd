@@ -1,4 +1,4 @@
-extends TextureButton_Enhanced
+extends ButtonSelf
 
 @export var action_remote_press: GUIDEAction
 

@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 	elif status == ResourceLoader.ThreadLoadStatus.THREAD_LOAD_LOADED:
 		## wait untill after curtain is closed to make change
 		if LoadingCurtain.is_closed():
-			GameLevelUI.show_level(ResourceLoader.load_threaded_get(_level_to_load.get_level_path()))
+			GameLevelUI.show_level(ResourceLoader.load_threaded_get(_level_to_load.get_level_path()), _level_to_load)
 			LoadingCurtain.request_open()
 			_loading_done()
 

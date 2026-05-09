@@ -2,19 +2,21 @@
 
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_psj2v"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="2_2bk2c"]
-[ext_resource type="Script" uid="uid://seumawif655e" path="res://environment/static_body_enhanced.gd" id="2_peypa"]
 [ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_qwnuw"]
 [ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="3_7kpc6"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_6f48a"]
 [ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="9_k00hl"]
+[ext_resource type="Script" uid="uid://cumbpfeyp08x3" path="res://environment/room_obsticals.gd" id="11_0as1x"]
 [ext_resource type="Texture2D" uid="uid://c5mwk3nfvdkx4" path="res://assets/Furniture/CouchNorth.png" id="11_g7jxt"]
 [ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="11_qwnuw"]
 [ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="12_0as1x"]
 [ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="12_g7jxt"]
-[ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/door_north.tscn" id="12_p2h7p"]
-[ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/door_south.tscn" id="13_g7jxt"]
+[ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/doors/door_north.tscn" id="12_p2h7p"]
+[ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/doors/door_south.tscn" id="13_g7jxt"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="14_g7jxt"]
-[ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/player_traps.tscn" id="15_0as1x"]
+[ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/doors/player_traps.tscn" id="15_0as1x"]
+[ext_resource type="PackedScene" uid="uid://cwnb3ho8q3a57" path="res://environment/doors/door_west.tscn" id="16_8kiq1"]
+[ext_resource type="PackedScene" uid="uid://c82ypbmc8wqa8" path="res://environment/doors/door_east.tscn" id="17_kvn45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
 size = Vector2(15, 126.75)
@@ -64,22 +66,18 @@ position = Vector2(32, 192)
 _trap_mode = 0
 
 [node name="Door_North" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
-z_as_relative = false
 position = Vector2(160, 72)
 dependency = NodePath("../Trap")
 
 [node name="Door_North2" parent="." unique_id=1753686542 node_paths=PackedStringArray("dependency") instance=ExtResource("12_p2h7p")]
-z_as_relative = false
 position = Vector2(480, 72)
 dependency = NodePath("../Trap")
 
 [node name="Door_South" parent="." unique_id=1293223859 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
-z_as_relative = false
 position = Vector2(160, 344)
 dependency = NodePath("../Trap")
 
 [node name="Door_South2" parent="." unique_id=1419732550 node_paths=PackedStringArray("dependency") instance=ExtResource("13_g7jxt")]
-z_as_relative = false
 position = Vector2(480, 344)
 dependency = NodePath("../Trap")
 
@@ -95,85 +93,96 @@ position = Vector2(296, 223)
 [node name="Breakable_PottedPlant4" parent="." unique_id=296753471 instance=ExtResource("9_k00hl")]
 position = Vector2(341, 223)
 
-[node name="CouchNorth" type="Sprite2D" parent="." unique_id=726553363]
-position = Vector2(574, 98)
-texture = ExtResource("11_g7jxt")
-
-[node name="CouchNorth2" type="Sprite2D" parent="." unique_id=109645111]
-position = Vector2(392, 91)
-texture = ExtResource("11_g7jxt")
-
-[node name="SmallBrownTable" type="Sprite2D" parent="." unique_id=1512384117]
-position = Vector2(575, 136)
-texture = ExtResource("12_0as1x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=128297516]
-visible = false
+[node name="RoomObsticals" type="StaticBody2D" parent="." unique_id=128297516]
+z_index = 5
+z_as_relative = false
 collision_layer = 0
 collision_mask = 0
 physics_material_override = ExtResource("3_7kpc6")
-script = ExtResource("2_peypa")
-block_player = false
-block_npc = false
+script = ExtResource("11_0as1x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1556347873]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObsticals" unique_id=1556347873]
 position = Vector2(8, 96)
 shape = SubResource("RectangleShape2D_x60sr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=243778056]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomObsticals" unique_id=243778056]
 position = Vector2(8, 287)
 shape = SubResource("RectangleShape2D_x60sr")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1467480225]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RoomObsticals" unique_id=1467480225]
 position = Vector2(632, 287)
 shape = SubResource("RectangleShape2D_x60sr")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=331849060]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="RoomObsticals" unique_id=331849060]
 position = Vector2(632, 95)
 shape = SubResource("RectangleShape2D_x60sr")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=869479955]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="RoomObsticals" unique_id=869479955]
 position = Vector2(319.375, 96)
 shape = SubResource("RectangleShape2D_peypa")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=2001215777]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="RoomObsticals" unique_id=2001215777]
 position = Vector2(320, 287)
 shape = SubResource("RectangleShape2D_peypa")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1119078163]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RoomObsticals" unique_id=1119078163]
 position = Vector2(255, 347)
 shape = SubResource("RectangleShape2D_aiegb")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=2131770591]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RoomObsticals" unique_id=2131770591]
 position = Vector2(384, 347)
 shape = SubResource("RectangleShape2D_aiegb")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=514123478]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="RoomObsticals" unique_id=514123478]
 position = Vector2(574, 347)
 shape = SubResource("RectangleShape2D_aiegb")
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1324046309]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="RoomObsticals" unique_id=1324046309]
 position = Vector2(64, 348)
 shape = SubResource("RectangleShape2D_aiegb")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2132457234]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RoomObsticals" unique_id=2132457234]
 position = Vector2(64, 58.625)
 shape = SubResource("RectangleShape2D_ls632")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=841620640]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="RoomObsticals" unique_id=841620640]
 position = Vector2(255, 59)
 shape = SubResource("RectangleShape2D_ls632")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=2097051410]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="RoomObsticals" unique_id=2097051410]
 position = Vector2(384, 58)
 shape = SubResource("RectangleShape2D_ls632")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=255932365]
-position = Vector2(574, 58)
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="RoomObsticals" unique_id=255932365]
+position = Vector2(575, 58)
 shape = SubResource("RectangleShape2D_ls632")
+
+[node name="CouchNorth" type="Sprite2D" parent="RoomObsticals" unique_id=726553363]
+position = Vector2(568, 96)
+texture = ExtResource("11_g7jxt")
+
+[node name="CouchNorth2" type="Sprite2D" parent="RoomObsticals" unique_id=109645111]
+position = Vector2(392, 96)
+texture = ExtResource("11_g7jxt")
+
+[node name="SmallBrownTable" type="Sprite2D" parent="RoomObsticals" unique_id=1512384117]
+position = Vector2(576, 136)
+texture = ExtResource("12_0as1x")
 
 [node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("14_g7jxt")]
 position = Vector2(461, 239)
 
 [node name="Trap_Player" parent="." unique_id=35800403 instance=ExtResource("15_0as1x")]
-position = Vector2(163, 67)
+position = Vector2(164, 68)
+
+[node name="Door_West" parent="." unique_id=79174139 instance=ExtResource("16_8kiq1")]
+position = Vector2(16, 192)
+
+[node name="Door_West2" parent="." unique_id=1696574183 instance=ExtResource("16_8kiq1")]
+position = Vector2(336, 192)
+
+[node name="Door_East" parent="." unique_id=1004658541 instance=ExtResource("17_kvn45")]
+position = Vector2(304, 192)
+
+[node name="Door_East2" parent="." unique_id=1768620993 instance=ExtResource("17_kvn45")]
+position = Vector2(624, 192)
