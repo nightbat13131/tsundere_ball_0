@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdmrdduas5aaf" path="res://architecture/ui/game_level_ui.gd" id="1_gxhkj"]
 [ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_n0g2q"]
 [ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_fjn30"]
-[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap.png" id="4_ka667"]
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="4_ka667"]
 [ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_y2yja"]
 [ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/options_control_type.gd" id="6_gv5gn"]
 [ext_resource type="Texture2D" uid="uid://ccbqt8vcom4po" path="res://testing/sheet_white1x.png" id="7_au2ae"]

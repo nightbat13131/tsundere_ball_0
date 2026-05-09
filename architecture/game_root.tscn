@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/ui/level_select.tscn" id="2_2uli3"]
 [ext_resource type="Resource" uid="uid://dfq3cxang5y2f" path="res://guide/ui_mapping_context.tres" id="2_cyf7k"]
 [ext_resource type="PackedScene" uid="uid://cr8i3ltlsxyoy" path="res://architecture/ui/game_level_ui.tscn" id="3_n0w4j"]
+[ext_resource type="Script" uid="uid://drwnkhlrv8eei" path="res://architecture/ui/cursors/custom_cursors.gd" id="3_q0ibd"]
+[ext_resource type="Resource" uid="uid://rsyonjd6m5ww" path="res://architecture/ui/cursors/default_cursor.tres" id="4_6nvoi"]
 [ext_resource type="PackedScene" uid="uid://j2a5a483t7sl" path="res://architecture/settings/audio_manager.tscn" id="4_50a1j"]
 [ext_resource type="PackedScene" uid="uid://ds30stwln1k53" path="res://architecture/loading_blocker.tscn" id="6_yemkn"]
 
@@ -11,6 +13,7 @@
 process_mode = 3
 script = ExtResource("1_ur1xq")
 ui_context = ExtResource("2_cyf7k")
+custom_cursors = Array[ExtResource("3_q0ibd")]([ExtResource("4_6nvoi")])
 
 [node name="GameLevelUI" parent="." unique_id=290767530 instance=ExtResource("3_n0w4j")]
 

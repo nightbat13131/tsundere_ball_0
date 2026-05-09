@@ -3,11 +3,13 @@ class_name GameRoot extends Node2D
 @export var ui_context: GUIDEMappingContext
 
 @onready var loading_blocker: LoadingCurtain = %LoadingBlocker
-
+@export var custom_cursors: Array[CustomCursor]
 static var _instance : GameRoot
 
 func _ready() -> void:
 	_instance = self
+	for each in custom_cursors:
+		each.activate()
 	if ui_context:
 		GUIDE.enable_mapping_context(ui_context)
 	loading_blocker.on_app_load()

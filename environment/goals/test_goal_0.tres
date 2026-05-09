@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://f7mdud4u1t7h"]
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_wgkgo"]
-[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap.png" id="2_3aige"]
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="2_3aige"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vue48"]
 atlas = ExtResource("2_3aige")

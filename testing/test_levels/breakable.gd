@@ -5,12 +5,14 @@ signal used(ball: Ball)
 
 const ANIMATION_BREAK = &"broke"
 const ANIMATION_IDLE = &"default"
+const ANIMATION_MAD = &'mad'
 
 @export_category("GUI")
 
 @export var goal: Goal_Info
 
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
+@onready var mad_man: AnimatedSprite2D = %mad_man
 
 var _break_next_frame := false # so that the hit frame bounces back the ball, and then is turned off the next frame. 
 var _is_used := false # prevent multiple triggers in a frame
@@ -18,6 +20,7 @@ var _is_used := false # prevent multiple triggers in a frame
 func _ready() -> void:
 	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.DECORATIONS)
 	animated_sprite_2d.play(ANIMATION_IDLE)
+	mad_man.play(ANIMATION_IDLE)
 	if Engine.is_editor_hint():
 		return
 	set_collision_layer_value(Ball.LAYER_BALL, true)
@@ -55,5 +58,9 @@ func _hit_by(thing: Node2D) -> void:
 
 func _break() -> void:
 	Portrait.request_emotion(FaceTexture.Emotions.MAD)
-	set_process_mode.call_deferred(Node.PROCESS_MODE_DISABLED)
+	for each_child in get_children():
+		if each_child is CollisionShape2D:
+			each_child.set_disabled(true)
+	#set_process_mode.call_deferred(Node.PROCESS_MODE_DISABLED)
 	animated_sprite_2d.play(ANIMATION_BREAK)
+	mad_man.play(ANIMATION_MAD)

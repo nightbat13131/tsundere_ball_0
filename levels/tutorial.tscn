@@ -80,13 +80,13 @@ _npc_type = 1
 [node name="Ball_NPC2" parent="." unique_id=81204232 instance=ExtResource("5_iniya")]
 z_index = 9
 z_as_relative = false
-position = Vector2(497, 152)
+position = Vector2(457, 223)
 _npc_type = 1
 
 [node name="Ball_NPC3" parent="." unique_id=669494992 instance=ExtResource("5_iniya")]
 z_index = 9
 z_as_relative = false
-position = Vector2(733, 164)
+position = Vector2(722, 136)
 
 [node name="Ball_NPC4" parent="." unique_id=874767357 instance=ExtResource("5_iniya")]
 z_index = 9
@@ -127,63 +127,39 @@ position = Vector2(912, 420)
 [node name="Breakables" type="Node2D" parent="." unique_id=2031131186]
 
 [node name="Breakable_PottedPlant" parent="Breakables" unique_id=190911682 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(344, 80)
 
 [node name="Breakable_PottedPlant2" parent="Breakables" unique_id=1993800526 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(295, 80)
 
 [node name="Breakable_PottedPlant3" parent="Breakables" unique_id=1915903203 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(295, 275)
 
 [node name="Breakable_PottedPlant5" parent="Breakables" unique_id=730968364 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(40, 274)
 
 [node name="Breakable_PottedPlant6" parent="Breakables" unique_id=2005919380 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(40, 80)
 
 [node name="Breakable_PottedPlant4" parent="Breakables" unique_id=296753471 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(344, 274)
 
 [node name="Breakable_PottedPlant7" parent="Breakables" unique_id=305282869 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(615, 80)
 
 [node name="Breakable_PottedPlant8" parent="Breakables" unique_id=293124527 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(615, 274)
 
 [node name="Breakable_PottedPlant9" parent="Breakables" unique_id=1689615980 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(664, 274)
 
 [node name="Breakable_PottedPlant10" parent="Breakables" unique_id=414673949 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(871, 274)
 
 [node name="Breakable_PottedPlant11" parent="Breakables" unique_id=802124639 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(872, 79)
 
 [node name="Breakable_PottedPlant12" parent="Breakables" unique_id=1412185950 instance=ExtResource("9_4jqu4")]
-z_index = 5
-z_as_relative = false
 position = Vector2(664, 80)
 
 [node name="RoomObsticals" type="StaticBody2D" parent="." unique_id=128297516]
@@ -205,19 +181,23 @@ position = Vector2(428, 92)
 
 [node name="Door_East2" parent="." unique_id=1768620993 node_paths=PackedStringArray("dependency") instance=ExtResource("17_i24xr")]
 modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(880, 416)
 dependency = NodePath("../Trap_Blue")
 
 [node name="Door_East_West" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("19_fpvtr")]
+z_index = 6
 position = Vector2(640, 208)
 dependency = NodePath("../Trap_Green_walk")
 
 [node name="Door_East_West2" parent="." unique_id=1632515542 node_paths=PackedStringArray("dependency") instance=ExtResource("19_fpvtr")]
+z_index = 6
 position = Vector2(320, 128)
 dependency = NodePath("../Trap_Green_roll")
 
 [node name="Door_North" parent="." unique_id=1257766987 node_paths=PackedStringArray("dependency") instance=ExtResource("7_rwnx0")]
 modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(768, 344)
 dependency = NodePath("../Trap_Pink")
 
@@ -237,5 +217,6 @@ frame_progress = 0.34322825
 
 [node name="Door_South" parent="." unique_id=1140622571 node_paths=PackedStringArray("dependency") instance=ExtResource("8_jkklj")]
 modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(768, 296)
 dependency = NodePath("../Trap_Pink")

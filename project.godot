@@ -27,8 +27,8 @@ GUIDE="*uid://p2jwrgjcbexr"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=600
+window/size/viewport_width=990
+window/size/viewport_height=640
 window/energy_saving/keep_screen_on=false
 
 [editor]
