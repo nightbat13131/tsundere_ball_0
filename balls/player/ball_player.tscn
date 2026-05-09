@@ -93,21 +93,47 @@ metadata/_custom_type_script = "uid://jk2jm1g6q853"
 script = ExtResource("13_gw41h")
 metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
-[node name="WalkMode" type="Node" parent="StateChart/CompoundState" unique_id=1165991015]
+[node name="WalkMode" type="Node" parent="StateChart/CompoundState" unique_id=165528351]
 unique_name_in_owner = true
+script = ExtResource("12_gw41h")
+initial_state = NodePath("Walking")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Walking" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=167710581]
 script = ExtResource("13_gw41h")
 metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
-[node name="ToMouseAiming" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=1716810053]
+[node name="ToNotWalking" type="Node" parent="StateChart/CompoundState/WalkMode/Walking" unique_id=1125046100]
 script = ExtResource("14_0xn1p")
-to = NodePath("../../RollMode/Aiming/Mouse/MouseAiming")
-event = &"mouse_pressed"
+to = NodePath("../../NotWalking")
 delay_in_seconds = "0.0"
 
-[node name="ToAimingJoystick" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=402319930]
+[node name="NotWalking" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=709960289]
+script = ExtResource("13_gw41h")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="ToWalkingWASD2" type="Node" parent="StateChart/CompoundState/WalkMode/NotWalking" unique_id=1790234113]
 script = ExtResource("14_0xn1p")
-to = NodePath("../../RollMode/Aiming/Joystick/JoystickAiming")
+to = NodePath("../..")
+event = &"walk_around_wasd"
+delay_in_seconds = "0.0"
+
+[node name="ToWalkingJoystick2" type="Node" parent="StateChart/CompoundState/WalkMode/NotWalking" unique_id=862049204]
+script = ExtResource("14_0xn1p")
+to = NodePath("../..")
+event = &"walk_around_joystick"
+delay_in_seconds = "0.0"
+
+[node name="ToAimingJoystick" type="Node" parent="StateChart/CompoundState/WalkMode/NotWalking" unique_id=402319930]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../../RollMode/Aiming/Joystick/JoystickAiming")
 event = &"joystick_aiming"
+delay_in_seconds = "0.0"
+
+[node name="ToMouseAiming" type="Node" parent="StateChart/CompoundState/WalkMode/NotWalking" unique_id=1716810053]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../../RollMode/Aiming/Mouse/MouseAiming")
+event = &"mouse_pressed"
 delay_in_seconds = "0.0"
 
 [node name="RollMode" type="Node" parent="StateChart/CompoundState" unique_id=887483662]
@@ -117,13 +143,13 @@ metadata/_custom_type_script = "uid://jk2jm1g6q853"
 
 [node name="ToWalkingWASD" type="Node" parent="StateChart/CompoundState/RollMode" unique_id=707872642]
 script = ExtResource("14_0xn1p")
-to = NodePath("../../WalkMode")
+to = NodePath("../../WalkMode/Walking")
 event = &"walk_around_wasd"
 delay_in_seconds = "0.0"
 
 [node name="ToWalkingJoystick" type="Node" parent="StateChart/CompoundState/RollMode" unique_id=202455342]
 script = ExtResource("14_0xn1p")
-to = NodePath("../../WalkMode")
+to = NodePath("../../WalkMode/Walking")
 event = &"walk_around_joystick"
 delay_in_seconds = "0.0"
 

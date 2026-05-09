@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_mdpv1"]
 [ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_233xa"]
+[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="3_7h0lp"]
 [ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="3_e2rpv"]
-[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="4_7h0lp"]
+[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://environment/tile_map_enhanced.gd" id="4_7h0lp"]
 [ext_resource type="PackedScene" uid="uid://dliw4w4otyrq5" path="res://balls/ball_npc.tscn" id="6_6olak"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="6_233xa"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="7_vphd7"]
@@ -42,7 +43,15 @@ texture = ExtResource("2_233xa")
 expand_mode = 1
 stretch_mode = 1
 
+[node name="StateChartDebugger" parent="." unique_id=572546266 instance=ExtResource("3_7h0lp")]
+offset_left = 637.0
+offset_top = -33.0
+offset_right = 926.0
+offset_bottom = 528.0
+initial_node_to_watch = NodePath("../BallPlayer/StateChart")
+
 [node name="TileMapLayer_WallsUnder" type="TileMapLayer" parent="." unique_id=1576620419]
+z_index = 4
 z_as_relative = false
 tile_map_data = PackedByteArray("AAAAAAkAAQAFAAAAAAAAAAgAAQABAAEAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQABAAEAAAAAAAQAAQABAAEAAAAAAAMAAQABAAEAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQABAAAAAAAYAAIAAQABAAAAAAAZAAIAAQABAAAAAAAaAAIAAQABAAAAAAAbAAIAAQABAAAAAAAgAAIAAQABAAAAAAAhAAIAAQABAAAAAAAiAAIAAQABAAAAAAAjAAIAAQABAAAAAAAkAAIAAQABAAAAAAAlAAIAAQABAAAAAAAmAAIAAQABAAAAAAAnAAIAAQAEAAAAAAAnAAMAAQABAAEAAAAnAAQAAQABAAEAAAAnAAUAAQABAAEAAAAnAAYAAQABAAEAAAAnAAcAAQABAAEAAAAnAAgAAQABAAEAAAAnAAkAAQAGAAAAAAAUAAkAAQACAAEAAAAUAAcAAQABAAEAAAAUAAYAAQABAAEAAAAUAAUAAQABAAEAAAAUAAQAAQABAAEAAAAUAAMAAQABAAEAAAATAAkAAQAAAAEAAAATAAgAAQABAAEAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAEAAAATAAQAAQABAAEAAAATAAMAAQABAAEAAAAAABUAAQADAAEAAAAAABQAAQABAAEAAAAAABMAAQABAAEAAAAAABIAAQABAAEAAAAAABEAAQABAAEAAAAAABAAAQABAAEAAAAAAA8AAQABAAEAAAAAAA4AAQAFAAEAAAAnABUAAQACAAEAAAAmABUAAQABAAAAAAAlABUAAQABAAAAAAAkABUAAQABAAAAAAAjABUAAQABAAAAAAAiABUAAQABAAAAAAAhABUAAQABAAAAAAAgABUAAQAKAAEAAAAbABUAAQAJAAEAAAAaABUAAQABAAAAAAAZABUAAQABAAAAAAAYABUAAQABAAAAAAAXABUAAQABAAAAAAAWABUAAQABAAAAAAAVABUAAQABAAAAAAAUABUAAQAIAAAAAAATABUAAQAIAAAAAAASABUAAQABAAAAAAARABUAAQABAAAAAAAQABUAAQABAAAAAAAPABUAAQABAAAAAAAOABUAAQABAAAAAAANABUAAQABAAAAAAAGABUAAQABAAAAAAAFABUAAQABAAAAAAAEABUAAQABAAAAAAADABUAAQABAAAAAAACABUAAQABAAAAAAABABUAAQABAAAAAAAnABQAAQABAAEAAAAnABMAAQABAAEAAAAnABIAAQABAAEAAAAnABEAAQABAAEAAAAnABAAAQABAAEAAAAnAA8AAQABAAEAAAAnAA4AAQAGAAEAAAAUABQAAQABAAEAAAAUABMAAQABAAEAAAAUABIAAQABAAEAAAAUABEAAQABAAEAAAAUABAAAQABAAEAAAATABQAAQABAAEAAAATABMAAQABAAEAAAATABIAAQABAAEAAAATABEAAQABAAEAAAATABAAAQABAAEAAAAGAAUAAQAVAAEAAAAGAAQAAQAWAAEAAAAGAAMAAQAWAAEAAAAFAAUAAQAVAAEAAAAFAAQAAQAWAAEAAAAFAAMAAQAWAAEAAAAEAAUAAQAVAAEAAAAEAAQAAQAWAAEAAAAEAAMAAQAWAAEAAAADAAUAAQAVAAEAAAADAAQAAQAWAAEAAAADAAMAAQAWAAEAAAACAAUAAQAVAAEAAAACAAQAAQAWAAEAAAACAAMAAQAWAAEAAAABAAUAAQAVAAEAAAABAAQAAQAWAAEAAAABAAMAAQAWAAEAAAASAAUAAQAVAAEAAAASAAQAAQAWAAEAAAASAAMAAQAWAAEAAAARAAUAAQAVAAEAAAARAAQAAQAWAAEAAAARAAMAAQAWAAEAAAAQAAUAAQAVAAEAAAAQAAQAAQAWAAEAAAAQAAMAAQAWAAEAAAAPAAUAAQAVAAEAAAAPAAQAAQAWAAEAAAAPAAMAAQAWAAEAAAAOAAUAAQAVAAEAAAAOAAQAAQAWAAEAAAAOAAMAAQAWAAEAAAANAAUAAQAVAAEAAAAUAAIAAQAHAAAAAAASAAIAAQABAAAAAAARAAIAAQABAAAAAAAQAAIAAQABAAAAAAAPAAIAAQABAAAAAAAOAAIAAQABAAAAAAANAAIAAQABAAAAAAAGAAIAAQABAAAAAAAFAAIAAQABAAAAAAAEAAIAAQABAAAAAAADAAIAAQABAAAAAAACAAIAAQABAAAAAAABAAIAAQABAAAAAAAAAAIAAQADAAAAAAAgAAMAAQAXAAAAAAAgAAQAAQATAAEAAAAgAAUAAQAXAAEAAAAbAAMAAQAUAAAAAAAbAAQAAQATAAAAAAAbAAUAAQAUAAEAAAAhAAMAAQAWAAEAAAAhAAQAAQAWAAEAAAAhAAUAAQAVAAEAAAAiAAMAAQAWAAEAAAAiAAQAAQAWAAEAAAAiAAUAAQAVAAEAAAAjAAMAAQAWAAEAAAAjAAQAAQAWAAEAAAAjAAUAAQAVAAEAAAAkAAMAAQAWAAEAAAAkAAQAAQAWAAEAAAAkAAUAAQAVAAEAAAAlAAMAAQAWAAEAAAAlAAQAAQAWAAEAAAAlAAUAAQAVAAEAAAAmAAMAAQAWAAEAAAAmAAQAAQAWAAEAAAAmAAUAAQAVAAEAAAAVAAMAAQAWAAEAAAAVAAQAAQAWAAEAAAAVAAUAAQAVAAEAAAAWAAMAAQAWAAEAAAAWAAQAAQAWAAEAAAAWAAUAAQAVAAEAAAAXAAMAAQAWAAEAAAAXAAQAAQAWAAEAAAAXAAUAAQAVAAEAAAAYAAMAAQAWAAEAAAAYAAQAAQAWAAEAAAAYAAUAAQAVAAEAAAAZAAMAAQAWAAEAAAAZAAQAAQAWAAEAAAAZAAUAAQAVAAEAAAAaAAMAAQAWAAEAAAAaAAQAAQAWAAEAAAAaAAUAAQAVAAEAAAAUAAgAAQABAAEAAAATAA4AAQAAAAAAAAATAA8AAQABAAEAAAAUAA4AAQACAAAAAAAUAA8AAQABAAEAAAATAAIAAQAHAAAAAAAHAAIAAQABAAAAAAAHAAMAAQAUAAAAAAAHAAQAAQATAAAAAAAHAAUAAQAUAAEAAAAMAAIAAQABAAAAAAAMAAMAAQAXAAAAAAAMAAQAAQATAAEAAAAMAAUAAQAXAAEAAAANAAMAAQAWAAEAAAANAAQAAQAWAAEAAAAHABUAAQAJAAEAAAAMABUAAQAKAAEAAAA=")
 tile_set = ExtResource("3_e2rpv")
@@ -50,6 +59,7 @@ navigation_enabled = false
 script = ExtResource("4_7h0lp")
 
 [node name="TileMapLayer_WallsOver" type="TileMapLayer" parent="." unique_id=1556340826]
+z_index = 20
 z_as_relative = false
 tile_map_data = PackedByteArray("AAAcAAIAAQABAAAAAQAdAAIAAQABAAAAAQAeAAIAAQABAAAAAQAfAAIAAQABAAAAAQAcAAMAAQAVAAAAAAAdAAMAAQAVAAAAAAAeAAMAAQAVAAAAAAAfAAMAAQAVAAAAAAAIAAIAAQABAAAAAQAIAAMAAQAVAAAAAAAJAAIAAQABAAAAAQAJAAMAAQAVAAAAAAAKAAIAAQABAAAAAQAKAAMAAQAVAAAAAAALAAIAAQABAAAAAQALAAMAAQAVAAAAAAA=")
 tile_set = ExtResource("3_e2rpv")
@@ -58,42 +68,58 @@ script = ExtResource("4_7h0lp")
 _tile_type = 1
 
 [node name="Ball_NPC" parent="." unique_id=964760348 instance=ExtResource("6_6olak")]
+z_index = 9
+z_as_relative = false
 position = Vector2(39, 268)
 
 [node name="Trap" parent="." unique_id=531650769 instance=ExtResource("7_vphd7")]
+z_index = 6
+z_as_relative = false
 position = Vector2(32, 192)
 _trap_mode = 0
 
 [node name="Door_North" parent="." unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("8_d6t2t")]
-z_as_relative = false
+modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(160, 72)
 dependency = NodePath("../Trap")
 
 [node name="Door_North2" parent="." unique_id=1753686542 node_paths=PackedStringArray("dependency") instance=ExtResource("8_d6t2t")]
-z_as_relative = false
+modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(480, 72)
 dependency = NodePath("../Trap")
 
 [node name="Door_South" parent="." unique_id=1293223859 node_paths=PackedStringArray("dependency") instance=ExtResource("9_whcpq")]
-z_as_relative = false
+modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(160, 344)
 dependency = NodePath("../Trap")
 
 [node name="Door_South2" parent="." unique_id=1419732550 node_paths=PackedStringArray("dependency") instance=ExtResource("9_whcpq")]
-z_as_relative = false
+modulate = Color(1, 1, 1, 0.75)
+z_index = 6
 position = Vector2(480, 344)
 dependency = NodePath("../Trap")
 
 [node name="Breakable_PottedPlant" parent="." unique_id=190911682 instance=ExtResource("10_m5gqm")]
+z_index = 5
+z_as_relative = false
 position = Vector2(344, 149)
 
 [node name="Breakable_PottedPlant2" parent="." unique_id=1993800526 instance=ExtResource("10_m5gqm")]
+z_index = 5
+z_as_relative = false
 position = Vector2(296, 147)
 
 [node name="Breakable_PottedPlant3" parent="." unique_id=1915903203 instance=ExtResource("10_m5gqm")]
+z_index = 5
+z_as_relative = false
 position = Vector2(296, 223)
 
 [node name="Breakable_PottedPlant4" parent="." unique_id=296753471 instance=ExtResource("10_m5gqm")]
+z_index = 5
+z_as_relative = false
 position = Vector2(341, 223)
 
 [node name="CouchNorth" type="Sprite2D" parent="." unique_id=726553363]
@@ -107,6 +133,12 @@ texture = ExtResource("11_cq5jd")
 [node name="SmallBrownTable" type="Sprite2D" parent="." unique_id=1512384117]
 position = Vector2(575, 136)
 texture = ExtResource("12_mtfkr")
+
+[node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("6_233xa")]
+position = Vector2(420, 180)
+
+[node name="ToNotWalking" parent="BallPlayer/StateChart/CompoundState/WalkMode/Walking" parent_id_path=PackedInt32Array(2041115718, 167710581) index="0" unique_id=1125046100]
+event = &"not_walking"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=128297516]
 visible = false
@@ -173,8 +205,9 @@ shape = SubResource("RectangleShape2D_ls632")
 position = Vector2(574, 58)
 shape = SubResource("RectangleShape2D_ls632")
 
-[node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("6_233xa")]
-position = Vector2(430, 190)
-
 [node name="Trap_Player" parent="." unique_id=1434384558 instance=ExtResource("15_233xa")]
-position = Vector2(160, 65)
+z_index = 6
+z_as_relative = false
+position = Vector2(160, 64)
+
+[editable path="BallPlayer"]

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c5mwk3nfvdkx4" path="res://assets/Furniture/CouchNorth.png" id="11_g7jxt"]
 [ext_resource type="TileSet" uid="uid://bw2f7blcgblxk" path="res://assets/tileset/tilest_tan_room.tres" id="11_qwnuw"]
 [ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="12_0as1x"]
-[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://testing/test_levels/tile_map_enhanced.gd" id="12_g7jxt"]
+[ext_resource type="Script" uid="uid://npljjqhjpuk8" path="res://environment/tile_map_enhanced.gd" id="12_g7jxt"]
 [ext_resource type="PackedScene" uid="uid://cwivnxda2gprc" path="res://environment/doors/door_north.tscn" id="12_p2h7p"]
 [ext_resource type="PackedScene" uid="uid://dmnbhfayf278q" path="res://environment/doors/door_south.tscn" id="13_g7jxt"]
 [ext_resource type="PackedScene" uid="uid://cnxywuptrsndj" path="res://balls/player/ball_player.tscn" id="14_g7jxt"]

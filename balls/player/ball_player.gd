@@ -20,6 +20,7 @@ const EVENT_CANCLE_SHOOT = &'cancle_shoot'
 const EVENT_SHOOT_COMPLETE = &"shot_done"
 const EVENT_WALKING_WASD = &'walk_around_wasd'
 const EVENT_WALKING_JOYSTICK = &'walk_around_joystick'
+const EVENT_NOT_WALKING = &'not_walking'
 const EVENT_CAPTURED = &'captured'
 
 const EVENT_JOYSTICK_AIMING = &'joystick_aiming'
@@ -41,13 +42,12 @@ const DEFAULT_ROLL_COOLDONW := .50
 var remaining_roll_cooldown := 0.0
 
 @onready var state_chart: StateChart = %StateChart
-@onready var state_walk: AtomicState = %WalkMode
+@onready var state_walk: CompoundState = %WalkMode
 @onready var state_aiming: CompoundState = %Aiming
 @onready var state_aiming_mouse: CompoundState = %Mouse
 @onready var state_aiming_joystick: CompoundState =  %Joystick
 
 @onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
-
 
 @export_category("G.U.I.D.E.")
 @export var pc_controler_context: GUIDEMappingContext
@@ -209,6 +209,8 @@ func _on_walk_mode_state_processing(_delta: float) -> void:
 			direction = action_walking_controler.value_axis_2d
 		if direction != DEFAULT_POS:
 			apply_central_impulse(direction * get_mass() * 10.0)
+			return
+		_send_event(EVENT_NOT_WALKING)
 
 func _on_roll_mode_state_entered() -> void: 
 	animated_sprite_feet.hide()
