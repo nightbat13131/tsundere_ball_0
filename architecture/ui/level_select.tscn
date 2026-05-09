@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
 [ext_resource type="Resource" uid="uid://bgs66genfal2j" path="res://architecture/ui/cursors/level_enter.tres" id="6_ijyg7"]
+[ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/spencers_info.tres" id="7_05iph"]
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
@@ -44,7 +45,7 @@ level_info = ExtResource("3_bagxp")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
-[node name="Tutorial2" type="Button" parent="Control" unique_id=1765708571]
+[node name="Spencers" type="Button" parent="Control" unique_id=1765708571]
 layout_mode = 0
 offset_left = 130.0
 offset_top = 343.0
@@ -52,7 +53,7 @@ offset_right = 168.0
 offset_bottom = 387.0
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
-level_info = ExtResource("3_bagxp")
+level_info = ExtResource("7_05iph")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 

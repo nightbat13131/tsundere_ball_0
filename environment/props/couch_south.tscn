@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://n178q3jsb10u"]
+
+[ext_resource type="Texture2D" uid="uid://5ho2shx4o1ft" path="res://assets/Furniture/CouchSouth.png" id="1_2ebbk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5cb"]
+size = Vector2(67, 30)
+
+[node name="CouthSouth" type="CollisionShape2D" unique_id=1103022107]
+shape = SubResource("RectangleShape2D_ud5cb")
+
+[node name="CouchSouth" type="Sprite2D" parent="." unique_id=1664860893]
+position = Vector2(0, 1)
+texture = ExtResource("1_2ebbk")

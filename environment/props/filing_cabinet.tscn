@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://31626sj7b02v"]
+
+[ext_resource type="Texture2D" uid="uid://dd3l5kvexboff" path="res://assets/Furniture/FilingCabinet.png" id="1_omeyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sh7"]
+size = Vector2(18, 38)
+
+[node name="FilingCabinet" type="CollisionShape2D" unique_id=1567785249]
+shape = SubResource("RectangleShape2D_k3sh7")
+
+[node name="FilingCabinet" type="Sprite2D" parent="." unique_id=291446512]
+position = Vector2(0, 2)
+texture = ExtResource("1_omeyq")

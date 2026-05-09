@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_64qaq")
 level_uid = "uid://bhkrgawj5tv0g"
-_always_unlocked = true
 metadata/_custom_type_script = "uid://dnatdka25e2wd"

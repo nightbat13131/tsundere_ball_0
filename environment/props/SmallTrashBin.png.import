@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du4cwbat56j4x"
-path="res://.godot/imported/DaiseyFlowerVase.png-ec7e626fef1de8af06f3c302809a0766.ctex"
+uid="uid://cflf1eoi5ly2n"
+path="res://.godot/imported/SmallTrashBin.png-373fc308db733e315622d814e039b8d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Furniture/DaiseyFlowerVase.png"
-dest_files=["res://.godot/imported/DaiseyFlowerVase.png-ec7e626fef1de8af06f3c302809a0766.ctex"]
+source_file="res://environment/props/SmallTrashBin.png"
+dest_files=["res://.godot/imported/SmallTrashBin.png-373fc308db733e315622d814e039b8d1.ctex"]
 
 [params]
 

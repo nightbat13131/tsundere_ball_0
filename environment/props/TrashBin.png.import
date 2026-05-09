@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fpcp50c53vou"
-path="res://.godot/imported/RedOvalRug.png-f8764fb870af34d958ee9a15598a4a70.ctex"
+uid="uid://y1oebqt7r7k5"
+path="res://.godot/imported/TrashBin.png-0be075f16befebd1bcc9b383863a17f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Furniture/RedOvalRug.png"
-dest_files=["res://.godot/imported/RedOvalRug.png-f8764fb870af34d958ee9a15598a4a70.ctex"]
+source_file="res://environment/props/TrashBin.png"
+dest_files=["res://.godot/imported/TrashBin.png-0be075f16befebd1bcc9b383863a17f9.ctex"]
 
 [params]
 

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://chfc1rvobqjcp"]
+
+[ext_resource type="Texture2D" uid="uid://43lbd7dxlqsi" path="res://assets/Furniture/PaddedChairWest.png" id="1_3pc2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sh7"]
+size = Vector2(27, 31)
+
+[node name="PaddedChairWest" type="CollisionShape2D" unique_id=1567785249]
+shape = SubResource("RectangleShape2D_k3sh7")
+
+[node name="PaddedChairWest" type="Sprite2D" parent="." unique_id=1884824866]
+position = Vector2(0, 2)
+texture = ExtResource("1_3pc2f")

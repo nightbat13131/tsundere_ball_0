@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://elymak8qclkt"
-path="res://.godot/imported/PurpleFlowerVase.png-2529235e7f1f2f785f890c1944d266e7.ctex"
+uid="uid://dw05b3cn0hd8v"
+path="res://.godot/imported/Counter_down.png-dd45bf52e2e034f95d49b701a1c2d1fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Furniture/PurpleFlowerVase.png"
-dest_files=["res://.godot/imported/PurpleFlowerVase.png-2529235e7f1f2f785f890c1944d266e7.ctex"]
+source_file="res://assets/Furniture/Counter_down.png"
+dest_files=["res://.godot/imported/Counter_down.png-dd45bf52e2e034f95d49b701a1c2d1fe.ctex"]
 
 [params]
 
