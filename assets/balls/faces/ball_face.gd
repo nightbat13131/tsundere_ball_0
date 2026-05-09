@@ -28,7 +28,7 @@ enum Emotions {
 	SCORE_0 = VERY_ANGRY,
 	SCORE_1 = FROWN,
 	SCORE_2 = SMILE,
-	SCORE_3 = EYES_CLOSED_UWU,
+	SCORE_3 = SMILE_UWU,
 	SCORE_4 = HEART_SMILE,
 
 } # number matches with expression order

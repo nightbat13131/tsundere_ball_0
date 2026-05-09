@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://wtir4bo0cs3k" path="res://architecture/settings/audio_manager.gd" id="1_kovmt"]
 [ext_resource type="AudioStream" uid="uid://diltlar1kdtan" path="res://assets/sounds/ui_effects/click3.wav" id="2_2ef83"]
 [ext_resource type="Script" uid="uid://iyi2xeten28r" path="res://architecture/settings/h_slider_enhansed.gd" id="2_omht2"]
-[ext_resource type="Texture2D" uid="uid://cqklqd2qa8cjh" path="res://assets/sheet_white2x.png" id="2_vbxqb"]
-[ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://architecture/texture_button_enhanced.gd" id="3_1u8gx"]
+[ext_resource type="Texture2D" uid="uid://cqklqd2qa8cjh" path="res://testing/sheet_white2x.png" id="2_vbxqb"]
+[ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://testing/texture_button_enhanced.gd" id="3_1u8gx"]
 [ext_resource type="AudioStream" uid="uid://cound3vvjt37r" path="res://assets/sounds/music/progress_2026_05_05(1).wav" id="5_1u8gx"]
-[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/tilemap.png" id="6_tuyx8"]
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap.png" id="6_tuyx8"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="6_xh3dk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ef83"]

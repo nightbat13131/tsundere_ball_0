@@ -1,11 +1,16 @@
+@tool
 class_name GameLevelUI extends CanvasLayer
 
 static var _instance : GameLevelUI : get = get_instance
 @onready var level_viewport: LevelViewport = %LevelViewport
 
 const UI_BANNER_HEIGHT = 40
+@onready var top_banner: MarginContainer = %TopBanner
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		top_banner.custom_minimum_size.y = UI_BANNER_HEIGHT
+		return
 	#deactivate()
 	_instance = self
 
@@ -14,6 +19,8 @@ func activate() -> void:
 	show()
 
 func deactivate() -> void:
+	if Engine.is_editor_hint():
+		return
 	hide()
 	set_physics_process(false)
 
@@ -24,6 +31,8 @@ func _show_level(level_scene: PackedScene, level_info: LevelInfo) -> void:
 	level_viewport.add_level(level)
 
 func _clear_old_level() -> void:
+	if Engine.is_editor_hint():
+		return
 	level_viewport.clear_old_level()
 
 static func try_deactivate() -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dalcnpagcfni0"
-path="res://.godot/imported/Bunny.png-bcea026f821dc7f83639c647d4704381.ctex"
+uid="uid://um4llrfoh6ra"
+path="res://.godot/imported/Mad_MagicalGirl-Sheet.png-211d1c0a79527626d00f859748a38afd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bunny.png"
-dest_files=["res://.godot/imported/Bunny.png-bcea026f821dc7f83639c647d4704381.ctex"]
+source_file="res://assets/balls/faces/Mad_MagicalGirl-Sheet.png"
+dest_files=["res://.godot/imported/Mad_MagicalGirl-Sheet.png-211d1c0a79527626d00f859748a38afd.ctex"]
 
 [params]
 

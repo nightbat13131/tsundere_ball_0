@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://um4llrfoh6ra"
-path="res://.godot/imported/Mad_MagicalGirl-Sheet.png-a5d722af63536d3a1448007bec151f7e.ctex"
+uid="uid://bnwln8br1jeqe"
+path="res://.godot/imported/background test.png-818acf9a6ed4463e827d1642e65c4699.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/faces/Mad_MagicalGirl-Sheet.png"
-dest_files=["res://.godot/imported/Mad_MagicalGirl-Sheet.png-a5d722af63536d3a1448007bec151f7e.ctex"]
+source_file="res://testing/background test.png"
+dest_files=["res://.godot/imported/background test.png-818acf9a6ed4463e827d1642e65c4699.ctex"]
 
 [params]
 

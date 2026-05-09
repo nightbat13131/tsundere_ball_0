@@ -1,3 +1,4 @@
+@tool
 class_name Breakable extends StaticBody2D
 
 signal used(ball: Ball)
@@ -15,10 +16,12 @@ var _break_next_frame := false # so that the hit frame bounces back the ball, an
 var _is_used := false # prevent multiple triggers in a frame
 
 func _ready() -> void:
+	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.DECORATIONS)
+	animated_sprite_2d.play(ANIMATION_IDLE)
+	if Engine.is_editor_hint():
+		return
 	set_collision_layer_value(Ball.LAYER_BALL, true)
 	set_collision_mask_value(Ball.LAYER_BALL, true)
-	
-	animated_sprite_2d.play(ANIMATION_IDLE)
 	if goal:
 		goal = goal.duplicate(false)
 		GoalTracker.goal_check_in.call_deferred(goal)
@@ -29,6 +32,8 @@ func remote_hit(thing: Node2D) -> void:
 	_hit_by(thing)
 	
 func _physics_process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
 	## collision detection moved to the BALL and it's advanced solver stuff.
 	#var collision = move_and_collide(Vector2.ZERO, true)
 	if _break_next_frame:

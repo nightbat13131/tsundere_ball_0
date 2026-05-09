@@ -1,5 +1,4 @@
 class_name LevelSelect extends CanvasLayer
-
 # https://docs.godotengine.org/en/stable/tutorials/io/background_loading.html
 
 static var _instance: LevelSelect: get = get_instance
@@ -7,15 +6,12 @@ static var _instance: LevelSelect: get = get_instance
 static var _level_to_load : LevelInfo
 static var _last_laoded: LevelInfo
 
-@onready var sprite_2d: Sprite2D = %Sprite2D
-
 func _ready() -> void:
 	activate()
 	_instance = self
 
 func activate() -> void:
 	set_physics_process(true)
-	sprite_2d.hide()
 	GameLevelUI.try_deactivate.call_deferred()
 	show()
 

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://x0ygfjc3j6nk"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="1_rmqv2"]
+[ext_resource type="Script" uid="uid://djblli3lewneb" path="res://environment/doors/door.gd" id="2_p0l4c"]
+[ext_resource type="SpriteFrames" uid="uid://b14i32hfyhxnv" path="res://environment/doors/spriteframes_door_east.tres" id="3_v5p5u"]
+[ext_resource type="SpriteFrames" uid="uid://bxuytpax7uofq" path="res://environment/doors/spriteframes_door_west.tres" id="4_p0l4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f48a"]
+size = Vector2(32, 64)
+
+[node name="Door_East_West" type="StaticBody2D" unique_id=244446843 node_paths=PackedStringArray("alt_sprite")]
+modulate = Color(1, 1, 1, 0.75)
+z_index = 5
+z_as_relative = false
+collision_layer = 0
+collision_mask = 0
+physics_material_override = ExtResource("1_rmqv2")
+script = ExtResource("2_p0l4c")
+alt_sprite = NodePath("AnimatedSprite2D2")
+metadata/_custom_type_script = "uid://seumawif655e"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1158324650]
+shape = SubResource("RectangleShape2D_6f48a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1782710565]
+unique_name_in_owner = true
+position = Vector2(16, 0)
+sprite_frames = ExtResource("3_v5p5u")
+offset = Vector2(-2.5, 0)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1533963003]
+position = Vector2(-16, 0)
+sprite_frames = ExtResource("4_p0l4c")
+offset = Vector2(2.5, 0)

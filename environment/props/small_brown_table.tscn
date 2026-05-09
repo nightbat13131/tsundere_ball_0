@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dbbtr04kgpr"]
+
+[ext_resource type="Texture2D" uid="uid://q43a3ax161wv" path="res://assets/Furniture/SmallBrownTable.png" id="1_nj7iy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpvtr"]
+size = Vector2(26, 19)
+
+[node name="SmallBrownTable" type="CollisionShape2D" unique_id=524959152]
+shape = SubResource("RectangleShape2D_fpvtr")
+metadata/_edit_group_ = true
+
+[node name="SmallBrownTable" type="Sprite2D" parent="." unique_id=1497740419]
+position = Vector2(0, 2)
+texture = ExtResource("1_nj7iy")

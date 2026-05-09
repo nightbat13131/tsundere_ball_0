@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy68fa31pnlis"
-path="res://.godot/imported/Pinwheel.png-a3cd446ecf6c544df857d401270b2775.ctex"
+uid="uid://cgu5ooxixoyba"
+path="res://.godot/imported/TsundereMiniUp_Purp-Sheet.png-6881558d53754c6591d916e6740aeae7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pinwheel.png"
-dest_files=["res://.godot/imported/Pinwheel.png-a3cd446ecf6c544df857d401270b2775.ctex"]
+source_file="res://assets/balls/TsundereMiniUp_Purp-Sheet.png"
+dest_files=["res://.godot/imported/TsundereMiniUp_Purp-Sheet.png-6881558d53754c6591d916e6740aeae7.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bmx1qrxrnr065"]
 
 [ext_resource type="Script" uid="uid://bn64xn4h4g54l" path="res://architecture/game_root.gd" id="1_ur1xq"]
-[ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/level_select.tscn" id="2_2uli3"]
+[ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/ui/level_select.tscn" id="2_2uli3"]
 [ext_resource type="Resource" uid="uid://dfq3cxang5y2f" path="res://guide/ui_mapping_context.tres" id="2_cyf7k"]
-[ext_resource type="PackedScene" uid="uid://cr8i3ltlsxyoy" path="res://architecture/game_level_ui.tscn" id="3_n0w4j"]
+[ext_resource type="PackedScene" uid="uid://cr8i3ltlsxyoy" path="res://architecture/ui/game_level_ui.tscn" id="3_n0w4j"]
 [ext_resource type="PackedScene" uid="uid://j2a5a483t7sl" path="res://architecture/settings/audio_manager.tscn" id="4_50a1j"]
 [ext_resource type="PackedScene" uid="uid://ds30stwln1k53" path="res://architecture/loading_blocker.tscn" id="6_yemkn"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7xdoygf4wxa3"]
 
-[ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/sprites/faces/texture_face.tres" id="2_otlxg"]
+[ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/balls/faces/texture_face.tres" id="2_otlxg"]
 [ext_resource type="Script" uid="uid://dbyu7ac7b1qfh" path="res://character/texture_portrait.gd" id="3_euii2"]
 
 [node name="Texture_Portrait" type="TextureRect" unique_id=1248651943]

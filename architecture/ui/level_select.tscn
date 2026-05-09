@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://2nmqlmxy5xa6" path="res://architecture/level_select.gd" id="1_hu3iy"]
 [ext_resource type="Script" uid="uid://bq7rglvho084a" path="res://architecture/ui/button_level_select.gd" id="1_jcfkq"]
+[ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/balls/faces/texture_face.tres" id="2_f5khk"]
 [ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/tutorial_info.tres" id="3_bagxp"]
 [ext_resource type="Resource" uid="uid://dqhajfx1g1p2o" path="res://testing/test_levels/dev_lv_1.tres" id="3_e8ohy"]
-[ext_resource type="Texture2D" uid="uid://cnkeb4slm4gd2" path="res://icon.svg" id="3_okj6e"]
 [ext_resource type="Resource" uid="uid://dl8vkdlsw1m4u" path="res://testing/test_levels/dev_lv_animation.tres" id="4_fmbur"]
 [ext_resource type="Resource" uid="uid://hb8f0ycya01h" path="res://testing/test_levels/dev_lv_background.tres" id="5_0hgg1"]
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
@@ -19,10 +19,11 @@ process_mode = 3
 script = ExtResource("1_hu3iy")
 
 [node name="ButtonSelf6" type="Button" parent="." unique_id=1433954292]
-offset_left = 760.0
-offset_top = 372.0
-offset_right = 794.0
-offset_bottom = 384.0
+offset_left = 124.0
+offset_top = 474.0
+offset_right = 162.0
+offset_bottom = 518.0
+icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("3_bagxp")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
@@ -90,11 +91,6 @@ metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="TextureButton_SoundSettings" parent="Dev/VBoxContainer" unique_id=124607973 instance=ExtResource("9_2xmtt")]
 layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866578568]
-unique_name_in_owner = true
-position = Vector2(96, 155)
-texture = ExtResource("3_okj6e")
 
 [node name="LoadingBlocker" parent="." unique_id=30920926 instance=ExtResource("12_iudv4")]
 unique_name_in_owner = true

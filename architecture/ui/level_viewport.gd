@@ -48,6 +48,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 static func get_viewport_size() -> Vector2: 
 	var a = Vector2.ONE
-	a.x = ProjectSettings.get_setting('display/window/size/viewport_width') - 10
-	a.y = ProjectSettings.get_setting('display/window/size/viewport_height') - GameLevelUI.UI_BANNER_HEIGHT
+	a.x = ProjectSettings.get_setting('display/window/size/viewport_width') - GameLevelUI.UI_BANNER_HEIGHT
+	a.y = ProjectSettings.get_setting('display/window/size/viewport_height') - GameLevelUI.UI_BANNER_HEIGHT*2
+	a = a.snapped(Vector2.ONE*16)
 	return a

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6wixdv0s2u86"
-path="res://.godot/imported/TsundereMiniOtherDiag_Purp-Sheet.png-fc05c2eb2f8bf6a273b6325439fd2a3f.ctex"
+uid="uid://cb3r2vssw3m8r"
+path="res://.godot/imported/red-spiral-15868539218z7.jpg-31e37f803226745b1f46d84ff23c93ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/balls/TsundereMiniOtherDiag_Purp-Sheet.png"
-dest_files=["res://.godot/imported/TsundereMiniOtherDiag_Purp-Sheet.png-fc05c2eb2f8bf6a273b6325439fd2a3f.ctex"]
+source_file="res://assets/ui/red-spiral-15868539218z7.jpg"
+dest_files=["res://.godot/imported/red-spiral-15868539218z7.jpg-31e37f803226745b1f46d84ff23c93ce.ctex"]
 
 [params]
 

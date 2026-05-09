@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lhvt3838yv3n"
-path="res://.godot/imported/Blue-Gradient-Spiral-Background-Graphics-1-1-580x387.jpg-139d74e92cf5a4cfa935336cebc4f674.ctex"
+uid="uid://ccbqt8vcom4po"
+path="res://.godot/imported/sheet_white1x.png-5b64ca03120b391b81e810b34f19d09b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Blue-Gradient-Spiral-Background-Graphics-1-1-580x387.jpg"
-dest_files=["res://.godot/imported/Blue-Gradient-Spiral-Background-Graphics-1-1-580x387.jpg-139d74e92cf5a4cfa935336cebc4f674.ctex"]
+source_file="res://testing/sheet_white1x.png"
+dest_files=["res://.godot/imported/sheet_white1x.png-5b64ca03120b391b81e810b34f19d09b.ctex"]
 
 [params]
 

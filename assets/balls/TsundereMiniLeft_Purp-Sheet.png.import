@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnwln8br1jeqe"
-path="res://.godot/imported/background test.png-6d06061bf95df0c8e3d8c0846b6a9c86.ctex"
+uid="uid://qq7a83p8ddd4"
+path="res://.godot/imported/TsundereMiniLeft_Purp-Sheet.png-a3d1e132f48db5d648a3e67fb49380eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background test.png"
-dest_files=["res://.godot/imported/background test.png-6d06061bf95df0c8e3d8c0846b6a9c86.ctex"]
+source_file="res://assets/balls/TsundereMiniLeft_Purp-Sheet.png"
+dest_files=["res://.godot/imported/TsundereMiniLeft_Purp-Sheet.png-a3d1e132f48db5d648a3e67fb49380eb.ctex"]
 
 [params]
 

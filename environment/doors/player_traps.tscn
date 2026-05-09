@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cd05pvf8yj4o0"]
 
 [ext_resource type="Script" uid="uid://e20dqfvp06ev" path="res://environment/trap.gd" id="1_b24b0"]
-[ext_resource type="Texture2D" uid="uid://cy68fa31pnlis" path="res://assets/Pinwheel.png" id="2_ivl5a"]
-[ext_resource type="Texture2D" uid="uid://cqd10kb34o6j3" path="res://assets/Cookie.png" id="3_cpvol"]
-[ext_resource type="Texture2D" uid="uid://dalcnpagcfni0" path="res://assets/Bunny.png" id="4_as8vi"]
+[ext_resource type="Texture2D" uid="uid://cy68fa31pnlis" path="res://assets/balls/Pinwheel.png" id="2_ivl5a"]
+[ext_resource type="Texture2D" uid="uid://cqd10kb34o6j3" path="res://assets/balls/Cookie.png" id="3_cpvol"]
+[ext_resource type="Texture2D" uid="uid://dalcnpagcfni0" path="res://assets/balls/Bunny.png" id="4_as8vi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b24b0"]
 size = Vector2(50, 50)

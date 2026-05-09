@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u4m71pkh5giu"
-path="res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c800975c3c24f06.ctex"
+uid="uid://73xkxsrg31yj"
+path="res://.godot/imported/TsundereMiniDiag_Purp-Sheet.png-808d12581f4b174a5b2f1904bc3dfa04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Modern_UI_Style_1.png"
-dest_files=["res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c800975c3c24f06.ctex"]
+source_file="res://assets/balls/TsundereMiniDiag_Purp-Sheet.png"
+dest_files=["res://.godot/imported/TsundereMiniDiag_Purp-Sheet.png-808d12581f4b174a5b2f1904bc3dfa04.ctex"]
 
 [params]
 

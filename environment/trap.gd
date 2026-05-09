@@ -19,8 +19,12 @@ enum TrapModes {PILLAR, HOLE, CLAW_HOLE, CLAW_PILLAR, NONE}
 
 var _used := false # prevent triggering multiple times in the same frame
 
-@export var dependency : Area2D_Enhanced
-@export var release_trigger : Area2D_Enhanced
+@export var dependency : Area2D_Enhanced:
+	set(value):
+		dependency = value
+		queue_redraw()
+
+#@export var release_trigger : Area2D_Enhanced
 
 @export_category("Icons")
 @export var _red_icons: CompressedTexture2D
@@ -37,6 +41,7 @@ var is_locked := false
 
 func _ready() -> void:
 	super._ready()
+	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.TRAPS)
 	if dependency:
 		_hybernate()
 		dependency.used.connect(_on_unlock)

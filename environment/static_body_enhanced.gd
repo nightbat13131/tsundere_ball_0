@@ -5,6 +5,8 @@ class_name StaticBody2d_Enhanced extends StaticBody2D
 
 func _ready() -> void:
 	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.TRAPS)
+	if Engine.is_editor_hint():
+		return
 	set_collision_layer_value(Ball.LAYER_NPC_WALL, block_npc)
 	set_collision_mask_value(Ball.LAYER_NPC, block_npc)
 	

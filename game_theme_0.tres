@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://cn7hspecfe725"]
 
-[ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/Modern_UI_Style_1.png" id="1_iydix"]
+[ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="1_iydix"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8de2"]
 load_path = "res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c800975c3c24f06.ctex"

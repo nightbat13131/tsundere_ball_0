@@ -24,6 +24,8 @@ const LAYER_NPC_BLUE = 5
 var _trap_mode := Trap.TrapModes.NONE: set = _set_trap_mode
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	set_collision_layer_value(LAYER_BALL, true)
 	set_collision_mask_value(LAYER_BALL, true)
 	
@@ -34,6 +36,8 @@ func _ready() -> void:
 	##
 
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
 	animated_sprite_ball.set_velocity(linear_velocity)
 	animated_sprite_ball.rotation = rotation *- 1
 
