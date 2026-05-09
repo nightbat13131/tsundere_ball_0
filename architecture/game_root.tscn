@@ -3,17 +3,34 @@
 [ext_resource type="Script" uid="uid://bn64xn4h4g54l" path="res://architecture/game_root.gd" id="1_ur1xq"]
 [ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/ui/level_select.tscn" id="2_2uli3"]
 [ext_resource type="Resource" uid="uid://dfq3cxang5y2f" path="res://guide/ui_mapping_context.tres" id="2_cyf7k"]
+[ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_4u58q"]
 [ext_resource type="PackedScene" uid="uid://cr8i3ltlsxyoy" path="res://architecture/ui/game_level_ui.tscn" id="3_n0w4j"]
 [ext_resource type="Script" uid="uid://drwnkhlrv8eei" path="res://architecture/ui/cursors/custom_cursors.gd" id="3_q0ibd"]
-[ext_resource type="Resource" uid="uid://rsyonjd6m5ww" path="res://architecture/ui/cursors/default_cursor.tres" id="4_6nvoi"]
+[ext_resource type="Resource" uid="uid://rsyonjd6m5ww" path="res://architecture/ui/cursors/default_cursor_arrow.tres" id="4_6nvoi"]
 [ext_resource type="PackedScene" uid="uid://j2a5a483t7sl" path="res://architecture/settings/audio_manager.tscn" id="4_50a1j"]
+[ext_resource type="Script" uid="uid://cluhc11vixkf1" path="res://addons/guide/guide_action.gd" id="4_bicas"]
+[ext_resource type="Resource" uid="uid://b4ps3lkdc5ahp" path="res://guide/ball_walk_wasd.tres" id="5_3n5fh"]
+[ext_resource type="Resource" uid="uid://3vj7d6h5jtmr" path="res://architecture/ui/cursors/default_cursor_pointer.tres" id="5_6nvoi"]
+[ext_resource type="Resource" uid="uid://c3ebadj8hyho6" path="res://guide/controler_walk.tres" id="5_svs3p"]
+[ext_resource type="Resource" uid="uid://026m7ugoctoq" path="res://guide/joystick_role_aiming.tres" id="6_2w7ao"]
 [ext_resource type="PackedScene" uid="uid://ds30stwln1k53" path="res://architecture/loading_blocker.tscn" id="6_yemkn"]
+[ext_resource type="Resource" uid="uid://ea2hf73e3e0a" path="res://guide/mouse_click.tres" id="8_v40i4"]
+[ext_resource type="Resource" uid="uid://dm7tnpjafqrne" path="res://guide/mouse_release.tres" id="9_05emb"]
+[ext_resource type="Resource" uid="uid://bpm3aexupleax" path="res://guide/mouse_moving.tres" id="10_2w7ao"]
+[ext_resource type="Resource" uid="uid://b8g6jlclkhu2m" path="res://architecture/ui/cursors/leave_game.tres" id="14_v4qld"]
+[ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="14_v40i4"]
+[ext_resource type="Resource" uid="uid://bgs66genfal2j" path="res://architecture/ui/cursors/level_enter.tres" id="15_v6gfs"]
+[ext_resource type="Resource" uid="uid://dyrjqnpjmmggu" path="res://architecture/ui/cursors/level_blocked.tres" id="16_5pui5"]
+[ext_resource type="Resource" uid="uid://cjcwpvdx11pn3" path="res://architecture/ui/cursors/pressed_cursor_pointer.tres" id="17_3cf5c"]
 
 [node name="GameRoot" type="Node2D" unique_id=984261104]
 process_mode = 3
 script = ExtResource("1_ur1xq")
 ui_context = ExtResource("2_cyf7k")
-custom_cursors = Array[ExtResource("3_q0ibd")]([ExtResource("4_6nvoi")])
+pc_controler_context = ExtResource("3_4u58q")
+contoler_actions = Array[ExtResource("4_bicas")]([ExtResource("5_svs3p"), ExtResource("6_2w7ao")])
+mouse_keyboard_actions = Array[ExtResource("4_bicas")]([ExtResource("5_3n5fh"), ExtResource("8_v40i4"), ExtResource("9_05emb"), ExtResource("10_2w7ao")])
+custom_cursors = Array[ExtResource("3_q0ibd")]([ExtResource("4_6nvoi"), ExtResource("5_6nvoi"), ExtResource("14_v4qld"), ExtResource("15_v6gfs"), ExtResource("16_5pui5"), ExtResource("17_3cf5c"), ExtResource("14_v40i4")])
 
 [node name="GameLevelUI" parent="." unique_id=290767530 instance=ExtResource("3_n0w4j")]
 

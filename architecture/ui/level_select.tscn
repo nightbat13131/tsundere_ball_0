@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://hb8f0ycya01h" path="res://testing/test_levels/dev_lv_background.tres" id="5_0hgg1"]
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
+[ext_resource type="Resource" uid="uid://bgs66genfal2j" path="res://architecture/ui/cursors/level_enter.tres" id="6_ijyg7"]
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
@@ -18,14 +19,41 @@
 process_mode = 3
 script = ExtResource("1_hu3iy")
 
-[node name="ButtonSelf6" type="Button" parent="." unique_id=1433954292]
-offset_left = 124.0
-offset_top = 474.0
-offset_right = 162.0
-offset_bottom = 518.0
+[node name="Control" type="Control" parent="." unique_id=1128431213]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton_SoundSettings" parent="Control" unique_id=124607973 instance=ExtResource("9_2xmtt")]
+layout_mode = 0
+offset_left = 825.0
+offset_top = 69.0
+offset_right = 851.0
+offset_bottom = 101.0
+
+[node name="Tutorial" type="Button" parent="Control" unique_id=1433954292]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 482.0
+offset_right = 147.0
+offset_bottom = 526.0
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("3_bagxp")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="Tutorial2" type="Button" parent="Control" unique_id=1765708571]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 343.0
+offset_right = 168.0
+offset_bottom = 387.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("3_bagxp")
+mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="Dev" type="HBoxContainer" parent="." unique_id=757718319]
@@ -34,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -47.0
-offset_right = 23.0
-offset_bottom = 47.0
+offset_left = -372.0
+offset_top = -232.0
+offset_right = -326.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -88,9 +116,6 @@ layout_mode = 2
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("9_rnwp1")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
-
-[node name="TextureButton_SoundSettings" parent="Dev/VBoxContainer" unique_id=124607973 instance=ExtResource("9_2xmtt")]
-layout_mode = 2
 
 [node name="LoadingBlocker" parent="." unique_id=30920926 instance=ExtResource("12_iudv4")]
 unique_name_in_owner = true

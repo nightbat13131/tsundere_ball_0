@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://cound3vvjt37r" path="res://assets/sounds/music/progress_2026_05_05(1).wav" id="5_1u8gx"]
 [ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="6_tuyx8"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="6_xh3dk"]
+[ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="8_yp11o"]
+[ext_resource type="Script" uid="uid://b3coc0wryqb4w" path="res://architecture/settings/close_game_button_self.gd" id="9_yp11o"]
+[ext_resource type="Resource" uid="uid://b8g6jlclkhu2m" path="res://architecture/ui/cursors/leave_game.tres" id="10_k23nc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ef83"]
 atlas = ExtResource("2_vbxqb")
@@ -30,6 +33,10 @@ load_path = "res://.godot/imported/tilemap.png-5e61b4f08267e3455a4ee95d454c23fa.
 [sub_resource type="AtlasTexture" id="AtlasTexture_k23nc"]
 atlas = SubResource("CompressedTexture2D_yp11o")
 region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu03l"]
+atlas = ExtResource("8_yp11o")
+region = Rect2(146, 354, 13, 13)
 
 [node name="AudioManager" type="CanvasLayer" unique_id=2013367331]
 process_mode = 3
@@ -113,12 +120,27 @@ step = 0.05
 script = ExtResource("2_omht2")
 
 [node name="TextureButton_SoundSettings" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=124607973 instance=ExtResource("6_xh3dk")]
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1095369691]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="ButtonSelf" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1005174258]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_wu03l")
+script = ExtResource("9_yp11o")
+mouse_cursor = ExtResource("10_k23nc")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="AudioStreamPlayer_BGMusic" type="AudioStreamPlayer" parent="." unique_id=365180193]
 unique_name_in_owner = true
 stream = ExtResource("5_1u8gx")
-volume_db = -30.0
+volume_db = -10.0
 bus = &"Music"
 
 [node name="SFXPlayers" type="Node" parent="." unique_id=868182985]

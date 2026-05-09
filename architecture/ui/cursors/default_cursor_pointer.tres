@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CustomCursor" format=3 uid="uid://3vj7d6h5jtmr"]
+
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="1_r6sgq"]
+[ext_resource type="Script" uid="uid://drwnkhlrv8eei" path="res://architecture/ui/cursors/custom_cursors.gd" id="2_vyeng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb8je"]
+atlas = ExtResource("1_r6sgq")
+region = Rect2(239, 102, 14, 16)
+
+[resource]
+script = ExtResource("2_vyeng")
+cursor_type = 1
+icon = SubResource("AtlasTexture_xb8je")
+offset = Vector2(5, 5)
+metadata/_custom_type_script = "uid://drwnkhlrv8eei"

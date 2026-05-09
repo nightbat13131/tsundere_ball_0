@@ -9,6 +9,9 @@ func _ready() -> void:
 		mouse_cursor.apply_to(self)
 	#set_z_index(Utility.UI_OVER_APPERANCE)
 	set_z_as_relative(false)
+	set_custom_minimum_size(Vector2.ONE*32.0)
+	set_icon_alignment(HORIZONTAL_ALIGNMENT_CENTER)
+	set_expand_icon(true)
 	#set_default_cursor_shape(CustomMouse.BUTTONS as Control.CursorShape)
 	if !Engine.is_editor_hint():
 		pressed.connect(self._on_pressed)

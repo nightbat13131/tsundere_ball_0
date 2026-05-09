@@ -9,7 +9,6 @@ class_name SoundManager extends CanvasLayer
 @onready var h_slider_sfx_volume: HSlider_Enhanced = %HSliderSFXVolume
 @onready var h_sliders : Array[HSlider_Enhanced] = [h_slider_master_volume, h_slider_music_volume, h_slider_sfx_volume]
 
-
 @onready var audio_stream_player_bg_music: AudioStreamPlayer = %AudioStreamPlayer_BGMusic
 @onready var sfx_players: Node = %SFXPlayers
 

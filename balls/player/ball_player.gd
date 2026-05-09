@@ -63,6 +63,11 @@ var remaining_roll_cooldown := 0.0
 @export var action_try_roll_mouse : GUIDEAction
 @export var action_try_roll_controler : GUIDEAction
 
+
+@export_category("Cursors") 
+@export var mouse_unpressed : CustomCursor
+@export var mouse_pressed : CustomCursor
+
 func _ready() -> void:
 	super._ready()
 	_instance = self
@@ -94,13 +99,6 @@ func _ready() -> void:
 	set_collision_mask_value(Ball.LAYER_PC_WALL, true)
 	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
 	_set_shader_parameter(UTILITIES.SHADER_MODULATE_COLOR, UTILITIES.COLOR_PLAYER) 
-
-static func request_pause(is_pause) -> void:
-	if _instance:
-		if is_pause:
-			GUIDE.disable_mapping_context(_instance.pc_controler_context)
-		else:
-			GUIDE.enable_mapping_context(_instance.pc_controler_context)
 
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -230,9 +228,13 @@ func _on_waiting_roll_state_processing(delta: float) -> void:
 
 func _on_aiming_state_processing(_delta: float) -> void: queue_redraw()
 
-func _on_mouse_aiming_state_entered() -> void: global_mouse_start = get_global_mouse_position()
+func _on_mouse_aiming_state_entered() -> void: 
+	global_mouse_start = get_global_mouse_position()
+	mouse_pressed.activate()
 
 func _on_mouse_aiming_state_processing(_delta: float) -> void: global_mouse_end = get_global_mouse_position()
+
+func _on_mouse_aiming_state_exited() -> void: mouse_unpressed.activate()
 
 func _on_joystick_aiming_state_processing(_delta: float) -> void:
 	if !action_joystick_aim.is_triggered():
@@ -248,6 +250,7 @@ func _on_try_roll_state_entered() -> void:
 	apply_central_impulse(get_shot_angle_vector().normalized() * _power)
 
 func _on_tree_exiting() -> void:
+	mouse_unpressed.activate()
 	if _instance == self:
 		_instance = null
 

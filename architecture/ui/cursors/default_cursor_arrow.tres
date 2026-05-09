@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomCursor" format=3 uid="uid://rsyonjd6m5ww"]
+
+[ext_resource type="Script" uid="uid://drwnkhlrv8eei" path="res://architecture/ui/cursors/custom_cursors.gd" id="1_tykdt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0wqm2"]
+load_path = "res://.godot/imported/tilemap_small_cursors.png-accbc2df8ed20d9123ac1720e9fbf0fd.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_illlr"]
+atlas = SubResource("CompressedTexture2D_0wqm2")
+region = Rect2(290, 52, 14, 14)
+
+[resource]
+script = ExtResource("1_tykdt")
+icon = SubResource("AtlasTexture_illlr")
+offset = Vector2(3, 3)
+metadata/_custom_type_script = "uid://drwnkhlrv8eei"

@@ -17,15 +17,12 @@ expand_margin_left = 15.0
 expand_margin_top = 15.0
 draw_center = false
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ccd1t"]
-load_path = "res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c800975c3c24f06.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_iydix"]
+atlas = ExtResource("1_iydix")
+region = Rect2(832, 271, 16, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nmbo0"]
-atlas = SubResource("CompressedTexture2D_ccd1t")
-region = Rect2(832, 270, 16, 18)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4g51l"]
-texture = SubResource("AtlasTexture_nmbo0")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8de2"]
+texture = SubResource("AtlasTexture_iydix")
 texture_margin_left = 3.0
 texture_margin_top = 6.0
 texture_margin_right = 3.0
@@ -61,7 +58,7 @@ bg_color = Color(0.69803923, 0.68235296, 0.79607844, 1)
 
 [resource]
 Button/styles/focus = SubResource("StyleBoxTexture_ewt1y")
-Button/styles/hover = SubResource("StyleBoxTexture_4g51l")
+Button/styles/hover = SubResource("StyleBoxTexture_j8de2")
 Button/styles/normal = SubResource("StyleBoxTexture_kmf0u")
 Button/styles/pressed = SubResource("StyleBoxTexture_l7e1t")
 Panel/styles/panel = SubResource("StyleBoxFlat_iydix")

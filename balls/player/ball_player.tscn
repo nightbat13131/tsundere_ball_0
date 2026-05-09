@@ -14,9 +14,11 @@
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="9_g3x7m"]
 [ext_resource type="Resource" uid="uid://chja8tsb2uggy" path="res://guide/controler_try_shoot.tres" id="9_ndsjn"]
 [ext_resource type="Script" uid="uid://dksap5bvgpa7t" path="res://balls/animated_sprite_feet.gd" id="10_g3x7m"]
+[ext_resource type="Resource" uid="uid://3vj7d6h5jtmr" path="res://architecture/ui/cursors/default_cursor_pointer.tres" id="11_8am6p"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="11_myekv"]
 [ext_resource type="SpriteFrames" uid="uid://1yl8e6wbw1i0" path="res://balls/player/feet_sprite_frames.tres" id="11_nlgnb"]
 [ext_resource type="AudioStream" uid="uid://cyqnc2d4pblx1" path="res://assets/sounds/thwack-05_couch.wav" id="11_ufkll"]
+[ext_resource type="Resource" uid="uid://cjcwpvdx11pn3" path="res://architecture/ui/cursors/pressed_cursor_pointer.tres" id="12_86agf"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="12_gw41h"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="13_gw41h"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="14_0xn1p"]
@@ -49,6 +51,8 @@ action_start_mouse_aim = ExtResource("5_gw41h")
 action_joystick_aim = ExtResource("8_g3x7m")
 action_try_roll_mouse = ExtResource("6_0xn1p")
 action_try_roll_controler = ExtResource("9_ndsjn")
+mouse_unpressed = ExtResource("11_8am6p")
+mouse_pressed = ExtResource("12_86agf")
 _npc_type = 3
 wall_hit = ExtResource("11_ufkll")
 
@@ -106,6 +110,7 @@ metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 [node name="ToNotWalking" type="Node" parent="StateChart/CompoundState/WalkMode/Walking" unique_id=1125046100]
 script = ExtResource("14_0xn1p")
 to = NodePath("../../NotWalking")
+event = &"not_walking"
 delay_in_seconds = "0.0"
 
 [node name="NotWalking" type="Node" parent="StateChart/CompoundState/WalkMode" unique_id=709960289]
@@ -244,5 +249,6 @@ delay_in_seconds = "0.0"
 [connection signal="state_processing" from="StateChart/CompoundState/RollMode/Aiming/Joystick/JoystickAiming" to="." method="_on_joystick_aiming_state_processing"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Aiming/Joystick/JoystickTryRoll" to="." method="_on_try_roll_state_entered"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Aiming/Mouse/MouseAiming" to="." method="_on_mouse_aiming_state_entered"]
+[connection signal="state_exited" from="StateChart/CompoundState/RollMode/Aiming/Mouse/MouseAiming" to="." method="_on_mouse_aiming_state_exited"]
 [connection signal="state_processing" from="StateChart/CompoundState/RollMode/Aiming/Mouse/MouseAiming" to="." method="_on_mouse_aiming_state_processing"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Aiming/Mouse/MouseTryRoll" to="." method="_on_try_roll_state_entered"]

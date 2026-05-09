@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb3r2vssw3m8r"
-path="res://.godot/imported/red-spiral-15868539218z7.jpg-31e37f803226745b1f46d84ff23c93ce.ctex"
+path="res://.godot/imported/circles.jpg-8cb4abed0e7f42513f0da95067a4b6db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/red-spiral-15868539218z7.jpg"
-dest_files=["res://.godot/imported/red-spiral-15868539218z7.jpg-31e37f803226745b1f46d84ff23c93ce.ctex"]
+source_file="res://assets/ui/circles.jpg"
+dest_files=["res://.godot/imported/circles.jpg-8cb4abed0e7f42513f0da95067a4b6db.ctex"]
 
 [params]
 
