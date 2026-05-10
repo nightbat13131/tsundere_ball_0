@@ -6,7 +6,7 @@ static var _instance : GameLevelUI : get = get_instance
 @onready var level_anchor: LevelAnchor = %LevelAnchor
 
 
-const UI_BANNER_HEIGHT = 40
+const UI_BANNER_HEIGHT = 50
 @onready var top_banner: Container = %TopBanner
 
 func _ready() -> void:

@@ -24,8 +24,6 @@ func _ready() -> void:
 		cursor.apply_to(self)
 
 func apply_pallet() -> void:
-	if _selected_pallet ==  PaletteMaterial.PalletSelection.DEFAULT:
-		return
 	_material = get_material_master().duplicate()
 	set_material(_material)
 	_material.set_pallet_selection(_selected_pallet)

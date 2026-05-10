@@ -29,8 +29,6 @@ func _ready() -> void:
 	
 
 func apply_pallet() -> void:
-	if _selected_pallet ==  PaletteMaterial.PalletSelection.DEFAULT:
-		return
 	_material = Floor.get_material_master().duplicate()
 	set_material(_material)
 	_material.set_pallet_selection(_selected_pallet)

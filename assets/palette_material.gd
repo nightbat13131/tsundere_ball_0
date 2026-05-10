@@ -8,9 +8,9 @@ class_name PaletteMaterial extends ShaderMaterial
 
 const SHADER_ARRAY_SIZE = 32  # was orignally a full 256
 
-enum PalletSelection {DEFAULT = 0, GRAYS = 2, SKY = 3, 
-
-	TUTORIAL = 1,
+enum PalletSelection {DEFAULT = 1, GRAYS = 3, SKY = 4, 
+	SPENCERS = 5,
+	TUTORIAL = 2,
 }
 
 ## The palette used for recoloring. The top row of the palette are reference colors, the lower rows are target colors. If there is only [code]2[/code] rows, the material will swap the top colors with bottom colors when matched. If there is more rows, the material will cycle the target rows.
