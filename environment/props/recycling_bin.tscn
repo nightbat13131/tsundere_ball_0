@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cssgjxpgqcb8"]
+
+[ext_resource type="Texture2D" uid="uid://dl6qeqjxa2yw7" path="res://assets/Furniture/RecyclingBin.png" id="1_5vwvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpvtr"]
+size = Vector2(16, 18)
+
+[node name="RecyclingBin" type="CollisionShape2D" unique_id=524959152]
+shape = SubResource("RectangleShape2D_fpvtr")
+metadata/_edit_group_ = true
+
+[node name="RecyclingBin" type="Sprite2D" parent="." unique_id=2032047803]
+position = Vector2(0, 1)
+texture = ExtResource("1_5vwvi")

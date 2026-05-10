@@ -7,7 +7,7 @@ static var _instance : GameLevelUI : get = get_instance
 
 
 const UI_BANNER_HEIGHT = 40
-@onready var top_banner: MarginContainer = %TopBanner
+@onready var top_banner: Container = %TopBanner
 
 func _ready() -> void:
 	if Engine.is_editor_hint():

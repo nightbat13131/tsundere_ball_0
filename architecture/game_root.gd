@@ -42,7 +42,9 @@ func _ready() -> void:
 				each_key_action.triggered.connect(_non_controler_detected)
 	if !OS.has_feature(&'web'):
 			# keep mosue from jumping out of program on browser 
-			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			#Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			# If it put this back O need to be able to escapte the trap and turn it back on
+			pass
 
 func _app_load_no_level() -> void:
 	loading_blocker.on_app_load()

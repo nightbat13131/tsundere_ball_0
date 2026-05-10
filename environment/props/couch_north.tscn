@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://c5mwk3nfvdkx4" path="res://assets/Furniture/CouchNorth.png" id="1_5lvb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5cb"]
-size = Vector2(67, 41)
+size = Vector2(64, 38)
 
 [node name="CouthNorth" type="CollisionShape2D" unique_id=1103022107]
 shape = SubResource("RectangleShape2D_ud5cb")
 
 [node name="CouchNorth2" type="Sprite2D" parent="." unique_id=1174398705]
-position = Vector2(0.25, 2)
+position = Vector2(0, 3)
 scale = Vector2(0.99333334, 1)
 texture = ExtResource("1_5lvb4")

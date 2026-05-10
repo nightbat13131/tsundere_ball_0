@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://7fryygmdh0xu" path="res://assets/Furniture/CouchEast.png" id="1_ug6aj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7tc1"]
-size = Vector2(27, 68)
+size = Vector2(29, 67)
 
 [node name="CouchEast" type="CollisionShape2D" unique_id=1716415499]
 shape = SubResource("RectangleShape2D_s7tc1")

@@ -24,14 +24,16 @@
 [ext_resource type="SpriteFrames" uid="uid://b6xf5tnas3h0x" path="res://architecture/ui/show_walk_sprite_frames.tres" id="19_2lwca"]
 [ext_resource type="PackedScene" uid="uid://x0ygfjc3j6nk" path="res://environment/doors/door_east_west.tscn" id="19_fpvtr"]
 [ext_resource type="Texture2D" uid="uid://elymak8qclkt" path="res://environment/props/PurpleFlowerVase.png" id="23_hi7gy"]
+[ext_resource type="PackedScene" uid="uid://cw0bewfml2fi0" path="res://environment/props/trash_bin.tscn" id="23_uc87h"]
 [ext_resource type="Texture2D" uid="uid://fpcp50c53vou" path="res://environment/props/RedOvalRug.png" id="23_wfa2t"]
+[ext_resource type="PackedScene" uid="uid://cssgjxpgqcb8" path="res://environment/props/recycling_bin.tscn" id="24_vbcni"]
 [ext_resource type="PackedScene" uid="uid://chfc1rvobqjcp" path="res://environment/props/padded_chair_west.tscn" id="24_xwxsl"]
 [ext_resource type="PackedScene" uid="uid://n178q3jsb10u" path="res://environment/props/couch_south.tscn" id="25_8bi7p"]
 [ext_resource type="Texture2D" uid="uid://cflf1eoi5ly2n" path="res://environment/props/SmallTrashBin.png" id="27_rxgvf"]
 [ext_resource type="PackedScene" uid="uid://m3abtpujjji4" path="res://environment/props/snack_machine.tscn" id="28_wfa2t"]
 [ext_resource type="PackedScene" uid="uid://ckvupxrj1auef" path="res://environment/props/soda_machine.tscn" id="29_46tuc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5lvq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uc87h"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 69, 40, 60, 102, 57, 49, 217, 160, 102, 217, 160, 102, 217, 160, 102, 217, 160, 102, 217, 160, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output = PackedVector3Array(0.93333334, 0.93333334, 0.93333334, 0.8784314, 0.8784314, 0.8784314, 0.27058825, 0.3529412, 0.39215687, 0.32941177, 0.43137255, 0.47843137, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -39,7 +41,7 @@ script = ExtResource("10_hi7gy")
 palette = ExtResource("9_f5lvq")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hi7gy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbcni"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 69, 40, 60, 102, 57, 49, 217, 160, 102, 217, 160, 102, 217, 160, 102, 217, 160, 102, 217, 160, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output = PackedVector3Array(0.93333334, 0.93333334, 0.93333334, 0.8784314, 0.8784314, 0.8784314, 0.27058825, 0.3529412, 0.39215687, 0.32941177, 0.43137255, 0.47843137, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0.7411765, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -61,7 +63,7 @@ position = Vector2(344, 80)
 position = Vector2(295, 80)
 
 [node name="Breakable_PottedPlant3" parent="Breakables" unique_id=1915903203 instance=ExtResource("9_4jqu4")]
-position = Vector2(295, 275)
+position = Vector2(295, 274)
 
 [node name="Breakable_PottedPlant5" parent="Breakables" unique_id=730968364 instance=ExtResource("9_4jqu4")]
 position = Vector2(40, 274)
@@ -100,12 +102,10 @@ position = Vector2(880, 416)
 dependency = NodePath("../../Trap_Blue")
 
 [node name="Door_East_West" parent="Doors" unique_id=244446843 node_paths=PackedStringArray("dependency") instance=ExtResource("19_fpvtr")]
-z_index = 6
 position = Vector2(640, 208)
 dependency = NodePath("../../Trap_Green_walk")
 
 [node name="Door_East_West2" parent="Doors" unique_id=1632515542 node_paths=PackedStringArray("dependency") instance=ExtResource("19_fpvtr")]
-z_index = 6
 position = Vector2(320, 128)
 dependency = NodePath("../../Trap_Green_roll")
 
@@ -150,7 +150,7 @@ script = ExtResource("3_2lwca")
 metadata/_edit_lock_ = true
 
 [node name="Floor_Controls" type="TextureRect" parent="Floor and Walls" unique_id=1195156034]
-material = SubResource("ShaderMaterial_f5lvq")
+material = SubResource("ShaderMaterial_uc87h")
 offset_left = 24.0
 offset_top = 312.0
 offset_right = 640.0
@@ -185,7 +185,7 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsUnder_controls" type="TileMapLayer" parent="Floor and Walls" unique_id=1269237105]
 z_index = 4
 z_as_relative = false
-material = SubResource("ShaderMaterial_hi7gy")
+material = SubResource("ShaderMaterial_vbcni")
 tile_map_data = PackedByteArray("AAABABMAAQABAAAAAAABABQAAQAWAAEAAAABABUAAQAWAAEAAAACABMAAQABAAAAAAACABQAAQAWAAEAAAACABUAAQAWAAEAAAADABMAAQABAAAAAAADABQAAQAWAAEAAAADABUAAQAWAAEAAAAEABMAAQABAAAAAAAEABQAAQAWAAEAAAAEABUAAQAWAAEAAAAFABMAAQABAAAAAAAFABQAAQAWAAEAAAAFABUAAQAWAAEAAAAGABMAAQABAAAAAAAGABQAAQAWAAEAAAAGABUAAQAWAAEAAAAHABMAAQABAAAAAAAHABQAAQAWAAEAAAAHABUAAQAWAAEAAAAIABMAAQABAAAAAAAIABQAAQAWAAEAAAAIABUAAQAWAAEAAAAJABMAAQABAAAAAAAJABQAAQAWAAEAAAAJABUAAQAWAAEAAAAKABMAAQABAAAAAAAKABQAAQAWAAEAAAAKABUAAQAWAAEAAAALABMAAQABAAAAAAALABQAAQAWAAEAAAALABUAAQAWAAEAAAAMABMAAQABAAAAAAAMABQAAQAWAAEAAAAMABUAAQAWAAEAAAANABMAAQABAAAAAAANABQAAQAWAAEAAAANABUAAQAWAAEAAAAOABMAAQABAAAAAAAOABQAAQAWAAEAAAAOABUAAQAWAAEAAAAPABMAAQABAAAAAAAPABQAAQAWAAEAAAAPABUAAQAWAAEAAAAQABMAAQABAAAAAAAQABQAAQAWAAEAAAAQABUAAQAWAAEAAAARABMAAQABAAAAAAARABQAAQAWAAEAAAARABUAAQAWAAEAAAASABMAAQABAAAAAAASABQAAQAWAAEAAAASABUAAQAWAAEAAAATABMAAQABAAAAAAATABQAAQAWAAEAAAATABUAAQAWAAEAAAAUABMAAQABAAAAAAAUABQAAQAWAAEAAAAUABUAAQAWAAEAAAAVABMAAQABAAAAAAAVABQAAQAWAAEAAAAVABUAAQAWAAEAAAAWABMAAQABAAAAAAAWABQAAQAWAAEAAAAWABUAAQAWAAEAAAAXABMAAQABAAAAAAAXABQAAQAWAAEAAAAXABUAAQAWAAEAAAAYABMAAQABAAAAAAAYABQAAQAWAAEAAAAYABUAAQAWAAEAAAAZABMAAQABAAAAAAAZABQAAQAWAAEAAAAZABUAAQAWAAEAAAAaABMAAQABAAAAAAAaABQAAQAWAAEAAAAaABUAAQAWAAEAAAAbABMAAQABAAAAAAAbABQAAQAWAAEAAAAbABUAAQAWAAEAAAAcABMAAQABAAAAAAAcABQAAQAWAAEAAAAcABUAAQAWAAEAAAAdABMAAQABAAAAAAAdABQAAQAWAAEAAAAdABUAAQAWAAEAAAAeABMAAQABAAAAAAAeABQAAQAWAAEAAAAeABUAAQAWAAEAAAAfABMAAQABAAAAAAAfABQAAQAWAAEAAAAfABUAAQAWAAEAAAAgABMAAQABAAAAAAAgABQAAQAWAAEAAAAgABUAAQAWAAEAAAAhABMAAQABAAAAAAAhABQAAQAWAAEAAAAhABUAAQAWAAEAAAAiABMAAQABAAAAAAAiABQAAQAWAAEAAAAiABUAAQAWAAEAAAAjABMAAQABAAAAAAAjABQAAQAWAAEAAAAjABUAAQAWAAEAAAAkABMAAQABAAAAAAAkABQAAQAWAAEAAAAkABUAAQAWAAEAAAAlABMAAQABAAAAAAAlABQAAQAWAAEAAAAlABUAAQAWAAEAAAAmABMAAQABAAAAAAAmABQAAQAWAAEAAAAmABUAAQAWAAEAAAAnABQAAQAWAAEAAAAnABUAAQAWAAEAAAABABYAAQAVAAEAAQACABYAAQAVAAEAAQADABYAAQAVAAEAAQAEABYAAQAVAAEAAQAFABYAAQAVAAEAAQAGABYAAQAVAAEAAQAHABYAAQAVAAEAAQAIABYAAQAVAAEAAQAJABYAAQAVAAEAAQAKABYAAQAVAAEAAQALABYAAQAVAAEAAQAMABYAAQAVAAEAAQANABYAAQAVAAEAAQAOABYAAQAVAAEAAQAPABYAAQAVAAEAAQAQABYAAQAVAAEAAQARABYAAQAVAAEAAQASABYAAQAVAAEAAQATABYAAQAVAAEAAQAUABYAAQAVAAEAAQAVABYAAQAVAAEAAQAWABYAAQAVAAEAAQAXABYAAQAVAAEAAQAYABYAAQAVAAEAAQAZABYAAQAVAAEAAQAaABYAAQAVAAEAAQAbABYAAQAVAAEAAQAcABYAAQAVAAEAAQAdABYAAQAVAAEAAQAeABYAAQAVAAEAAQAfABYAAQAVAAEAAQAgABYAAQAVAAEAAQAhABYAAQAVAAEAAQAiABYAAQAVAAEAAQAjABYAAQAVAAEAAQAkABYAAQAVAAEAAQAlABYAAQAVAAEAAQAmABYAAQAVAAEAAQAnABYAAQAVAAEAAQA=")
 tile_set = ExtResource("3_uhtn0")
 navigation_enabled = false
@@ -217,7 +217,7 @@ position = Vector2(532, 284)
 position = Vector2(428, 284)
 
 [node name="PurpleFlowerVase" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1387988351]
-position = Vector2(428, 85)
+position = Vector2(428, 86)
 texture = ExtResource("23_hi7gy")
 
 [node name="PurpleFlowerVase2" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=443304900]
@@ -229,23 +229,29 @@ position = Vector2(428, 278)
 texture = ExtResource("18_8bi7p")
 
 [node name="DaiseyFlowerVase2" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=384117515]
-position = Vector2(532, 277)
+position = Vector2(532, 278)
 texture = ExtResource("18_8bi7p")
 
 [node name="PaddedChairWest" parent="RoomObsticals and Decorations" unique_id=1567785249 instance=ExtResource("24_xwxsl")]
-position = Vector2(353, 182)
+position = Vector2(354, 182)
 
 [node name="SnackMachine" parent="RoomObsticals and Decorations" unique_id=633250682 instance=ExtResource("28_wfa2t")]
-position = Vector2(803, 68)
+position = Vector2(804, 70)
 
 [node name="SodaMachine" parent="RoomObsticals and Decorations" unique_id=1816243601 instance=ExtResource("29_46tuc")]
-position = Vector2(750, 63)
+position = Vector2(750, 66)
 
 [node name="CouthSouth" parent="RoomObsticals and Decorations" unique_id=559222874 instance=ExtResource("25_8bi7p")]
 position = Vector2(480, 282)
 
+[node name="TrashBin" parent="RoomObsticals and Decorations" unique_id=1187513601 instance=ExtResource("23_uc87h")]
+position = Vector2(670, 370)
+
+[node name="RecyclingBin" parent="RoomObsticals and Decorations" unique_id=694956473 instance=ExtResource("24_vbcni")]
+position = Vector2(720, 78)
+
 [node name="RedOvalRug" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1247392123]
-position = Vector2(251, 199)
+position = Vector2(252, 200)
 texture = ExtResource("23_wfa2t")
 
 [node name="BallPlayer" parent="." unique_id=2041115718 instance=ExtResource("14_thtll")]
@@ -280,7 +286,7 @@ _trap_mode = 0
 npc_type = 1
 
 [node name="Trap_Green_walk" parent="." unique_id=1743689901 instance=ExtResource("6_bfhhw")]
-position = Vector2(596, 208)
+position = Vector2(588, 208)
 npc_type = 1
 
 [node name="Trap_Blue" parent="." unique_id=1118811519 instance=ExtResource("6_bfhhw")]
@@ -288,7 +294,7 @@ position = Vector2(848, 416)
 npc_type = 2
 
 [node name="Trap_Pink" parent="." unique_id=1525486486 instance=ExtResource("6_bfhhw")]
-position = Vector2(779, 127)
+position = Vector2(780, 128)
 _trap_mode = 0
 
 [node name="Trap_Player" parent="." unique_id=35800403 instance=ExtResource("15_65qm1")]

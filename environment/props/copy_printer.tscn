@@ -2,12 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bjpux13ia7fxa" path="res://assets/Furniture/CopierPrinter.png" id="1_hq8wt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4kta"]
-radius = 13.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq8wt"]
+size = Vector2(24, 26)
 
-[node name="CollisionShape2D" type="CollisionShape2D" unique_id=1716415499]
-shape = SubResource("CapsuleShape2D_h4kta")
+[node name="CopierPrinter" type="CollisionShape2D" unique_id=1716415499]
+shape = SubResource("RectangleShape2D_hq8wt")
 
 [node name="CopierPrinter" type="Sprite2D" parent="." unique_id=1615925977]
-position = Vector2(1, 0)
 texture = ExtResource("1_hq8wt")

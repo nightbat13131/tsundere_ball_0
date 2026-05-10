@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dw05b3cn0hd8v" path="res://assets/Furniture/Counter_down.png" id="1_nb7qd"]
 
 [node name="Counter_SE" type="CollisionPolygon2D" unique_id=1181467443]
-polygon = PackedVector2Array(0, -75, 30, -75, 31, 49, -59, 49, -59, 21, 0, 21)
+polygon = PackedVector2Array(0, -75, 31, -75, 31, 49, -59, 49, -59, 21, 0, 21)
 
 [node name="Counter_SE" type="Sprite2D" parent="." unique_id=411574071]
 position = Vector2(-14, -9)

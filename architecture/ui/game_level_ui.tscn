@@ -52,12 +52,9 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TopBanner" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1397219220]
+[node name="TopBanner" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1115683194]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner" unique_id=2141971462]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner" unique_id=1889964907]
@@ -118,3 +115,4 @@ mouse_filter = 2
 script = ExtResource("11_f0lw1")
 
 [node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/LevelAnchor" unique_id=1783182777 instance=ExtResource("11_pojhi")]
+visible = false

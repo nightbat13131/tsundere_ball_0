@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bjcilicilou1i" path="res://assets/Furniture/SnackMachine.png" id="1_avfmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sh7"]
-size = Vector2(36, 39)
+size = Vector2(36, 40)
 
 [node name="SnackMachine" type="CollisionShape2D" unique_id=1567785249]
 shape = SubResource("RectangleShape2D_k3sh7")

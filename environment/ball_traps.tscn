@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqd10kb34o6j3" path="res://assets/balls/Cookie.png" id="3_gximu"]
 [ext_resource type="Texture2D" uid="uid://chlc6nt6chqwy" path="res://assets/balls/hero.png" id="5_gximu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mko34"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gximu"]
 radius = 30.0
 
 [node name="Trap" type="Area2D" unique_id=531650769]
@@ -23,7 +23,8 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=200930861]
 unique_name_in_owner = true
-shape = SubResource("CircleShape2D_mko34")
+visible = false
+shape = SubResource("CircleShape2D_gximu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=526299596]
 unique_name_in_owner = true

@@ -53,12 +53,78 @@ texture_margin_top = 6.0
 texture_margin_right = 3.0
 texture_margin_bottom = 6.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccd1t"]
+atlas = ExtResource("1_iydix")
+region = Rect2(287, 339, 6, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmbo0"]
+texture = SubResource("AtlasTexture_ccd1t")
+texture_margin_left = 3.0
+texture_margin_right = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4c6po"]
+load_path = "res://.godot/imported/Modern_UI_Style_1.png-4070cea3a26efb03b8d92906191dcaed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmbo0"]
+atlas = SubResource("CompressedTexture2D_4c6po")
+region = Rect2(287, 291, 6, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4g51l"]
+texture = SubResource("AtlasTexture_nmbo0")
+texture_margin_left = 3.0
+texture_margin_right = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8de2"]
+atlas = ExtResource("1_iydix")
+region = Rect2(245, 450, 22, 11)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4c6po"]
+texture = SubResource("AtlasTexture_j8de2")
+texture_margin_left = 3.0
+texture_margin_top = 5.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iydix"]
 bg_color = Color(0.69803923, 0.68235296, 0.79607844, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iydix"]
+load_path = "res://.godot/imported/Modern_UI_Style_1.png-4070cea3a26efb03b8d92906191dcaed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewt1y"]
+atlas = SubResource("CompressedTexture2D_iydix")
+region = Rect2(8, 8, 32, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccd1t"]
+texture = SubResource("AtlasTexture_ewt1y")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8de2"]
+bg_color = Color(0.6, 0.6, 0.6, 0.54901963)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g51l"]
+atlas = ExtResource("1_iydix")
+region = Rect2(480, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmf0u"]
+atlas = ExtResource("1_iydix")
+region = Rect2(640, 256, 16, 16)
 
 [resource]
 Button/styles/focus = SubResource("StyleBoxTexture_ewt1y")
 Button/styles/hover = SubResource("StyleBoxTexture_j8de2")
 Button/styles/normal = SubResource("StyleBoxTexture_kmf0u")
 Button/styles/pressed = SubResource("StyleBoxTexture_l7e1t")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_nmbo0")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_4g51l")
+HSlider/styles/slider = SubResource("StyleBoxTexture_4c6po")
 Panel/styles/panel = SubResource("StyleBoxFlat_iydix")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ccd1t")
+Pannel_Fog/base_type = &"PanelContainer"
+Pannel_Fog/styles/panel = SubResource("StyleBoxFlat_j8de2")
+master_slider/base_type = &"HSlider"
+master_slider/icons/grabber = SubResource("AtlasTexture_4g51l")
+master_slider/icons/grabber_highlight = SubResource("AtlasTexture_kmf0u")

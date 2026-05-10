@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cw0bewfml2fi0"]
+
+[ext_resource type="Texture2D" uid="uid://y1oebqt7r7k5" path="res://assets/Furniture/TrashBin.png" id="2_p4mny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpvtr"]
+size = Vector2(16, 18)
+
+[node name="TrashBin" type="CollisionShape2D" unique_id=524959152]
+shape = SubResource("RectangleShape2D_fpvtr")
+metadata/_edit_group_ = true
+
+[node name="TrashBin" type="Sprite2D" parent="." unique_id=1772123206]
+position = Vector2(0, 2)
+texture = ExtResource("2_p4mny")

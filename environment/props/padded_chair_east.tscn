@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://43lbd7dxlqsi" path="res://assets/Furniture/PaddedChairWest.png" id="1_2x11d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sh7"]
-size = Vector2(27, 31)
+size = Vector2(30, 30)
 
 [node name="PaddedChairEast" type="CollisionShape2D" unique_id=1567785249]
 shape = SubResource("RectangleShape2D_k3sh7")
