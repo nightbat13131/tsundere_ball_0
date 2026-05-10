@@ -7,7 +7,7 @@ var _sub_viewport_container: SubViewportContainer
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
-		size = get_viewport_size()
+		size = GameLevelUI.get_viewport_size()
 		#size.x = ProjectSettings.get_setting('display/window/size/viewport_width')
 		#size.y = ProjectSettings.get_setting('display/window/size/viewport_height') - GameLevelUI.UI_BANNER_HEIGHT
 		return
@@ -45,10 +45,3 @@ func _unhandled_input(_event: InputEvent) -> void:
 	## overcomes the viewport seemily blocking mouse movement problems I was having for 3D and suddnely 2D..
 	#GUIDE.inject_input(_event)
 	pass
-
-static func get_viewport_size() -> Vector2: 
-	var a = Vector2.ONE
-	a.x = ProjectSettings.get_setting('display/window/size/viewport_width') - GameLevelUI.UI_BANNER_HEIGHT
-	a.y = ProjectSettings.get_setting('display/window/size/viewport_height') - GameLevelUI.UI_BANNER_HEIGHT*2
-	a = a.snapped(Vector2.ONE*16)
-	return a

@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://cr8i3ltlsxyoy"]
 
 [ext_resource type="Script" uid="uid://cdmrdduas5aaf" path="res://architecture/ui/game_level_ui.gd" id="1_ut0wp"]
-[ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/ui/level_viewport.gd" id="2_jgkem"]
 [ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_m7fyu"]
 [ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/options_control_type.gd" id="3_fqrik"]
 [ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_qpwan"]
 [ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="4_56b18"]
-[ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="4_m7fyu"]
 [ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_pojhi"]
 [ext_resource type="Script" uid="uid://tjdvvki3df43" path="res://architecture/ui/button_restart_level.gd" id="5_ppoab"]
 [ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="6_qpwan"]
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="8_e6151"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
+[ext_resource type="Script" uid="uid://bbfu4nrpd8wik" path="res://architecture/ui/level_anchor.gd" id="11_f0lw1"]
 [ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/tutorial.tscn" id="11_pojhi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
@@ -111,23 +110,11 @@ metadata/_custom_type_script = "uid://dij1pecfcavpi"
 [node name="Button_SoundSettings" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=922504962 instance=ExtResource("10_pojhi")]
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=592241813]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 10
-
-[node name="LevelViewport" type="SubViewport" parent="MarginContainer/CenterContainer/VBoxContainer/SubViewportContainer" unique_id=1958433274]
+[node name="LevelAnchor" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=2077499331]
 unique_name_in_owner = true
-handle_input_locally = false
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
-canvas_item_default_texture_filter = 0
-size = Vector2i(944, 560)
-render_target_update_mode = 4
-script = ExtResource("2_jgkem")
+custom_minimum_size = Vector2(944, 560)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("11_f0lw1")
 
-[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/SubViewportContainer/LevelViewport" unique_id=1783182777 instance=ExtResource("11_pojhi")]
-
-[node name="GuideDebugger" parent="." unique_id=676886905 instance=ExtResource("4_m7fyu")]
-visible = false
-scale = Vector2(0.75, 0.75)
+[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/LevelAnchor" unique_id=1783182777 instance=ExtResource("11_pojhi")]

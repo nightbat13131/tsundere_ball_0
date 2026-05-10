@@ -6,9 +6,7 @@ static var _instance: LevelSelect: get = get_instance
 static var _level_to_load : LevelInfo
 static var _last_laoded: LevelInfo
 
-func _ready() -> void:
-	activate()
-	_instance = self
+func _ready() -> void: _instance = self
 
 func activate() -> void:
 	set_physics_process(true)
@@ -63,3 +61,7 @@ static func request_reload() -> void:
 static func request_activate() -> void:
 	if get_instance():
 		get_instance().activate()
+
+static func request_deactivate() -> void:
+	if get_instance():
+		get_instance().deactivate()

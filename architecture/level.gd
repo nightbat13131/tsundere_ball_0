@@ -30,7 +30,7 @@ func _draw() -> void:
 		draw_line(Vector2(1,1000)*focus_point, Vector2(1,-1000)*focus_point, Color.BLUE_VIOLET, 3)
 		#(level_end.position, 16, Color.BLUE_VIOLET, false, 2)
 	var win_scale : float = ProjectSettings.get_setting('display/window/stretch/scale')
-	var window_size := LevelViewport.get_viewport_size() / win_scale
+	var window_size := GameLevelUI.get_viewport_size() / win_scale
 	var ui_size := Vector2(window_size.x, GameLevelUI.UI_BANNER_HEIGHT)
 	for points in [
 			[Vector2.ZERO, Vector2(1,0)*window_size, Vector2(1,1)*window_size, Vector2(0,1)*window_size, Vector2.ZERO],

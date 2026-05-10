@@ -1,10 +1,11 @@
 class_name GameRoot extends Node2D
 
+@export var _initial_level: LevelInfo
+
 @export var ui_context: GUIDEMappingContext
 @export var pc_controler_context: GUIDEMappingContext
 @export var contoler_actions : Array[GUIDEAction]
 @export var mouse_keyboard_actions: Array[GUIDEAction]
-
 
 @onready var loading_blocker: LoadingCurtain = %LoadingBlocker
 @export var custom_cursors: Array[CustomCursor]
@@ -22,7 +23,10 @@ var _mouse_hidden := false:
 
 func _ready() -> void:
 	_instance = self
-	loading_blocker.on_app_load()
+	if _initial_level:
+		_app_load_level()
+	else:
+		_app_load_no_level()
 	for each in custom_cursors:
 		each.activate()
 	if ui_context:
@@ -39,7 +43,15 @@ func _ready() -> void:
 	if !OS.has_feature(&'web'):
 			# keep mosue from jumping out of program on browser 
 			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-				
+
+func _app_load_no_level() -> void:
+	loading_blocker.on_app_load()
+	LevelSelect.request_activate()
+
+func _app_load_level() -> void:
+	loading_blocker.force_closed()
+	LevelSelect.request_level(_initial_level)
+	LevelSelect.request_deactivate()
 
 static func request_pause(is_pause: bool) -> void:
 	if _instance:

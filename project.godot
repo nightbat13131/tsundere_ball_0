@@ -44,8 +44,7 @@ enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://a
 
 folder_colors={
 "res://addons/": "gray",
-"res://character/": "pink",
-"res://guide/": "teal",
+"res://environment/props/": "teal",
 "res://levels/": "purple"
 }
 
@@ -81,3 +80,4 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.74509805, 0.9254902, 0.70980394, 1)
+2d/snap/snap_2d_vertices_to_pixel=true

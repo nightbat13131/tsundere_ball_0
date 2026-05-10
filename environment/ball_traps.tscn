@@ -4,24 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://dalcnpagcfni0" path="res://assets/balls/Bunny.png" id="2_76ffl"]
 [ext_resource type="Texture2D" uid="uid://cy68fa31pnlis" path="res://assets/balls/Pinwheel.png" id="2_twl76"]
 [ext_resource type="Texture2D" uid="uid://cqd10kb34o6j3" path="res://assets/balls/Cookie.png" id="3_gximu"]
+[ext_resource type="Texture2D" uid="uid://chlc6nt6chqwy" path="res://assets/balls/hero.png" id="5_gximu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_twl76"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mko34"]
 radius = 30.0
 
 [node name="Trap" type="Area2D" unique_id=531650769]
+z_index = 6
+z_as_relative = false
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_twl76")
 _red_icons = ExtResource("2_twl76")
 _yellow_icons = ExtResource("3_gximu")
 _blue_icons = ExtResource("2_76ffl")
+_player_icons = ExtResource("5_gximu")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=200930861]
 unique_name_in_owner = true
-shape = SubResource("CircleShape2D_twl76")
+shape = SubResource("CircleShape2D_mko34")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=526299596]
 unique_name_in_owner = true
+texture = ExtResource("2_twl76")
 hframes = 2
 frame = 1
