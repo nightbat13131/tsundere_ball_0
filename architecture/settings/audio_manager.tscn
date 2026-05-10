@@ -3,24 +3,21 @@
 [ext_resource type="Script" uid="uid://wtir4bo0cs3k" path="res://architecture/settings/audio_manager.gd" id="1_kovmt"]
 [ext_resource type="AudioStream" uid="uid://diltlar1kdtan" path="res://assets/sounds/ui_effects/click3.wav" id="2_2ef83"]
 [ext_resource type="Script" uid="uid://iyi2xeten28r" path="res://architecture/settings/h_slider_enhansed.gd" id="2_omht2"]
-[ext_resource type="Texture2D" uid="uid://cqklqd2qa8cjh" path="res://testing/sheet_white2x.png" id="2_vbxqb"]
-[ext_resource type="Script" uid="uid://cyxqjjbt3vlh" path="res://testing/texture_button_enhanced.gd" id="3_1u8gx"]
+[ext_resource type="Script" uid="uid://d0lt7exjofy76" path="res://architecture/settings/button_self_toggle.gd" id="3_yp11o"]
+[ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="4_yp11o"]
 [ext_resource type="AudioStream" uid="uid://cound3vvjt37r" path="res://assets/sounds/music/progress_2026_05_05(1).wav" id="5_1u8gx"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="6_xh3dk"]
 [ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="8_yp11o"]
 [ext_resource type="Script" uid="uid://b3coc0wryqb4w" path="res://architecture/settings/close_game_button_self.gd" id="9_yp11o"]
 [ext_resource type="Resource" uid="uid://b8g6jlclkhu2m" path="res://architecture/ui/cursors/leave_game.tres" id="10_k23nc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ef83"]
-atlas = ExtResource("2_vbxqb")
-region = Rect2(6, 711, 84, 85)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k23nc"]
+atlas = ExtResource("8_yp11o")
+region = Rect2(639, 146, 16, 16)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xh3dk"]
-load_path = "res://.godot/imported/sheet_white2x.png-ecff2b70dea2507e6c204598df5a534d.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuyx8"]
-atlas = SubResource("CompressedTexture2D_xh3dk")
-region = Rect2(0, 805, 79, 97)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp11o"]
+atlas = ExtResource("8_yp11o")
+region = Rect2(497, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wu03l"]
 atlas = ExtResource("8_yp11o")
@@ -35,10 +32,14 @@ sound_sfx_changed = ExtResource("2_2ef83")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1221517187]
 anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 0.694
-offset_right = 1.0
-offset_bottom = -105.16
+anchor_left = -0.011000001
+anchor_top = -0.016
+anchor_right = 0.51000005
+anchor_bottom = 0.53000003
+offset_left = -0.1099987
+offset_top = 0.24000072
+offset_right = -0.40005493
+offset_bottom = -0.2000122
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"Pannel_Fog"
@@ -66,16 +67,18 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 14
 
-[node name="MuteAll" type="TextureButton" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=108600423]
+[node name="MuteAll" type="Button" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=248041062]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 toggle_mode = true
-texture_normal = SubResource("AtlasTexture_2ef83")
-texture_pressed = SubResource("AtlasTexture_tuyx8")
-stretch_mode = 4
-script = ExtResource("3_1u8gx")
-metadata/_custom_type_script = "uid://cyxqjjbt3vlh"
+icon = SubResource("AtlasTexture_k23nc")
+script = ExtResource("3_yp11o")
+pressed_icon = SubResource("AtlasTexture_yp11o")
+unpressed_icon = SubResource("AtlasTexture_k23nc")
+mouse_cursor = ExtResource("4_yp11o")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="HSliderMasterVolume" type="HSlider" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1887038403]
 unique_name_in_owner = true
@@ -92,6 +95,7 @@ script = ExtResource("2_omht2")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"music_slider"
 max_value = 1.0
 step = 0.05
 value = 0.5
@@ -101,6 +105,7 @@ script = ExtResource("2_omht2")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"sfx_slider"
 max_value = 1.0
 step = 0.05
 value = 0.25

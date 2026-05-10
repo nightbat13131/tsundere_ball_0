@@ -7,19 +7,23 @@ load_path = "res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c80097
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c6po"]
 atlas = SubResource("CompressedTexture2D_j8de2")
-region = Rect2(96, 0, 16, 16)
+region = Rect2(268, 386, 25, 13)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewt1y"]
 texture = SubResource("AtlasTexture_4c6po")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-expand_margin_left = 15.0
-expand_margin_top = 15.0
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_top = 3.0
+expand_margin_right = 4.0
+expand_margin_bottom = 3.0
 draw_center = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iydix"]
 atlas = ExtResource("1_iydix")
-region = Rect2(832, 271, 16, 18)
+region = Rect2(832, 270, 16, 18)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8de2"]
 texture = SubResource("AtlasTexture_iydix")
@@ -113,6 +117,22 @@ region = Rect2(480, 256, 16, 16)
 atlas = ExtResource("1_iydix")
 region = Rect2(640, 256, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq8wh"]
+atlas = ExtResource("1_iydix")
+region = Rect2(480, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7e1t"]
+atlas = ExtResource("1_iydix")
+region = Rect2(640, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isc8t"]
+atlas = ExtResource("1_iydix")
+region = Rect2(432, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlg1d"]
+atlas = ExtResource("1_iydix")
+region = Rect2(592, 256, 16, 16)
+
 [resource]
 Button/styles/focus = SubResource("StyleBoxTexture_ewt1y")
 Button/styles/hover = SubResource("StyleBoxTexture_j8de2")
@@ -128,3 +148,9 @@ Pannel_Fog/styles/panel = SubResource("StyleBoxFlat_j8de2")
 master_slider/base_type = &"HSlider"
 master_slider/icons/grabber = SubResource("AtlasTexture_4g51l")
 master_slider/icons/grabber_highlight = SubResource("AtlasTexture_kmf0u")
+music_slider/base_type = &"HSlider"
+music_slider/icons/grabber = SubResource("AtlasTexture_cq8wh")
+music_slider/icons/grabber_highlight = SubResource("AtlasTexture_l7e1t")
+sfx_slider/base_type = &"HSlider"
+sfx_slider/icons/grabber = SubResource("AtlasTexture_isc8t")
+sfx_slider/icons/grabber_highlight = SubResource("AtlasTexture_mlg1d")

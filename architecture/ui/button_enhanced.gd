@@ -4,6 +4,8 @@ var sfx_sound: AudioStream
 
 @export var mouse_cursor: CustomCursor
 
+
+
 func _ready() -> void:
 	if mouse_cursor:
 		mouse_cursor.apply_to(self)

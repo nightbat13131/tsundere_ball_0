@@ -2,7 +2,7 @@ class_name SoundManager extends CanvasLayer
 
 @export var sound_sfx_changed : AudioStream 
 
-@onready var mute_all: TextureButton_Enhanced = %MuteAll
+@onready var mute_all: ButtonSelf = %MuteAll
 
 @onready var h_slider_master_volume: HSlider_Enhanced = %HSliderMasterVolume
 @onready var h_slider_music_volume: HSlider_Enhanced = %HSliderMusicVolume
@@ -43,7 +43,7 @@ func _set_acitve(turn_on: bool) -> void:
 	set_visible(turn_on)
 	for each_slider: HSlider_Enhanced in h_sliders: 
 		each_slider.set_editable(turn_on)
-	for each_button: TextureButton_Enhanced in [mute_all]:
+	for each_button: Button in [mute_all]:
 		each_button.set_disabled(!turn_on)
 	if turn_on:
 		mute_all.grab_focus()

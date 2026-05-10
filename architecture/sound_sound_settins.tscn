@@ -7,7 +7,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aycrh"]
 atlas = ExtResource("1_7w3t6")
-region = Rect2(160, 185, 15, 15)
+region = Rect2(242, 18, 13, 13)
 
 [node name="Button_SoundSettings" type="Button" unique_id=922504962]
 custom_minimum_size = Vector2(32, 32)
