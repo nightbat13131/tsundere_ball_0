@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bjcilicilou1i" path="res://assets/Furniture/SnackMachine.png" id="1_avfmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sh7"]
-size = Vector2(36, 40)
+size = Vector2(36, 42)
 
 [node name="SnackMachine" type="CollisionShape2D" unique_id=1567785249]
 shape = SubResource("RectangleShape2D_k3sh7")
 
 [node name="SnackMachine" type="Sprite2D" parent="." unique_id=285355410]
-position = Vector2(0, 4)
 texture = ExtResource("1_avfmj")
+centered = false
+offset = Vector2(-19, -22)

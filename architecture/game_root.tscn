@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bn64xn4h4g54l" path="res://architecture/game_root.gd" id="1_ur1xq"]
 [ext_resource type="PackedScene" uid="uid://caexciavr6ck0" path="res://architecture/ui/level_select.tscn" id="2_2uli3"]
 [ext_resource type="Resource" uid="uid://dfq3cxang5y2f" path="res://guide/ui_mapping_context.tres" id="2_cyf7k"]
-[ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/tutorial_info.tres" id="2_v6gfs"]
+[ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/00_tutorial_info.tres" id="2_v6gfs"]
 [ext_resource type="Resource" uid="uid://cwrecqck2u3gc" path="res://guide/player_ball_context.tres" id="3_4u58q"]
 [ext_resource type="PackedScene" uid="uid://cr8i3ltlsxyoy" path="res://architecture/ui/game_level_ui.tscn" id="3_n0w4j"]
 [ext_resource type="Script" uid="uid://drwnkhlrv8eei" path="res://architecture/ui/cursors/custom_cursors.gd" id="3_q0ibd"]

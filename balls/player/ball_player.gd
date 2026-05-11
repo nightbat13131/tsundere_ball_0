@@ -5,7 +5,6 @@ class_name Ball_Player extends Ball
 # https://www.youtube.com/watch?v=tgrDkFdEK0I
 ## there was a problem with Ball_Player going odd directions if shot while moving, but turning off rotation seems to have solved this problem.
 
-const DEFAULT_POS := Vector2.INF
 const COLOR_OTHER = Color(Color.GRAY, .50)
 
 const CANCLE_PAUSE_DURATION := .5
@@ -22,6 +21,7 @@ const EVENT_WALKING_WASD = &'walk_around_wasd'
 const EVENT_WALKING_JOYSTICK = &'walk_around_joystick'
 const EVENT_NOT_WALKING = &'not_walking'
 const EVENT_CAPTURED = &'captured'
+const EVENT_TELEPORTED = &'teleported'
 
 const EVENT_JOYSTICK_AIMING = &'joystick_aiming'
 const EVENT_CANCLE_JOYSTICK_AIM = &'cancle_joystick_aiming'
@@ -36,8 +36,6 @@ static var _instance : Ball_Player
 var global_mouse_start := DEFAULT_POS
 var global_mouse_end := DEFAULT_POS
 
-var _screen_center := Vector2.ONE * 100.0 # TODO udpate on screen resize
-
 const DEFAULT_ROLL_COOLDONW := .50
 var remaining_roll_cooldown := 0.0
 
@@ -46,23 +44,19 @@ var remaining_roll_cooldown := 0.0
 @onready var state_aiming: CompoundState = %Aiming
 @onready var state_aiming_mouse: CompoundState = %Mouse
 @onready var state_aiming_joystick: CompoundState =  %Joystick
+@onready var state_captured: AtomicState = %Captured
 
 @onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
 
 @export_category("G.U.I.D.E.")
 @export var pc_controler_context: GUIDEMappingContext
-
 @export var action_walking_wasd: GUIDEAction
 @export var action_walking_controler: GUIDEAction
-
 @export var action_cancle_ball: GUIDEAction
-
 @export var action_start_mouse_aim : GUIDEAction
 @export var action_joystick_aim : GUIDEAction
-
 @export var action_try_roll_mouse : GUIDEAction
 @export var action_try_roll_controler : GUIDEAction
-
 
 @export_category("Cursors") 
 @export var mouse_unpressed : CustomCursor
@@ -72,6 +66,7 @@ func _ready() -> void:
 	super._ready()
 	_instance = self
 	tree_exiting.connect(_on_tree_exiting)
+
 	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.BALL_PLAYER)
 	if pc_controler_context:
 		GUIDE.enable_mapping_context(pc_controler_context)
@@ -93,8 +88,8 @@ func _ready() -> void:
 		if action_walking_controler:
 			action_walking_controler.triggered.connect(_send_event.bind(EVENT_WALKING_JOYSTICK))
 			
-	get_viewport().size_changed.connect(_on_viewport_size_changed)
-	_on_viewport_size_changed()
+	#get_viewport().size_changed.connect(_on_viewport_size_changed)
+	#_on_viewport_size_changed()
 	set_collision_layer_value(Ball.LAYER_PC, true)
 	set_collision_mask_value(Ball.LAYER_PC_WALL, true)
 	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
@@ -254,4 +249,6 @@ func _on_tree_exiting() -> void:
 	if _instance == self:
 		_instance = null
 
-func _on_viewport_size_changed() -> void: _screen_center = get_viewport_rect().get_center()
+
+
+func _on_ready_state_entered() -> void: set_use_custom_integrator(false)

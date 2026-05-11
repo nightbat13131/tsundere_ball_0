@@ -19,19 +19,27 @@ func _set_speed(speed: float) -> void:
 		return
 	_speed = speed
 	speed_scale = _speed / AVERAGE_SPEED
+	_update_animation()
 
 func set_velocity(velocity: Vector2) -> void:
 	_roll_direction(velocity.angle())
 	_set_speed(velocity.length())
 
 func _roll_direction(radian: float) -> void:
-	set_global_rotation(radian)
+	set_global_rotation(radian + PI*-.5)
 
-func _request_pause() -> void:
-	pause()
+func _request_pause() -> void: pause()
 
 static func request_pause(_is_pause) -> void:
 	# TODO: not working
 	for each in _instances: 
 		each._request_pause()
+
+func _update_animation() -> void:
+	if _speed <= 2.5:
+		if get_animation() != STILL:
+			play(STILL)
+	else: 
+		if get_animation() != WALK:
+			play(WALK)
 	

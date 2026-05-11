@@ -12,3 +12,5 @@ metadata/_edit_group_ = true
 [node name="TrashBin" type="Sprite2D" parent="." unique_id=1772123206]
 position = Vector2(0, 2)
 texture = ExtResource("2_p4mny")
+centered = false
+offset = Vector2(-10, -12)

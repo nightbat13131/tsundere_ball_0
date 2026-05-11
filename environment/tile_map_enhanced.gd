@@ -1,7 +1,7 @@
 @tool
 class_name TileMapLayer_Enhanced extends TileMapLayer
 
-enum TileType {WALLS, WALLS_OVER}
+enum TileType {WALLS, WALLS_OVER, PROPS}
 
 @export var _tile_type := TileType.WALLS
 @export var _selected_pallet := PaletteMaterial.PalletSelection.DEFAULT
@@ -21,6 +21,8 @@ func _ready() -> void:
 			pass
 		TileType.WALLS_OVER:
 			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.OVERLAY)
+		TileType.PROPS:
+			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.DECORATIONS)
 	apply_pallet()
 	if Engine.is_editor_hint():
 		return

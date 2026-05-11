@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://b0l5st8onqucp"]
+
+[ext_resource type="PackedScene" uid="uid://d2gp0bdseolw2" path="res://levels/grocery.tscn" id="1_nhy11"]
+[ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/progress_save_stuff/level_info.gd" id="1_wtt5p"]
+[ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/00_tutorial_info.tres" id="2_nhy11"]
+
+[resource]
+script = ExtResource("1_wtt5p")
+level_uid = "uid://c3lne062koifr"
+level_packed_scene = ExtResource("1_nhy11")
+unlocked_by = ExtResource("2_nhy11")
+metadata/_custom_type_script = "uid://dnatdka25e2wd"

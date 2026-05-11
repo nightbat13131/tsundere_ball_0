@@ -10,5 +10,8 @@ func _ready() -> void:
 
 func _engine_align() -> void:
 	for each_child in get_children():
-		#if each_child is Sprite2D:
-				each_child.global_position = each_child.global_position.snapped(Vector2.ONE*2)
+		each_child.global_position = each_child.global_position.snapped(Vector2.ONE*2)
+		if each_child is Sprite2D:
+			each_child.set_centered(false)
+
+		

@@ -9,10 +9,10 @@
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqqo"]
-size = Vector2(42, 6)
+size = Vector2(30, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_belqf"]
-size = Vector2(6, 9)
+size = Vector2(6, 10)
 
 [node name="Breakable_Bench" type="StaticBody2D" unique_id=190911682]
 z_index = 5
@@ -26,18 +26,20 @@ goal = ExtResource("2_dtqqo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
 unique_name_in_owner = true
 sprite_frames = ExtResource("3_belqf")
-frame_progress = 0.43545237
+frame_progress = 0.6533472
+centered = false
+offset = Vector2(-23, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173216956]
-position = Vector2(0, -3)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_dtqqo")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=298781952]
-position = Vector2(-18, 0.5)
+position = Vector2(-18, 0)
 shape = SubResource("RectangleShape2D_belqf")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1216171781]
-position = Vector2(18, 1)
+position = Vector2(18, 0)
 shape = SubResource("RectangleShape2D_belqf")
 
 [node name="mad_man" type="AnimatedSprite2D" parent="." unique_id=798433252]

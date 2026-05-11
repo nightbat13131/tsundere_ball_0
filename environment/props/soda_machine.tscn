@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://njrc2gxuxbsr" path="res://assets/Furniture/SodaMachine.png" id="1_qi3qo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sh7"]
-size = Vector2(34, 40)
+size = Vector2(34, 44)
 
 [node name="SodaMachine" type="CollisionShape2D" unique_id=1567785249]
 shape = SubResource("RectangleShape2D_k3sh7")
 
 [node name="SodaMachine" type="Sprite2D" parent="." unique_id=148432338]
-position = Vector2(0, 6)
 texture = ExtResource("1_qi3qo")
+centered = false
+offset = Vector2(-17, -23)

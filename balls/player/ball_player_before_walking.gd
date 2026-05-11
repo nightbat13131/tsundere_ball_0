@@ -4,7 +4,6 @@ class_name Ball_Player_BeforeWalking extends Ball
 
 ## if I insit on a walking mode, doing "Freeze Mode Kinimatic" might help
 
-const DEFAULT_POS := Vector2.INF
 #const COLOR_POWER = Color(Color.RED, .75)
 const COLOR_OTHER = Color(Color.GRAY, .50)
 

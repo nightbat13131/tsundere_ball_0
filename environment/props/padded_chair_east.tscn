@@ -11,4 +11,6 @@ shape = SubResource("RectangleShape2D_k3sh7")
 [node name="PaddedChairWest" type="Sprite2D" parent="." unique_id=1884824866]
 position = Vector2(0, 2)
 texture = ExtResource("1_2x11d")
+centered = false
+offset = Vector2(-18, -20)
 flip_h = true

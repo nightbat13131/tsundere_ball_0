@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="12_gw41h"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="13_gw41h"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="14_0xn1p"]
+[ext_resource type="AudioStream" uid="uid://ycxoj1ejwfuc" path="res://assets/sounds/justine_bounce.wav" id="14_86agf"]
 [ext_resource type="Script" uid="uid://le5w1cm0ul8p" path="res://addons/godot_state_charts/expression_guard.gd" id="20_iodpe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vls1"]
@@ -55,13 +56,15 @@ mouse_unpressed = ExtResource("11_8am6p")
 mouse_pressed = ExtResource("12_86agf")
 _npc_type = 3
 wall_hit = ExtResource("11_ufkll")
+door_hit = ExtResource("14_86agf")
 
 [node name="AnimatedSprite_Feet" type="AnimatedSprite2D" parent="." unique_id=758807694]
 unique_name_in_owner = true
 sprite_frames = ExtResource("11_nlgnb")
 animation = &"walking"
 autoplay = "walking"
-offset = Vector2(20, 0)
+centered = false
+offset = Vector2(-32, -31)
 script = ExtResource("10_g3x7m")
 
 [node name="AnimatedSprite_Ball" type="AnimatedSprite2D" parent="." unique_id=555928894]
@@ -79,6 +82,9 @@ unique_name_in_owner = true
 visible = false
 shape = SubResource("CircleShape2D_gchj4")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=821181491]
+unique_name_in_owner = true
+
 [node name="StateChart" type="Node" parent="." unique_id=963705701]
 unique_name_in_owner = true
 process_mode = 1
@@ -90,10 +96,19 @@ metadata/_custom_type_script = "uid://couw105c3bde4"
 
 [node name="CompoundState" type="Node" parent="StateChart" unique_id=1255905680]
 script = ExtResource("12_gw41h")
-initial_state = NodePath("RollMode")
+initial_state = NodePath("Ready")
 metadata/_custom_type_script = "uid://jk2jm1g6q853"
 
+[node name="Ready" type="Node" parent="StateChart/CompoundState" unique_id=665666991]
+script = ExtResource("13_gw41h")
+
+[node name="Post_Ready" type="Node" parent="StateChart/CompoundState/Ready" unique_id=1445289523]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../RollMode")
+delay_in_seconds = "0.1"
+
 [node name="Captured" type="Node" parent="StateChart/CompoundState" unique_id=832757018]
+unique_name_in_owner = true
 script = ExtResource("13_gw41h")
 metadata/_custom_type_script = "uid://cytafq8i1y8qm"
 
@@ -239,6 +254,13 @@ to = NodePath("../Captured")
 event = &"captured"
 delay_in_seconds = "0.0"
 
+[node name="Telported" type="Node" parent="StateChart/CompoundState" unique_id=108885275]
+script = ExtResource("14_0xn1p")
+to = NodePath("../Ready")
+event = &"teleported"
+delay_in_seconds = "0.0"
+
+[connection signal="state_entered" from="StateChart/CompoundState/Ready" to="." method="_on_ready_state_entered"]
 [connection signal="state_entered" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_entered"]
 [connection signal="state_processing" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_processing"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode" to="." method="_on_roll_mode_state_entered"]

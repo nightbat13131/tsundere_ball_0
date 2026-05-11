@@ -4,20 +4,21 @@ class_name LevelInfo extends Resource
 @export var level_uid: String : get = get_level_path
 
 @export var unlocked_by: LevelInfo
-#@export var _always_unlocked := false
+@export var unlocked_by_: LevelInfo
+@export var unlocked_by__: LevelInfo
+var _lockers : Array[LevelInfo] = [unlocked_by, unlocked_by_, unlocked_by__]
 
 var _score := Score.Scores.LOCKED
 
-
 # has to be called manually because it's a resource
-func _ready() -> void:
-	if unlocked_by:
-		unlocked_by.changed.connect(changed.emit)
+func _ready() -> void: _connect_unlockers()
 
 func is_locked() -> bool:
-	if unlocked_by == null:
-		return false
-	return !unlocked_by.is_complete()
+	for each_level : LevelInfo in _lockers:
+		if each_level:
+			if !each_level.is_complete():
+				return true
+	return false
 
 func is_complete() -> bool: return ![Score.Scores.LOCKED, Score.Scores.NA].has(_score)
 
@@ -44,3 +45,9 @@ func set_score(score: Score) -> void:
 	if new_score as int > old_score:
 		_score = new_score
 	changed.emit()
+
+func _connect_unlockers() -> void:
+	for each_info in _lockers:
+		if each_info:
+			if !each_info.changed.is_connected(changed.emit):
+				each_info.changed.connect(changed.emit)

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_pojhi"]
 [ext_resource type="Script" uid="uid://tjdvvki3df43" path="res://architecture/ui/button_restart_level.gd" id="5_ppoab"]
 [ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="6_qpwan"]
+[ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="7_e6151"]
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="8_e6151"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
 [ext_resource type="Script" uid="uid://bbfu4nrpd8wik" path="res://architecture/ui/level_anchor.gd" id="11_f0lw1"]
@@ -17,19 +18,13 @@
 atlas = ExtResource("4_56b18")
 region = Rect2(2, 153, 12, 16)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s66kq"]
-load_path = "res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c800975c3c24f06.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6y21"]
-atlas = SubResource("CompressedTexture2D_s66kq")
-region = Rect2(386, 131, 12, 11)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pojhi"]
-load_path = "res://.godot/imported/Modern_UI_Style_1.png-e378b7b72629e5ee6c800975c3c24f06.ctex"
+atlas = ExtResource("7_e6151")
+region = Rect2(546, 131, 12, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s66kq"]
-atlas = SubResource("CompressedTexture2D_pojhi")
-region = Rect2(419, 99, 10, 11)
+atlas = ExtResource("7_e6151")
+region = Rect2(579, 100, 10, 10)
 
 [node name="GameLevelUI" type="CanvasLayer" unique_id=290767530]
 process_mode = 3

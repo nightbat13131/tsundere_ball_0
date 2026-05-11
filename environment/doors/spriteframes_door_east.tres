@@ -2,27 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://xb8h7x61g4v2" path="res://assets/Furniture/Animated/Door/eastslidingdoor-Sheet.png" id="1_rf4f0"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qu1x"]
+atlas = ExtResource("1_rf4f0")
+region = Rect2(0, 0, 16, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf4f0"]
+atlas = ExtResource("1_rf4f0")
+region = Rect2(16, 0, 16, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3vwj"]
 atlas = ExtResource("1_rf4f0")
-region = Rect2(0, 0, 5, 64)
+region = Rect2(32, 0, 16, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbbet"]
 atlas = ExtResource("1_rf4f0")
-region = Rect2(5, 0, 5, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5lr27"]
-atlas = ExtResource("1_rf4f0")
-region = Rect2(10, 0, 5, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yw3de"]
-atlas = ExtResource("1_rf4f0")
-region = Rect2(15, 0, 5, 64)
+region = Rect2(48, 0, 16, 64)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u3vwj")
+"texture": SubResource("AtlasTexture_5qu1x")
 }],
 "loop": false,
 "name": &"default",
@@ -30,13 +30,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rf4f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3vwj")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gbbet")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5lr27")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yw3de")
 }],
 "loop": false,
 "name": &"opening",

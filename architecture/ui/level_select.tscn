@@ -3,17 +3,25 @@
 [ext_resource type="Script" uid="uid://2nmqlmxy5xa6" path="res://architecture/level_select.gd" id="1_hu3iy"]
 [ext_resource type="Script" uid="uid://bq7rglvho084a" path="res://architecture/ui/button_level_select.gd" id="1_jcfkq"]
 [ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/balls/faces/texture_face.tres" id="2_f5khk"]
-[ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/tutorial_info.tres" id="3_bagxp"]
+[ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="2_rnogh"]
+[ext_resource type="Resource" uid="uid://o0orihev6fn8" path="res://levels/00_tutorial_info.tres" id="3_bagxp"]
 [ext_resource type="Resource" uid="uid://dqhajfx1g1p2o" path="res://testing/test_levels/dev_lv_1.tres" id="3_e8ohy"]
 [ext_resource type="Resource" uid="uid://dl8vkdlsw1m4u" path="res://testing/test_levels/dev_lv_animation.tres" id="4_fmbur"]
 [ext_resource type="Resource" uid="uid://hb8f0ycya01h" path="res://testing/test_levels/dev_lv_background.tres" id="5_0hgg1"]
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
 [ext_resource type="Resource" uid="uid://bgs66genfal2j" path="res://architecture/ui/cursors/level_enter.tres" id="6_ijyg7"]
-[ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/spencers_info.tres" id="7_05iph"]
+[ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/01_info.tres" id="7_05iph"]
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
+[ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_info.tres" id="8_05iph"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
+[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_info.tres" id="9_mx6xu"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
+[ext_resource type="Resource" uid="uid://c7c6uv8o12772" path="res://levels/04_info.tres" id="10_tva47"]
+[ext_resource type="Resource" uid="uid://cxnbj0dwef4ww" path="res://levels/05_info.tres" id="11_ynp5y"]
+[ext_resource type="Resource" uid="uid://bo4mwoak4jilo" path="res://levels/06_info.tres" id="12_fbxss"]
+[ext_resource type="Resource" uid="uid://bsiyhe5n3amtq" path="res://levels/07_info.tres" id="13_ynp5y"]
+[ext_resource type="Resource" uid="uid://c7653fn1ma5vt" path="res://levels/08_info.tres" id="14_fbxss"]
 
 [sub_resource type="Gradient" id="Gradient_ijyg7"]
 offsets = PackedFloat32Array(0.77160496, 1)
@@ -23,6 +31,9 @@ colors = PackedColorArray(0.8974315, 0.95152885, 0.99937683, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_ijyg7")
 fill = 2
 fill_from = Vector2(0.491453, 0.517094)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0cld"]
+atlas = ExtResource("2_rnogh")
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=656451208]
 process_mode = 3
@@ -50,36 +61,126 @@ offset_right = 431.0
 offset_bottom = 284.0
 texture = SubResource("GradientTexture2D_05iph")
 
-[node name="TextureButton_SoundSettings" parent="Control" unique_id=124607973 instance=ExtResource("9_2xmtt")]
-layout_mode = 0
-offset_left = 378.0
-offset_top = -249.0
-offset_right = 410.0
-offset_bottom = -217.0
+[node name="Line2D" type="Line2D" parent="Control" unique_id=688210154]
+position = Vector2(-475, -308)
+points = PackedVector2Array(207, 450, 402, 474, 706, 460, 748, 346, 739, 155, 626, 143, 478, 186, 514, 318, 301, 334, 202, 305, 205, 170)
+texture = SubResource("AtlasTexture_m0cld")
+texture_mode = 1
 
 [node name="Tutorial" type="Button" parent="Control" unique_id=1433954292]
 layout_mode = 0
-offset_left = -260.0
-offset_top = 173.0
-offset_right = -222.0
-offset_bottom = 217.0
+offset_left = -285.0
+offset_top = 119.0
+offset_right = -247.0
+offset_bottom = 163.0
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("3_bagxp")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
-[node name="Spencers" type="Button" parent="Control" unique_id=1765708571]
+[node name="_1" type="Button" parent="Control" unique_id=1765708571]
 layout_mode = 0
-offset_left = -161.0
-offset_top = -133.0
-offset_right = -123.0
-offset_bottom = -89.0
+offset_left = -87.0
+offset_top = 139.0
+offset_right = -49.0
+offset_bottom = 183.0
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("7_05iph")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_2" type="Button" parent="Control" unique_id=1908643981]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 130.0
+offset_right = 253.0
+offset_bottom = 174.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("8_05iph")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_3" type="Button" parent="Control" unique_id=1252052063]
+layout_mode = 0
+offset_left = 256.0
+offset_top = -7.0
+offset_right = 294.0
+offset_bottom = 37.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("9_mx6xu")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_4" type="Button" parent="Control" unique_id=526429081]
+layout_mode = 0
+offset_left = 245.0
+offset_top = -171.0
+offset_right = 283.0
+offset_bottom = -127.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("10_tva47")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_5" type="Button" parent="Control" unique_id=737019173]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -143.0
+offset_right = 36.0
+offset_bottom = -99.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("11_ynp5y")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_6" type="Button" parent="Control" unique_id=1355047401]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -6.0
+offset_right = 57.0
+offset_bottom = 38.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("12_fbxss")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_7" type="Button" parent="Control" unique_id=1580105737]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -15.0
+offset_right = -208.0
+offset_bottom = 29.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("13_ynp5y")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_8" type="Button" parent="Control" unique_id=1489638064]
+layout_mode = 0
+offset_left = -293.0
+offset_top = -155.0
+offset_right = -255.0
+offset_bottom = -111.0
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("14_fbxss")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="TextureButton_SoundSettings" parent="Control" unique_id=124607973 instance=ExtResource("9_2xmtt")]
+layout_mode = 0
+offset_left = 378.0
+offset_top = -249.0
+offset_right = 410.0
+offset_bottom = -217.0
 
 [node name="Dev" type="HBoxContainer" parent="." unique_id=757718319]
 visible = false

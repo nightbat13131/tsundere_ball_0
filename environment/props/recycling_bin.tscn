@@ -12,3 +12,5 @@ metadata/_edit_group_ = true
 [node name="RecyclingBin" type="Sprite2D" parent="." unique_id=2032047803]
 position = Vector2(0, 1)
 texture = ExtResource("1_5vwvi")
+centered = false
+offset = Vector2(-10, -12)

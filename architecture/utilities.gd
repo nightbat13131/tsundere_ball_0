@@ -7,7 +7,7 @@ enum Z_Indexes {
 	TRAPS = 6 ,  IN_TRAP = 7 , 
 	
 	BALL_PLAYER = 10, BALL_NPC = 9 , 
-	
+	DOORS = 12, 
 	OVERLAY = 20}
 
 

@@ -1,36 +1,24 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://1yl8e6wbw1i0"]
 
-[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="1_nxmuy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxmuy"]
-atlas = ExtResource("1_nxmuy")
-region = Rect2(51, 96, 17, 16)
+[ext_resource type="Texture2D" uid="uid://cylp00u1ns3nj" path="res://assets/balls/magicalgirlwalkdown-Sheet.png" id="1_nxmuy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7xow"]
 atlas = ExtResource("1_nxmuy")
-region = Rect2(68, 0, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6knmh"]
-atlas = ExtResource("1_nxmuy")
-region = Rect2(68, 16, 17, 16)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjsq8"]
 atlas = ExtResource("1_nxmuy")
-region = Rect2(68, 32, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_13u1l"]
-atlas = ExtResource("1_nxmuy")
-region = Rect2(68, 48, 17, 16)
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vph4s"]
 atlas = ExtResource("1_nxmuy")
-region = Rect2(68, 64, 17, 16)
+region = Rect2(192, 0, 64, 64)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxmuy")
+"texture": SubResource("AtlasTexture_i7xow")
 }],
 "loop": false,
 "name": &"default",
@@ -38,16 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i7xow")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6knmh")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_xjsq8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_13u1l")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vph4s")

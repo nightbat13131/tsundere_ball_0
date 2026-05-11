@@ -10,3 +10,5 @@ shape = SubResource("RectangleShape2D_hq8wt")
 
 [node name="CopierPrinter" type="Sprite2D" parent="." unique_id=1615925977]
 texture = ExtResource("1_hq8wt")
+centered = false
+offset = Vector2(-12, -16)
