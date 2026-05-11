@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://w34kn8r36ukl"]
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_2uo5g"]
-[ext_resource type="AudioStream" uid="uid://bhd2e8lwtwdr5" path="res://assets/sounds/LedasLuzta33_bigger_break.wav" id="1_qirhd"]
+[ext_resource type="AudioStream" uid="uid://cjej8k00gwkgm" path="res://assets/sounds/floraphonic-wood-smash-1-170410.mp3" id="1_qirhd"]
 [ext_resource type="Texture2D" uid="uid://cm6igwnll4jsb" path="res://assets/Furniture/Breakables/WoodenBenchBroken.png" id="2_b4irp"]
 [ext_resource type="Texture2D" uid="uid://cy48jtugwtq4m" path="res://assets/Furniture/Breakables/WoodenBench.png" id="3_gwpkh"]
 

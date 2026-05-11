@@ -8,7 +8,10 @@ enum Z_Indexes {
 	
 	BALL_PLAYER = 10, BALL_NPC = 9 , 
 	DOORS = 12, 
-	OVERLAY = 20}
+	OVERWALLS = 16,
+	OVERLAY = 21
+	
+	}
 
 enum Conditions { AND = 0, OR = 1} 
 

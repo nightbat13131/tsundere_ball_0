@@ -22,8 +22,9 @@
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="12_gw41h"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="13_gw41h"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="14_0xn1p"]
-[ext_resource type="AudioStream" uid="uid://ycxoj1ejwfuc" path="res://assets/sounds/justine_bounce.wav" id="14_86agf"]
+[ext_resource type="AudioStream" uid="uid://ctcp5h0t8to3d" path="res://assets/sounds/floraphonic-glass-knock-1-189096.mp3" id="14_86agf"]
 [ext_resource type="Script" uid="uid://le5w1cm0ul8p" path="res://addons/godot_state_charts/expression_guard.gd" id="20_iodpe"]
+[ext_resource type="Script" uid="uid://b4qk11kcx53h1" path="res://balls/player/drawing_node.gd" id="25_b4ung"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vls1"]
 shader = ExtResource("7_nlgnb")
@@ -85,6 +86,11 @@ shape = SubResource("CircleShape2D_gchj4")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=821181491]
 unique_name_in_owner = true
+
+[node name="drawing_node" type="Node2D" parent="." unique_id=2096425257 node_paths=PackedStringArray("draw_master")]
+unique_name_in_owner = true
+script = ExtResource("25_b4ung")
+draw_master = NodePath("..")
 
 [node name="StateChart" type="Node" parent="." unique_id=963705701]
 unique_name_in_owner = true

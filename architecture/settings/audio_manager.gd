@@ -3,7 +3,8 @@ class_name SoundManager extends CanvasLayer
 signal is_closing(is_closing: bool)
 
 @export var sound_sfx_changed : AudioStream 
-
+@export var sound_screen_opening : AudioStream
+@export var sound_screen_closing : AudioStream
 @onready var mute_all: ButtonSelf = %MuteAll
 
 @onready var h_slider_master_volume: HSlider_Enhanced = %HSliderMasterVolume
@@ -49,7 +50,10 @@ func _set_acitve(turn_on: bool) -> void:
 	for each_button: Button in [mute_all]:
 		each_button.set_disabled(!turn_on)
 	if turn_on:
+		request_sfx(sound_screen_opening)
 		mute_all.grab_focus()
+	else: 
+		request_sfx(sound_screen_closing)
 
 func is_active() -> bool: return is_visible()
 

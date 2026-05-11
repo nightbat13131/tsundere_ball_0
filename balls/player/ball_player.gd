@@ -45,6 +45,7 @@ var remaining_roll_cooldown := 0.0
 @onready var state_aiming_mouse: CompoundState = %Mouse
 @onready var state_aiming_joystick: CompoundState =  %Joystick
 @onready var state_captured: AtomicState = %Captured
+@onready var drawing_node: DrawingNode = %drawing_node
 
 @onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
 
@@ -88,8 +89,6 @@ func _ready() -> void:
 		if action_walking_controler:
 			action_walking_controler.triggered.connect(_send_event.bind(EVENT_WALKING_JOYSTICK))
 			
-	#get_viewport().size_changed.connect(_on_viewport_size_changed)
-	#_on_viewport_size_changed()
 	set_collision_layer_value(Ball.LAYER_PC, true)
 	set_collision_mask_value(Ball.LAYER_PC_WALL, true)
 	_set_shader_parameter(UTILITIES.SHADER_OUTLINE_COLOR, UTILITIES.COLOR_BORDER_BOUNCY)
@@ -132,56 +131,77 @@ func get_shot_angle_vector() -> Vector2:
 			return action_joystick_aim.value_axis_2d
 	return DEFAULT_POS
 
-func _draw() -> void:
+func request_draw(node: Node2D) -> void:
 	if get_tree().paused:
 		return
 	if state_aiming.active: 
-		_draw_power_indicator() 
+		_draw_power_indicator(node) 
 		if state_aiming_mouse.active:
-			_draw_mouse_aim()
+			_draw_mouse_aim(node)
 		elif state_aiming_joystick.active:
-			_draw_joystick_aim()
+			_draw_joystick_aim(node)	
 
-func _draw_power_indicator() -> void:
+#func _draw() -> void:
+	#if get_tree().paused:
+		#return
+	#if state_aiming.active: 
+		#_draw_power_indicator(self) 
+		#if state_aiming_mouse.active:
+			#_draw_mouse_aim(self)
+		#elif state_aiming_joystick.active:
+			#_draw_joystick_aim(self)
+
+func _draw_power_indicator(node: Node2D) -> void:
 	var visable_power := _get_power_ratio()
 	if is_equal_approx(visable_power, 0.0):
 		return
 	visable_power *= sin(_get_power_ratio())
-	visable_power =  BALL_RADIUS + (visable_power * BALL_RADIUS*8)
+	visable_power =  (BALL_RADIUS*1.5) + (visable_power  * BALL_RADIUS*8)
 	var direction = get_shot_angle_vector()
 	if direction == DEFAULT_POS:
 		return
 	direction = direction.normalized()
 	var color_power = Color.from_hsv( (1.0-_get_power_ratio()) *.33, 1.0, 1.0, .5)
-	draw_polygon(
-		[direction*visable_power, direction.rotated(- PI*.5)*BALL_RADIUS, direction.rotated( PI*.5)*BALL_RADIUS,  ], [color_power]
-			) 
+	var points = [
+		direction*visable_power, # direction.rotated(- PI*.5)*BALL_RADIUS, direction.rotated( PI*.5)*BALL_RADIUS,
+		]
+	var test_points = points.duplicate()
+	var slice_count := 5
+	for i in range(slice_count):
+		test_points.insert(-1,BALL_RADIUS* direction.rotated( PI * (i / float(10)) ) )
+		if i != 0:
+			i *= -1
+			test_points.insert(0, BALL_RADIUS* direction.rotated( PI * (i / float(10)) ) )
+			if Geometry2D.triangulate_polygon(test_points):
+				points = test_points.duplicate()
+	node.draw_polygon( 	points, [color_power]) 
 
-func _draw_joystick_aim() -> void:
-	var primary_center := to_local( Vector2.ONE * BALL_RADIUS * 1.5)  #  to_local(_screen_center)
-	draw_circle(primary_center, BALL_RADIUS, COLOR_OTHER, false, 5)
+
+func _draw_joystick_aim(node: Node2D) -> void:
+	var primary_center := to_local( Vector2.ONE * BALL_RADIUS * 2.0)  #  to_local(_screen_center)
+	node.draw_circle(primary_center, BALL_RADIUS, COLOR_OTHER, false, 5)
 	
 	if !action_joystick_aim.is_triggered():
 		return
 	var direction = get_shot_angle_vector()
 	if direction == DEFAULT_POS:
 		return
-	draw_circle(primary_center + direction * _get_power_ratio() * BALL_RADIUS * 1.25, BALL_RADIUS * .75, COLOR_OTHER, true)
+	node.draw_circle(primary_center + direction * _get_power_ratio() * BALL_RADIUS * 1.25, BALL_RADIUS * .75, COLOR_OTHER, true)
 
-func _draw_mouse_aim() -> void:
+func _draw_mouse_aim(node: Node2D) -> void:
 	var local_start : Vector2 = to_local(global_mouse_start)
-	draw_circle(local_start, BALL_RADIUS, COLOR_OTHER, false, 5)
+	node.draw_circle(local_start, BALL_RADIUS, COLOR_OTHER, false, 5)
 	var direction = get_shot_angle_vector()
 	if direction == DEFAULT_POS:
 		return
 	direction = direction.normalized()
 	## Mouse line
-	draw_line(local_start - direction*BALL_RADIUS, 
+	node.draw_line(local_start - direction*BALL_RADIUS, 
 		to_local(global_mouse_end), 
 		COLOR_OTHER, 2)
 
 func _send_event(event: String) -> void:
-	queue_redraw()
+	drawing_node.queue_redraw()
 	#print(event)
 	if state_chart:
 		state_chart.send_event(event)
@@ -215,13 +235,13 @@ func _on_roll_mode_state_exited() -> void: animated_sprite_feet.show()
 func _on_waiting_roll_state_entered() -> void:
 	global_mouse_end = DEFAULT_POS
 	global_mouse_start = DEFAULT_POS
-	queue_redraw()
+	drawing_node.queue_redraw()
 
 func _on_waiting_roll_state_processing(delta: float) -> void:
 	remaining_roll_cooldown -= delta
 	state_chart.set_expression_property(KEY_ROLL_COOLDOWN, remaining_roll_cooldown)
 
-func _on_aiming_state_processing(_delta: float) -> void: queue_redraw()
+func _on_aiming_state_processing(_delta: float) -> void: drawing_node.queue_redraw()
 
 func _on_mouse_aiming_state_entered() -> void: 
 	global_mouse_start = get_global_mouse_position()
@@ -248,7 +268,5 @@ func _on_tree_exiting() -> void:
 	mouse_unpressed.activate()
 	if _instance == self:
 		_instance = null
-
-
 
 func _on_ready_state_entered() -> void: set_use_custom_integrator(false)

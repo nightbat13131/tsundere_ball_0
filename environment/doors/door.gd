@@ -4,7 +4,7 @@ class_name Door extends StaticBody2d_Enhanced
 const ANIMATION_CLOSED = &"default"
 const ANIMATION_OPENING = &"opening"
 
-const SOUND_PATH = 'uid://domubmw5gl2m0'
+const SOUND_PATH = 'uid://3rclkpk67o37'
 static var sound : AudioStream
 
 @export var _dependency_condition := UTILITIES.Conditions.AND

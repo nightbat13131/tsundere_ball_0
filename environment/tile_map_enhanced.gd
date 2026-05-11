@@ -20,7 +20,7 @@ func _ready() -> void:
 			#get_tile_set().set_physics_layer_collision_layer(0, Ball.LAYER_PC_WALL)
 			pass
 		TileType.WALLS_OVER:
-			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.OVERLAY)
+			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.OVERWALLS)
 		TileType.PROPS:
 			UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.DECORATIONS)
 	apply_pallet()

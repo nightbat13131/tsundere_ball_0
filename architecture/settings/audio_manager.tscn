@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://wtir4bo0cs3k" path="res://architecture/settings/audio_manager.gd" id="1_kovmt"]
 [ext_resource type="AudioStream" uid="uid://diltlar1kdtan" path="res://assets/sounds/ui_effects/click3.wav" id="2_2ef83"]
 [ext_resource type="Script" uid="uid://iyi2xeten28r" path="res://architecture/settings/h_slider_enhansed.gd" id="2_omht2"]
+[ext_resource type="AudioStream" uid="uid://by2bqh8ls4ilp" path="res://assets/sounds/floraphonic-minimal-pop-click-ui-1-198301.mp3" id="3_k23nc"]
+[ext_resource type="AudioStream" uid="uid://f7sfovrpap28" path="res://assets/sounds/floraphonic-infographic-pop-5-197872.mp3" id="3_wu03l"]
 [ext_resource type="Script" uid="uid://d0lt7exjofy76" path="res://architecture/settings/button_self_toggle.gd" id="3_yp11o"]
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="4_yp11o"]
 [ext_resource type="AudioStream" uid="uid://cound3vvjt37r" path="res://assets/sounds/music/progress_2026_05_05(1).wav" id="5_1u8gx"]
@@ -29,6 +31,8 @@ scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 script = ExtResource("1_kovmt")
 sound_sfx_changed = ExtResource("2_2ef83")
+sound_screen_opening = ExtResource("3_wu03l")
+sound_screen_closing = ExtResource("3_k23nc")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1221517187]
 anchors_preset = -1

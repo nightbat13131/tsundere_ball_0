@@ -1,10 +1,8 @@
 class_name ButtonSelf extends Button
 
-var sfx_sound: AudioStream
+@export var sfx_sound: AudioStream
 
 @export var mouse_cursor: CustomCursor
-
-
 
 func _ready() -> void:
 	if mouse_cursor:
@@ -20,7 +18,9 @@ func _ready() -> void:
 		pressed.connect(self._press_sound)
 
 # sound can be replaced by assigning differnet path in _ready() in children.
-func _press_sound() ->void: SoundManager.request_sfx(sfx_sound)
+func _press_sound() ->void: 
+	if sfx_sound:
+		SoundManager.request_sfx(sfx_sound)
 
 func _on_pressed() -> void: 
 	printerr("ButtonSelf has been pressed, but _on_pressed() not overrode. Name:" , self.name , " Text: ", get_text())

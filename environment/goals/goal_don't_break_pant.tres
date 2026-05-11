@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://dux8fo0i6ce8e"]
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_bkj8w"]
-[ext_resource type="AudioStream" uid="uid://cve4acv8al102" path="res://assets/sounds/LedasLuzta_smaller_break.wav" id="1_nk5ni"]
+[ext_resource type="AudioStream" uid="uid://dbh85qrpdklhb" path="res://assets/sounds/floraphonic-rocks-and-gravel-slide-1-204994.mp3" id="1_nk5ni"]
 [ext_resource type="Texture2D" uid="uid://c6x0ibmvnejut" path="res://assets/Furniture/Breakables/PottedShrubBroken.png" id="2_v3ak6"]
 [ext_resource type="Texture2D" uid="uid://du1vfa80f55hi" path="res://assets/Furniture/Breakables/PottedShrub.png" id="3_nhwk0"]
 
