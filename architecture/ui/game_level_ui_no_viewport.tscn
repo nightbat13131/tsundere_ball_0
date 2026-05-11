@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cud6a2n84df5f"]
+
+[ext_resource type="Script" uid="uid://cdmrdduas5aaf" path="res://architecture/ui/game_level_ui.gd" id="1_ll80i"]
+[ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_s1unj"]
+[ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_0d11o"]
+[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="4_86wyq"]
+[ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_xkafi"]
+[ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/options_control_type.gd" id="6_rvjoe"]
+[ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="7_r5lqn"]
+[ext_resource type="Script" uid="uid://tjdvvki3df43" path="res://architecture/ui/button_restart_level.gd" id="8_o36rh"]
+[ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="9_o25ae"]
+[ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="10_ru2t5"]
+[ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="11_ww6xv"]
+[ext_resource type="Script" uid="uid://bbfu4nrpd8wik" path="res://architecture/ui/level_anchor.gd" id="12_6nxic"]
+[ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="13_k7fvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
+atlas = ExtResource("4_86wyq")
+region = Rect2(2, 153, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6y21"]
+atlas = ExtResource("7_r5lqn")
+region = Rect2(546, 131, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s66kq"]
+atlas = ExtResource("7_r5lqn")
+region = Rect2(579, 100, 10, 10)
+
+[node name="GameLevelUI" type="CanvasLayer" unique_id=290767530]
+process_mode = 3
+script = ExtResource("1_ll80i")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1692064266]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1044804643]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=2074390954]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=1430320388]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBanner" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1115683194]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner" unique_id=1889964907]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1945582308]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Texture_Portrait" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/MarginContainer" unique_id=874604160 instance=ExtResource("2_s1unj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GoalTracker" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1614772457]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("3_0d11o")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/GoalTracker" unique_id=2143513147]
+layout_mode = 2
+texture = SubResource("AtlasTexture_pojhi")
+stretch_mode = 4
+script = ExtResource("5_xkafi")
+
+[node name="Control" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=337516986]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=394613439]
+visible = false
+layout_mode = 2
+script = ExtResource("6_rvjoe")
+
+[node name="TextureButton_RestartLevel" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=733876681]
+layout_mode = 2
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_o6y21")
+script = ExtResource("8_o36rh")
+mouse_cursor = ExtResource("9_o25ae")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="TextureButton_Map" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1683309943]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_s66kq")
+script = ExtResource("10_ru2t5")
+mouse_cursor = ExtResource("9_o25ae")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="Button_SoundSettings" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=922504962 instance=ExtResource("11_ww6xv")]
+layout_mode = 2
+
+[node name="LevelAnchor" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=2077499331]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(944, 560)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("12_6nxic")
+
+[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/LevelAnchor" unique_id=1783182777 instance=ExtResource("13_k7fvm")]
+visible = false

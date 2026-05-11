@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="9_5sm44"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_t41t0"]
 [ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/ui/level_viewport.gd" id="11_cwohd"]
-[ext_resource type="PackedScene" uid="uid://cd3pbg6rdw583" path="res://testing/test_levels/test_room.tscn" id="12_e4ln5"]
+[ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="12_4vmp8"]
 [ext_resource type="PackedScene" uid="uid://dkr80d2pi0d41" path="res://addons/guide/debugger/guide_debugger.tscn" id="13_1ei8u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
@@ -65,7 +65,6 @@ mouse_filter = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 0
 
 [node name="GoalTracker" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1614772457]
 layout_mode = 2
@@ -110,11 +109,11 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(640, 364)
+size = Vector2i(944, 560)
 render_target_update_mode = 4
 script = ExtResource("11_cwohd")
 
-[node name="Node2D" parent="MarginContainer/CenterContainer/VBoxContainer/SubViewportContainer/LevelViewport" unique_id=1783182777 instance=ExtResource("12_e4ln5")]
+[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/SubViewportContainer/LevelViewport" unique_id=1783182777 instance=ExtResource("12_4vmp8")]
 
 [node name="GuideDebugger" parent="." unique_id=676886905 instance=ExtResource("13_1ei8u")]
 visible = false

@@ -6,12 +6,26 @@ static var _instance: LevelSelect: get = get_instance
 static var _level_to_load : LevelInfo
 static var _last_laoded: LevelInfo
 
-func _ready() -> void: _instance = self
+@export var focus_button : ButtonSelf
+@export var settings_screen: SoundManager
 
+func _ready() -> void: 
+	_instance = self
+	if settings_screen:
+		settings_screen.is_closing.connect(_on_settings_is_closing)
 func activate() -> void:
 	set_physics_process(true)
 	GameLevelUI.try_deactivate.call_deferred()
 	show()
+	if focus_button:
+		focus_button.grab_focus()
+
+func is_active() -> bool: return is_visible()
+
+func _on_settings_is_closing(is_closing: bool) -> void:
+	if is_active() and is_closing:
+		if focus_button:
+			focus_button.grab_focus()
 
 func deactivate() -> void:
 	hide()

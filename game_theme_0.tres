@@ -105,7 +105,24 @@ texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 7.0
 texture_margin_bottom = 5.0
-expand_margin_left = 2.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ewt1y"]
+load_path = "res://.godot/imported/Modern_UI_Style_1.png-4070cea3a26efb03b8d92906191dcaed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61nxy"]
+atlas = SubResource("CompressedTexture2D_ewt1y")
+region = Rect2(8, 14, 32, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_snm3c"]
+texture = SubResource("AtlasTexture_61nxy")
+texture_margin_left = 8.0
+texture_margin_top = 2.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 2.0
 
@@ -146,6 +163,8 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_4g51l")
 HSlider/styles/slider = SubResource("StyleBoxTexture_4c6po")
 Panel/styles/panel = SubResource("StyleBoxFlat_iydix")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ccd1t")
+PanelContainer_no_top/base_type = &"PanelContainer"
+PanelContainer_no_top/styles/panel = SubResource("StyleBoxTexture_snm3c")
 Pannel_Fog/base_type = &"PanelContainer"
 Pannel_Fog/styles/panel = SubResource("StyleBoxFlat_j8de2")
 master_slider/base_type = &"HSlider"

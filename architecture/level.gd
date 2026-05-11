@@ -41,7 +41,8 @@ func _draw() -> void:
 
 func _on_level_end_start(thing: Ball, _trap: Trap) -> void:
 	if thing is Ball_Player:
-		Portrait.request_emotion(FaceTexture.Emotions.BLUSHING)
+		Portrait.level_end()
+		#Portrait.request_emotion(FaceTexture.Emotions.BLUSHING)
 		if _level_info: ## so can run level in debug
 			_level_info.set_score(GoalTracker.get_score())
 	else:

@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="7_e6151"]
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="8_e6151"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
-[ext_resource type="Script" uid="uid://bbfu4nrpd8wik" path="res://architecture/ui/level_anchor.gd" id="11_f0lw1"]
 [ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="11_pojhi"]
+[ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/ui/level_viewport.gd" id="12_e6151"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
 atlas = ExtResource("4_56b18")
@@ -110,12 +110,22 @@ metadata/_custom_type_script = "uid://dij1pecfcavpi"
 [node name="Button_SoundSettings" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=922504962 instance=ExtResource("10_pojhi")]
 layout_mode = 2
 
-[node name="LevelAnchor" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=2077499331]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(944, 560)
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1268844189]
 layout_mode = 2
 mouse_filter = 2
-script = ExtResource("11_f0lw1")
+theme_type_variation = &"PanelContainer_no_top"
 
-[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/LevelAnchor" unique_id=1783182777 instance=ExtResource("11_pojhi")]
-visible = false
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer" unique_id=554786834]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="LevelViewport" type="SubViewport" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/SubViewportContainer" unique_id=323253979]
+unique_name_in_owner = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(944, 560)
+render_target_update_mode = 4
+script = ExtResource("12_e6151")
+
+[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/SubViewportContainer/LevelViewport" unique_id=1783182777 instance=ExtResource("11_pojhi")]

@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://b7xdoygf4wxa3"]
 
 [ext_resource type="Texture2D" uid="uid://dp6bw3nvdfa4g" path="res://assets/balls/faces/texture_face.tres" id="2_otlxg"]
+[ext_resource type="AudioStream" uid="uid://cynntvmhk7awu" path="res://assets/sounds/cute_ball_grunts/haynie_cute_sad_aahh.mp3" id="3_0r41s"]
+[ext_resource type="SpriteFrames" uid="uid://1yl8e6wbw1i0" path="res://balls/player/feet_sprite_frames.tres" id="3_c42lp"]
 [ext_resource type="Script" uid="uid://dbyu7ac7b1qfh" path="res://character/texture_portrait.gd" id="3_euii2"]
+[ext_resource type="AudioStream" uid="uid://d3my4b1lskq83" path="res://assets/sounds/cute_ball_grunts/haynie_cute_sad_grunts_huhh.mp3" id="4_3rxsg"]
+[ext_resource type="Script" uid="uid://dksap5bvgpa7t" path="res://balls/animated_sprite_feet.gd" id="4_otlxg"]
+[ext_resource type="AudioStream" uid="uid://bqt1o7k7dp8oi" path="res://assets/sounds/cute_ball_grunts/haynie_cute_sad_grunts_huhuhuh.mp3" id="5_dt3l0"]
+[ext_resource type="AudioStream" uid="uid://dc5g2fffxcj53" path="res://assets/sounds/cute_ball_grunts/haynie_cute_sad_grunts_uhh.mp3" id="6_gyw21"]
+[ext_resource type="AudioStream" uid="uid://rsbr1v8yxqjs" path="res://assets/sounds/cute_ball_grunts/haynie_cute_sad_moho.mp3" id="7_15urm"]
+[ext_resource type="AudioStream" uid="uid://b1durw4qe8tbq" path="res://assets/sounds/cute_ball_grunts/haynie_cute_sad_oohh.mp3" id="8_da6jn"]
+[ext_resource type="AudioStream" uid="uid://dr87xr3y76epr" path="res://assets/sounds/cute_ball_grunts/haynie_cute_happy_grunts_wah.mp3" id="9_0ovcv"]
+[ext_resource type="AudioStream" uid="uid://bxsl0eb0v1mtr" path="res://assets/sounds/cute_ball_grunts/haynie_cute_happy_grunts_woha.mp3" id="10_bakyr"]
+[ext_resource type="AudioStream" uid="uid://dbho3cbxeed2d" path="res://assets/sounds/cute_ball_grunts/haynie_cute_happy_grunts_yaah.mp3" id="11_yvked"]
+[ext_resource type="AudioStream" uid="uid://oimwgh7ycdb" path="res://assets/sounds/cute_ball_grunts/haynie_cute_happy_grunts_yahahh.mp3" id="12_ojce5"]
+[ext_resource type="AudioStream" uid="uid://prycbixqljam" path="res://assets/sounds/cute_ball_grunts/haynie_cute_happy_grunts_yawoo.mp3" id="13_gwox8"]
 
 [node name="Texture_Portrait" type="TextureRect" unique_id=1248651943]
+z_index = 10
 offset_right = 32.0
 offset_bottom = 32.0
 mouse_filter = 0
@@ -11,3 +25,14 @@ texture = ExtResource("2_otlxg")
 stretch_mode = 5
 script = ExtResource("3_euii2")
 face_image = ExtResource("2_otlxg")
+bad_sounds = Array[AudioStream]([ExtResource("3_0r41s"), ExtResource("4_3rxsg"), ExtResource("5_dt3l0"), ExtResource("6_gyw21"), ExtResource("7_15urm"), ExtResource("8_da6jn")])
+good_sounds = Array[AudioStream]([ExtResource("9_0ovcv"), ExtResource("10_bakyr"), ExtResource("11_yvked"), ExtResource("12_ojce5"), ExtResource("13_gwox8")])
+good_emotions = Array[int]([1, 6, 8, 9, 11, 13])
+bad_emotions = Array[int]([4, 12, 3, 5])
+
+[node name="AnimatedSprite_Feet" type="AnimatedSprite2D" parent="." unique_id=1987445672]
+z_as_relative = false
+position = Vector2(16, 15)
+sprite_frames = ExtResource("3_c42lp")
+script = ExtResource("4_otlxg")
+metadata/_custom_type_script = "uid://dksap5bvgpa7t"

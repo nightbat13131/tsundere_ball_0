@@ -2,8 +2,8 @@
 class_name GameLevelUI extends CanvasLayer
 
 static var _instance : GameLevelUI : get = get_instance
-#@onready var level_viewport: LevelViewport = %LevelViewport
-@onready var level_anchor: LevelAnchor = %LevelAnchor
+@onready var level_viewport: LevelViewport = %LevelViewport
+#@onready var level_anchor: LevelAnchor = %LevelAnchor
 
 
 const UI_BANNER_HEIGHT = 50
@@ -30,14 +30,14 @@ func _show_level(level_scene: PackedScene, level_info: LevelInfo) -> void:
 	activate()
 	var level : Level = level_scene.instantiate()
 	level.set_info(level_info)
-	#level_viewport.add_level(level)
-	level_anchor.add_level(level)
+	level_viewport.add_level(level)
+	#level_anchor.add_level(level)
 
 func _clear_old_level() -> void:
 	if Engine.is_editor_hint():
 		return
-	#level_viewport.clear_old_level()
-	level_anchor.clear_old_level()
+	level_viewport.clear_old_level()
+	#level_anchor.clear_old_level()
 
 static func try_deactivate() -> void:
 	if get_instance():

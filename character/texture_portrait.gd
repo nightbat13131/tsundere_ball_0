@@ -5,6 +5,11 @@ const BASE_DURATION = 2.0
 static var _instance : Portrait
 
 @export var face_image : FaceTexture
+@export var bad_sounds : Array[AudioStream]
+@export var good_sounds : Array[AudioStream]
+
+@export var good_emotions: Array[FaceTexture.Emotions]
+@export var bad_emotions: Array[FaceTexture.Emotions]
 
 var emote_remaining := 0.0
 
@@ -32,9 +37,29 @@ func _request_emotion(emotion: FaceTexture.Emotions, is_idle:= false) -> void:
 	else: 
 		emote_remaining = BASE_DURATION
 
-static func request_emotion(emotion: FaceTexture.Emotions) -> void:
+func _something_bad() -> void:
+	_request_emotion(bad_emotions.pick_random())
+	SoundManager.request_sfx(bad_sounds.pick_random())
+
+func _something_good() -> void:
+	_request_emotion(good_emotions.pick_random())
+	SoundManager.request_sfx(good_sounds.pick_random())
+
+func _level_end() -> void:
+	#sound based on score
+	pass
+
+static func something_bad() -> void:
 	if _instance:
-		_instance._request_emotion(emotion)
+		_instance._something_bad()
+
+static func something_good() -> void:
+	if _instance:
+		_instance._something_good()
+
+static func level_end() -> void:
+	if _instance:
+		_instance._level_end()
 
 static func level_start() -> void:
 	if _instance:

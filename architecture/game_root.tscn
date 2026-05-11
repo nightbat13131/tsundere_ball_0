@@ -36,7 +36,8 @@ custom_cursors = Array[ExtResource("3_q0ibd")]([ExtResource("4_6nvoi"), ExtResou
 
 [node name="GameLevelUI" parent="." unique_id=290767530 instance=ExtResource("3_n0w4j")]
 
-[node name="LevelSelect" parent="." unique_id=408408737 instance=ExtResource("2_2uli3")]
+[node name="LevelSelect" parent="." unique_id=408408737 node_paths=PackedStringArray("settings_screen") instance=ExtResource("2_2uli3")]
+settings_screen = NodePath("../AudioManager")
 
 [node name="AudioManager" parent="." unique_id=2119366650 instance=ExtResource("4_50a1j")]
 

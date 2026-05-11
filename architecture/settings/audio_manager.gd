@@ -1,5 +1,7 @@
 class_name SoundManager extends CanvasLayer
 
+signal is_closing(is_closing: bool)
+
 @export var sound_sfx_changed : AudioStream 
 
 @onready var mute_all: ButtonSelf = %MuteAll
@@ -39,6 +41,7 @@ func activate() -> void: _set_acitve(true)
 func deactivate() -> void: _set_acitve(false)
 
 func _set_acitve(turn_on: bool) -> void:
+	is_closing.emit(!turn_on)
 	GameRoot.request_pause(turn_on)
 	set_visible(turn_on)
 	for each_slider: HSlider_Enhanced in h_sliders: 

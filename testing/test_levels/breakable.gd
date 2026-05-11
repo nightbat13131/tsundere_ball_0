@@ -57,7 +57,8 @@ func _hit_by(thing: Node2D) -> void:
 		used.emit(thing)
 
 func _break() -> void:
-	Portrait.request_emotion(FaceTexture.Emotions.MAD)
+	Portrait.something_bad()
+	#Portrait.request_emotion(FaceTexture.Emotions.MAD)
 	for each_child in get_children():
 		if each_child is CollisionShape2D:
 			each_child.set_disabled(true)
