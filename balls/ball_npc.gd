@@ -32,6 +32,10 @@ func set_animation() -> void:
 		NPCType.BLUE:
 			animated_sprite_ball.set_sprite_frames(blue_sprites)
 
+func _draw() -> void:
+	if Engine.is_editor_hint():
+		draw_circle(Vector2.ZERO, BALL_RADIUS * 1.5, get_color(_npc_type))
+
 static func get_ball_collision_layer(npc_type: NPCType) -> int:
 	match npc_type:
 		NPCType.RED:

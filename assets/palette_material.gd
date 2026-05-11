@@ -10,6 +10,7 @@ const SHADER_ARRAY_SIZE = 32  # was orignally a full 256
 
 enum PalletSelection {DEFAULT = 1, GRAYS = 3, SKY = 4, 
 	SPENCERS = 5,
+	GROCERY = 6,
 	TUTORIAL = 2,
 }
 

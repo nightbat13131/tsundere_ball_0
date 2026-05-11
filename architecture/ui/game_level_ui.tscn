@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="8_e6151"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
 [ext_resource type="Script" uid="uid://bbfu4nrpd8wik" path="res://architecture/ui/level_anchor.gd" id="11_f0lw1"]
-[ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/tutorial.tscn" id="11_pojhi"]
+[ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="11_pojhi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
 atlas = ExtResource("4_56b18")

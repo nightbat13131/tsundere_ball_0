@@ -3,7 +3,7 @@ extends ButtonSelf
 
 @export var _close := false
 
-@export var thing: LoadingScreen
+@export var thing: LoadingCurtain
 
 func _on_pressed() -> void:
 	if !thing: 

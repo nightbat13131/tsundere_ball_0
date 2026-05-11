@@ -39,7 +39,7 @@ func _draw() -> void:
 		draw_polyline(points, Color.RED, 4
 	)
 
-func _on_level_end_start(thing: Ball) -> void:
+func _on_level_end_start(thing: Ball, _trap: Trap) -> void:
 	if thing is Ball_Player:
 		Portrait.request_emotion(FaceTexture.Emotions.BLUSHING)
 		if _level_info: ## so can run level in debug
@@ -47,7 +47,7 @@ func _on_level_end_start(thing: Ball) -> void:
 	else:
 		push_error(thing, "triggered Level._on_level_end_start instead of a Ball_Player")
 
-func _on_level_end_complete(thing: Ball) -> void:
+func _on_level_end_complete(thing: Ball, _trap: Trap) -> void:
 	if thing is Ball_Player:
 		GameRoot.request_map_view()
 	else:

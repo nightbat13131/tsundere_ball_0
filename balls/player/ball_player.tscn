@@ -37,6 +37,7 @@ expression = "RollCoolDown <= 0.0"
 metadata/_custom_type_script = "uid://le5w1cm0ul8p"
 
 [node name="BallPlayer" type="RigidBody2D" unique_id=2041115718]
+z_index = 100
 collision_layer = 0
 collision_mask = 0
 mass = 2.0

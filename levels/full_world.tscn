@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ds1k5d6mo0ctc"]
+
+[ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="1_ip5cj"]
+[ext_resource type="PackedScene" uid="uid://kv7u6g7bgryb" path="res://levels/_01_grocery.tscn" id="2_g15fm"]
+[ext_resource type="PackedScene" uid="uid://c3lne062koifr" path="res://levels/spencers.tscn" id="3_ay36w"]
+
+[node name="FullWorld" type="Node2D" unique_id=813509994]
+
+[node name="Tutorial" parent="." unique_id=1783182777 instance=ExtResource("1_ip5cj")]
+position = Vector2(6, 59)
+
+[node name="Spencers" parent="." unique_id=1425284418 instance=ExtResource("2_g15fm")]
+position = Vector2(964, 11)
+
+[node name="Spencers2" parent="." unique_id=942252390 instance=ExtResource("3_ay36w")]
+position = Vector2(1921, 9)

@@ -10,6 +10,7 @@ enum Z_Indexes {
 	DOORS = 12, 
 	OVERLAY = 20}
 
+enum Conditions { AND = 0, OR = 1} 
 
 const LOCKED_COLOR = Color.WEB_GRAY
 
@@ -20,7 +21,7 @@ const COLOR_NPC_RED = Color("#f72796") # Color.RED
 const COLOR_NPC_YELLOW = Color("#15e445") # Color.YELLOW
 const COLOR_NPC_BLUE = Color("#23c8fa") # Color.BLUE
 const COLOR_PLAYER = Color("#d8a4ec") #Color.WHITE
-const DARKEN_HOLE = .25
+const DARKEN_HOLE = .75
 
 const COLOR_BORDER_BOUNCY = Color.WHITE
 const COLOR_BORDER_OBSTICAL = Color.BLACK
