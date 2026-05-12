@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dl8vkdlsw1m4u" path="res://testing/test_levels/dev_lv_animation.tres" id="4_fmbur"]
 [ext_resource type="Resource" uid="uid://hb8f0ycya01h" path="res://testing/test_levels/dev_lv_background.tres" id="5_0hgg1"]
 [ext_resource type="Resource" uid="uid://rbe8nihyrmi" path="res://testing/test_levels/dev_lv_pool.tres" id="5_080af"]
+[ext_resource type="AudioStream" uid="uid://dj5s35kjb0aei" path="res://assets/sounds/floraphonic-classic-game-action-positive-23-224561.mp3" id="6_fbxss"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
 [ext_resource type="Resource" uid="uid://bgs66genfal2j" path="res://architecture/ui/cursors/level_enter.tres" id="6_ijyg7"]
 [ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/01_info.tres" id="7_05iph"]
@@ -79,6 +80,7 @@ focus_neighbor_right = NodePath("../_1")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("3_bagxp")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -94,6 +96,7 @@ focus_neighbor_right = NodePath("../_2")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("7_05iph")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -108,6 +111,7 @@ focus_neighbor_top = NodePath("../_3")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("8_05iph")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -123,6 +127,7 @@ focus_neighbor_bottom = NodePath("../_2")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("9_mx6xu")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -139,6 +144,7 @@ focus_neighbor_bottom = NodePath("../_3")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("10_tva47")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -154,6 +160,7 @@ focus_neighbor_bottom = NodePath("../_6")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("11_ynp5y")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -170,6 +177,7 @@ focus_neighbor_bottom = NodePath("../_1")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("12_fbxss")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -185,6 +193,7 @@ focus_neighbor_bottom = NodePath("../Tutorial")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("13_ynp5y")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -199,6 +208,7 @@ focus_neighbor_bottom = NodePath("../_7")
 icon = ExtResource("2_f5khk")
 script = ExtResource("1_jcfkq")
 level_info = ExtResource("14_fbxss")
+sfx_sound = ExtResource("6_fbxss")
 mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 

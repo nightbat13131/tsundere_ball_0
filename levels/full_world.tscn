@@ -2,15 +2,43 @@
 
 [ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="1_ip5cj"]
 [ext_resource type="PackedScene" uid="uid://kv7u6g7bgryb" path="res://levels/_01_grocery.tscn" id="2_g15fm"]
-[ext_resource type="PackedScene" uid="uid://c3lne062koifr" path="res://levels/spencers.tscn" id="3_ay36w"]
+[ext_resource type="PackedScene" uid="uid://c3lne062koifr" path="res://levels/_02_spencers.tscn" id="3_ay36w"]
+[ext_resource type="PackedScene" uid="uid://de2lcbrtpry1l" path="res://levels/_03_bowling.tscn" id="4_dycqt"]
+[ext_resource type="PackedScene" uid="uid://dm6k6og5oabc1" path="res://levels/l4.tscn" id="5_y3ltj"]
+[ext_resource type="PackedScene" uid="uid://d3kq30x107fck" path="res://levels/l5.tscn" id="6_lokff"]
+[ext_resource type="PackedScene" uid="uid://bh23o2ykokgbx" path="res://levels/l6.tscn" id="7_j8n07"]
+[ext_resource type="PackedScene" uid="uid://qjcy7mlw5lch" path="res://levels/l7.tscn" id="8_ibr5p"]
+[ext_resource type="PackedScene" uid="uid://berolhgkqa10b" path="res://levels/l8.tscn" id="9_2hra7"]
 
 [node name="FullWorld" type="Node2D" unique_id=813509994]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2029397765]
+position = Vector2(1441, -302)
+zoom = Vector2(0.35, 0.35)
 
 [node name="Tutorial" parent="." unique_id=1783182777 instance=ExtResource("1_ip5cj")]
 position = Vector2(6, 59)
 
-[node name="Spencers" parent="." unique_id=1425284418 instance=ExtResource("2_g15fm")]
-position = Vector2(964, 11)
+[node name="01_Grocery" parent="." unique_id=34532267 instance=ExtResource("2_g15fm")]
+position = Vector2(971, 33)
 
 [node name="Spencers2" parent="." unique_id=942252390 instance=ExtResource("3_ay36w")]
 position = Vector2(1921, 19)
+
+[node name="Bowling Ally" parent="." unique_id=97734996 instance=ExtResource("4_dycqt")]
+position = Vector2(1939, -571)
+
+[node name="Level2" parent="." unique_id=1055897155 instance=ExtResource("5_y3ltj")]
+position = Vector2(1930, -1273)
+
+[node name="Level3" parent="." unique_id=2116825393 instance=ExtResource("6_lokff")]
+position = Vector2(955, -1268)
+
+[node name="Level4" parent="." unique_id=1265747329 instance=ExtResource("7_j8n07")]
+position = Vector2(970, -614)
+
+[node name="Level5" parent="." unique_id=1126100662 instance=ExtResource("8_ibr5p")]
+position = Vector2(0, -549)
+
+[node name="Level6" parent="." unique_id=2112752524 instance=ExtResource("9_2hra7")]
+position = Vector2(-10, -1208)

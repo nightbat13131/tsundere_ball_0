@@ -10,9 +10,11 @@
 [ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="6_qpwan"]
 [ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="7_e6151"]
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="8_e6151"]
+[ext_resource type="AudioStream" uid="uid://b21cbbjoxled6" path="res://assets/sounds/floraphonic-classic-game-action-negative-6-224416.mp3" id="9_wx1ds"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
 [ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="11_pojhi"]
 [ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/ui/level_viewport.gd" id="12_e6151"]
+[ext_resource type="AudioStream" uid="uid://bm6532s6qxc30" path="res://assets/sounds/floraphonic-bloop-1-184019.mp3" id="12_j2qje"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
 atlas = ExtResource("4_56b18")
@@ -95,6 +97,7 @@ layout_mode = 2
 size_flags_vertical = 4
 icon = SubResource("AtlasTexture_o6y21")
 script = ExtResource("5_ppoab")
+sfx_sound = ExtResource("9_wx1ds")
 mouse_cursor = ExtResource("8_e6151")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
@@ -104,6 +107,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = SubResource("AtlasTexture_s66kq")
 script = ExtResource("6_qpwan")
+sfx_sound = ExtResource("12_j2qje")
 mouse_cursor = ExtResource("8_e6151")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
