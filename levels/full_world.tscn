@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://kv7u6g7bgryb" path="res://levels/_01_grocery.tscn" id="2_g15fm"]
 [ext_resource type="PackedScene" uid="uid://c3lne062koifr" path="res://levels/_02_spencers.tscn" id="3_ay36w"]
 [ext_resource type="PackedScene" uid="uid://de2lcbrtpry1l" path="res://levels/_03_bowling.tscn" id="4_dycqt"]
-[ext_resource type="PackedScene" uid="uid://dm6k6og5oabc1" path="res://levels/l4.tscn" id="5_y3ltj"]
+[ext_resource type="PackedScene" uid="uid://dm6k6og5oabc1" path="res://levels/_04_clairs.tscn" id="5_y3ltj"]
 [ext_resource type="PackedScene" uid="uid://d3kq30x107fck" path="res://levels/l5.tscn" id="6_lokff"]
 [ext_resource type="PackedScene" uid="uid://bh23o2ykokgbx" path="res://levels/l6.tscn" id="7_j8n07"]
 [ext_resource type="PackedScene" uid="uid://qjcy7mlw5lch" path="res://levels/l7.tscn" id="8_ibr5p"]
@@ -22,13 +22,13 @@ position = Vector2(6, 59)
 [node name="01_Grocery" parent="." unique_id=34532267 instance=ExtResource("2_g15fm")]
 position = Vector2(971, 33)
 
-[node name="Spencers2" parent="." unique_id=942252390 instance=ExtResource("3_ay36w")]
+[node name="2 Spencers" parent="." unique_id=942252390 instance=ExtResource("3_ay36w")]
 position = Vector2(1970, 28)
 
-[node name="Bowling Ally" parent="." unique_id=97734996 instance=ExtResource("4_dycqt")]
+[node name="3 Bowling Ally" parent="." unique_id=97734996 instance=ExtResource("4_dycqt")]
 position = Vector2(1939, -571)
 
-[node name="4" parent="." unique_id=1055897155 instance=ExtResource("5_y3ltj")]
+[node name="4 Clairs" parent="." unique_id=1055897155 instance=ExtResource("5_y3ltj")]
 position = Vector2(1930, -1273)
 
 [node name="Level3" parent="." unique_id=2116825393 instance=ExtResource("6_lokff")]

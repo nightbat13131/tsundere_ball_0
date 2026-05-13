@@ -109,9 +109,9 @@ func _on_screen_exited() -> void:
 	_needs_pos_reset = true
 	set_use_custom_integrator(true)
 
-func remote_flig(direction_deg: int) -> void:
+func remote_fling(direction_deg: int, power_mod : float) -> void:
 	#_send_event(Ball_Player.EVENT_REMOTE_FLING)
-	apply_central_impulse(Vector2.from_angle( deg_to_rad(direction_deg)) * Ball_Player.MAX_POWER * 4 )
+	apply_central_impulse(Vector2.from_angle( deg_to_rad(direction_deg)) * Ball_Player.MAX_POWER * power_mod )
 
 func _send_event(_event: String) -> void: pass
 

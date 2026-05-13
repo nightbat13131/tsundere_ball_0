@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cakreegva6ums"]
 
-[ext_resource type="Texture2D" uid="uid://bjpux13ia7fxa" path="res://assets/Furniture/CopierPrinter.png" id="1_hq8wt"]
+[ext_resource type="Texture2D" uid="uid://bjpux13ia7fxa" path="res://environment/props/CopierPrinter.png" id="1_hq8wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hq8wt"]
 size = Vector2(24, 26)

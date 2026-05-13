@@ -35,6 +35,7 @@ var _disablers : Array[Area2D_Enhanced] = []
 #@export var release_trigger : Area2D_Enhanced
 @export var _trap_mode := TrapModes.HOLE
 @export var _angle_deg : int = 90 
+@export var _power_mod : float = 1.0
 @export_category("Icons")
 @export var _red_icons: CompressedTexture2D
 @export var _yellow_icons: CompressedTexture2D
@@ -109,16 +110,14 @@ func _on_body_entered(body: Node2D) -> void:
 		if !body is TileMapLayer_Enhanced: ## not ideal, but needs no error
 			push_warning("Trap ", self, "triggered for a ", body, " instead of a ball.")
 		return
-	body = body as Ball
-	if _trap_mode == TrapModes.FLING:
-		body.remote_flig(_angle_deg)
-		return 
 	
-	if _trap_mode == TrapModes.SIMPLE_TRIGGER:
-		_used = true
-		used.emit(body, self)
-		_hybernate()
+	if _trap_mode == TrapModes.FLING:
+		_do_fling(body)
+		return 
+	elif _trap_mode == TrapModes.SIMPLE_TRIGGER:
+		_do_trigger(body)
 		return
+	body = body as Ball
 	_used = body.get_captured(_trap_mode)
 	if !is_used(): # trapping for this body failed
 		return
@@ -137,6 +136,14 @@ func _on_body_entered(body: Node2D) -> void:
 		tween_scale.set_trans(Tween.TRANS_BOUNCE)
 		tween_scale.tween_property(body.animated_sprite_ball, "scale", Vector2(.8, .8), 1.0)
 	tween_pos.tween_callback(complete.emit.bind(body, self))
+
+func _do_fling(ball: Ball) -> void:
+	ball.remote_fling(_angle_deg, _power_mod)
+
+func _do_trigger(ball: Ball) -> void:
+	_used = true
+	used.emit(ball, self)
+	_hybernate()
 
 func _process(_delta: float) -> void: queue_redraw()
 
@@ -174,7 +181,6 @@ func _draw_fling(color := Color.WHITE, row_count := 3, row_mod: float = 0.1) -> 
 			color, THICKNESS*.5
 		)
 		arrow_tip += direction * row_thickness
-
 
 func _draw() -> void:
 	if Engine.is_editor_hint():

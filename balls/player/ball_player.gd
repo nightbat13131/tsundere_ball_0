@@ -41,6 +41,7 @@ var global_mouse_end := DEFAULT_POS
 const DEFAULT_ROLL_COOLDONW := .50
 var remaining_roll_cooldown := 0.0
 var _remote_direction_deg : int = 0
+var _remote_power_mod : int = 0
 
 @onready var state_chart: StateChart = %StateChart
 @onready var state_walk: CompoundState = %WalkMode
@@ -117,10 +118,7 @@ func _get_usable_power() -> float:
 	elif state_aiming_joystick.active:
 		if action_joystick_aim.is_triggered():
 			out = action_joystick_aim.value_axis_2d.length() * MAX_POWER
-			#prints(action_joystick_aim.value_axis_2d, out)
 	## short doesn't count
-	
-	
 	return clampf(out, MIN_POWER, MAX_POWER)
 
 func _get_power_ratio() -> float: return (_get_usable_power()-MIN_POWER) / (MAX_POWER - MIN_POWER)
@@ -210,9 +208,10 @@ func _send_event(event: String) -> void:
 	else:
 		push_error(self, " has no State Chart")
 
-func remote_flig(direction_deg: int) -> void:
+func remote_fling(direction_deg: int, power_mod : float) -> void:
 	_send_event(Ball_Player.EVENT_REMOTE_FLING)
 	_remote_direction_deg = direction_deg
+	_remote_power_mod = power_mod
 	#apply_central_impulse(Vector2.from_angle( deg_to_rad(direction_deg)) * Ball_Player.MAX_POWER * 4 )
 
 func _on_walk_mode_state_entered() -> void: 
@@ -283,7 +282,7 @@ func _on_tree_exiting() -> void:
 func _on_ready_state_entered() -> void: set_use_custom_integrator(false)
 
 func _on_do_fling_state_entered() -> void:
-	var _power := MAX_POWER * 2.5
+	var _power := MAX_POWER * _remote_power_mod
 	var _direction := Vector2.from_angle(deg_to_rad(_remote_direction_deg))
 	_send_event(EVENT_FLING_COMPLETE) # so far no conflict with calling this before applying the impulse
 	remaining_roll_cooldown = DEFAULT_ROLL_COOLDONW

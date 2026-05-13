@@ -7,7 +7,6 @@ size = Vector2(26, 20)
 
 [node name="SmallBrownTable" type="CollisionShape2D" unique_id=524959152]
 shape = SubResource("RectangleShape2D_fpvtr")
-metadata/_edit_group_ = true
 
 [node name="SmallBrownTable" type="Sprite2D" parent="." unique_id=1497740419]
 texture = ExtResource("1_nj7iy")
