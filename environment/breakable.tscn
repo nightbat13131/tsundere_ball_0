@@ -33,4 +33,3 @@ unique_name_in_owner = true
 position = Vector2(-1, -38)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("4_g0v8s")
-animation = &"mad"

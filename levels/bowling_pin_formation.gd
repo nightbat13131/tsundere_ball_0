@@ -27,5 +27,3 @@ func _ready() -> void:
 			get_child(ball_index).position = _current_position
 			_current_position += Vector2.DOWN * _here_radis
 			ball_index += 1
-			pass
-			print(row_number, col_num)

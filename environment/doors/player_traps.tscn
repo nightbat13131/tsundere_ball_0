@@ -5,31 +5,39 @@
 [ext_resource type="Texture2D" uid="uid://cqd10kb34o6j3" path="res://assets/balls/Cookie.png" id="3_cpvol"]
 [ext_resource type="Texture2D" uid="uid://dalcnpagcfni0" path="res://assets/balls/Bunny.png" id="4_as8vi"]
 [ext_resource type="Texture2D" uid="uid://chlc6nt6chqwy" path="res://assets/balls/hero.png" id="5_x1i6i"]
+[ext_resource type="SpriteFrames" uid="uid://chu0rqymqtju6" path="res://small_happy_man.tres" id="6_f8com"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1i6i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idoww"]
 size = Vector2(50, 50)
 
 [node name="Trap_Player" type="Area2D" unique_id=531650769]
+modulate = Color(1, 1, 1, 0.75)
 z_index = 6
 z_as_relative = false
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_b24b0")
+_trap_mode = 0
 _red_icons = ExtResource("2_ivl5a")
 _yellow_icons = ExtResource("3_cpvol")
 _blue_icons = ExtResource("4_as8vi")
 _player_icons = ExtResource("5_x1i6i")
-_trap_mode = 0
 npc_type = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=200930861]
 unique_name_in_owner = true
 visible = false
-shape = SubResource("RectangleShape2D_x1i6i")
+shape = SubResource("RectangleShape2D_idoww")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=526299596]
 unique_name_in_owner = true
 texture = ExtResource("5_x1i6i")
 hframes = 2
 frame = 1
+
+[node name="happy_man" type="AnimatedSprite2D" parent="." unique_id=99338312]
+unique_name_in_owner = true
+position = Vector2(0, -50)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("6_f8com")

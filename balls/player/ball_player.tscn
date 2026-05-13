@@ -106,6 +106,24 @@ script = ExtResource("12_gw41h")
 initial_state = NodePath("Ready")
 metadata/_custom_type_script = "uid://jk2jm1g6q853"
 
+[node name="ToRemoteFling" type="Node" parent="StateChart/CompoundState" unique_id=770139190]
+script = ExtResource("14_0xn1p")
+to = NodePath("../RemoteFling")
+event = &"remote_fling"
+delay_in_seconds = "0.0"
+
+[node name="ToCaptured" type="Node" parent="StateChart/CompoundState" unique_id=1121964734]
+script = ExtResource("14_0xn1p")
+to = NodePath("../Captured")
+event = &"captured"
+delay_in_seconds = "0.0"
+
+[node name="Telported" type="Node" parent="StateChart/CompoundState" unique_id=108885275]
+script = ExtResource("14_0xn1p")
+to = NodePath("../Ready")
+event = &"teleported"
+delay_in_seconds = "0.0"
+
 [node name="Ready" type="Node" parent="StateChart/CompoundState" unique_id=665666991]
 script = ExtResource("13_gw41h")
 
@@ -162,6 +180,28 @@ script = ExtResource("14_0xn1p")
 to = NodePath("../../../RollMode/Aiming/Mouse/MouseAiming")
 event = &"mouse_pressed"
 delay_in_seconds = "0.0"
+
+[node name="RemoteFling" type="Node" parent="StateChart/CompoundState" unique_id=1741659140]
+script = ExtResource("12_gw41h")
+initial_state = NodePath("FlingCharging")
+
+[node name="FlingCharging" type="Node" parent="StateChart/CompoundState/RemoteFling" unique_id=483222116]
+script = ExtResource("13_gw41h")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="charging" type="Node" parent="StateChart/CompoundState/RemoteFling/FlingCharging" unique_id=320969189]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../DoFling")
+delay_in_seconds = "0.1"
+
+[node name="DoFling" type="Node" parent="StateChart/CompoundState/RemoteFling" unique_id=1553378962]
+script = ExtResource("13_gw41h")
+
+[node name="To_roll" type="Node" parent="StateChart/CompoundState/RemoteFling/DoFling" unique_id=1548767076]
+script = ExtResource("14_0xn1p")
+to = NodePath("../../../RollMode")
+event = &"fling_complete"
+delay_in_seconds = "0.2"
 
 [node name="RollMode" type="Node" parent="StateChart/CompoundState" unique_id=887483662]
 script = ExtResource("12_gw41h")
@@ -255,21 +295,13 @@ delay_in_seconds = "0.0"
 [node name="MouseTryRoll" type="Node" parent="StateChart/CompoundState/RollMode/Aiming/Mouse" unique_id=27954402]
 script = ExtResource("13_gw41h")
 
-[node name="ToCaptured" type="Node" parent="StateChart/CompoundState" unique_id=1121964734]
-script = ExtResource("14_0xn1p")
-to = NodePath("../Captured")
-event = &"captured"
-delay_in_seconds = "0.0"
-
-[node name="Telported" type="Node" parent="StateChart/CompoundState" unique_id=108885275]
-script = ExtResource("14_0xn1p")
-to = NodePath("../Ready")
-event = &"teleported"
-delay_in_seconds = "0.0"
-
 [connection signal="state_entered" from="StateChart/CompoundState/Ready" to="." method="_on_ready_state_entered"]
 [connection signal="state_entered" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_entered"]
 [connection signal="state_processing" from="StateChart/CompoundState/WalkMode" to="." method="_on_walk_mode_state_processing"]
+[connection signal="state_entered" from="StateChart/CompoundState/RemoteFling" to="." method="_on_remote_fling_state_entered"]
+[connection signal="state_entered" from="StateChart/CompoundState/RemoteFling/FlingCharging" to="." method="_on_remote_fling_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/CompoundState/RemoteFling/FlingCharging" to="." method="_on_remote_fling_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/CompoundState/RemoteFling/DoFling" to="." method="_on_do_fling_state_entered"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode" to="." method="_on_roll_mode_state_entered"]
 [connection signal="state_exited" from="StateChart/CompoundState/RollMode" to="." method="_on_roll_mode_state_exited"]
 [connection signal="state_entered" from="StateChart/CompoundState/RollMode/Waiting_Roll" to="." method="_on_waiting_roll_state_entered"]

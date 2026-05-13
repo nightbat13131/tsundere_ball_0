@@ -109,6 +109,10 @@ func _on_screen_exited() -> void:
 	_needs_pos_reset = true
 	set_use_custom_integrator(true)
 
+func remote_flig(direction_deg: int) -> void:
+	#_send_event(Ball_Player.EVENT_REMOTE_FLING)
+	apply_central_impulse(Vector2.from_angle( deg_to_rad(direction_deg)) * Ball_Player.MAX_POWER * 4 )
+
 func _send_event(_event: String) -> void: pass
 
 # https://forum.godotengine.org/t/what-is-the-proper-way-to-teleport-rigidbody2d/27752/3

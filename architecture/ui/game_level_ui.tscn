@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cr8i3ltlsxyoy"]
 
 [ext_resource type="Script" uid="uid://cdmrdduas5aaf" path="res://architecture/ui/game_level_ui.gd" id="1_ut0wp"]
+[ext_resource type="Resource" uid="uid://cflkbwkds83x0" path="res://guide/ui_screen_focus.tres" id="2_j2qje"]
 [ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_m7fyu"]
 [ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/options_control_type.gd" id="3_fqrik"]
 [ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_qpwan"]
@@ -12,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://cp77kqo2x281y" path="res://architecture/ui/cursors/ui_button_active.tres" id="8_e6151"]
 [ext_resource type="AudioStream" uid="uid://b21cbbjoxled6" path="res://assets/sounds/floraphonic-classic-game-action-negative-6-224416.mp3" id="9_wx1ds"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
-[ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="11_pojhi"]
 [ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/ui/level_viewport.gd" id="12_e6151"]
 [ext_resource type="AudioStream" uid="uid://bm6532s6qxc30" path="res://assets/sounds/floraphonic-bloop-1-184019.mp3" id="12_j2qje"]
 
@@ -28,71 +28,96 @@ region = Rect2(546, 131, 12, 11)
 atlas = ExtResource("7_e6151")
 region = Rect2(579, 100, 10, 10)
 
-[node name="GameLevelUI" type="CanvasLayer" unique_id=290767530]
+[node name="GameLevelUI" type="CanvasLayer" unique_id=290767530 node_paths=PackedStringArray("focus_target")]
 process_mode = 3
 script = ExtResource("1_ut0wp")
+action_request_focus = ExtResource("2_j2qje")
+focus_target = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/TextureButton_Map")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1692064266]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Control" type="Control" parent="." unique_id=538668478]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1044804643]
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1692064266]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.5
+offset_top = -309.5
+offset_right = 479.5
+offset_bottom = 309.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer" unique_id=1044804643]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=2074390954]
+[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer" unique_id=2074390954]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=1430320388]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer" unique_id=1430320388]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TopBanner" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1115683194]
+[node name="TopBanner" type="PanelContainer" parent="Control/MarginContainer/CenterContainer/VBoxContainer" unique_id=1115683194]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner" unique_id=1889964907]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner" unique_id=1889964907]
 layout_mode = 2
 mouse_filter = 0
 theme_override_constants/separation = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1945582308]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1945582308]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="Texture_Portrait" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/MarginContainer" unique_id=874604160 instance=ExtResource("2_m7fyu")]
+[node name="Texture_Portrait" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/MarginContainer" unique_id=874604160 instance=ExtResource("2_m7fyu")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="GoalTracker" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1614772457]
+[node name="GoalTracker" type="HBoxContainer" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1614772457]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 script = ExtResource("3_qpwan")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/GoalTracker" unique_id=2143513147]
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/GoalTracker" unique_id=2143513147]
 layout_mode = 2
 texture = SubResource("AtlasTexture_pojhi")
 stretch_mode = 4
 script = ExtResource("5_pojhi")
 
-[node name="Control" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=337516986]
+[node name="Control" type="Control" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=337516986]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=394613439]
+[node name="OptionButton" type="OptionButton" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=394613439]
 visible = false
 layout_mode = 2
 script = ExtResource("3_fqrik")
 
-[node name="TextureButton_RestartLevel" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=733876681]
+[node name="TextureButton_RestartLevel" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=733876681]
 layout_mode = 2
 size_flags_vertical = 4
 icon = SubResource("AtlasTexture_o6y21")
@@ -101,7 +126,7 @@ sfx_sound = ExtResource("9_wx1ds")
 mouse_cursor = ExtResource("8_e6151")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
-[node name="TextureButton_Map" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1683309943]
+[node name="TextureButton_Map" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=1683309943]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -111,25 +136,23 @@ sfx_sound = ExtResource("12_j2qje")
 mouse_cursor = ExtResource("8_e6151")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
-[node name="Button_SoundSettings" parent="MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=922504962 instance=ExtResource("10_pojhi")]
+[node name="Button_SoundSettings" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=922504962 instance=ExtResource("10_pojhi")]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1268844189]
+[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer/CenterContainer/VBoxContainer" unique_id=1268844189]
 layout_mode = 2
 mouse_filter = 2
 theme_type_variation = &"PanelContainer_no_top"
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer" unique_id=554786834]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control/MarginContainer/CenterContainer/VBoxContainer/PanelContainer" unique_id=554786834]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 
-[node name="LevelViewport" type="SubViewport" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/SubViewportContainer" unique_id=323253979]
+[node name="LevelViewport" type="SubViewport" parent="Control/MarginContainer/CenterContainer/VBoxContainer/PanelContainer/SubViewportContainer" unique_id=323253979]
 unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(944, 560)
 render_target_update_mode = 4
 script = ExtResource("12_e6151")
-
-[node name="Tutorial" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/SubViewportContainer/LevelViewport" unique_id=1783182777 instance=ExtResource("11_pojhi")]

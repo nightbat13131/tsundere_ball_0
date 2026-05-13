@@ -7,7 +7,11 @@ const PALLET_SWAP_MATERIAL_PATH = 'uid://74bd75wqgltb' # already has the image i
 static var cursor : CustomCursor
 static var pallet_material : PaletteMaterial
 
-@export var _selected_pallet := PaletteMaterial.PalletSelection.DEFAULT
+@export var _selected_pallet := PaletteMaterial.PalletSelection.DEFAULT:
+	set(value):
+		_selected_pallet = value
+		apply_pallet()
+
 var _material : PaletteMaterial
 
 func _ready() -> void:

@@ -19,6 +19,7 @@ var _is_used := false # prevent multiple triggers in a frame
 
 func _ready() -> void:
 	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.DECORATIONS)
+	UTILITIES.apply_z_layer(mad_man, UTILITIES.Z_Indexes.SUB_OVERLAY)
 	animated_sprite_2d.play(ANIMATION_IDLE)
 	mad_man.play(ANIMATION_IDLE)
 	if Engine.is_editor_hint():

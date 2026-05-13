@@ -11,11 +11,14 @@ const THICKNESS = 4.0
 const FRAME_INACITVE = 0
 const FRAME_ACITVE = 1
 
+const ANIMATION_IDLE = &"default"
+const ANIMATION_HAPPY = &'happy'
+
 ## Pillar: Captures ball and holds it IN the way
 ## Hole: Captures's ball and moves it OUT of the way.
 ## Simple Trigger: something happens, but the ball is not "caught"
 ## Release the ball when the release trigger happens. 
-enum TrapModes {PILLAR, HOLE, SIMPLE_TRIGGER, CLAW_HOLE, CLAW_PILLAR, NONE}
+enum TrapModes {PILLAR = 0, HOLE = 1, SIMPLE_TRIGGER = 2, FLING = 3, CLAW_HOLE, CLAW_PILLAR, NONE = -1}
 
 var _used := false: get = is_used # prevent triggering multiple times in the same frame
 var _shape: Shape2D
@@ -31,22 +34,24 @@ var _disablers : Array[Area2D_Enhanced] = []
 
 #@export var release_trigger : Area2D_Enhanced
 @export var _trap_mode := TrapModes.HOLE
+@export var _angle_deg : int = 90 
 @export_category("Icons")
 @export var _red_icons: CompressedTexture2D
 @export var _yellow_icons: CompressedTexture2D
 @export var _blue_icons: CompressedTexture2D
 @export var _player_icons : CompressedTexture2D
 
-
-
 @onready var collision_shape: CollisionShape2D = %CollisionShape
 @onready var sprite_2d: Sprite2D = %Sprite2D
+@onready var happy_man: AnimatedSprite2D = %happy_man
 
 var is_locked := false
 
 func _ready() -> void:
 	super._ready()
 	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.TRAPS)
+	UTILITIES.apply_z_layer(happy_man, UTILITIES.Z_Indexes.SUB_OVERLAY)
+	happy_man.play(ANIMATION_IDLE)
 	set_modulate(Color(Color.WHITE, .75))
 	_setup_icon()
 	_setup_collision_shape()
@@ -86,13 +91,12 @@ func _on_unlock_check(_ball: Ball, trap: Trap)-> void:
 		_dependencys = []
 	else:
 		_dependencys.erase(trap)
-	if _dependencys.size() <= 1:
+	if _dependencys.is_empty():
 		_do_unlock()
 
 func _do_unlock() -> void:
 	is_locked = false
 	collision_shape.set_disabled.call_deferred(false)
-	#set_process_mode.call_deferred(Node.PROCESS_MODE_INHERIT)
 	queue_redraw()
 	sprite_2d.set_frame(FRAME_ACITVE)
 
@@ -105,6 +109,11 @@ func _on_body_entered(body: Node2D) -> void:
 		if !body is TileMapLayer_Enhanced: ## not ideal, but needs no error
 			push_warning("Trap ", self, "triggered for a ", body, " instead of a ball.")
 		return
+	body = body as Ball
+	if _trap_mode == TrapModes.FLING:
+		body.remote_flig(_angle_deg)
+		return 
+	
 	if _trap_mode == TrapModes.SIMPLE_TRIGGER:
 		_used = true
 		used.emit(body, self)
@@ -113,9 +122,9 @@ func _on_body_entered(body: Node2D) -> void:
 	_used = body.get_captured(_trap_mode)
 	if !is_used(): # trapping for this body failed
 		return
+	happy_man.play(ANIMATION_HAPPY)
 	used.emit(body, self)
 	Portrait.something_good()
-	#Portrait.request_emotion(FaceTexture.Emotions.BLUSHING)
 	_hybernate()
 	#suck to center
 	var tween_pos = get_tree().create_tween()
@@ -152,6 +161,21 @@ func _draw_trigger(color := Color.WHITE, row_count := 3, row_mod: float = 0.1) -
 	for i in range(row_count):
 		draw_line(Vector2.ZERO, Vector2.from_angle(start_radian + radian_width * i)*Ball.BALL_RADIUS*1.8, color, THICKNESS)
 
+func _draw_fling(color := Color.WHITE, row_count := 3, row_mod: float = 0.1) -> void:
+	var direction = Vector2.from_angle( deg_to_rad(_angle_deg))
+	var row_thickness := (SIDE_LENGTH) / float(row_count)
+	var arrow_tip = Vector2.ZERO - (direction * row_mod * row_thickness)
+	var arm_length = 30
+	
+	#draw_line(Vector2.ZERO,arrow_tip* Ball.BALL_RADIUS, color, 5)
+	for each in row_count:
+		draw_polyline(
+			[arrow_tip + direction.rotated(PI*.75) * arm_length, arrow_tip , arrow_tip + direction.rotated(PI*-.75)*arm_length], 
+			color, THICKNESS*.5
+		)
+		arrow_tip += direction * row_thickness
+
+
 func _draw() -> void:
 	if Engine.is_editor_hint():
 		_draw_engine()
@@ -163,6 +187,7 @@ func _draw() -> void:
 		draw_circle(Vector2.ZERO, RADIUS, color, false, THICKNESS)
 		if is_locked:
 			draw_circle(Vector2.ZERO, RADIUS + THICKNESS*.5, UTILITIES.LOCKED_COLOR, false, THICKNESS)
+			row_count = 2
 	elif _shape is RectangleShape2D:
 		draw_polyline( UTILITIES.get_square_points(SIDE_LENGTH * .5), color, THICKNESS)
 		if is_locked:
@@ -180,6 +205,8 @@ func _draw() -> void:
 			_draw_pillar(color, row_count, row_mod)
 		TrapModes.SIMPLE_TRIGGER:
 			_draw_trigger(color, row_count, row_mod)
+		TrapModes.FLING:
+			_draw_fling(color, row_count, row_mod)
 
 func _draw_engine() -> void:
 	for dependency in dependencys:
@@ -206,14 +233,10 @@ func _setup_icon() -> void:
 	pass
 
 func _setup_collision_shape() -> void:
-	match _trap_mode:
-		TrapModes.HOLE:
+	if [TrapModes.HOLE, TrapModes.SIMPLE_TRIGGER].has(_trap_mode):
 			_shape = CircleShape2D.new()
 			_shape.radius = RADIUS
-		TrapModes.SIMPLE_TRIGGER:
-			_shape = CircleShape2D.new()
-			_shape.radius = RADIUS
-		TrapModes.PILLAR:
+	elif [TrapModes.PILLAR, TrapModes.FLING].has(_trap_mode):
 			_shape = RectangleShape2D.new()
 			_shape.size = Vector2.ONE * SIDE_LENGTH
 	collision_shape.set_shape(_shape)

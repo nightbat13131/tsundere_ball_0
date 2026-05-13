@@ -30,6 +30,8 @@ GUIDE="*uid://p2jwrgjcbexr"
 window/size/viewport_width=990
 window/size/viewport_height=656
 window/energy_saving/keep_screen_on=false
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [editor]
 

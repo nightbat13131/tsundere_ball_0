@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
 [ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_info.tres" id="8_05iph"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
-[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_info.tres" id="9_mx6xu"]
+[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_bownling_info.tres" id="9_mx6xu"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
 [ext_resource type="Resource" uid="uid://c7c6uv8o12772" path="res://levels/04_info.tres" id="10_tva47"]
 [ext_resource type="Resource" uid="uid://cxnbj0dwef4ww" path="res://levels/05_info.tres" id="11_ynp5y"]
@@ -101,6 +101,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_2" type="Button" parent="Control" unique_id=1908643981]
+visible = false
 layout_mode = 0
 offset_left = 215.0
 offset_top = 130.0
@@ -132,6 +133,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_4" type="Button" parent="Control" unique_id=526429081]
+visible = false
 layout_mode = 0
 offset_left = 245.0
 offset_top = -171.0
@@ -149,6 +151,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_5" type="Button" parent="Control" unique_id=737019173]
+visible = false
 layout_mode = 0
 offset_left = -2.0
 offset_top = -143.0
@@ -165,6 +168,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_6" type="Button" parent="Control" unique_id=1355047401]
+visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = -6.0
@@ -182,6 +186,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_7" type="Button" parent="Control" unique_id=1580105737]
+visible = false
 layout_mode = 0
 offset_left = -246.0
 offset_top = -15.0
@@ -198,6 +203,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_8" type="Button" parent="Control" unique_id=1489638064]
+visible = false
 layout_mode = 0
 offset_left = -293.0
 offset_top = -155.0

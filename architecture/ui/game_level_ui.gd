@@ -4,17 +4,26 @@ class_name GameLevelUI extends CanvasLayer
 static var _instance : GameLevelUI : get = get_instance
 @onready var level_viewport: LevelViewport = %LevelViewport
 #@onready var level_anchor: LevelAnchor = %LevelAnchor
-
+@export var action_request_focus : GUIDEAction
 
 const UI_BANNER_HEIGHT = 50
 @onready var top_banner: Container = %TopBanner
+@export var focus_target : Button
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		top_banner.custom_minimum_size.y = UI_BANNER_HEIGHT
 		return
-	#deactivate()
+	if action_request_focus:
+		action_request_focus.triggered.connect(_on_action_request_focus)
 	_instance = self
+
+func _on_action_request_focus() -> void:
+	if is_active():
+		if focus_target:
+			focus_target.grab_focus()
+
+func is_active() -> bool: return is_visible()
 
 func activate() -> void:
 	set_physics_process(true)

@@ -22,6 +22,8 @@ const EVENT_WALKING_JOYSTICK = &'walk_around_joystick'
 const EVENT_NOT_WALKING = &'not_walking'
 const EVENT_CAPTURED = &'captured'
 const EVENT_TELEPORTED = &'teleported'
+const EVENT_REMOTE_FLING = &'remote_fling'
+const EVENT_FLING_COMPLETE = &'fling_complete'
 
 const EVENT_JOYSTICK_AIMING = &'joystick_aiming'
 const EVENT_CANCLE_JOYSTICK_AIM = &'cancle_joystick_aiming'
@@ -38,6 +40,7 @@ var global_mouse_end := DEFAULT_POS
 
 const DEFAULT_ROLL_COOLDONW := .50
 var remaining_roll_cooldown := 0.0
+var _remote_direction_deg : int = 0
 
 @onready var state_chart: StateChart = %StateChart
 @onready var state_walk: CompoundState = %WalkMode
@@ -114,7 +117,7 @@ func _get_usable_power() -> float:
 	elif state_aiming_joystick.active:
 		if action_joystick_aim.is_triggered():
 			out = action_joystick_aim.value_axis_2d.length() * MAX_POWER
-			prints(action_joystick_aim.value_axis_2d, out)
+			#prints(action_joystick_aim.value_axis_2d, out)
 	## short doesn't count
 	
 	
@@ -176,7 +179,6 @@ func _draw_power_indicator(node: Node2D) -> void:
 				points = test_points.duplicate()
 	node.draw_polygon( 	points, [color_power]) 
 
-
 func _draw_joystick_aim(node: Node2D) -> void:
 	var primary_center := to_local( Vector2.ONE * BALL_RADIUS * 2.0)  #  to_local(_screen_center)
 	node.draw_circle(primary_center, BALL_RADIUS, COLOR_OTHER, false, 5)
@@ -207,6 +209,11 @@ func _send_event(event: String) -> void:
 		state_chart.send_event(event)
 	else:
 		push_error(self, " has no State Chart")
+
+func remote_flig(direction_deg: int) -> void:
+	_send_event(Ball_Player.EVENT_REMOTE_FLING)
+	_remote_direction_deg = direction_deg
+	#apply_central_impulse(Vector2.from_angle( deg_to_rad(direction_deg)) * Ball_Player.MAX_POWER * 4 )
 
 func _on_walk_mode_state_entered() -> void: 
 	set_mass(MASS_WALKING)
@@ -264,9 +271,21 @@ func _on_try_roll_state_entered() -> void:
 	state_chart.set_expression_property(KEY_ROLL_COOLDOWN, remaining_roll_cooldown)
 	apply_central_impulse(get_shot_angle_vector().normalized() * _power)
 
+func _on_remote_fling_state_entered() -> void:
+	_on_roll_mode_state_entered()
+
+
 func _on_tree_exiting() -> void:
 	mouse_unpressed.activate()
 	if _instance == self:
 		_instance = null
 
 func _on_ready_state_entered() -> void: set_use_custom_integrator(false)
+
+func _on_do_fling_state_entered() -> void:
+	var _power := MAX_POWER * 2.5
+	var _direction := Vector2.from_angle(deg_to_rad(_remote_direction_deg))
+	_send_event(EVENT_FLING_COMPLETE) # so far no conflict with calling this before applying the impulse
+	remaining_roll_cooldown = DEFAULT_ROLL_COOLDONW
+	state_chart.set_expression_property(KEY_ROLL_COOLDOWN, remaining_roll_cooldown)
+	apply_central_impulse(_direction * _power)

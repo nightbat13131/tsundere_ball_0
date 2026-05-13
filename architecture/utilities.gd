@@ -9,7 +9,9 @@ enum Z_Indexes {
 	BALL_PLAYER = 10, BALL_NPC = 9 , 
 	DOORS = 12, 
 	OVERWALLS = 16,
-	OVERLAY = 21
+	OVER_DOORS = 17,
+	SUB_OVERLAY = 20,
+	OVERLAY = 21,
 	
 	}
 

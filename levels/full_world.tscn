@@ -23,12 +23,12 @@ position = Vector2(6, 59)
 position = Vector2(971, 33)
 
 [node name="Spencers2" parent="." unique_id=942252390 instance=ExtResource("3_ay36w")]
-position = Vector2(1921, 19)
+position = Vector2(1970, 28)
 
 [node name="Bowling Ally" parent="." unique_id=97734996 instance=ExtResource("4_dycqt")]
 position = Vector2(1939, -571)
 
-[node name="Level2" parent="." unique_id=1055897155 instance=ExtResource("5_y3ltj")]
+[node name="4" parent="." unique_id=1055897155 instance=ExtResource("5_y3ltj")]
 position = Vector2(1930, -1273)
 
 [node name="Level3" parent="." unique_id=2116825393 instance=ExtResource("6_lokff")]

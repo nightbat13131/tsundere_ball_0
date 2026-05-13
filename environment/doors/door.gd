@@ -1,6 +1,8 @@
 @tool
 class_name Door extends StaticBody2d_Enhanced
 
+signal opening
+
 const ANIMATION_CLOSED = &"default"
 const ANIMATION_OPENING = &"opening"
 
@@ -38,12 +40,13 @@ func _on_unlock_check(_ball: Ball, trap: Trap)-> void:
 		_dependencys = []
 	else:
 		_dependencys.erase(trap)
-	if _dependencys.size() <= 1:
+	if _dependencys.is_empty():
 		_do_unlock()
 
 func is_locked() -> bool: return !_dependencys.is_empty()
 
 func _do_unlock() -> void:
+	opening.emit()
 	animated_sprite_2d.play(ANIMATION_OPENING)
 	if alt_sprite:
 		alt_sprite.play(ANIMATION_OPENING)
