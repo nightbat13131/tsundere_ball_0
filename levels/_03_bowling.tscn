@@ -152,7 +152,7 @@ metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6y6hl"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(0.73333335, 0.8156863, 0.85882354, 0.7647059, 0.7254902, 0.78431374, 0.8784314, 0.8784314, 0.8784314, 0.93333334, 0.93333334, 0.93333334, 0, 0, 0, 0.13333334, 0.1254902, 0.20392157, 0.4117647, 0.41568628, 0.41568628, 0.4117647, 0.41568628, 0.41568628, 0.4117647, 0.41568628, 0.41568628, 0.4117647, 0.41568628, 0.41568628, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("7_rh0si")
 palette = ExtResource("6_xhb4i")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
@@ -229,7 +229,6 @@ script = ExtResource("13_7dglq")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer_Couter" type="TileMapLayer" parent="RoomObsticals and Decorations" unique_id=1441314599]
-modulate = Color(1, 0.59000003, 0.59000003, 1)
 z_index = 5
 z_as_relative = false
 material = SubResource("ShaderMaterial_ewrtd")
@@ -409,17 +408,16 @@ metadata/_edit_lock_ = true
 [node name="Floor_exit" type="TextureRect" parent="Floor and Walls" unique_id=852829941]
 material = SubResource("ShaderMaterial_6y6hl")
 offset_left = 16.0
-offset_top = -16.0
+offset_top = -8.0
 offset_right = 176.0
-offset_bottom = 128.0
+offset_bottom = 136.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("8_ecjrb")
 expand_mode = 1
 stretch_mode = 1
 script = ExtResource("9_w04v0")
-_selected_pallet = 3
-metadata/_edit_lock_ = true
+_selected_pallet = 8
 
 [node name="TileMapLayer_WallsUnder" type="TileMapLayer" parent="Floor and Walls" unique_id=1576620419]
 z_index = 4
@@ -502,27 +500,22 @@ npc_type = 3
 
 [node name="Trap_Green" parent="Traps" unique_id=1743689901 instance=ExtResource("27_p8owk")]
 position = Vector2(136, 488)
-_power_mod = null
 npc_type = 1
 
 [node name="Trap_Blue" parent="Traps" unique_id=1118811519 instance=ExtResource("27_p8owk")]
 position = Vector2(72, 488)
-_power_mod = null
 npc_type = 2
 
 [node name="Trap_pink" parent="Traps" unique_id=773819845 instance=ExtResource("27_p8owk")]
 position = Vector2(200, 488)
-_power_mod = null
 
 [node name="player_trigger" parent="Traps" unique_id=1525486486 instance=ExtResource("27_p8owk")]
 position = Vector2(848, 112)
 _trap_mode = 2
-_power_mod = null
 npc_type = 3
 
 [node name="PlayerEnd" parent="Traps" unique_id=35800403 instance=ExtResource("28_qh3qy")]
 position = Vector2(96, 32)
-_power_mod = null
 
 [node name="Balls" type="Node2D" parent="." unique_id=1963109991]
 metadata/_edit_lock_ = true

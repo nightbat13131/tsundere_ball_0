@@ -13,6 +13,8 @@ enum PalletSelection {DEFAULT = 1, GRAYS = 3, SKY = 4,
 	GROCERY = 6,
 	BOWLING = 7,
 	CLAIRS = 8,
+	GARDEN = 9, 
+	ROAD = 10,
 	TUTORIAL = 2,
 }
 

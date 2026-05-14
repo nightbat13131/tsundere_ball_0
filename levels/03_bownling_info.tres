@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://gshv01j7uolu"]
 
 [ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/progress_save_stuff/level_info.gd" id="1_j5ma7"]
-[ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/01_info.tres" id="2_maglp"]
+[ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_info.tres" id="2_maglp"]
 
 [resource]
 script = ExtResource("1_j5ma7")

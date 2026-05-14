@@ -101,7 +101,6 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_2" type="Button" parent="Control" unique_id=1908643981]
-visible = false
 layout_mode = 0
 offset_left = 215.0
 offset_top = 130.0
@@ -133,7 +132,6 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_4" type="Button" parent="Control" unique_id=526429081]
-visible = false
 layout_mode = 0
 offset_left = 245.0
 offset_top = -171.0

@@ -41,7 +41,7 @@ var global_mouse_end := DEFAULT_POS
 const DEFAULT_ROLL_COOLDONW := .50
 var remaining_roll_cooldown := 0.0
 var _remote_direction_deg : int = 0
-var _remote_power_mod : int = 0
+var _remote_power_mod : float = 0.0
 
 @onready var state_chart: StateChart = %StateChart
 @onready var state_walk: CompoundState = %WalkMode

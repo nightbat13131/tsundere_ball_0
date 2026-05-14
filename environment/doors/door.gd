@@ -16,6 +16,8 @@ var _dependencys : Array[Area2D_Enhanced] = []
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 @export var alt_sprite: AnimatedSprite2D
 
+var _is_unlocked := false
+
 func _ready() -> void:
 	super._ready()
 	UTILITIES.apply_z_layer(self, UTILITIES.Z_Indexes.DOORS)
@@ -46,6 +48,9 @@ func _on_unlock_check(_ball: Ball, trap: Trap)-> void:
 func is_locked() -> bool: return !_dependencys.is_empty()
 
 func _do_unlock() -> void:
+	if _is_unlocked: ## prevent repeated triggers
+		return
+	_is_unlocked = true
 	opening.emit()
 	animated_sprite_2d.play(ANIMATION_OPENING)
 	if alt_sprite:
