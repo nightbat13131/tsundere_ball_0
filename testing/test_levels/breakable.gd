@@ -30,11 +30,15 @@ func _ready() -> void:
 		goal = goal.duplicate(false)
 		GoalTracker.goal_check_in.call_deferred(goal)
 
+#func is_break_good() -> bool: return goal.should_break
+
 func remote_hit(thing: Node2D) -> void:
-	if _break_next_frame or _is_used:
-		return 
-	_hit_by(thing)
-	
+	if !thing is Ball:
+		if thing.get_mass() > Ball_Player.MASS_WALKING:  # precent player in walk mode from triggering the break
+			_hit_by(thing)
+		else:
+			_hit_by(thing)
+
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return

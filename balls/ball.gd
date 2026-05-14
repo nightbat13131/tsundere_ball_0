@@ -92,8 +92,8 @@ static func get_color(npc_type: NPCType) -> Color:
 
 func _on_body_entered(body: Node) -> void:
 	if body is Breakable: # has it's own sound to play
-		if get_mass() > Ball_Player.MASS_WALKING:  # precent player in walk mode from triggering the break
-			body.remote_hit(self)
+		#if get_mass() > Ball_Player.MASS_WALKING:  # precent player in walk mode from triggering the break
+		body.remote_hit(self)
 	elif body is Ball:
 		if ball_hit:
 			SoundManager.request_sfx(ball_hit)

@@ -1,0 +1,81 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dkjn5unjyi4dn"]
+
+[ext_resource type="Texture2D" uid="uid://bmocxtojxyiio" path="res://assets/balls/magicalgirlheart.png" id="1_xvs2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl2oc"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(44, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uy0i"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(55, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvmg5"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(66, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xehq5"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(77, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu81e"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(0, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgaas"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(11, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myhlx"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(22, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2e6v"]
+atlas = ExtResource("1_xvs2w")
+region = Rect2(33, 0, 11, 27)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uy0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvmg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xehq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu81e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgaas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myhlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2e6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2oc")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"mad",
+"speed": 5.0
+}]

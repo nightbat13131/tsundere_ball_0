@@ -209,10 +209,9 @@ func _send_event(event: String) -> void:
 		push_error(self, " has no State Chart")
 
 func remote_fling(direction_deg: int, power_mod : float) -> void:
-	_send_event(Ball_Player.EVENT_REMOTE_FLING)
 	_remote_direction_deg = direction_deg
 	_remote_power_mod = power_mod
-	#apply_central_impulse(Vector2.from_angle( deg_to_rad(direction_deg)) * Ball_Player.MAX_POWER * 4 )
+	_send_event(Ball_Player.EVENT_REMOTE_FLING)
 
 func _on_walk_mode_state_entered() -> void: 
 	set_mass(MASS_WALKING)
@@ -270,9 +269,7 @@ func _on_try_roll_state_entered() -> void:
 	state_chart.set_expression_property(KEY_ROLL_COOLDOWN, remaining_roll_cooldown)
 	apply_central_impulse(get_shot_angle_vector().normalized() * _power)
 
-func _on_remote_fling_state_entered() -> void:
-	_on_roll_mode_state_entered()
-
+func _on_remote_fling_state_entered() -> void: _on_roll_mode_state_entered()
 
 func _on_tree_exiting() -> void:
 	mouse_unpressed.activate()

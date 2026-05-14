@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ducis5fiwapa4"]
+
+[ext_resource type="Script" uid="uid://pnl5p1h6410k" path="res://testing/test_levels/breakable.gd" id="1_jna1b"]
+[ext_resource type="Resource" uid="uid://ddw6i7136u1d1" path="res://environment/goals/goal_do_pot.tres" id="2_jna1b"]
+[ext_resource type="SpriteFrames" uid="uid://dp34rw7utlu04" path="res://environment/goals/frames_breakable_pot.tres" id="3_jna1b"]
+[ext_resource type="SpriteFrames" uid="uid://dkjn5unjyi4dn" path="res://small_heart_man.tres" id="4_jna1b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdhqd"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jna1b"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_belqf"]
+size = Vector2(29, 12)
+
+[node name="Breakable_Pot" type="StaticBody2D" unique_id=190911682]
+z_index = 5
+z_as_relative = false
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_vdhqd")
+script = ExtResource("1_jna1b")
+goal = ExtResource("2_jna1b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
+unique_name_in_owner = true
+position = Vector2(7, -19)
+sprite_frames = ExtResource("3_jna1b")
+centered = false
+offset = Vector2(-23, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173216956]
+position = Vector2(-7, -12)
+shape = SubResource("RectangleShape2D_jna1b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1608244509]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_jna1b")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=551389006]
+position = Vector2(8, -12)
+shape = SubResource("RectangleShape2D_jna1b")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1216171781]
+position = Vector2(0.5, -6)
+shape = SubResource("RectangleShape2D_belqf")
+
+[node name="mad_man" type="AnimatedSprite2D" parent="." unique_id=798433252]
+unique_name_in_owner = true
+z_index = 20
+z_as_relative = false
+position = Vector2(0, -34)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("4_jna1b")
+animation = &"mad"
+frame = 9
+frame_progress = 1.0

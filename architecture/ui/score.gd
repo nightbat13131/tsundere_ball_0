@@ -9,7 +9,11 @@ func add_goal(goal: Goal_Info) -> void:
 	if !_goals.has(goal):
 		_goals.append(goal)
 
-func get_total() -> int: return _goals.size()
+func get_total() -> int: 
+	var count := 1
+	for each in _goals:
+		count += each.total_count()
+	return count
 
 func get_failed() -> int:
 	var count := 0

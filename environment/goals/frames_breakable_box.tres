@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cu15yvjgeu1bl"]
+
+[ext_resource type="Texture2D" uid="uid://b4e4ws05wyvvl" path="res://assets/Furniture/Breakables/boxnbrokenbox.png" id="1_dwjpp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwjpp"]
+atlas = ExtResource("1_dwjpp")
+region = Rect2(24, 0, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp2dh"]
+atlas = ExtResource("1_dwjpp")
+region = Rect2(0, 0, 24, 21)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwjpp")
+}],
+"loop": false,
+"name": &"broke",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp2dh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]

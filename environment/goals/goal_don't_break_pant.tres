@@ -8,6 +8,6 @@
 [resource]
 script = ExtResource("1_bkj8w")
 ui_icon_init = ExtResource("3_nhwk0")
-ui_icon_failed = ExtResource("2_v3ak6")
-fail_sound = ExtResource("1_nk5ni")
+ui_icon_broken = ExtResource("2_v3ak6")
+break_sound = ExtResource("1_nk5ni")
 metadata/_custom_type_script = "uid://dggw7ue6r5ma3"
