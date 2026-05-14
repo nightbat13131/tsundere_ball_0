@@ -38,10 +38,12 @@ func _request_emotion(emotion: FaceTexture.Emotions, is_idle:= false) -> void:
 		emote_remaining = BASE_DURATION
 
 func _something_bad() -> void:
+	print_debug("no?")
 	_request_emotion(bad_emotions.pick_random())
 	SoundManager.request_sfx(bad_sounds.pick_random())
 
 func _something_good() -> void:
+	print_debug("what?")
 	_request_emotion(good_emotions.pick_random())
 	SoundManager.request_sfx(good_sounds.pick_random())
 

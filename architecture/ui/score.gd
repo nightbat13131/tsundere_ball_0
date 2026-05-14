@@ -4,22 +4,19 @@ class_name Score extends Resource
 enum Scores {LOCKED = -1, NA = 0, FULL_FAIL = 1, BAD = 2, MID = 3, GOOD = 4, FULL_WIN = 5}
 
 var _goals : Array[Goal_Info]
+var _total := 0
 
 func add_goal(goal: Goal_Info) -> void:
 	if !_goals.has(goal):
+		_total += goal.total_count()
 		_goals.append(goal)
 
-func get_total() -> int: 
-	var count := 1
-	for each in _goals:
-		count += each.total_count()
-	return count
+func get_total() -> int: return _total
 
 func get_failed() -> int:
 	var count := 0
 	for each_goal in _goals:
-		if each_goal.is_failed():
-			count += 1
+		count += each_goal.fail_count()
 	return count
 
 func get_score() -> Scores: return ratio_to_score(get_failed(), get_total())
@@ -44,12 +41,12 @@ static func score_to_emotion(score: Scores) -> FaceTexture.Emotions:
 			return FaceTexture.Emotions.SCORE_4
 	return FaceTexture.Emotions.BLANK
 
-static func ratio_to_score(broken: int, total: int) -> Scores:
+static func ratio_to_score(fail: int, total: int) -> Scores:
 	var new_score := Scores.MID
-	var ratio : float = broken / float(total)
-	if broken == 0:
+	var ratio : float = fail / float(total)
+	if fail <= 0:
 		new_score = Scores.FULL_WIN
-	elif broken >= total:
+	elif fail >= total:
 		new_score = Scores.FULL_FAIL
 	elif ratio <= .33: # not many broken
 		new_score = Scores.GOOD

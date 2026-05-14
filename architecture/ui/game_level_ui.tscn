@@ -47,6 +47,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1692064266]
 layout_mode = 1
@@ -63,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Control/MarginContainer" unique_id=1044804643]
 layout_mode = 2

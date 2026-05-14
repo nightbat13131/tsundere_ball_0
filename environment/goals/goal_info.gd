@@ -7,6 +7,8 @@ class_name Goal_Info extends Resource
 
 signal update_icon(texture)
 
+@export var should_break := false
+
 ## Aim for 36*36 or less
 @export var ui_icon_init: Texture2D
 ## Aim for 36*36 or less
@@ -15,7 +17,7 @@ signal update_icon(texture)
 @export var sort_order := 1
 @export var break_sound : AudioStream
 
-var should_break := false
+
 
 var _is_broken := false
 
@@ -28,18 +30,25 @@ func broke() -> void:
 	_is_broken = true
 	update_icon.emit(ui_icon_broken)
 	SoundManager.request_sfx(break_sound)
-	if is_failed():
-		Portrait.something_bad()
-	else:
+	if _is_success():
 		Portrait.something_good()
+	else:
+		Portrait.something_bad()
 
 func total_count() -> int:
 	if should_break: 
 		return 0
 	return 1
 
-func is_failed() -> bool: 
+func fail_count() -> int:
+	if _is_broken:
+		if should_break:
+			return -1
+		else:
+			return 1
+	return 0
+
+func _is_success() -> bool:
 	if should_break:
 		return _is_broken
-	else:
-		return !_is_broken
+	return !_is_broken

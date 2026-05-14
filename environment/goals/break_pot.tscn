@@ -27,6 +27,7 @@ goal = ExtResource("2_jna1b")
 unique_name_in_owner = true
 position = Vector2(7, -19)
 sprite_frames = ExtResource("3_jna1b")
+frame_progress = 1.0
 centered = false
 offset = Vector2(-23, -7)
 
@@ -53,6 +54,4 @@ z_as_relative = false
 position = Vector2(0, -34)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("4_jna1b")
-animation = &"mad"
-frame = 9
-frame_progress = 1.0
+frame_progress = 0.7741108

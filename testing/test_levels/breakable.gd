@@ -33,10 +33,10 @@ func _ready() -> void:
 #func is_break_good() -> bool: return goal.should_break
 
 func remote_hit(thing: Node2D) -> void:
-	if !thing is Ball:
-		if thing.get_mass() > Ball_Player.MASS_WALKING:  # precent player in walk mode from triggering the break
+	if thing is Ball:
+		if thing.get_mass() > Ball_Player.MASS_WALKING:  # prevent player in walk mode from triggering the break when bad
 			_hit_by(thing)
-		else:
+		elif goal.should_break:
 			_hit_by(thing)
 
 func _physics_process(_delta: float) -> void:
@@ -62,8 +62,6 @@ func _hit_by(thing: Node2D) -> void:
 		used.emit(thing)
 
 func _break() -> void:
-	Portrait.something_bad()
-	#Portrait.request_emotion(FaceTexture.Emotions.MAD)
 	for each_child in get_children():
 		if each_child is CollisionShape2D:
 			each_child.set_disabled(true)
