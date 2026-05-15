@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_2uo5g"]
 [ext_resource type="AudioStream" uid="uid://cjej8k00gwkgm" path="res://assets/sounds/floraphonic-wood-smash-1-170410.mp3" id="1_qirhd"]
-[ext_resource type="Texture2D" uid="uid://cm6igwnll4jsb" path="res://assets/Furniture/Breakables/WoodenBenchBroken.png" id="2_b4irp"]
+[ext_resource type="Texture2D" uid="uid://dupmntbirvq5x" path="res://assets/Furniture/Breakables/WoodenBenchBroken_icon.png" id="3_qirhd"]
 [ext_resource type="Texture2D" uid="uid://4w2omcuyuk01" path="res://assets/Furniture/Breakables/WoodenBench_no_outline.png" id="4_qirhd"]
 
 [resource]
 script = ExtResource("1_2uo5g")
 ui_icon_init = ExtResource("4_qirhd")
-ui_icon_broken = ExtResource("2_b4irp")
+ui_icon_broken = ExtResource("3_qirhd")
 init_order = 2
 broke_order = 12
 break_sound = ExtResource("1_qirhd")

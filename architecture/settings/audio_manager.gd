@@ -75,8 +75,8 @@ static func request_sfx(sound: AudioStream, pitch := 1.0) -> void:
 	if sound:
 		if _current_manager: # may be missing while testing scenes
 			_current_manager._request_sfx(sound, pitch)
-	else:
-		push_warning("Null sound sent to request_sfx")
+	#else:
+		#push_warning("Null sound sent to request_sfx")
 
 func _request_sfx(sound: AudioStream, pitch: float) -> void:
 	var target_player = sfx_players.get_child(_sfx_player_index) as AudioStreamPlayer

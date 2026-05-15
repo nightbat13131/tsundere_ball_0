@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_bkj8w"]
 [ext_resource type="AudioStream" uid="uid://dbh85qrpdklhb" path="res://assets/sounds/floraphonic-rocks-and-gravel-slide-1-204994.mp3" id="1_nk5ni"]
-[ext_resource type="Texture2D" uid="uid://c6x0ibmvnejut" path="res://assets/Furniture/Breakables/PottedShrubBroken.png" id="2_v3ak6"]
+[ext_resource type="Texture2D" uid="uid://nbtw62ji7fln" path="res://assets/Furniture/Breakables/PottedShrubBroken_icon.png" id="3_nk5ni"]
 [ext_resource type="Texture2D" uid="uid://cckw6ev05c66m" path="res://assets/Furniture/Breakables/PottedShrub_no_outline.png" id="4_nk5ni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk5ni"]
+atlas = ExtResource("4_nk5ni")
+region = Rect2(3, 2, 19, 29)
 
 [resource]
 script = ExtResource("1_bkj8w")
-ui_icon_init = ExtResource("4_nk5ni")
-ui_icon_broken = ExtResource("2_v3ak6")
+ui_icon_init = SubResource("AtlasTexture_nk5ni")
+ui_icon_broken = ExtResource("3_nk5ni")
 broke_order = 11
 break_sound = ExtResource("1_nk5ni")
 metadata/_custom_type_script = "uid://dggw7ue6r5ma3"
