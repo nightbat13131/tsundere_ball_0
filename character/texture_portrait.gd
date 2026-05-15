@@ -10,6 +10,8 @@ static var _instance : Portrait
 
 @export var good_emotions: Array[FaceTexture.Emotions]
 @export var bad_emotions: Array[FaceTexture.Emotions]
+@onready var animated_sprite_feet: AnimatedSprite_Feet = %AnimatedSprite_Feet
+
 
 var emote_remaining := 0.0
 
@@ -47,9 +49,19 @@ func _something_good() -> void:
 	_request_emotion(good_emotions.pick_random())
 	SoundManager.request_sfx(good_sounds.pick_random())
 
-func _level_end() -> void:
-	#sound based on score ? 
-	pass
+func _level_end() -> void: pass
+
+static func feet_out() -> void:
+	if _instance:
+		_instance.animated_sprite_feet.show()
+
+static func feet_in() -> void:
+	if _instance:
+		_instance.animated_sprite_feet.hide()
+
+static func feet_velocity(velocity: Vector2) -> void:
+	if _instance:
+		_instance.animated_sprite_feet.set_velocity(Vector2.DOWN * velocity.length())
 
 static func something_bad() -> void:
 	if _instance:

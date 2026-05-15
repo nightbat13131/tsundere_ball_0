@@ -5,6 +5,7 @@ class_name Goal_Info extends Resource
 ##  should_break == true
 #### does not count towards total and counts as a bonus point if borken
 
+
 signal update_icon(texture)
 
 @export var should_break := false
@@ -14,10 +15,9 @@ signal update_icon(texture)
 ## Aim for 36*36 or less
 @export var ui_icon_broken: Texture2D
 # lower number goes first
-@export var sort_order := 1
+@export var init_order := 1
+@export var broke_order := 10
 @export var break_sound : AudioStream
-
-
 
 var _is_broken := false
 

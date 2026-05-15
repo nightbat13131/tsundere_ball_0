@@ -7,7 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cmkwdonx4022u" path="res://balls/sprite_frames_pink_ball.tres" id="4_ot6ls"]
 [ext_resource type="SpriteFrames" uid="uid://cvceegepd3hmp" path="res://balls/sprite_frames_green_ball.tres" id="5_bjos4"]
 [ext_resource type="Script" uid="uid://2y3c0pou66t2" path="res://balls/animated_sprite_ball.gd" id="6_1fx13"]
-[ext_resource type="AudioStream" uid="uid://djwtdfq5487vw" path="res://assets/sounds/thwack-04_double_marble.wav" id="6_twlnt"]
+[ext_resource type="AudioStream" uid="uid://cphsbejcj6bna" path="res://assets/sounds/thwack-04_double_marble_75vol.wav" id="6_h0qv4"]
 [ext_resource type="AudioStream" uid="uid://cyqnc2d4pblx1" path="res://assets/sounds/thwack-05_couch.wav" id="7_h0qv4"]
 [ext_resource type="AudioStream" uid="uid://ctcp5h0t8to3d" path="res://assets/sounds/floraphonic-glass-knock-1-189096.mp3" id="8_h0qv4"]
 
@@ -29,7 +29,7 @@ script = ExtResource("1_p3w87")
 red_sprites = ExtResource("4_ot6ls")
 blue_sprites = ExtResource("4_3uik4")
 yellow_sprites = ExtResource("5_bjos4")
-ball_hit = ExtResource("6_twlnt")
+ball_hit = ExtResource("6_h0qv4")
 wall_hit = ExtResource("7_h0qv4")
 door_hit = ExtResource("8_h0qv4")
 

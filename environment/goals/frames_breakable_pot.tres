@@ -2,19 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://c0ujle0lk2bst" path="res://assets/Furniture/Breakables/breakablepot.png" id="1_guvpu"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_guvpu"]
+atlas = ExtResource("1_guvpu")
+region = Rect2(33, 0, 33, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_w81ap"]
 atlas = ExtResource("1_guvpu")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eh2v5"]
-atlas = ExtResource("1_guvpu")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 33, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w81ap")
+"texture": SubResource("AtlasTexture_guvpu")
 }],
 "loop": false,
 "name": &"broke",
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eh2v5")
+"texture": SubResource("AtlasTexture_w81ap")
 }],
 "loop": false,
 "name": &"default",

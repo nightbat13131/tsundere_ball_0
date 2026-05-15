@@ -31,7 +31,7 @@ good_emotions = Array[int]([1, 6, 8, 9, 11, 13])
 bad_emotions = Array[int]([4, 12, 3, 5])
 
 [node name="AnimatedSprite_Feet" type="AnimatedSprite2D" parent="." unique_id=1987445672]
-visible = false
+unique_name_in_owner = true
 z_as_relative = false
 position = Vector2(16, 15)
 sprite_frames = ExtResource("3_c42lp")

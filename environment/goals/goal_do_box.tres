@@ -1,8 +1,21 @@
 [gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://dtsatad713jw6"]
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_ni08f"]
+[ext_resource type="Texture2D" uid="uid://b4e4ws05wyvvl" path="res://assets/Furniture/Breakables/boxnbrokenbox.png" id="2_qyli8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyli8"]
+atlas = ExtResource("2_qyli8")
+region = Rect2(25, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfiei"]
+atlas = ExtResource("2_qyli8")
+region = Rect2(0, 0, 1, 21)
 
 [resource]
 script = ExtResource("1_ni08f")
 should_break = true
+ui_icon_init = SubResource("AtlasTexture_jfiei")
+ui_icon_broken = SubResource("AtlasTexture_qyli8")
+init_order = 30
+broke_order = 8
 metadata/_custom_type_script = "uid://dggw7ue6r5ma3"

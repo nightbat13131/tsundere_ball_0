@@ -101,6 +101,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	super._process(delta)
 	animated_sprite_feet.set_velocity(linear_velocity)
+	Portrait.feet_velocity(linear_velocity)
 
 func _set_trap_mode(mode: Trap.TrapModes) -> void:
 	super._set_trap_mode(mode)
@@ -231,11 +232,14 @@ func _on_walk_mode_state_processing(_delta: float) -> void:
 		_send_event(EVENT_NOT_WALKING)
 
 func _on_roll_mode_state_entered() -> void: 
+	Portrait.feet_in()
 	animated_sprite_feet.hide()
 	set_mass(MASS_ROLLING)
 	set_linear_damp(DAMP_ROLLING)
 
-func _on_roll_mode_state_exited() -> void: animated_sprite_feet.show()
+func _on_roll_mode_state_exited() -> void: 
+	Portrait.feet_out()
+	animated_sprite_feet.show()
 
 func _on_waiting_roll_state_entered() -> void:
 	global_mouse_end = DEFAULT_POS

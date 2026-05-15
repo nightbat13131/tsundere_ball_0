@@ -10,13 +10,14 @@ region = Rect2(34, 0, 29, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxfwq"]
 atlas = ExtResource("3_3lcag")
-region = Rect2(0, 0, 1, 32)
+region = Rect2(34, 0, 1, 32)
 
 [resource]
 script = ExtResource("2_xh1jl")
 should_break = true
 ui_icon_init = SubResource("AtlasTexture_kxfwq")
 ui_icon_broken = SubResource("AtlasTexture_3lcag")
-sort_order = 10
+init_order = 9
+broke_order = 30
 break_sound = ExtResource("1_7mwad")
 metadata/_custom_type_script = "uid://dggw7ue6r5ma3"

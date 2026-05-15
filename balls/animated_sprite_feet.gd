@@ -30,10 +30,10 @@ func _roll_direction(radian: float) -> void:
 
 func _request_pause() -> void: pause()
 
-static func request_pause(_is_pause) -> void:
-	# TODO: not working
-	for each in _instances: 
-		each._request_pause()
+#static func request_pause(_is_pause) -> void:
+	## TODO: not working
+	#for each in _instances: 
+		#each._request_pause()
 
 func _update_animation() -> void:
 	if _speed <= 2.5:
