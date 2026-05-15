@@ -21,6 +21,11 @@ signal update_icon(texture)
 
 var _is_broken := false
 
+func get_sort_order() -> int:
+	if _is_broken:
+		return broke_order
+	return init_order
+
 func get_goal_icon() -> Texture2D:
 	if _is_broken:
 		return ui_icon_broken

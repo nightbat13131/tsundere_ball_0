@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b7xdoygf4wxa3" path="res://character/character_portrate.tscn" id="2_m7fyu"]
 [ext_resource type="Script" uid="uid://ck85dytd4gs2" path="res://testing/options_control_type.gd" id="3_fqrik"]
 [ext_resource type="Script" uid="uid://ck17w42dvnfj6" path="res://architecture/goal_tracker.gd" id="3_qpwan"]
-[ext_resource type="Texture2D" uid="uid://bfkyj6cx48ekh" path="res://assets/ui/tilemap_small_cursors.png" id="4_56b18"]
-[ext_resource type="Script" uid="uid://da1oiixyoch6n" path="res://architecture/texture_goal.gd" id="5_pojhi"]
 [ext_resource type="Script" uid="uid://tjdvvki3df43" path="res://architecture/ui/button_restart_level.gd" id="5_ppoab"]
 [ext_resource type="Script" uid="uid://cc7crxt1v2wp6" path="res://architecture/ui/button_map.gd" id="6_qpwan"]
 [ext_resource type="Texture2D" uid="uid://u4m71pkh5giu" path="res://assets/ui/Modern_UI_Style_1.png" id="7_e6151"]
@@ -15,10 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="10_pojhi"]
 [ext_resource type="Script" uid="uid://c3q547gl5di03" path="res://architecture/ui/level_viewport.gd" id="12_e6151"]
 [ext_resource type="AudioStream" uid="uid://bm6532s6qxc30" path="res://assets/sounds/floraphonic-bloop-1-184019.mp3" id="12_j2qje"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pojhi"]
-atlas = ExtResource("4_56b18")
-region = Rect2(2, 153, 12, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6y21"]
 atlas = ExtResource("7_e6151")
@@ -103,12 +97,6 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 script = ExtResource("3_qpwan")
-
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer/GoalTracker" unique_id=2143513147]
-layout_mode = 2
-texture = SubResource("AtlasTexture_pojhi")
-stretch_mode = 4
-script = ExtResource("5_pojhi")
 
 [node name="Control" type="Control" parent="Control/MarginContainer/CenterContainer/VBoxContainer/TopBanner/HBoxContainer" unique_id=337516986]
 layout_mode = 2

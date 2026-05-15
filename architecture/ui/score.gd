@@ -10,6 +10,7 @@ func add_goal(goal: Goal_Info) -> void:
 	if !_goals.has(goal):
 		_total += goal.total_count()
 		_goals.append(goal)
+		#goal.changed.connect(changed.emit)
 
 func get_total() -> int: return _total
 
