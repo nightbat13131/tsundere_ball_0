@@ -1,44 +1,47 @@
 [gd_scene format=3 uid="uid://ds1k5d6mo0ctc"]
 
 [ext_resource type="PackedScene" uid="uid://bhkrgawj5tv0g" path="res://levels/_00_tutorial.tscn" id="1_ip5cj"]
-[ext_resource type="PackedScene" uid="uid://kv7u6g7bgryb" path="res://levels/_01_grocery.tscn" id="2_g15fm"]
-[ext_resource type="PackedScene" uid="uid://c3lne062koifr" path="res://levels/_02_spencers.tscn" id="3_ay36w"]
-[ext_resource type="PackedScene" uid="uid://de2lcbrtpry1l" path="res://levels/_03_bowling.tscn" id="4_dycqt"]
-[ext_resource type="PackedScene" uid="uid://dm6k6og5oabc1" path="res://levels/_04_clairs.tscn" id="5_y3ltj"]
+[ext_resource type="PackedScene" uid="uid://kv7u6g7bgryb" path="res://levels/_grocery.tscn" id="2_g15fm"]
+[ext_resource type="PackedScene" uid="uid://c3lne062koifr" path="res://levels/_spencers.tscn" id="3_ay36w"]
+[ext_resource type="PackedScene" uid="uid://de2lcbrtpry1l" path="res://levels/_bowling.tscn" id="4_dycqt"]
+[ext_resource type="PackedScene" uid="uid://dm6k6og5oabc1" path="res://levels/_clairs.tscn" id="5_y3ltj"]
 [ext_resource type="PackedScene" uid="uid://d3kq30x107fck" path="res://levels/l5.tscn" id="6_lokff"]
 [ext_resource type="PackedScene" uid="uid://bh23o2ykokgbx" path="res://levels/l6.tscn" id="7_j8n07"]
-[ext_resource type="PackedScene" uid="uid://b8jdq3rdni8q" path="res://levels/_07_garden.tscn" id="8_dycqt"]
-[ext_resource type="PackedScene" uid="uid://berolhgkqa10b" path="res://levels/_08_parking.tscn" id="9_y3ltj"]
+[ext_resource type="PackedScene" uid="uid://b8jdq3rdni8q" path="res://levels/_garden.tscn" id="8_dycqt"]
+[ext_resource type="PackedScene" uid="uid://berolhgkqa10b" path="res://levels/_parking.tscn" id="9_y3ltj"]
 
 [node name="FullWorld" type="Node2D" unique_id=813509994]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2029397765]
-position = Vector2(1441, -302)
-zoom = Vector2(0.33, 0.33)
+position = Vector2(2085, -1367)
+zoom = Vector2(0.3, 0.3)
 
 [node name="Tutorial" parent="." unique_id=1783182777 instance=ExtResource("1_ip5cj")]
-position = Vector2(-20, 104)
+position = Vector2(656, -977)
 
 [node name="01_Grocery" parent="." unique_id=34532267 instance=ExtResource("2_g15fm")]
-position = Vector2(981, 82)
+position = Vector2(1640, -972)
 
 [node name="2 Spencers" parent="." unique_id=942252390 instance=ExtResource("3_ay36w")]
-position = Vector2(1973, 80)
+position = Vector2(2656, -980)
 
 [node name="3 Bowling Ally" parent="." unique_id=97734996 instance=ExtResource("4_dycqt")]
-position = Vector2(962, -532)
+position = Vector2(1390, -1605)
+scale = Vector2(1.5, 1)
 
 [node name="4 Clairs" parent="." unique_id=1055897155 instance=ExtResource("5_y3ltj")]
-position = Vector2(1991, -532)
+position = Vector2(2795, -1591)
 
 [node name="Level3" parent="." unique_id=2116825393 instance=ExtResource("6_lokff")]
+visible = false
 position = Vector2(974, -1230)
 
 [node name="Level4" parent="." unique_id=1265747329 instance=ExtResource("7_j8n07")]
+visible = false
 position = Vector2(1994, -1203)
 
 [node name="7 Garden" parent="." unique_id=1220749811 instance=ExtResource("8_dycqt")]
-position = Vector2(4, -486)
+position = Vector2(442, -1650)
 
 [node name="8 Parking" parent="." unique_id=903953375 instance=ExtResource("9_y3ltj")]
-position = Vector2(2, -1144)
+position = Vector2(508, -2333)

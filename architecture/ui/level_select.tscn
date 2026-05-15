@@ -16,13 +16,13 @@
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
 [ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_info.tres" id="8_05iph"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
-[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_bownling_info.tres" id="9_mx6xu"]
+[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_info.tres" id="9_mx6xu"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
 [ext_resource type="Resource" uid="uid://c7c6uv8o12772" path="res://levels/04_info.tres" id="10_tva47"]
 [ext_resource type="Resource" uid="uid://cxnbj0dwef4ww" path="res://levels/05_info.tres" id="11_ynp5y"]
 [ext_resource type="Resource" uid="uid://bo4mwoak4jilo" path="res://levels/06_info.tres" id="12_fbxss"]
-[ext_resource type="Resource" uid="uid://bsiyhe5n3amtq" path="res://levels/07_info.tres" id="13_ynp5y"]
-[ext_resource type="Resource" uid="uid://c7653fn1ma5vt" path="res://levels/08_info.tres" id="14_fbxss"]
+[ext_resource type="Resource" uid="uid://bsiyhe5n3amtq" path="res://levels/07_garden.tres" id="13_ynp5y"]
+[ext_resource type="Resource" uid="uid://c7653fn1ma5vt" path="res://levels/08_parking.tres" id="14_fbxss"]
 
 [sub_resource type="Gradient" id="Gradient_ijyg7"]
 offsets = PackedFloat32Array(0.77160496, 1)
@@ -65,7 +65,7 @@ texture = SubResource("GradientTexture2D_05iph")
 
 [node name="Line2D" type="Line2D" parent="Control" unique_id=688210154]
 position = Vector2(-475, -308)
-points = PackedVector2Array(207, 450, 402, 474, 706, 460, 748, 346, 739, 155, 626, 143, 478, 186, 514, 318, 301, 334, 202, 305, 205, 170)
+points = PackedVector2Array(207, 450, 402, 474, 706, 460, 748, 346, 656, 297, 514, 318, 301, 334, 202, 305, 205, 170)
 texture = SubResource("AtlasTexture_m0cld")
 texture_mode = 1
 
@@ -117,10 +117,10 @@ metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_3" type="Button" parent="Control" unique_id=1252052063]
 layout_mode = 0
-offset_left = 256.0
-offset_top = -7.0
-offset_right = 294.0
-offset_bottom = 37.0
+offset_left = 213.0
+offset_top = -23.0
+offset_right = 251.0
+offset_bottom = 21.0
 focus_neighbor_left = NodePath("../_6")
 focus_neighbor_top = NodePath("../_4")
 focus_neighbor_bottom = NodePath("../_2")
@@ -132,6 +132,7 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_4" type="Button" parent="Control" unique_id=526429081]
+visible = false
 layout_mode = 0
 offset_left = 245.0
 offset_top = -171.0
@@ -166,7 +167,6 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_6" type="Button" parent="Control" unique_id=1355047401]
-visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = -6.0
@@ -184,11 +184,26 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_7" type="Button" parent="Control" unique_id=1580105737]
-visible = false
 layout_mode = 0
-offset_left = -246.0
+offset_left = -248.0
 offset_top = -15.0
-offset_right = -208.0
+offset_right = -210.0
+offset_bottom = 29.0
+focus_neighbor_top = NodePath("../_8")
+focus_neighbor_right = NodePath("../_6")
+focus_neighbor_bottom = NodePath("../Tutorial")
+icon = ExtResource("2_f5khk")
+script = ExtResource("1_jcfkq")
+level_info = ExtResource("13_ynp5y")
+sfx_sound = ExtResource("6_fbxss")
+mouse_cursor = ExtResource("6_ijyg7")
+metadata/_custom_type_script = "uid://dij1pecfcavpi"
+
+[node name="_9" type="Button" parent="Control" unique_id=1407040205]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -15.0
+offset_right = -210.0
 offset_bottom = 29.0
 focus_neighbor_top = NodePath("../_8")
 focus_neighbor_right = NodePath("../_6")
@@ -201,7 +216,6 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_8" type="Button" parent="Control" unique_id=1489638064]
-visible = false
 layout_mode = 0
 offset_left = -293.0
 offset_top = -155.0

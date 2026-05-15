@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://clvqbsx0vbxxc" path="res://architecture/level.gd" id="1_c1deg"]
 [ext_resource type="PackedScene" uid="uid://dnyw3lh7dacsp" path="res://environment/goals/break_potted_plant.tscn" id="2_xv1ui"]
+[ext_resource type="PackedScene" uid="uid://ducis5fiwapa4" path="res://environment/goals/break_pot.tscn" id="3_4fmbl"]
 [ext_resource type="PackedScene" uid="uid://x0ygfjc3j6nk" path="res://environment/doors/door_east_west.tscn" id="3_cne80"]
+[ext_resource type="PackedScene" uid="uid://8shvpkuyotor" path="res://environment/goals/break_box.tscn" id="4_gw2mx"]
 [ext_resource type="Texture2D" uid="uid://dmgkd02d86qea" path="res://assets/tileset/color_swap_pallet.png" id="6_621wm"]
 [ext_resource type="Script" uid="uid://c3ax3u3u28f1c" path="res://assets/palette_material.gd" id="7_qfgom"]
 [ext_resource type="Texture2D" uid="uid://neioiqfftj5o" path="res://assets/tileset/tan_floor.png" id="8_bnuh0"]
@@ -14,12 +16,11 @@
 [ext_resource type="PhysicsMaterial" uid="uid://mkqnvfa22ewu" path="res://environment/physics_material_walls.tres" id="12_umngd"]
 [ext_resource type="PackedScene" uid="uid://cxbl463le6rk" path="res://environment/props/padded_chair_east.tscn" id="13_b7bi6"]
 [ext_resource type="Script" uid="uid://cumbpfeyp08x3" path="res://environment/room_obsticals.gd" id="13_qoh86"]
-[ext_resource type="Texture2D" uid="uid://c7h4wij4a777d" path="res://assets/tileset/counter_tileset.png" id="14_1xn1j"]
 [ext_resource type="PackedScene" uid="uid://dlj3dhwh6pdqi" path="res://environment/props/couch_north.tscn" id="15_fb1wr"]
 [ext_resource type="PackedScene" uid="uid://dbbtr04kgpr" path="res://environment/props/small_brown_table.tscn" id="16_indto"]
 [ext_resource type="Texture2D" uid="uid://elymak8qclkt" path="res://environment/props/PurpleFlowerVase.png" id="17_7omid"]
+[ext_resource type="TileSet" uid="uid://dfr2gjdf46i41" path="res://environment/tile_set_counter.tres" id="17_n6pai"]
 [ext_resource type="Texture2D" uid="uid://du4cwbat56j4x" path="res://environment/props/DaiseyFlowerVase.png" id="18_6mx2r"]
-[ext_resource type="PackedScene" uid="uid://chfc1rvobqjcp" path="res://environment/props/padded_chair_west.tscn" id="19_ipttb"]
 [ext_resource type="PackedScene" uid="uid://m3abtpujjji4" path="res://environment/props/snack_machine.tscn" id="20_ryfvn"]
 [ext_resource type="PackedScene" uid="uid://ckvupxrj1auef" path="res://environment/props/soda_machine.tscn" id="21_m6yxo"]
 [ext_resource type="PackedScene" uid="uid://n178q3jsb10u" path="res://environment/props/couch_south.tscn" id="22_4dan0"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cflf1eoi5ly2n" path="res://environment/props/SmallTrashBin.png" id="26_2y5ti"]
 [ext_resource type="PackedScene" uid="uid://di4y5x1g6hx6n" path="res://environment/ball_traps.tscn" id="27_wfupj"]
 [ext_resource type="Texture2D" uid="uid://cfkg3ydsgoirj" path="res://environment/props/clothing_displays2.png" id="28_f53jl"]
+[ext_resource type="PackedScene" uid="uid://bjh2hmfx3sh8h" path="res://environment/props/couch_east.tscn" id="28_gw2mx"]
 [ext_resource type="Texture2D" uid="uid://com7xc27y5gp" path="res://environment/props/clothing_displays12.png" id="28_pfvrf"]
 [ext_resource type="PackedScene" uid="uid://cd05pvf8yj4o0" path="res://environment/doors/player_traps.tscn" id="28_sa641"]
 [ext_resource type="Texture2D" uid="uid://dkcg403u7y472" path="res://environment/props/clothing_displays3.png" id="29_6ehod"]
@@ -41,43 +43,13 @@
 [ext_resource type="Texture2D" uid="uid://cvvdlopojefjp" path="res://environment/props/clothing_displays13.png" id="37_f53jl"]
 [ext_resource type="Texture2D" uid="uid://dqinrnb2hm32h" path="res://environment/props/clothing_displays11.png" id="37_pha46"]
 [ext_resource type="PackedScene" uid="uid://booei1p76ainp" path="res://environment/goals/break_bench.tscn" id="41_f53jl"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f53jl"]
-shader_parameter/color_count = 10
-shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-script = ExtResource("7_qfgom")
-palette = ExtResource("6_621wm")
-metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ehod"]
-shader_parameter/color_count = 10
-shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-script = ExtResource("7_qfgom")
-palette = ExtResource("6_621wm")
-metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fmbl"]
-shader_parameter/color_count = 10
-shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-script = ExtResource("7_qfgom")
-palette = ExtResource("6_621wm")
-metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gw2mx"]
-shader_parameter/color_count = 10
-shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-script = ExtResource("7_qfgom")
-palette = ExtResource("6_621wm")
-metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
+[ext_resource type="PackedScene" uid="uid://bmu11tkhr6l08" path="res://environment/props/couch_west.tscn" id="44_gw2mx"]
+[ext_resource type="Texture2D" uid="uid://crvx2qhmoat6n" path="res://environment/props/clothing_display.png" id="45_n6pai"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6pai"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("7_qfgom")
 palette = ExtResource("6_621wm")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
@@ -93,7 +65,7 @@ metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2jcbm"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(1, 0.8862745, 0.76862746, 0.65882355, 0.9019608, 0.7529412, 0.8, 0.8, 0.2, 1, 1, 0.8, 1, 0, 0.4, 1, 0.8, 0, 1, 1, 0.6, 1, 1, 0.6, 1, 1, 0.6, 1, 1, 0.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("7_qfgom")
 palette = ExtResource("6_621wm")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
@@ -101,7 +73,7 @@ metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f3w6x"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("7_qfgom")
 palette = ExtResource("6_621wm")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
@@ -117,7 +89,7 @@ metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pha46"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 1, 0.8, 0.5019608, 1, 0.8784314, 0.50980395, 0.7294118, 0.40784314, 0.78431374, 1, 0.93333334, 0.34509805, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0.9647059, 0.6, 0.53333336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("7_qfgom")
 palette = ExtResource("6_621wm")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
@@ -125,91 +97,46 @@ metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_psyw1"]
 shader_parameter/color_count = 10
 shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+script = ExtResource("7_qfgom")
+palette = ExtResource("6_621wm")
+metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6thg"]
+shader_parameter/color_count = 10
+shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+script = ExtResource("7_qfgom")
+palette = ExtResource("6_621wm")
+metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gbk4g"]
+shader_parameter/color_count = 10
+shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+script = ExtResource("7_qfgom")
+palette = ExtResource("6_621wm")
+metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fp2qa"]
+shader_parameter/color_count = 10
+shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output = PackedVector3Array(0.42745098, 0.29803923, 0.25490198, 0.30588236, 0.20392157, 0.18039216, 0.4, 0.22352941, 0.19215687, 0.42745098, 0.29803923, 0.25490198, 0.6901961, 0.07058824, 0.039215688, 0, 0, 0, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0.14901961, 0.19607843, 0.21960784, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+script = ExtResource("7_qfgom")
+palette = ExtResource("6_621wm")
+metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3la7f"]
+shader_parameter/color_count = 10
+shader_parameter/source = PackedInt32Array(241, 215, 189, 238, 195, 154, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output = PackedVector3Array(0.94509804, 0.84313726, 0.7411765, 0.93333334, 0.7647059, 0.6039216, 0, 1, 0, 0, 1, 1, 0.27058825, 0.15686275, 0.23529412, 0.4, 0.22352941, 0.19215687, 0.8509804, 0.627451, 0.4, 0.8509804, 0.627451, 0.4, 0.8509804, 0.627451, 0.4, 0.8509804, 0.627451, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("7_qfgom")
 palette = ExtResource("6_621wm")
 metadata/_custom_type_script = "uid://c3ax3u3u28f1c"
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_psyw1"]
-tile_data = PackedInt32Array(65536, 327680, 1, 131072, 0, 5, 1, 393216, 0, 65537, 393216, 1, 131073, 393216, 2, 196609, 393216, 3, 65538, 458752, 1, 131074, 262144, 5)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6r4qu"]
-texture = ExtResource("14_1xn1j")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:1/0 = 0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:1/0 = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:2/0 = 0
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:2/0 = 0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:2/0 = 0
-9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:2/0 = 0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:3/0 = 0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:3/0 = 0
-8:3/0 = 0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:4/0 = 0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:4/0 = 0
-8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:4/0 = 0
-10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:5/0 = 0
-7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:6/0 = 0
-6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:7/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_5jopr"]
-physics_layer_0/collision_layer = 4294967295
-physics_layer_0/collision_mask = 4294967295
-sources/0 = SubResource("TileSetAtlasSource_6r4qu")
-pattern_0 = SubResource("TileMapPattern_psyw1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pai"]
+atlas = ExtResource("28_pfvrf")
+region = Rect2(62, 0, 63, 19)
 
 [node name="4" type="Node2D" unique_id=1783182777 node_paths=PackedStringArray("level_end")]
 script = ExtResource("1_c1deg")
@@ -222,7 +149,7 @@ metadata/_edit_lock_ = true
 position = Vector2(319, 91)
 
 [node name="Breakable_PottedPlant5" parent="Breakables" unique_id=730968364 instance=ExtResource("2_xv1ui")]
-position = Vector2(45, 288)
+position = Vector2(43, 254)
 
 [node name="Breakable_PottedPlant4" parent="Breakables" unique_id=296753471 instance=ExtResource("2_xv1ui")]
 position = Vector2(368, 90)
@@ -231,7 +158,7 @@ position = Vector2(368, 90)
 position = Vector2(408, 438)
 
 [node name="Breakable_PottedPlant9" parent="Breakables" unique_id=1689615980 instance=ExtResource("2_xv1ui")]
-position = Vector2(268, 442)
+position = Vector2(276, 440)
 
 [node name="Breakable_PottedPlant10" parent="Breakables" unique_id=414673949 instance=ExtResource("2_xv1ui")]
 position = Vector2(897, 273)
@@ -250,6 +177,24 @@ position = Vector2(898, 93)
 
 [node name="Breakable_PottedPlant14" parent="Breakables" unique_id=1790002408 instance=ExtResource("2_xv1ui")]
 position = Vector2(899, 173)
+
+[node name="Breakable_Pot2" parent="Breakables" unique_id=190911682 instance=ExtResource("3_4fmbl")]
+position = Vector2(140, 439)
+
+[node name="Breakable_Pot4" parent="Breakables" unique_id=302369359 instance=ExtResource("3_4fmbl")]
+position = Vector2(798, 523)
+
+[node name="Breakable_Box" parent="Breakables" unique_id=2115625683 instance=ExtResource("4_gw2mx")]
+position = Vector2(549, 435)
+
+[node name="Breakable_Box2" parent="Breakables" unique_id=1280341804 instance=ExtResource("4_gw2mx")]
+position = Vector2(42, 523)
+
+[node name="Breakable_Bench" parent="Breakables" unique_id=95793811 instance=ExtResource("41_f53jl")]
+position = Vector2(230, 85)
+
+[node name="Breakable_Bench2" parent="Breakables" unique_id=1139496321 instance=ExtResource("41_f53jl")]
+position = Vector2(455, 83)
 
 [node name="Doors" type="Node2D" parent="." unique_id=702827230]
 metadata/_edit_lock_ = true
@@ -271,14 +216,14 @@ dependencys = [NodePath("../../Traps/Trap_Pink_t")]
 
 [node name="Door_East_West_end" parent="Doors" unique_id=1632515542 node_paths=PackedStringArray("dependencys") instance=ExtResource("3_cne80")]
 z_index = 12
-position = Vector2(80, 128)
+position = Vector2(80, 112)
 dependencys = [NodePath("../../Traps/Trap_Green"), NodePath("../../Traps/Trap_Blue"), NodePath("../../Traps/Trap_Pink")]
 
 [node name="Floor and Walls" type="Node2D" parent="." unique_id=1725542476]
 metadata/_edit_lock_ = true
 
 [node name="Floor" type="TextureRect" parent="Floor and Walls" unique_id=2134588563]
-material = SubResource("ShaderMaterial_f53jl")
+material = SubResource("ShaderMaterial_n6pai")
 offset_right = 944.0
 offset_bottom = 544.0
 size_flags_horizontal = 3
@@ -291,7 +236,7 @@ _selected_pallet = 8
 metadata/_edit_lock_ = true
 
 [node name="Floor_west" type="TextureRect" parent="Floor and Walls" unique_id=1907508793]
-material = SubResource("ShaderMaterial_6ehod")
+material = SubResource("ShaderMaterial_opbr5")
 offset_left = 768.0
 offset_right = 944.0
 offset_bottom = 544.0
@@ -305,25 +250,25 @@ _selected_pallet = 8
 metadata/_edit_lock_ = true
 
 [node name="Floor_exit" type="TextureRect" parent="Floor and Walls" unique_id=1523656802]
-material = SubResource("ShaderMaterial_4fmbl")
+material = SubResource("ShaderMaterial_2jcbm")
 offset_left = -16.0
 offset_top = 56.0
 offset_right = 80.0
 offset_bottom = 208.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("8_mqulg")
+texture = ExtResource("8_bnuh0")
 expand_mode = 1
 stretch_mode = 1
 script = ExtResource("9_hr0ra")
-_selected_pallet = 5
+_selected_pallet = 7
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer_WallsUnder" type="TileMapLayer" parent="Floor and Walls" unique_id=1576620419]
 z_index = 4
 z_as_relative = false
-material = SubResource("ShaderMaterial_gw2mx")
-tile_map_data = PackedByteArray("AAAWAAIAAQAWAAEAAAAXAAIAAQAWAAEAAAAYAAIAAQAWAAEAAAAZAAIAAQAWAAEAAAAaAAIAAQAWAAEAAAAbAAIAAQAWAAEAAAAgAAIAAQAWAAEAAAAhAAIAAQAWAAEAAAAiAAIAAQAWAAEAAAAjAAIAAQAWAAEAAAAgAAMAAQAWAAEAAAAbAAMAAQAWAAEAAAAhAAMAAQAWAAEAAAAiAAMAAQAWAAEAAAAjAAMAAQAWAAEAAAAWAAMAAQAWAAEAAAAXAAMAAQAWAAEAAAAYAAMAAQAWAAEAAAAZAAMAAQAWAAEAAAAaAAMAAQAWAAEAAAAkAAIAAQAWAAEAAAAkAAMAAQAWAAEAAAAlAAIAAQAWAAEAAAAlAAMAAQAWAAEAAAAmAAIAAQAWAAEAAAAmAAMAAQAWAAEAAAAnAAIAAQAWAAEAAAAnAAMAAQAWAAEAAAAFAAIAAQAWAAEAAAAFAAMAAQAWAAEAAAAGAAIAAQAWAAEAAAAGAAMAAQAWAAEAAAAHAAIAAQAWAAEAAAAHAAMAAQAWAAEAAAAMAAIAAQAWAAEAAAAMAAMAAQAWAAEAAAANAAIAAQAWAAEAAAANAAMAAQAWAAEAAAAOAAIAAQAWAAEAAAAOAAMAAQAWAAEAAAAPAAIAAQAWAAEAAAAPAAMAAQAWAAEAAAAQAAIAAQAWAAEAAAAQAAMAAQAWAAEAAAARAAIAAQAWAAEAAAARAAMAAQAWAAEAAAAIAAIAAQAWAAEAAAAIAAMAAQAWAAEAAAAJAAIAAQAWAAEAAAAJAAMAAQAWAAEAAAAKAAIAAQAWAAEAAAAKAAMAAQAWAAEAAAALAAIAAQAWAAEAAAALAAMAAQAWAAEAAAAcAAIAAQAWAAEAAAAcAAMAAQAWAAEAAAAdAAIAAQAWAAEAAAAdAAMAAQAWAAEAAAAeAAIAAQAWAAEAAAAeAAMAAQAWAAEAAAAfAAIAAQAWAAEAAAAfAAMAAQAWAAEAAAASAAIAAQAWAAEAAAASAAMAAQAWAAEAAAATAAIAAQAWAAEAAAATAAMAAQAWAAEAAAAUAAIAAQAWAAEAAAAUAAMAAQAWAAEAAAAVAAIAAQAWAAEAAAAVAAMAAQAWAAEAAAAoAAIAAQAWAAEAAAAoAAMAAQAWAAEAAAApAAIAAQAWAAEAAAApAAMAAQAWAAEAAAAqAAIAAQAWAAEAAAAqAAMAAQAWAAEAAAA3AAMAAQAWAAEAAAA4AAMAAQAWAAEAAAA5AAMAAQAWAAEAAAA6AAMAAQAWAAEAAAA3AAIAAQAWAAEAAAA4AAIAAQAWAAEAAAA5AAIAAQAWAAEAAAA6AAIAAQAWAAEAAAAFAAQAAQAVAAEAAQAGAAQAAQAVAAEAAQAHAAQAAQAVAAEAAQAIAAQAAQAVAAEAAQAJAAQAAQAVAAEAAQAKAAQAAQAVAAEAAQALAAQAAQAVAAEAAQAMAAQAAQAVAAEAAQANAAQAAQAVAAEAAQAOAAQAAQAVAAEAAQAPAAQAAQAVAAEAAQAQAAQAAQAVAAEAAQARAAQAAQAVAAEAAQASAAQAAQAVAAEAAQATAAQAAQAVAAEAAQAUAAQAAQAVAAEAAQAVAAQAAQAVAAEAAQAWAAQAAQAVAAEAAQAXAAQAAQAVAAEAAQAYAAQAAQAVAAEAAQAZAAQAAQAVAAEAAQAaAAQAAQAVAAEAAQAbAAQAAQAVAAEAAQAcAAQAAQAVAAEAAQAdAAQAAQAVAAEAAQAeAAQAAQAVAAEAAQAfAAQAAQAVAAEAAQAgAAQAAQAVAAEAAQAhAAQAAQAVAAEAAQAiAAQAAQAVAAEAAQAjAAQAAQAVAAEAAQAkAAQAAQAVAAEAAQAlAAQAAQAVAAEAAQAnAAQAAQAVAAEAAQAoAAQAAQAVAAEAAQApAAQAAQAVAAEAAQAqAAQAAQAVAAEAAQAmAAQAAQAVAAEAAQA3AAQAAQAVAAEAAQA4AAQAAQAVAAEAAQA5AAQAAQAVAAEAAQA6AAQAAQAVAAEAAQAtAAIAAQAWAAEAAAAtAAMAAQAWAAEAAAAtAAQAAQAVAAEAAQAuAAIAAQAWAAEAAAAuAAMAAQAWAAEAAAAuAAQAAQAVAAEAAQAvAAIAAQAWAAEAAAAvAAMAAQAWAAEAAAAvAAQAAQAWAAIAAAAvAA4AAQAWAAEAAAAvAA8AAQAWAAIAAAAvABkAAQAWAAEAAAAvABoAAQAWAAIAAAAwAAIAAQAWAAEAAAAwAAMAAQAWAAEAAAAwAAQAAQAWAAIAABAwAA4AAQAWAAEAAAAwAA8AAQAWAAIAABAwABkAAQAWAAEAAAAwABoAAQAWAAIAABAxAAIAAQAWAAEAAAAxAAMAAQAWAAEAAAAxAAQAAQAVAAEAAQAxAA0AAQAWAAEAAAAxAA4AAQAWAAEAAAAxAA8AAQAVAAEAAQAxABgAAQAWAAEAAAAxABkAAQAWAAEAAAAxABoAAQAVAAEAAQAyAAIAAQAWAAEAAAAyAAMAAQAWAAEAAAAyAAQAAQAVAAEAAQAyAA0AAQAWAAEAAAAyAA4AAQAWAAEAAAAyAA8AAQAVAAEAAQAyABgAAQAWAAEAAAAyABkAAQAWAAEAAAAyABoAAQAVAAEAAQAzAAIAAQAWAAEAAAAzAAMAAQAWAAEAAAAzAAQAAQAVAAEAAQAzAA0AAQAWAAEAAAAzAA4AAQAWAAEAAAAzAA8AAQAVAAEAAQAzABgAAQAWAAEAAAAzABkAAQAWAAEAAAAzABoAAQAVAAEAAQA0AAIAAQAWAAEAAAA0AAMAAQAWAAEAAAA0AAQAAQAVAAEAAQA0AA0AAQAWAAEAAAA0AA4AAQAWAAEAAAA0AA8AAQAVAAEAAQA0ABgAAQAWAAEAAAA0ABkAAQAWAAEAAAA0ABoAAQAVAAEAAQA1AAIAAQAWAAEAAAA1AAMAAQAWAAEAAAA1AAQAAQAVAAEAAQA1AA0AAQAWAAEAAAA1AA4AAQAWAAEAAAA1AA8AAQAVAAEAAQA1ABgAAQAWAAEAAAA1ABkAAQAWAAEAAAA1ABoAAQAVAAEAAQA2AAIAAQAWAAEAAAA2AAMAAQAWAAEAAAA2AAQAAQAVAAEAAQA2AA0AAQAWAAEAAAA2AA4AAQAWAAEAAAA2AA8AAQAVAAEAAQA2ABgAAQAWAAEAAAA2ABkAAQAWAAEAAAA2ABoAAQAVAAEAAQAvAAUAAQATAAIAAAAvABAAAQATAAIAAAAvABsAAQATAAIAAAAwAAUAAQATAAIAABAwABAAAQATAAIAABAwABsAAQATAAIAABA3AA0AAQAWAAEAAAA3AA4AAQAWAAEAAAA3AA8AAQAVAAEAAQA3ABgAAQAWAAEAAAA3ABkAAQAWAAEAAAA3ABoAAQAVAAEAAQA4AA0AAQAWAAEAAAA4AA4AAQAWAAEAAAA4AA8AAQAVAAEAAQA4ABgAAQAWAAEAAAA4ABkAAQAWAAEAAAA4ABoAAQAVAAEAAQArAAIAAQAWAAEAAAArAAMAAQAWAAEAAAArAAQAAQAVAAEAAQAsAAIAAQAWAAEAAAAsAAMAAQAWAAEAAAAsAAQAAQAVAAEAAQAFAAUAAQATAAIAABAFAAYAAQATAAIAABAIABcAAQAWAAEAAAAIABgAAQAWAAEAAAAIABkAAQAWAAEAAAAJABgAAQAWAAEAAAAJABkAAQAWAAEAAAAKABgAAQAWAAEAAAAKABkAAQAWAAEAAAALABgAAQAWAAEAAAALABkAAQAWAAEAAAAMABgAAQAWAAEAAAAMABkAAQAWAAEAAAANABgAAQAWAAEAAAANABkAAQAWAAEAAAAOABgAAQAWAAEAAAAOABkAAQAWAAEAAAAPABgAAQAWAAEAAAAPABkAAQAWAAEAAAAQABgAAQAWAAEAAAAQABkAAQAWAAEAAAARABgAAQAWAAEAAAARABkAAQAWAAEAAAASABgAAQAWAAEAAAASABkAAQAWAAEAAAATABgAAQAWAAEAAAATABkAAQAWAAEAAAAUABgAAQAWAAEAAAAUABkAAQAWAAEAAAAVABgAAQAWAAEAAAAVABkAAQAWAAEAAAAWABgAAQAWAAEAAAAWABkAAQAWAAEAAAAXABgAAQAWAAEAAAAXABkAAQAWAAEAAAAYABgAAQAWAAEAAAAYABkAAQAWAAEAAAAZABgAAQAWAAEAAAAZABkAAQAWAAEAAAAaABgAAQAWAAEAAAAaABkAAQAWAAEAAAAbABgAAQAWAAEAAAAbABkAAQAWAAEAAAAcABcAAQAWAAEAAAAcABgAAQAWAAEAAAAcABkAAQAWAAEAAAAdABgAAQAWAAEAAAAdABkAAQAWAAEAAAAeABgAAQAWAAEAAAAeABkAAQAWAAEAAAAfABgAAQAWAAEAAAAfABkAAQAWAAEAAAAgABgAAQAWAAEAAAAgABkAAQAWAAEAAAAhABgAAQAWAAEAAAAhABkAAQAWAAEAAAAiABcAAQAWAAEAAAAiABgAAQAWAAEAAAAiABkAAQAWAAEAAAAjABcAAQAWAAEAAAAjABgAAQAWAAEAAAAjABkAAQAWAAEAAAAIABoAAQAVAAEAAQAJABoAAQAVAAEAAQAKABoAAQAVAAEAAQALABoAAQAVAAEAAQAMABoAAQAVAAEAAQANABoAAQAVAAEAAQAOABoAAQAVAAEAAQAPABoAAQAVAAEAAQAQABoAAQAVAAEAAQARABoAAQAVAAEAAQASABoAAQAVAAEAAQATABoAAQAVAAEAAQAUABoAAQAVAAEAAQAVABoAAQAVAAEAAQAWABoAAQAVAAEAAQAXABoAAQAVAAEAAQAYABoAAQAVAAEAAQAZABoAAQAVAAEAAQAaABoAAQAVAAEAAQAbABoAAQAVAAEAAQAcABoAAQAVAAEAAQAdABoAAQAVAAEAAQAeABoAAQAVAAEAAQAfABoAAQAVAAEAAQAgABoAAQAVAAEAAQAhABoAAQAVAAEAAQAiABoAAQAVAAEAAQAjABoAAQAVAAEAAQAFAA0AAQAWAAEAAAAFAA4AAQAWAAEAAAAFAA8AAQAWAAEAAAAFABAAAQAVAAEAAQAEAA4AAQAWAAEAAAAEAA8AAQAWAAEAAAAEABAAAQAVAAEAAQADAA4AAQAWAAEAAAADAA8AAQAWAAEAAAADABAAAQAVAAEAAQACAA4AAQAWAAEAAAACAA8AAQAWAAEAAAACABAAAQAVAAEAAQA=")
+material = SubResource("ShaderMaterial_f3w6x")
+tile_map_data = PackedByteArray("AAAWAAIAAQAWAAEAAAAXAAIAAQAWAAEAAAAYAAIAAQAWAAEAAAAZAAIAAQAWAAEAAAAaAAIAAQAWAAEAAAAbAAIAAQAWAAEAAAAgAAIAAQAWAAEAAAAhAAIAAQAWAAEAAAAiAAIAAQAWAAEAAAAjAAIAAQAWAAEAAAAgAAMAAQAWAAEAAAAbAAMAAQAWAAEAAAAhAAMAAQAWAAEAAAAiAAMAAQAWAAEAAAAjAAMAAQAWAAEAAAAWAAMAAQAWAAEAAAAXAAMAAQAWAAEAAAAYAAMAAQAWAAEAAAAZAAMAAQAWAAEAAAAaAAMAAQAWAAEAAAAkAAIAAQAWAAEAAAAkAAMAAQAWAAEAAAAlAAIAAQAWAAEAAAAlAAMAAQAWAAEAAAAmAAIAAQAWAAEAAAAmAAMAAQAWAAEAAAAnAAIAAQAWAAEAAAAnAAMAAQAWAAEAAAAFAAIAAQAWAAEAAAAFAAMAAQAVAAEAAQAGAAIAAQAWAAEAAAAGAAMAAQAWAAEAAAAHAAIAAQAWAAEAAAAHAAMAAQAWAAEAAAAMAAIAAQAWAAEAAAAMAAMAAQAWAAEAAAANAAIAAQAWAAEAAAANAAMAAQAWAAEAAAAOAAIAAQAWAAEAAAAOAAMAAQAWAAEAAAAPAAIAAQAWAAEAAAAPAAMAAQAWAAEAAAAQAAIAAQAWAAEAAAAQAAMAAQAWAAEAAAARAAIAAQAWAAEAAAARAAMAAQAWAAEAAAAIAAIAAQAWAAEAAAAIAAMAAQAWAAEAAAAJAAIAAQAWAAEAAAAJAAMAAQAWAAEAAAAKAAIAAQAWAAEAAAAKAAMAAQAWAAEAAAALAAIAAQAWAAEAAAALAAMAAQAWAAEAAAAcAAIAAQAWAAEAAAAcAAMAAQAWAAEAAAAdAAIAAQAWAAEAAAAdAAMAAQAWAAEAAAAeAAIAAQAWAAEAAAAeAAMAAQAWAAEAAAAfAAIAAQAWAAEAAAAfAAMAAQAWAAEAAAASAAIAAQAWAAEAAAASAAMAAQAWAAEAAAATAAIAAQAWAAEAAAATAAMAAQAWAAEAAAAUAAIAAQAWAAEAAAAUAAMAAQAWAAEAAAAVAAIAAQAWAAEAAAAVAAMAAQAWAAEAAAAoAAIAAQAWAAEAAAAoAAMAAQAWAAEAAAApAAIAAQAWAAEAAAApAAMAAQAWAAEAAAAqAAIAAQAWAAEAAAAqAAMAAQAWAAEAAAA3AAMAAQAWAAEAAAA4AAMAAQAWAAEAAAA5AAMAAQAWAAEAAAA6AAMAAQAWAAEAAAA3AAIAAQAWAAEAAAA4AAIAAQAWAAEAAAA5AAIAAQAWAAEAAAA6AAIAAQAWAAEAAAAGAAQAAQAVAAEAAQAHAAQAAQAVAAEAAQAIAAQAAQAVAAEAAQAJAAQAAQAVAAEAAQAKAAQAAQAVAAEAAQALAAQAAQAVAAEAAQAMAAQAAQAVAAEAAQANAAQAAQAVAAEAAQAOAAQAAQAVAAEAAQAPAAQAAQAVAAEAAQAQAAQAAQAVAAEAAQARAAQAAQAVAAEAAQASAAQAAQAVAAEAAQATAAQAAQAVAAEAAQAUAAQAAQAVAAEAAQAVAAQAAQAVAAEAAQAWAAQAAQAVAAEAAQAXAAQAAQAVAAEAAQAYAAQAAQAVAAEAAQAZAAQAAQAVAAEAAQAaAAQAAQAVAAEAAQAbAAQAAQAVAAEAAQAcAAQAAQAVAAEAAQAdAAQAAQAVAAEAAQAeAAQAAQAVAAEAAQAfAAQAAQAVAAEAAQAgAAQAAQAVAAEAAQAhAAQAAQAVAAEAAQAiAAQAAQAVAAEAAQAjAAQAAQAVAAEAAQAkAAQAAQAVAAEAAQAlAAQAAQAVAAEAAQAnAAQAAQAVAAEAAQAoAAQAAQAVAAEAAQApAAQAAQAVAAEAAQAqAAQAAQAVAAEAAQAmAAQAAQAVAAEAAQA3AAQAAQAVAAEAAQA4AAQAAQAVAAEAAQA5AAQAAQAVAAEAAQA6AAQAAQAVAAEAAQAtAAIAAQAWAAEAAAAtAAMAAQAWAAEAAAAtAAQAAQAVAAEAAQAuAAIAAQAWAAEAAAAuAAMAAQAWAAEAAAAuAAQAAQAVAAEAAQAvAAIAAQAWAAEAAAAvAAMAAQAWAAEAAAAvAAQAAQAWAAIAAAAvAA4AAQAWAAEAAAAvAA8AAQAWAAIAAAAvABkAAQAWAAEAAAAvABoAAQAWAAIAAAAwAAIAAQAWAAEAAAAwAAMAAQAWAAEAAAAwAAQAAQAWAAIAABAwAA4AAQAWAAEAAAAwAA8AAQAWAAIAABAwABkAAQAWAAEAAAAwABoAAQAWAAIAABAxAAIAAQAWAAEAAAAxAAMAAQAWAAEAAAAxAAQAAQAVAAEAAQAxAA0AAQAWAAEAAAAxAA4AAQAWAAEAAAAxAA8AAQAVAAEAAQAxABgAAQAWAAEAAAAxABkAAQAWAAEAAAAxABoAAQAVAAEAAQAyAAIAAQAWAAEAAAAyAAMAAQAWAAEAAAAyAAQAAQAVAAEAAQAyAA0AAQAWAAEAAAAyAA4AAQAWAAEAAAAyAA8AAQAVAAEAAQAyABgAAQAWAAEAAAAyABkAAQAWAAEAAAAyABoAAQAVAAEAAQAzAAIAAQAWAAEAAAAzAAMAAQAWAAEAAAAzAAQAAQAVAAEAAQAzAA0AAQAWAAEAAAAzAA4AAQAWAAEAAAAzAA8AAQAVAAEAAQAzABgAAQAWAAEAAAAzABkAAQAWAAEAAAAzABoAAQAVAAEAAQA0AAIAAQAWAAEAAAA0AAMAAQAWAAEAAAA0AAQAAQAVAAEAAQA0AA0AAQAWAAEAAAA0AA4AAQAWAAEAAAA0AA8AAQAVAAEAAQA0ABgAAQAWAAEAAAA0ABkAAQAWAAEAAAA0ABoAAQAVAAEAAQA1AAIAAQAWAAEAAAA1AAMAAQAWAAEAAAA1AAQAAQAVAAEAAQA1AA0AAQAWAAEAAAA1AA4AAQAWAAEAAAA1AA8AAQAVAAEAAQA1ABgAAQAWAAEAAAA1ABkAAQAWAAEAAAA1ABoAAQAVAAEAAQA2AAIAAQAWAAEAAAA2AAMAAQAWAAEAAAA2AAQAAQAVAAEAAQA2AA0AAQAWAAEAAAA2AA4AAQAWAAEAAAA2AA8AAQAVAAEAAQA2ABgAAQAWAAEAAAA2ABkAAQAWAAEAAAA2ABoAAQAVAAEAAQAvAAUAAQATAAIAAAAvABAAAQATAAIAAAAvABsAAQATAAIAAAAwAAUAAQATAAIAABAwABAAAQATAAIAABAwABsAAQATAAIAABA3AA0AAQAWAAEAAAA3AA4AAQAWAAEAAAA3AA8AAQAVAAEAAQA3ABgAAQAWAAEAAAA3ABkAAQAWAAEAAAA3ABoAAQAVAAEAAQA4AA0AAQAWAAEAAAA4AA4AAQAWAAEAAAA4AA8AAQAVAAEAAQA4ABgAAQAWAAEAAAA4ABkAAQAWAAEAAAA4ABoAAQAVAAEAAQArAAIAAQAWAAEAAAArAAMAAQAWAAEAAAArAAQAAQAVAAEAAQAsAAIAAQAWAAEAAAAsAAMAAQAWAAEAAAAsAAQAAQAVAAEAAQAIABcAAQAWAAEAAAAIABgAAQAWAAEAAAAIABkAAQAWAAEAAAAJABgAAQAWAAEAAAAJABkAAQAWAAEAAAAKABgAAQAWAAEAAAAKABkAAQAWAAEAAAALABgAAQAWAAEAAAALABkAAQAWAAEAAAAMABgAAQAWAAEAAAAMABkAAQAWAAEAAAANABgAAQAWAAEAAAANABkAAQAWAAEAAAAOABgAAQAWAAEAAAAOABkAAQAWAAEAAAAPABgAAQAWAAEAAAAPABkAAQAWAAEAAAAQABgAAQAWAAEAAAAQABkAAQAWAAEAAAARABgAAQAWAAEAAAARABkAAQAWAAEAAAASABgAAQAWAAEAAAASABkAAQAWAAEAAAATABgAAQAWAAEAAAATABkAAQAWAAEAAAAUABgAAQAWAAEAAAAUABkAAQAWAAEAAAAVABgAAQAWAAEAAAAVABkAAQAWAAEAAAAWABgAAQAWAAEAAAAWABkAAQAWAAEAAAAXABgAAQAWAAEAAAAXABkAAQAWAAEAAAAYABgAAQAWAAEAAAAYABkAAQAWAAEAAAAZABgAAQAWAAEAAAAZABkAAQAWAAEAAAAaABgAAQAWAAEAAAAaABkAAQAWAAEAAAAbABgAAQAWAAEAAAAbABkAAQAWAAEAAAAcABcAAQAWAAEAAAAcABgAAQAWAAEAAAAcABkAAQAWAAEAAAAdABgAAQAWAAEAAAAdABkAAQAWAAEAAAAeABgAAQAWAAEAAAAeABkAAQAWAAEAAAAfABgAAQAWAAEAAAAfABkAAQAWAAEAAAAgABgAAQAWAAEAAAAgABkAAQAWAAEAAAAhABgAAQAWAAEAAAAhABkAAQAWAAEAAAAiABcAAQAWAAEAAAAiABgAAQAWAAEAAAAiABkAAQAWAAEAAAAjABcAAQAWAAEAAAAjABgAAQAWAAEAAAAjABkAAQAWAAEAAAAIABoAAQAVAAEAAQAJABoAAQAVAAEAAQAKABoAAQAVAAEAAQALABoAAQAVAAEAAQAMABoAAQAVAAEAAQANABoAAQAVAAEAAQAOABoAAQAVAAEAAQAPABoAAQAVAAEAAQAQABoAAQAVAAEAAQARABoAAQAVAAEAAQASABoAAQAVAAEAAQATABoAAQAVAAEAAQAUABoAAQAVAAEAAQAVABoAAQAVAAEAAQAWABoAAQAVAAEAAQAXABoAAQAVAAEAAQAYABoAAQAVAAEAAQAZABoAAQAVAAEAAQAaABoAAQAVAAEAAQAbABoAAQAVAAEAAQAcABoAAQAVAAEAAQAdABoAAQAVAAEAAQAeABoAAQAVAAEAAQAfABoAAQAVAAEAAQAgABoAAQAVAAEAAQAhABoAAQAVAAEAAQAiABoAAQAVAAEAAQAjABoAAQAVAAEAAQAFAAQAAQATAAIAABAFAAUAAQATAAIAABACAA4AAQAVAAEAAQADAA4AAQAVAAEAAQAEAA4AAQAVAAEAAQAFAA0AAQAWAAEAAAAFAA4AAQAVAAEAAQACAAwAAQAWAAEAAAACAA0AAQAWAAEAAAADAAwAAQAWAAEAAAADAA0AAQAWAAEAAAAEAAwAAQAWAAEAAAAEAA0AAQAWAAEAAAAFAAsAAQAWAAEAAAAFAAwAAQAWAAEAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
 script = ExtResource("11_c8ah6")
@@ -333,8 +278,8 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsUnder_exit" type="TileMapLayer" parent="Floor and Walls" unique_id=1837659701]
 z_index = 4
 z_as_relative = false
-material = SubResource("ShaderMaterial_n6pai")
-tile_map_data = PackedByteArray("AAAEAAIAAQAWAAEAAAAEAAMAAQAWAAEAAAABAAIAAQAWAAEAAAABAAMAAQAWAAEAAAACAAIAAQAWAAEAAAACAAMAAQAWAAEAAAAAAAIAAQAWAAEAAAAAAAMAAQAWAAEAAAACAAQAAQAVAAEAAQAEAAQAAQAVAAEAAQADAAIAAQAWAAEAAAADAAMAAQAWAAEAAAADAAQAAQAVAAEAAQAAAAQAAQAVAAEAAQABAAQAAQAVAAEAAQAAAAEAAQAWAAEAAAAEAAUAAQATAAIAAAAEAAYAAQATAAIAAAA=")
+material = SubResource("ShaderMaterial_0koqc")
+tile_map_data = PackedByteArray("AAAEAAIAAQAWAAEAAAAEAAMAAQAVAAEAAQABAAIAAQAWAAEAAAABAAMAAQAWAAEAAAACAAIAAQAWAAEAAAACAAMAAQAWAAEAAAAAAAIAAQAWAAEAAAAAAAMAAQAWAAEAAAACAAQAAQAVAAEAAQADAAIAAQAWAAEAAAADAAMAAQAWAAEAAAADAAQAAQAVAAEAAQAAAAQAAQAVAAEAAQABAAQAAQAVAAEAAQAAAAEAAQAWAAEAAAAEAAQAAQATAAIAAAAEAAUAAQATAAIAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
 script = ExtResource("11_c8ah6")
@@ -344,8 +289,8 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsOver" type="TileMapLayer" parent="Floor and Walls" unique_id=1556340826]
 z_index = 16
 z_as_relative = false
-material = SubResource("ShaderMaterial_opbr5")
-tile_map_data = PackedByteArray("AAAAAAAAAQAAAAIAAAAAAAEAAQAAAAEAAAAAABYAAQAEAAMAAAAAABcAAQAEAAMAAAAAABgAAQAEAAMAAAAAABkAAQAEAAMAAAAAABoAAQAEAAMAAAAAABsAAQAEAAMAAAAAABwAAQAEAAMAAAAAAB0AAQAEAAMAAAAAAB4AAQAEAAMAAAABAAAAAQADAAMAAAABAAEAAQACAAIAAAABABYAAQAEAAMAAAABABcAAQAEAAMAAAABABgAAQAEAAMAAAABABkAAQAEAAMAAAABABoAAQAEAAMAAAABABsAAQAEAAMAAAABABwAAQAEAAMAAAABAB0AAQAEAAMAAAABAB4AAQAEAAMAAAACAAAAAQAEAAIAACACAAEAAQAEAAIAACADAAAAAQAEAAIAACADAAEAAQAEAAIAACAEACIAAQAEAAIAAAAFACIAAQAEAAIAAAAGACIAAQAEAAIAAAAHAAAAAQAEAAMAAEAHAAEAAQAEAAMAAEAHACIAAQAEAAIAAAAIAAAAAQAEAAIAAAAIAAEAAQAEAAIAAAAJAAAAAQAEAAIAAAAJAAEAAQAEAAIAAAAKAAAAAQAEAAIAAAAKAAEAAQAEAAIAAAALAAAAAQAEAAIAAAALAAEAAQAEAAIAAAAMAAAAAQAEAAIAAAAMAAEAAQAEAAIAAAANAAAAAQAEAAIAAAANAAEAAQAEAAIAAAAOAAAAAQAEAAIAAAAOAAEAAQAEAAIAAAAPAAAAAQAEAAIAAAAPAAEAAQAEAAIAAAAPACIAAQAEAAIAAAAQAAEAAQAEAAIAAAAQACIAAQAEAAIAAAAXAAAAAQAEAAIAAAAXAAEAAQAEAAIAAAAXACIAAQAEAAIAAAAYAAAAAQAEAAIAAAAYAAEAAQAEAAIAAAAYACIAAQAEAAIAAAAZAAAAAQAEAAIAAAAZAAEAAQAEAAIAAAAZACIAAQAEAAIAAAAaAAAAAQAEAAIAAAAaAAEAAQAEAAIAAAAaACIAAQAEAAIAAAAbAAAAAQAEAAIAAAAbAAEAAQAEAAIAAAAbACIAAQAEAAIAAAAcAAAAAQAEAAIAAAAcAAEAAQAEAAIAAAAdAAAAAQAEAAIAAAAdAAEAAQAEAAIAAAAeAAAAAQAEAAIAAAAeAAEAAQAEAAIAAAAfAAAAAQAEAAIAAAAfAAEAAQAEAAIAAAAgAAAAAQAEAAIAAAAgAAEAAQAEAAIAAAAgACIAAQAEAAIAAAAhAAAAAQAEAAIAAAAhAAEAAQAEAAIAAAAhACIAAQAEAAIAAAAiAAAAAQAEAAIAAAAiAAEAAQAEAAIAAAAiACIAAQAEAAIAAAAjAAAAAQAEAAIAAAAjAAEAAQAEAAIAAAAjACIAAQAEAAIAAAAkAAAAAQAEAAIAAAAkAAEAAQAEAAIAAAAkACIAAQAEAAIAAAAlAAAAAQAEAAIAAAAlAAEAAQAEAAIAAAAlACIAAQAEAAIAAAAmAAAAAQAEAAIAAAAmAAEAAQAEAAIAAAAnAAAAAQAEAAIAAAAnAAEAAQAEAAIAAAAoAAAAAQAEAAIAAAAoAAEAAQAEAAIAAAApAAAAAQAEAAIAAAApAAEAAQAEAAIAAAAqAAAAAQAEAAIAAAAqAAEAAQAEAAIAAAAqACIAAQAEAAMAAGA0AAAAAQAEAAIAAAA0AAEAAQAEAAIAAAA1AAAAAQAEAAIAAAA1AAEAAQAEAAIAAAA5AAQAAQAEAAMAAAA5AAUAAQAEAAMAAAA6AAQAAQAEAAMAAAA6AAUAAQAEAAMAAAA5ABEAAQAEAAMAAAA5ABIAAQAEAAMAAAA5ABMAAQAEAAMAAAA5ABQAAQAEAAMAAAA5ABUAAQAEAAMAAAA5ABYAAQAEAAMAAAA5ABcAAQAEAAMAAAA5ABwAAQAEAAMAAAA5AB0AAQAEAAMAAAA5AB4AAQAEAAMAAAAEAAAAAQACAAIAACAEAAEAAQAGAAIAACAFAAAAAQADAAIAAEAFAAEAAQAGAAIAAEAGAAAAAQAEAAMAAEAGAAEAAQAEAAMAAEAQAAAAAQAEAAIAAAAEACEAAQAQAAAAAAAFACEAAQARAAAAAAAGACEAAQARAAAAAAAHACEAAQARAAAAAAAIACEAAQARAAAAAAAIACIAAQAEAAIAAAAJACEAAQASAAAAAAAJACIAAQAEAAIAAAAKACEAAQAEAAIAAAAKACIAAQAEAAIAAAAPACEAAQAEAAIAAAAQACEAAQAEAAIAAAAXACEAAQAEAAIAAAAYACEAAQAEAAIAAAAZACEAAQAEAAIAAAAaACEAAQAEAAIAAAARAAAAAQAEAAIAAAARAAEAAQAEAAIAAAASAAAAAQAEAAIAAAASAAEAAQAEAAIAAAATAAAAAQAEAAIAAAATAAEAAQAEAAIAAAAUAAAAAQAEAAIAAAAUAAEAAQAEAAIAAAAVAAAAAQAEAAIAAAAVAAEAAQAEAAIAAAAWAAAAAQAEAAIAAAAWAAEAAQAEAAIAAAARACEAAQAEAAIAAAARACIAAQAEAAIAAAASACEAAQAEAAIAAAASACIAAQAEAAIAAAATACEAAQAGAAIAAAATACIAAQACAAIAAAAUACEAAQAGAAIAAGAUACIAAQADAAIAAGAVACEAAQAEAAMAAGAVACIAAQAEAAMAAGAWACEAAQAEAAMAAGAWACIAAQAEAAMAAGAlACEAAQAEAAIAAAAqACEAAQAEAAMAAGAiACEAAQAEAAIAAAAjACEAAQAEAAIAAAAkACEAAQAEAAIAAAAfACEAAQAEAAIAAAAfACIAAQAEAAIAAAAgACEAAQAEAAIAAAAhACEAAQAEAAIAAAAcACEAAQAEAAIAAAAcACIAAQAEAAIAAAAdACEAAQAEAAIAAAAdACIAAQAEAAIAAAAeACEAAQAEAAIAAAAeACIAAQAEAAIAAAAbACEAAQAEAAIAAAAxACEAAQAEAAMAAGAxACIAAQAEAAMAAGAyACEAAQAEAAIAAAAyACIAAQAEAAIAAAAzACEAAQAEAAIAAAAzACIAAQAEAAIAAAA0ACEAAQAEAAIAAAA0ACIAAQAEAAIAAAA1ACEAAQAEAAIAAAA1ACIAAQAEAAIAAAAAAB8AAQAEAAMAAAAAACAAAQAEAAIAAGAAACEAAQADAAMAAGAAACIAAQAAAAIAAGABAB8AAQAEAAMAAAABACAAAQAEAAIAAGABACEAAQAGAAIAAGABACIAAQADAAIAAGACACEAAQAEAAMAAGACACIAAQAEAAMAAGADACEAAQAEAAIAAAADACIAAQAEAAIAAAA2ACEAAQAEAAIAAAA2ACIAAQAEAAIAAAA5AB8AAQAEAAMAAAA5ACAAAQAEAAMAADA2AAAAAQAEAAIAAAA2AAEAAQAEAAIAAAA3AAAAAQAEAAIAAAA3AAEAAQAEAAIAAAA4AAAAAQAEAAMAAFA4AAEAAQAEAAMAAFA5AAAAAQADAAIAAFA5AAEAAQAGAAIAAFA5AAIAAQAEAAMAAAA5AAMAAQAEAAMAAAA6AAAAAQAAAAIAAFA6AAEAAQADAAMAAFA6AAIAAQAEAAMAAAA6AAMAAQAEAAMAAAA6ABEAAQAEAAMAAAA6ABIAAQAEAAMAAAA6ABMAAQAEAAMAAAA6ABQAAQAEAAMAAAA6ABUAAQAEAAMAAAA6ABYAAQAEAAMAAAA6ABcAAQAEAAMAAAA6ABwAAQAEAAMAAAA6AB0AAQAEAAMAAAA6AB4AAQAEAAMAAAA6AB8AAQAEAAMAAAA6ACAAAQAEAAMAADA4ACEAAQAEAAIAADA4ACIAAQAEAAIAADA5ACEAAQAGAAIAADA5ACIAAQADAAMAADA6ACEAAQADAAIAADA6ACIAAQAAAAIAADA3ACIAAQAEAAIAADA3ACEAAQAEAAIAADA5AAYAAQAEAAMAAAA5AAcAAQAEAAMAAAA5AAgAAQAEAAMAAAA5AAkAAQAEAAMAAAA5AAoAAQAEAAMAAAA6AAYAAQAEAAMAAAA6AAcAAQAEAAMAAAA6AAgAAQAEAAMAAAA6AAkAAQAEAAMAAAA6AAoAAQAEAAMAAAA5AAsAAQAEAAMAAAA5AAwAAQAEAAMAAAA5AA0AAQAEAAMAAAA5AA4AAQAEAAMAAAA6AAsAAQAEAAMAAAA6AAwAAQAEAAMAAAA6AA0AAQAEAAMAAAA6AA4AAQAEAAMAAAA5AA8AAQAEAAMAAAA5ABAAAQAEAAMAAAA6AA8AAQAEAAMAAAA6ABAAAQAEAAMAAAAAABEAAQAEAAMAAAAAABIAAQAEAAMAAAAAABMAAQAEAAMAAAAAABQAAQAEAAMAAAABABEAAQAEAAMAAAABABIAAQAEAAMAAAABABMAAQAEAAMAAAABABQAAQAEAAMAAAAAABUAAQAEAAMAAAABABUAAQAEAAMAAAAAABAAAQAEAAMAAAABABAAAQAEAAMAAAA5ABgAAQAEAAMAAAA5ABkAAQAEAAMAAAA5ABoAAQAEAAMAAAA5ABsAAQAEAAMAAAA6ABgAAQAEAAMAAAA6ABkAAQAEAAMAAAA6ABoAAQAEAAMAAAA6ABsAAQAEAAMAAAALACEAAQAEAAIAAAALACIAAQAEAAIAAAAMACEAAQAEAAIAAAAMACIAAQAEAAIAAAANACEAAQAEAAIAAAANACIAAQAEAAIAAAAOACEAAQAEAAIAAAAOACIAAQAEAAIAAAAEACMAAQAEAAIAAAAEACQAAQATAAAAAAAFACMAAQAEAAIAAAAGACMAAQAEAAIAAAAHACMAAQAEAAIAAAAIACMAAQAEAAIAAAAJACMAAQAEAAIAAAAJACQAAQATAAEAAAAyAAAAAQAEAAMAAEAyAAEAAQAEAAMAAEAzAAAAAQAEAAIAAAAzAAEAAQAEAAIAAAAxAAAAAQAEAAMAAEAxAAEAAQAEAAMAAEAmACEAAQAEAAIAAAAmACIAAQAEAAIAAAAnACEAAQAEAAIAAAAnACIAAQAEAAIAAAAoACEAAQAEAAIAAAAoACIAAQAEAAIAAAApACEAAQAEAAIAAAApACIAAQAEAAIAAAAvAAsAAQADAAIAAAAvAAwAAQADAAIAAAAvABYAAQADAAIAAAAvABcAAQADAAIAAAAwAAsAAQAGAAIAAAAwAAwAAQAGAAIAAAAwABYAAQAGAAIAAAAwABcAAQAGAAIAAAAxAAsAAQAEAAIAAAAxAAwAAQAEAAIAAAAxABYAAQAEAAIAAAAxABcAAQAEAAIAAAAyAAsAAQAEAAIAAAAyAAwAAQAEAAIAAAAyABYAAQAEAAIAAAAyABcAAQAEAAIAAAAzAAsAAQAEAAIAAAAzAAwAAQAEAAIAAAAzABYAAQAEAAIAAAAzABcAAQAEAAIAAAA0AAsAAQAEAAIAAAA0AAwAAQAEAAIAAAA0ABYAAQAEAAIAAAA0ABcAAQAEAAIAAAA1AAsAAQAEAAIAAAA1AAwAAQAEAAIAAAA1ABYAAQAEAAIAAAA1ABcAAQAEAAIAAAA2AAsAAQAEAAIAAAA2AAwAAQAEAAIAAAA2ABYAAQAEAAIAAAA2ABcAAQAEAAIAAAAvAAIAAQAEAAIAAEAvAAMAAQAEAAMAAAAvAAQAAQAAAAEAAAAvAAkAAQAAAAEAACAvAAoAAQAEAAMAAAAvAA0AAQAEAAMAAAAvAA4AAQAEAAMAAAAvAA8AAQAAAAEAAAAvABQAAQAAAAEAACAvABUAAQAEAAMAAAAvABgAAQAEAAMAAAAvABkAAQAEAAMAAAAvABoAAQAAAAEAAAAvAB8AAQAAAAEAACAvACAAAQAEAAMAAAAwAAIAAQAEAAIAAEAwAAMAAQAEAAMAAAAwAAQAAQABAAEAAAAwAAkAAQABAAEAACAwAAoAAQAEAAMAAAAwAA0AAQAEAAMAAAAwAA4AAQAEAAMAAAAwAA8AAQABAAEAAAAwABQAAQABAAEAACAwABUAAQAEAAMAAAAwABgAAQAEAAMAAAAwABkAAQAEAAMAAAAwABoAAQABAAEAAAAwAB8AAQABAAEAACAwACAAAQAEAAMAAAA3AAsAAQAEAAIAAAA3AAwAAQAEAAIAAAA3ABYAAQAEAAIAAAA3ABcAAQAEAAIAAAA4AAsAAQAEAAIAAAA4AAwAAQAEAAIAAAA4ABYAAQAEAAIAAAA4ABcAAQAEAAIAAAAtACEAAQAEAAIAAAAtACIAAQAEAAIAAAAuACEAAQAEAAIAAAAuACIAAQAEAAIAAAAvACEAAQAGAAIAAAAvACIAAQACAAIAAAAwACEAAQAGAAIAAGAwACIAAQADAAIAAGAtAAAAAQAEAAIAACAtAAEAAQAEAAIAACAuAAAAAQAEAAIAACAuAAEAAQAEAAIAACAvAAAAAQACAAIAACAvAAEAAQAGAAIAACAwAAAAAQADAAIAAEAwAAEAAQAGAAIAAEArAAAAAQAEAAIAAAArAAEAAQAEAAIAAAAsAAAAAQAEAAIAAAAsAAEAAQAEAAIAAAArACEAAQAEAAIAAAArACIAAQAEAAIAAAAsACEAAQAEAAIAAAAsACIAAQAEAAIAAAAEAAMAAQAEAAMAAAAFAAMAAQAEAAMAAAAEAAIAAQAEAAIAAEAFAAIAAQAEAAIAAEAAAAwAAQAAAAIAAAAAAA0AAQADAAIAAAAAAA4AAQAEAAMAAAAAAA8AAQAEAAMAAAABAAwAAQADAAMAAAABAA0AAQAGAAIAAAABAA4AAQAEAAMAAAABAA8AAQAEAAMAAAACAAwAAQAEAAIAAAACAA0AAQAEAAIAAAADAAwAAQAEAAIAAAADAA0AAQAEAAIAAAAEAAsAAQAEAAMAADAEAAwAAQAGAAIAADAEAA0AAQADAAMAADAFAAsAAQAEAAMAADAFAAwAAQADAAIAADAFAA0AAQABAAEAAAAEAAUAAQAAAAEAAAAFAAUAAQABAAEAAAAEAAQAAQAEAAMAAAAFAAQAAQAEAAMAAAAEAAoAAQAAAAAAAAAFAAoAAQABAAAAAAAIABYAAQAAAAAAAAAIABcAAQAAAAEAAAAJABYAAQAEAAIAAAAJABcAAQAEAAIAAAAKABYAAQAEAAIAAAAKABcAAQAEAAIAAAALABYAAQAEAAIAAAALABcAAQAEAAIAAAAMABYAAQAEAAIAAAAMABcAAQAEAAIAAAANABYAAQAEAAIAAAANABcAAQAEAAIAAAAOABYAAQAEAAIAAAAOABcAAQAEAAIAAAAPABYAAQAEAAIAAAAPABcAAQAEAAIAAAAQABYAAQAEAAIAAAAQABcAAQAEAAIAAAARABYAAQAEAAIAAAARABcAAQAEAAIAAAASABYAAQAEAAIAAAASABcAAQAEAAIAAAATABYAAQAEAAIAAAATABcAAQAEAAIAAAAUABYAAQAEAAIAAAAUABcAAQAEAAIAAAAVABYAAQAEAAIAAAAVABcAAQAEAAIAAAAWABYAAQAEAAIAAAAWABcAAQAEAAIAAAAXABYAAQAEAAIAAAAXABcAAQAEAAIAAAAYABYAAQAEAAIAAAAYABcAAQAEAAIAAAAZABYAAQAEAAIAAAAZABcAAQAEAAIAAAAaABYAAQAEAAIAAAAaABcAAQAEAAIAAAAbABYAAQAEAAIAAAAbABcAAQAEAAIAAAAcABYAAQAEAAIAAAAcABcAAQAEAAIAAAAdABYAAQAEAAIAAAAdABcAAQAEAAIAAAAeABYAAQAEAAIAAAAeABcAAQAEAAIAAAAfABYAAQAEAAIAAAAfABcAAQAEAAIAAAAgABYAAQAEAAIAAAAgABcAAQAEAAIAAAAhABYAAQAEAAIAAAAhABcAAQAEAAIAAAAiABYAAQAEAAIAAAAiABcAAQAEAAIAAAAjABYAAQABAAAAAAAjABcAAQABAAEAAAA=")
+material = SubResource("ShaderMaterial_pha46")
+tile_map_data = PackedByteArray("AAAAAAAAAQAEAAIAAAAAAAEAAQAEAAIAAAAAABYAAQAEAAMAAAAAABcAAQAEAAMAAAAAABgAAQAEAAMAAAAAABkAAQAEAAMAAAAAABoAAQAEAAMAAAAAABsAAQAEAAMAAAAAABwAAQAEAAMAAAAAAB0AAQAEAAMAAAAAAB4AAQAEAAMAAAABAAAAAQAEAAIAAAABAAEAAQAEAAIAAAABABYAAQAEAAMAAAABABcAAQAEAAMAAAABABgAAQAEAAMAAAABABkAAQAEAAMAAAABABoAAQAEAAMAAAABABsAAQAEAAMAAAABABwAAQAEAAMAAAABAB0AAQAEAAMAAAABAB4AAQAEAAMAAAACAAAAAQAEAAIAACACAAEAAQAEAAIAACADAAAAAQAEAAIAACADAAEAAQAEAAIAACAHAAAAAQAEAAMAAEAHAAEAAQAEAAMAAEAIAAAAAQAEAAIAAAAIAAEAAQAEAAIAAAAJAAAAAQAEAAIAAAAJAAEAAQAEAAIAAAAKAAAAAQAEAAIAAAAKAAEAAQAEAAIAAAALAAAAAQAEAAIAAAALAAEAAQAEAAIAAAAMAAAAAQAEAAIAAAAMAAEAAQAEAAIAAAANAAAAAQAEAAIAAAANAAEAAQAEAAIAAAAOAAAAAQAEAAIAAAAOAAEAAQAEAAIAAAAPAAAAAQAEAAIAAAAPAAEAAQAEAAIAAAAPACIAAQAEAAIAAAAQAAEAAQAEAAIAAAAQACIAAQAEAAIAAAAXAAAAAQAEAAIAAAAXAAEAAQAEAAIAAAAXACIAAQAEAAIAAAAYAAAAAQAEAAIAAAAYAAEAAQAEAAIAAAAYACIAAQAEAAIAAAAZAAAAAQAEAAIAAAAZAAEAAQAEAAIAAAAZACIAAQAEAAIAAAAaAAAAAQAEAAIAAAAaAAEAAQAEAAIAAAAaACIAAQAEAAIAAAAbAAAAAQAEAAIAAAAbAAEAAQAEAAIAAAAbACIAAQAEAAIAAAAcAAAAAQAEAAIAAAAcAAEAAQAEAAIAAAAdAAAAAQAEAAIAAAAdAAEAAQAEAAIAAAAeAAAAAQAEAAIAAAAeAAEAAQAEAAIAAAAfAAAAAQAEAAIAAAAfAAEAAQAEAAIAAAAgAAAAAQAEAAIAAAAgAAEAAQAEAAIAAAAgACIAAQAEAAIAAAAhAAAAAQAEAAIAAAAhAAEAAQAEAAIAAAAhACIAAQAEAAIAAAAiAAAAAQAEAAIAAAAiAAEAAQAEAAIAAAAiACIAAQAEAAIAAAAjAAAAAQAEAAIAAAAjAAEAAQAEAAIAAAAjACIAAQAEAAIAAAAkAAAAAQAEAAIAAAAkAAEAAQAEAAIAAAAkACIAAQAEAAIAAAAlAAAAAQAEAAIAAAAlAAEAAQAEAAIAAAAlACIAAQAEAAIAAAAmAAAAAQAEAAIAAAAmAAEAAQAEAAIAAAAnAAAAAQAEAAIAAAAnAAEAAQAEAAIAAAAoAAAAAQAEAAIAAAAoAAEAAQAEAAIAAAApAAAAAQAEAAIAAAApAAEAAQAEAAIAAAAqAAAAAQAEAAIAAAAqAAEAAQAEAAIAAAAqACIAAQAEAAMAAGA0AAAAAQAEAAIAAAA0AAEAAQAEAAIAAAA1AAAAAQAEAAIAAAA1AAEAAQAEAAIAAAA5AAQAAQAEAAMAAAA5AAUAAQAEAAMAAAA6AAQAAQAEAAMAAAA6AAUAAQAEAAMAAAA5ABEAAQAEAAMAAAA5ABIAAQAEAAMAAAA5ABMAAQAEAAMAAAA5ABQAAQAEAAMAAAA5ABUAAQAEAAMAAAA5ABYAAQAGAAIAAAA5ABcAAQAGAAIAAAA5ABwAAQAEAAMAAAA5AB0AAQAEAAMAAAA5AB4AAQAEAAMAAAAEAAAAAQACAAIAACAEAAEAAQAGAAIAACAFAAAAAQADAAIAAEAFAAEAAQAGAAIAAEAGAAAAAQAEAAMAAEAGAAEAAQAEAAMAAEAQAAAAAQAEAAIAAAAPACEAAQAEAAIAAAAQACEAAQAEAAIAAAAXACEAAQAEAAIAAAAYACEAAQAEAAIAAAAZACEAAQAEAAIAAAAaACEAAQAEAAIAAAARAAAAAQAEAAIAAAARAAEAAQAEAAIAAAASAAAAAQAEAAIAAAASAAEAAQAEAAIAAAATAAAAAQAEAAIAAAATAAEAAQAEAAIAAAAUAAAAAQAEAAIAAAAUAAEAAQAEAAIAAAAVAAAAAQAEAAIAAAAVAAEAAQAEAAIAAAAWAAAAAQAEAAIAAAAWAAEAAQAEAAIAAAARACEAAQAEAAIAAAARACIAAQAEAAIAAAASACEAAQAEAAIAAAASACIAAQAEAAIAAAATACEAAQAEAAIAAAATACIAAQAEAAIAAAAUACEAAQAEAAIAAAAUACIAAQAEAAIAAAAVACEAAQAEAAIAAAAVACIAAQAEAAIAAAAWACEAAQAEAAMAAGAWACIAAQAEAAMAAGAlACEAAQAEAAIAAAAqACEAAQAEAAMAAGAiACEAAQAEAAIAAAAjACEAAQAEAAIAAAAkACEAAQAEAAIAAAAfACEAAQARAAAAAAAfACIAAQAEAAIAAAAgACEAAQASAAAAAAAhACEAAQAEAAIAAAAcACEAAQARAAAAAAAcACIAAQAEAAIAAAAdACEAAQARAAAAAAAdACIAAQAEAAIAAAAeACEAAQARAAAAAAAeACIAAQAEAAIAAAAbACEAAQAQAAAAAAAxACEAAQAEAAMAAGAxACIAAQAEAAMAAGAyACEAAQAEAAIAAAAyACIAAQAEAAIAAAAzACEAAQAEAAIAAAAzACIAAQAEAAIAAAA0ACEAAQAEAAIAAAA0ACIAAQAEAAIAAAA1ACEAAQAEAAIAAAA1ACIAAQAEAAIAAAAAAB8AAQAEAAMAAAAAACAAAQAEAAIAAGAAACEAAQADAAMAAGAAACIAAQAAAAIAAGABAB8AAQAEAAMAAAABACAAAQAEAAIAAGABACEAAQAGAAIAAGABACIAAQADAAIAAGACACEAAQAEAAMAAGACACIAAQAEAAMAAGA2ACEAAQAEAAIAAAA2ACIAAQAEAAIAAAA5AB8AAQAEAAMAAAA5ACAAAQAEAAMAADA2AAAAAQAEAAIAAAA2AAEAAQAEAAIAAAA3AAAAAQAEAAIAAAA3AAEAAQAEAAIAAAA4AAAAAQAEAAMAAFA4AAEAAQAEAAMAAFA5AAAAAQADAAIAAFA5AAEAAQAGAAIAAFA5AAIAAQAEAAMAAAA5AAMAAQAEAAMAAAA6AAAAAQAAAAIAAFA6AAEAAQADAAMAAFA6AAIAAQAEAAMAAAA6AAMAAQAEAAMAAAA6ABEAAQAEAAMAAAA6ABIAAQAEAAMAAAA6ABMAAQAEAAMAAAA6ABQAAQAEAAMAAAA6ABUAAQAEAAMAAAA6ABYAAQACAAMAAAA6ABcAAQACAAMAAAA6ABwAAQAEAAMAAAA6AB0AAQAEAAMAAAA6AB4AAQAEAAMAAAA6AB8AAQAEAAMAAAA6ACAAAQAEAAMAADA4ACEAAQAEAAIAADA4ACIAAQAEAAIAADA5ACEAAQAGAAIAADA5ACIAAQADAAMAADA6ACEAAQADAAIAADA6ACIAAQAAAAIAADA3ACIAAQAEAAIAADA3ACEAAQAEAAIAADA5AAYAAQAEAAMAAAA5AAcAAQAEAAMAAAA5AAgAAQAEAAMAAAA5AAkAAQAEAAMAAAA5AAoAAQAEAAMAAAA6AAYAAQAEAAMAAAA6AAcAAQAEAAMAAAA6AAgAAQAEAAMAAAA6AAkAAQAEAAMAAAA6AAoAAQAEAAMAAAA5AAsAAQAGAAIAAAA5AAwAAQAGAAIAAAA5AA0AAQAEAAMAAAA5AA4AAQAEAAMAAAA6AAsAAQACAAMAAAA6AAwAAQACAAMAAAA6AA0AAQAEAAMAAAA6AA4AAQAEAAMAAAA5AA8AAQAEAAMAAAA5ABAAAQAEAAMAAAA6AA8AAQAEAAMAAAA6ABAAAQAEAAMAAAAAABIAAQAEAAMAAAAAABMAAQAEAAMAAAAAABQAAQAEAAMAAAABABIAAQAEAAMAAAABABMAAQAEAAMAAAABABQAAQAEAAMAAAAAABUAAQAEAAMAAAABABUAAQAEAAMAAAA5ABgAAQAEAAMAAAA5ABkAAQAEAAMAAAA5ABoAAQAEAAMAAAA5ABsAAQAEAAMAAAA6ABgAAQAEAAMAAAA6ABkAAQAEAAMAAAA6ABoAAQAEAAMAAAA6ABsAAQAEAAMAAAANACEAAQAEAAIAAAANACIAAQAEAAIAAAAOACEAAQAEAAIAAAAOACIAAQAEAAIAAAAyAAAAAQAEAAMAAEAyAAEAAQAEAAMAAEAzAAAAAQAEAAIAAAAzAAEAAQAEAAIAAAAxAAAAAQAEAAMAAEAxAAEAAQAEAAMAAEAmACEAAQAEAAIAAAAmACIAAQAEAAIAAAAnACEAAQAEAAIAAAAnACIAAQAEAAIAAAAoACEAAQAEAAIAAAAoACIAAQAEAAIAAAApACEAAQAEAAIAAAApACIAAQAEAAIAAAAvAAsAAQADAAIAAAAvAAwAAQADAAIAAAAvABYAAQADAAIAAAAvABcAAQADAAIAAAAwAAsAAQAGAAIAAAAwAAwAAQAGAAIAAAAwABYAAQAGAAIAAAAwABcAAQAGAAIAAAAxAAsAAQAEAAIAAAAxAAwAAQAEAAIAAAAxABYAAQAEAAIAAAAxABcAAQAEAAIAAAAyAAsAAQAEAAIAAAAyAAwAAQAEAAIAAAAyABYAAQAEAAIAAAAyABcAAQAEAAIAAAAzAAsAAQAEAAIAAAAzAAwAAQAEAAIAAAAzABYAAQAEAAIAAAAzABcAAQAEAAIAAAA0AAsAAQAEAAIAAAA0AAwAAQAEAAIAAAA0ABYAAQAEAAIAAAA0ABcAAQAEAAIAAAA1AAsAAQAEAAIAAAA1AAwAAQAEAAIAAAA1ABYAAQAEAAIAAAA1ABcAAQAEAAIAAAA2AAsAAQAEAAIAAAA2AAwAAQAEAAIAAAA2ABYAAQAEAAIAAAA2ABcAAQAEAAIAAAAvAAIAAQAEAAIAAEAvAAMAAQAEAAMAAAAvAAQAAQAAAAEAAAAvAAkAAQAAAAEAACAvAAoAAQAEAAMAAAAvAA0AAQAEAAMAAAAvAA4AAQAEAAMAAAAvAA8AAQAAAAEAAAAvABQAAQAAAAEAACAvABUAAQAEAAMAAAAvABgAAQAEAAMAAAAvABkAAQAEAAMAAAAvABoAAQAAAAEAAAAvAB8AAQAAAAEAACAvACAAAQAEAAMAAAAwAAIAAQAEAAIAAEAwAAMAAQAEAAMAAAAwAAQAAQABAAEAAAAwAAkAAQABAAEAACAwAAoAAQAEAAMAAAAwAA0AAQAEAAMAAAAwAA4AAQAEAAMAAAAwAA8AAQABAAEAAAAwABQAAQABAAEAACAwABUAAQAEAAMAAAAwABgAAQAEAAMAAAAwABkAAQAEAAMAAAAwABoAAQABAAEAAAAwAB8AAQABAAEAACAwACAAAQAEAAMAAAA3AAsAAQAEAAIAAAA3AAwAAQAEAAIAAAA3ABYAAQAEAAIAAAA3ABcAAQAEAAIAAAA4AAsAAQAEAAIAAAA4AAwAAQAEAAIAAAA4ABYAAQAEAAIAAAA4ABcAAQAEAAIAAAAtACEAAQAEAAIAAAAtACIAAQAEAAIAAAAuACEAAQAEAAIAAAAuACIAAQAEAAIAAAAvACEAAQAGAAIAAAAvACIAAQACAAIAAAAwACEAAQAGAAIAAGAwACIAAQADAAIAAGAtAAAAAQAEAAIAACAtAAEAAQAEAAIAACAuAAAAAQAEAAIAACAuAAEAAQAEAAIAACAvAAAAAQACAAIAACAvAAEAAQAGAAIAACAwAAAAAQADAAIAAEAwAAEAAQAGAAIAAEArAAAAAQAEAAIAAAArAAEAAQAEAAIAAAAsAAAAAQAEAAIAAAAsAAEAAQAEAAIAAAArACEAAQAEAAIAAAArACIAAQAEAAIAAAAsACEAAQAEAAIAAAAsACIAAQAEAAIAAAAIABYAAQAAAAAAAAAIABcAAQAAAAEAAAAJABYAAQAEAAIAAAAJABcAAQAEAAIAAAAKABYAAQAEAAIAAAAKABcAAQAEAAIAAAALABYAAQAEAAIAAAALABcAAQAEAAIAAAAMABYAAQAEAAIAAAAMABcAAQAEAAIAAAANABYAAQAEAAIAAAANABcAAQAEAAIAAAAOABYAAQAEAAIAAAAOABcAAQAEAAIAAAAPABYAAQAEAAIAAAAPABcAAQAEAAIAAAAQABYAAQAEAAIAAAAQABcAAQAEAAIAAAARABYAAQAEAAIAAAARABcAAQAEAAIAAAASABYAAQAEAAIAAAASABcAAQAEAAIAAAATABYAAQAEAAIAAAATABcAAQAEAAIAAAAUABYAAQAEAAIAAAAUABcAAQAEAAIAAAAVABYAAQAEAAIAAAAVABcAAQAEAAIAAAAWABYAAQAEAAIAAAAWABcAAQAEAAIAAAAXABYAAQAEAAIAAAAXABcAAQAEAAIAAAAYABYAAQAEAAIAAAAYABcAAQAEAAIAAAAZABYAAQAEAAIAAAAZABcAAQAEAAIAAAAaABYAAQAEAAIAAAAaABcAAQAEAAIAAAAbABYAAQAEAAIAAAAbABcAAQAEAAIAAAAcABYAAQAEAAIAAAAcABcAAQAEAAIAAAAdABYAAQAEAAIAAAAdABcAAQAEAAIAAAAeABYAAQAEAAIAAAAeABcAAQAEAAIAAAAfABYAAQAEAAIAAAAfABcAAQAEAAIAAAAgABYAAQAEAAIAAAAgABcAAQAEAAIAAAAhABYAAQAEAAIAAAAhABcAAQAEAAIAAAAiABYAAQAEAAIAAAAiABcAAQAEAAIAAAAjABYAAQABAAAAAAAjABcAAQABAAEAAAAbACMAAQAEAAIAAAAbACQAAQATAAAAAAAcACMAAQAEAAIAAAAdACMAAQAEAAIAAAAeACMAAQAEAAIAAAAfACMAAQAEAAIAAAAgACMAAQAEAAIAAAAgACQAAQATAAEAAAADACEAAQAEAAIAAAADACIAAQAEAAIAAAAEACEAAQAEAAIAAAAEACIAAQAEAAIAAAAFACEAAQAEAAIAAAAFACIAAQAEAAIAAAAGACEAAQAEAAIAAAAGACIAAQAEAAIAAAAHACEAAQAEAAIAAAAHACIAAQAEAAIAAAAIACEAAQAEAAIAAAAIACIAAQAEAAIAAAAJACEAAQAEAAIAAAAJACIAAQAEAAIAAAAKACEAAQAEAAIAAAAKACIAAQAEAAIAAAALACEAAQAEAAIAAAALACIAAQAEAAIAAAAMACEAAQAEAAIAAAAMACIAAQAEAAIAAAD+/wAAAQAEAAIAAAD+/wEAAQAEAAIAAAD//wAAAQAEAAIAAAD//wEAAQAEAAIAAAAAAAwAAQAEAAMAAAAAAA0AAQAEAAMAAAAAAA4AAQAEAAMAAAAAAA8AAQAEAAMAAAABAAwAAQAEAAMAAAABAA0AAQAEAAMAAAABAA4AAQAEAAMAAAABAA8AAQAEAAMAAAAAAAoAAQAAAAIAAAAAAAsAAQADAAIAAAABAAoAAQADAAMAAAABAAsAAQAGAAIAAAACAAoAAQAEAAIAAAACAAsAAQAEAAIAAAADAAoAAQAEAAIAAAADAAsAAQAEAAIAAAAEAAMAAQAEAAMAAAAEAAkAAQAAAAAAAAAEAAoAAQAGAAIAADAFAAMAAQAEAAMAAAAFAAkAAQABAAAAAAAFAAoAAQADAAIAADAEAAIAAQAEAAMAAAAFAAIAAQAEAAMAAAAEAAQAAQAAAAEAAAAFAAQAAQABAAEAAAAEAAsAAQADAAMAADAFAAsAAQABAAEAAAAAABAAAQAEAAMAAAAAABEAAQAEAAMAAAABABAAAQAEAAMAAAABABEAAQAEAAMAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
 script = ExtResource("11_c8ah6")
@@ -356,8 +301,8 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsOver_doorexit" type="TileMapLayer" parent="Floor and Walls" unique_id=31999283 node_paths=PackedStringArray("door")]
 z_index = 17
 z_as_relative = false
-material = SubResource("ShaderMaterial_2jcbm")
-tile_map_data = PackedByteArray("AAAEAAUAAQAHAAIAAAAEAAYAAQAFAAMAAAAEAAcAAQAFAAMAAAAEAAgAAQAFAAMAAAAEAAkAAQAFAAMAAAAEAAoAAQAHAAMAAAAFAAUAAQAIAAIAAAAFAAYAAQAGAAMAAAAFAAcAAQAGAAMAAAAFAAgAAQAGAAMAAAAFAAkAAQAGAAMAAAAFAAoAAQAIAAMAAAA=")
+material = SubResource("ShaderMaterial_psyw1")
+tile_map_data = PackedByteArray("AAAEAAUAAQAFAAMAAAAEAAYAAQAFAAMAAAAEAAcAAQAFAAMAAAAEAAgAAQAFAAMAAAAEAAkAAQAHAAMAAAAFAAUAAQAGAAMAAAAFAAYAAQAGAAMAAAAFAAcAAQAGAAMAAAAFAAgAAQAGAAMAAAAFAAkAAQAIAAMAAAAEAAQAAQAHAAIAAAAFAAQAAQAIAAIAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
 script = ExtResource("11_m0aac")
@@ -369,7 +314,7 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsOver_blue" type="TileMapLayer" parent="Floor and Walls" unique_id=1601621001 node_paths=PackedStringArray("door")]
 z_index = 17
 z_as_relative = false
-material = SubResource("ShaderMaterial_f3w6x")
+material = SubResource("ShaderMaterial_i6thg")
 tile_map_data = PackedByteArray("AAAvAAQAAQAHAAIAAAAvAAUAAQAFAAMAAAAvAAYAAQAFAAMAAAAvAAcAAQAFAAMAAAAvAAgAAQAFAAMAAAAvAAkAAQAHAAMAAAAwAAQAAQAIAAIAAAAwAAUAAQAGAAMAAAAwAAYAAQAGAAMAAAAwAAcAAQAGAAMAAAAwAAgAAQAGAAMAAAAwAAkAAQAIAAMAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
@@ -382,7 +327,7 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsOver_green" type="TileMapLayer" parent="Floor and Walls" unique_id=261874001 node_paths=PackedStringArray("door")]
 z_index = 17
 z_as_relative = false
-material = SubResource("ShaderMaterial_0koqc")
+material = SubResource("ShaderMaterial_gbk4g")
 tile_map_data = PackedByteArray("AAAvAA8AAQAHAAIAAAAvABAAAQAFAAMAAAAvABEAAQAFAAMAAAAvABIAAQAFAAMAAAAvABMAAQAFAAMAAAAvABQAAQAHAAMAAAAwAA8AAQAIAAIAAAAwABAAAQAGAAMAAAAwABEAAQAGAAMAAAAwABIAAQAGAAMAAAAwABMAAQAGAAMAAAAwABQAAQAIAAMAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
@@ -395,7 +340,7 @@ metadata/_edit_lock_ = true
 [node name="TileMapLayer_WallsOver_pink" type="TileMapLayer" parent="Floor and Walls" unique_id=707563755 node_paths=PackedStringArray("door")]
 z_index = 17
 z_as_relative = false
-material = SubResource("ShaderMaterial_pha46")
+material = SubResource("ShaderMaterial_fp2qa")
 tile_map_data = PackedByteArray("AAAvABoAAQAHAAIAAAAvABsAAQAFAAMAAAAvABwAAQAFAAMAAAAvAB0AAQAFAAMAAAAvAB4AAQAFAAMAAAAvAB8AAQAHAAMAAAAwABoAAQAIAAIAAAAwABsAAQAGAAMAAAAwABwAAQAGAAMAAAAwAB0AAQAGAAMAAAAwAB4AAQAGAAMAAAAwAB8AAQAIAAMAAAA=")
 tile_set = ExtResource("10_vo331")
 navigation_enabled = false
@@ -417,33 +362,36 @@ script = ExtResource("13_qoh86")
 modulate = Color(0.80142105, 0.7794223, 1, 1)
 z_index = 5
 z_as_relative = false
-material = SubResource("ShaderMaterial_psyw1")
+material = SubResource("ShaderMaterial_3la7f")
 tile_map_data = PackedByteArray("AAAmAAoAAAAGAAAAAAAmAAwAAAAGAAIAAAAmAA0AAAAGAAMAAAAmAAsAAAAIAAMAAAAKABAAAAAAAAUAAAALAA8AAAAGAAEAAAALABAAAAAGAAIAAAALABEAAAAGAAMAAAAMABAAAAAEAAUAAAAKAA8AAAAFAAEAAAALAA4AAAAGAAAAAAAMAA8AAAAHAAEAAAAeAA8AAAAFAAEAAAAeABAAAAAAAAUAAAAfAA8AAAAGAAEAAAAfABAAAAAGAAIAAAAfAA4AAAAGAAAAAAAfABEAAAAGAAMAAAAgAA8AAAAHAAEAAAAgABAAAAAEAAUAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAQAAAAQAAwAAAAAAAUAAAARAAoAAAABAAAAAAARAAsAAAABAAQAAAARAAwAAAACAAIAAAASAAoAAAABAAAAAAASAAsAAAABAAQAAAASAAwAAAACAAIAAAATAAoAAAABAAAAAAATAAsAAAABAAQAAAATAAwAAAACAAIAAAAUAAoAAAABAAAAAAAUAAsAAAABAAQAAAAUAAwAAAACAAIAAAAVAAoAAAAGAAcAAAAVAAsAAAABAAQAAAAVAAwAAAACAAIAAAAWAAoAAAABAAAAAAAWAAsAAAABAAQAAAAWAAwAAAACAAIAAAAXAAoAAAABAAAAAAAXAAsAAAABAAQAAAAXAAwAAAACAAIAAAAYAAoAAAABAAAAAAAYAAsAAAABAAQAAAAYAAwAAAACAAIAAAAZAAoAAAABAAAAAAAZAAsAAAABAAQAAAAZAAwAAAACAAIAAAAVAAQAAAAGAAAAAAAVAAUAAAAIAAMAAAAVAAYAAAAIAAMAAAAVAAcAAAAIAAMAAAAVAAgAAAAIAAMAAAAVAAkAAAAIAAMAAAAaAAoAAAAEAAAAAAAaAAsAAAAEAAQAAAAaAAwAAAAEAAUAAAA=")
-tile_set = SubResource("TileSet_5jopr")
+tile_set = ExtResource("17_n6pai")
 script = ExtResource("11_c8ah6")
 _tile_type = 2
 metadata/_custom_type_script = "uid://npljjqhjpuk8"
 
 [node name="PaddedChairEast" parent="RoomObsticals and Decorations" unique_id=1567785249 instance=ExtResource("13_b7bi6")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
 position = Vector2(894, 120)
 
 [node name="PaddedChairEast2" parent="RoomObsticals and Decorations" unique_id=1513362541 instance=ExtResource("13_b7bi6")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
 position = Vector2(894, 296)
 
 [node name="PaddedChairEast3" parent="RoomObsticals and Decorations" unique_id=223360499 instance=ExtResource("13_b7bi6")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
 position = Vector2(894, 472)
 
 [node name="CouthNorth" parent="RoomObsticals and Decorations" unique_id=1103022107 instance=ExtResource("15_fb1wr")]
 position = Vector2(468, 420)
 
 [node name="CouthNorth2" parent="RoomObsticals and Decorations" unique_id=436944679 instance=ExtResource("15_fb1wr")]
-position = Vector2(214, 424)
+position = Vector2(226, 424)
 
 [node name="SmallBrownTable" parent="RoomObsticals and Decorations" unique_id=524959152 instance=ExtResource("16_indto")]
 position = Vector2(524, 430)
 
 [node name="SmallBrownTable2" parent="RoomObsticals and Decorations" unique_id=2018113615 instance=ExtResource("16_indto")]
-position = Vector2(152, 428)
+position = Vector2(170, 432)
 
 [node name="SmallBrownTable3" parent="RoomObsticals and Decorations" unique_id=172678889 instance=ExtResource("16_indto")]
 position = Vector2(402, 344)
@@ -451,8 +399,33 @@ position = Vector2(402, 344)
 [node name="SmallBrownTable4" parent="RoomObsticals and Decorations" unique_id=663051345 instance=ExtResource("16_indto")]
 position = Vector2(292, 344)
 
+[node name="SnackMachine" parent="RoomObsticals and Decorations" unique_id=633250682 instance=ExtResource("20_ryfvn")]
+position = Vector2(370, 416)
+
+[node name="SodaMachine" parent="RoomObsticals and Decorations" unique_id=1816243601 instance=ExtResource("21_m6yxo")]
+position = Vector2(306, 414)
+
+[node name="CouthSouth" parent="RoomObsticals and Decorations" unique_id=559222874 instance=ExtResource("22_4dan0")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
+position = Vector2(346, 342)
+
+[node name="RecyclingBin" parent="RoomObsticals and Decorations" unique_id=694956473 instance=ExtResource("24_585dj")]
+position = Vector2(336, 432)
+
+[node name="CouchEast" parent="RoomObsticals and Decorations" unique_id=1716415499 instance=ExtResource("28_gw2mx")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
+position = Vector2(740, 374)
+
+[node name="CouchEast2" parent="RoomObsticals and Decorations" unique_id=1582344644 instance=ExtResource("28_gw2mx")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
+position = Vector2(738, 198)
+
+[node name="CouchEast3" parent="RoomObsticals and Decorations" unique_id=753265711 instance=ExtResource("44_gw2mx")]
+modulate = Color(0.7882353, 0.7411765, 1, 1)
+position = Vector2(48, 292)
+
 [node name="PurpleFlowerVase" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1387988351]
-position = Vector2(146, 416)
+position = Vector2(164, 420)
 texture = ExtResource("17_7omid")
 centered = false
 
@@ -486,29 +459,9 @@ position = Vector2(340, 66)
 texture = ExtResource("18_6mx2r")
 centered = false
 
-[node name="PaddedChairWest" parent="RoomObsticals and Decorations" unique_id=255038224 instance=ExtResource("19_ipttb")]
-position = Vector2(48, 322)
-
-[node name="SnackMachine" parent="RoomObsticals and Decorations" unique_id=633250682 instance=ExtResource("20_ryfvn")]
-position = Vector2(370, 416)
-
-[node name="SodaMachine" parent="RoomObsticals and Decorations" unique_id=1816243601 instance=ExtResource("21_m6yxo")]
-position = Vector2(306, 414)
-
-[node name="CouthSouth" parent="RoomObsticals and Decorations" unique_id=559222874 instance=ExtResource("22_4dan0")]
-position = Vector2(346, 342)
-
-[node name="RecyclingBin" parent="RoomObsticals and Decorations" unique_id=694956473 instance=ExtResource("24_585dj")]
-position = Vector2(336, 432)
-
 [node name="RedOvalRug" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1247392123]
-position = Vector2(52, 466)
+position = Vector2(422, 456)
 texture = ExtResource("25_70cdd")
-centered = false
-
-[node name="SmallTrashBin" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1027864739]
-position = Vector2(788, 80)
-texture = ExtResource("26_2y5ti")
 centered = false
 
 [node name="SmallTrashBin4" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=398435537]
@@ -521,13 +474,8 @@ position = Vector2(354, 150)
 texture = ExtResource("26_2y5ti")
 centered = false
 
-[node name="SmallTrashBin2" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1578697130]
-position = Vector2(786, 258)
-texture = ExtResource("26_2y5ti")
-centered = false
-
 [node name="SmallTrashBin3" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1365310866]
-position = Vector2(786, 434)
+position = Vector2(874, 514)
 texture = ExtResource("26_2y5ti")
 centered = false
 
@@ -539,6 +487,12 @@ centered = false
 [node name="ClothingDisplays13" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=2119350374]
 position = Vector2(508, 54)
 texture = ExtResource("28_pfvrf")
+centered = false
+flip_h = true
+
+[node name="ClothingDisplays15" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=36973427]
+position = Vector2(156, 46)
+texture = SubResource("AtlasTexture_n6pai")
 centered = false
 flip_h = true
 
@@ -563,7 +517,7 @@ texture = ExtResource("31_gw2mx")
 centered = false
 
 [node name="ClothingDisplays6" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=304419544]
-position = Vector2(176, 256)
+position = Vector2(176, 254)
 texture = ExtResource("32_n6pai")
 centered = false
 
@@ -578,13 +532,38 @@ texture = ExtResource("34_2jcbm")
 centered = false
 
 [node name="ClothingDisplays11" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=844600725]
-position = Vector2(176, 226)
+position = Vector2(176, 222)
 texture = ExtResource("37_pha46")
 centered = false
 
 [node name="ClothingDisplays14" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=35637334]
 position = Vector2(610, 156)
 texture = ExtResource("37_f53jl")
+centered = false
+
+[node name="ClothingDisplay" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=987515147]
+position = Vector2(786, 160)
+texture = ExtResource("45_n6pai")
+centered = false
+
+[node name="ClothingDisplay2" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1612763144]
+position = Vector2(798, 70)
+texture = ExtResource("45_n6pai")
+centered = false
+
+[node name="ClothingDisplay3" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1035203906]
+position = Vector2(788, 254)
+texture = ExtResource("45_n6pai")
+centered = false
+
+[node name="ClothingDisplay4" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1885751343]
+position = Vector2(820, 336)
+texture = ExtResource("45_n6pai")
+centered = false
+
+[node name="ClothingDisplay5" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=1592970429]
+position = Vector2(788, 424)
+texture = ExtResource("45_n6pai")
 centered = false
 
 [node name="Traps" type="Node2D" parent="." unique_id=2019723507]
@@ -616,14 +595,14 @@ position = Vector2(704, 464)
 _trap_mode = 2
 
 [node name="player_end" parent="Traps" unique_id=35800403 node_paths=PackedStringArray("dependencys") instance=ExtResource("28_sa641")]
-position = Vector2(32, 128)
+position = Vector2(32, 120)
 dependencys = [NodePath("../Trap_Green"), NodePath("../Trap_Blue"), NodePath("../Trap_Pink")]
 
 [node name="Balls" type="Node2D" parent="." unique_id=1963109991]
 metadata/_edit_lock_ = true
 
 [node name="BallPlayer" parent="Balls" unique_id=2041115718 instance=ExtResource("29_wl7op")]
-position = Vector2(112, 498)
+position = Vector2(479, 492)
 
 [node name="Ball_NPC2" parent="Balls" unique_id=81204232 instance=ExtResource("30_qud7f")]
 position = Vector2(628, 291)
@@ -637,18 +616,12 @@ _npc_type = 1
 position = Vector2(620, 116)
 
 [node name="Ball_NPC6" parent="Balls" unique_id=445551194 instance=ExtResource("30_qud7f")]
-position = Vector2(445, 473)
+position = Vector2(214, 478)
 
 [node name="Ball_NPC4" parent="Balls" unique_id=874767357 instance=ExtResource("30_qud7f")]
 position = Vector2(626, 476)
 _npc_type = 2
 
 [node name="Ball_NPC7" parent="Balls" unique_id=854536707 instance=ExtResource("30_qud7f")]
-position = Vector2(373, 120)
+position = Vector2(377, 122)
 _npc_type = 2
-
-[node name="Breakable_Bench" parent="." unique_id=190911682 instance=ExtResource("41_f53jl")]
-position = Vector2(230, 85)
-
-[node name="Breakable_Bench2" parent="." unique_id=1139496321 instance=ExtResource("41_f53jl")]
-position = Vector2(455, 83)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bmu11tkhr6l08"]
+
+[ext_resource type="Texture2D" uid="uid://7fryygmdh0xu" path="res://assets/Furniture/CouchEast.png" id="1_kscei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7tc1"]
+size = Vector2(28, 66)
+
+[node name="CouchEast" type="CollisionShape2D" unique_id=1716415499]
+shape = SubResource("RectangleShape2D_s7tc1")
+
+[node name="CouchEast" type="Sprite2D" parent="." unique_id=1021176636]
+position = Vector2(2, 0)
+texture = ExtResource("1_kscei")
+centered = false
+offset = Vector2(-17, -37)
+flip_h = true
