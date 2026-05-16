@@ -18,11 +18,10 @@ const ANIMATION_HAPPY = &'happy'
 ## Hole: Captures's ball and moves it OUT of the way.
 ## Simple Trigger: something happens, but the ball is not "caught"
 ## Release the ball when the release trigger happens. 
-enum TrapModes {PILLAR = 0, HOLE = 1, SIMPLE_TRIGGER = 2, FLING = 3, CLAW_HOLE, CLAW_PILLAR, NONE = -1}
+enum TrapModes {PILLAR = 0, HOLE = 1, SIMPLE_TRIGGER = 2, REPEAT_TRIGGER = 4, FLING = 3, CLAW_HOLE = 10, CLAW_PILLAR = 11, NONE = -1}
 
 var _used := false: get = is_used # prevent triggering multiple times in the same frame
 var _shape: Shape2D
-
 
 @export var _dependency_condition := UTILITIES.Conditions.AND
 @export var dependencys : Array[Area2D_Enhanced] = []
@@ -103,6 +102,9 @@ func _do_unlock() -> void:
 
 func is_used() -> bool: return _used
 
+func turn(deg: int) -> void:
+	_angle_deg += deg
+
 func _on_body_entered(body: Node2D) -> void:
 	if is_used():
 		return
@@ -114,7 +116,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if _trap_mode == TrapModes.FLING:
 		_do_fling(body)
 		return 
-	elif _trap_mode == TrapModes.SIMPLE_TRIGGER:
+	elif [TrapModes.SIMPLE_TRIGGER, TrapModes.REPEAT_TRIGGER].has(_trap_mode):
 		_do_trigger(body)
 		return
 	body = body as Ball
@@ -141,9 +143,10 @@ func _do_fling(ball: Ball) -> void:
 	ball.remote_fling(_angle_deg, _power_mod)
 
 func _do_trigger(ball: Ball) -> void:
-	_used = true
 	used.emit(ball, self)
-	_hybernate()
+	if _trap_mode == TrapModes.SIMPLE_TRIGGER:
+		_used = true
+		_hybernate()
 
 func _process(_delta: float) -> void: queue_redraw()
 
@@ -161,7 +164,6 @@ func _draw_pillar(color := Color.WHITE, row_count := 3, row_mod: float = 0.1) ->
 		draw_polyline( UTILITIES.get_square_points((row_thickness * row_num) + (row_thickness * row_mod)), color, THICKNESS*.5)
 
 func _draw_trigger(color := Color.WHITE, row_count := 3, row_mod: float = 0.1) -> void:
-	row_count *= 2
 	var radian_width = TAU / row_count
 	var start_radian = radian_width * row_mod
 
@@ -210,7 +212,9 @@ func _draw() -> void:
 		TrapModes.PILLAR:
 			_draw_pillar(color, row_count, row_mod)
 		TrapModes.SIMPLE_TRIGGER:
-			_draw_trigger(color, row_count, row_mod)
+			_draw_trigger(color, row_count*2, row_mod)
+		TrapModes.REPEAT_TRIGGER:
+			_draw_trigger(color, row_count*4, row_mod)
 		TrapModes.FLING:
 			_draw_fling(color, row_count, row_mod)
 
@@ -239,7 +243,7 @@ func _setup_icon() -> void:
 	pass
 
 func _setup_collision_shape() -> void:
-	if [TrapModes.HOLE, TrapModes.SIMPLE_TRIGGER].has(_trap_mode):
+	if [TrapModes.HOLE, TrapModes.SIMPLE_TRIGGER, TrapModes.REPEAT_TRIGGER].has(_trap_mode):
 			_shape = CircleShape2D.new()
 			_shape.radius = RADIUS
 	elif [TrapModes.PILLAR, TrapModes.FLING].has(_trap_mode):

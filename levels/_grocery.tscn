@@ -548,7 +548,7 @@ texture = ExtResource("19_5tcqi")
 centered = false
 
 [node name="PosterNotifications" type="Sprite2D" parent="RoomObsticals and Decorations" unique_id=711553385]
-position = Vector2(305, 35)
+position = Vector2(306, 36)
 texture = ExtResource("38_t4dwm")
 centered = false
 

@@ -504,37 +504,37 @@ position = Vector2(311.29535, 261.4)
 _npc_type = 2
 
 [node name="Ball_NPC2" parent="Balls/BowlingPinFormation" unique_id=2020245276 instance=ExtResource("22_kv8tr")]
-position = Vector2(282.1969, 244.59999)
+position = Vector2(282.8897, 245)
 _npc_type = 1
 
 [node name="Ball_NPC5" parent="Balls/BowlingPinFormation" unique_id=189433739 instance=ExtResource("22_kv8tr")]
-position = Vector2(282.1969, 278.19998)
+position = Vector2(282.8897, 277.8)
 _npc_type = 1
 
 [node name="Ball_NPC6" parent="Balls/BowlingPinFormation" unique_id=1916847020 instance=ExtResource("22_kv8tr")]
-position = Vector2(253.09845, 227.79999)
+position = Vector2(254.48409, 228.59999)
 
 [node name="Ball_NPC7" parent="Balls/BowlingPinFormation" unique_id=843818567 instance=ExtResource("22_kv8tr")]
-position = Vector2(253.09845, 261.4)
+position = Vector2(254.48409, 261.4)
 _npc_type = 2
 
 [node name="Ball_NPC4" parent="Balls/BowlingPinFormation" unique_id=2092170497 instance=ExtResource("22_kv8tr")]
-position = Vector2(253.09845, 295)
+position = Vector2(254.48409, 294.19998)
 
 [node name="Ball_NPC8" parent="Balls/BowlingPinFormation" unique_id=2040036419 instance=ExtResource("22_kv8tr")]
-position = Vector2(224, 211)
+position = Vector2(226.07846, 212.19998)
 _npc_type = 2
 
 [node name="Ball_NPC9" parent="Balls/BowlingPinFormation" unique_id=1580073759 instance=ExtResource("22_kv8tr")]
-position = Vector2(224, 244.6)
+position = Vector2(226.07846, 244.99998)
 _npc_type = 1
 
 [node name="Ball_NPC10" parent="Balls/BowlingPinFormation" unique_id=181651791 instance=ExtResource("22_kv8tr")]
-position = Vector2(224, 278.2)
+position = Vector2(226.07846, 277.8)
 _npc_type = 1
 
 [node name="Ball_NPC11" parent="Balls/BowlingPinFormation" unique_id=610280808 instance=ExtResource("22_kv8tr")]
-position = Vector2(224, 311.80002)
+position = Vector2(226.07846, 310.59998)
 _npc_type = 2
 
 [node name="Breakable_Bench" parent="." unique_id=1870082730 instance=ExtResource("22_6xwin")]
