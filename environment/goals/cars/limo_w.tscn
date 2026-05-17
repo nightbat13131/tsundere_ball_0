@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dk1523opnwniu"]
+
+[ext_resource type="PackedScene" uid="uid://b0ienbt0uovna" path="res://environment/goals/cars/car_base.tscn" id="1_2ksiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ksiw"]
+size = Vector2(124, 32)
+
+[node name="Breakable_Car" unique_id=190911682 instance=ExtResource("1_2ksiw")]
+
+[node name="Broke_Sprite" parent="." index="1" unique_id=1515547006]
+region_rect = Rect2(142, 188, 138, 48)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=173216956]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2ksiw")

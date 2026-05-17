@@ -12,9 +12,9 @@ func _clear_goals() -> void:
 		each_child.queue_free()
 
 static func goal_check_in(goal: Goal_Info) -> void:
-	score.add_goal(goal)
 	#goals.append(goal)
 	if _instance:
+		score.add_goal(goal)
 		var holder := TextureRect_Goal.new()
 		var parent := CenterContainer.new()
 		holder.apply_goal(goal)

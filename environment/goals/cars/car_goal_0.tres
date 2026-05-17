@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://p1axocqqsddv"]
+
+[ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_fk1tx"]
+
+[resource]
+script = ExtResource("1_fk1tx")
+should_break = true
+metadata/_custom_type_script = "uid://dggw7ue6r5ma3"

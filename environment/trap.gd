@@ -31,6 +31,8 @@ var _dependencys : Array[Area2D_Enhanced] = []
 @export var disablers : Array[Area2D_Enhanced] = []
 var _disablers : Array[Area2D_Enhanced] = []
 
+@export var _car_tracker: CarTracker
+
 #@export var release_trigger : Area2D_Enhanced
 @export var _trap_mode := TrapModes.HOLE
 @export var _angle_deg : int = 90 
@@ -60,6 +62,9 @@ func _ready() -> void:
 	_connect_interactions()
 
 func _connect_interactions() -> void:
+	if _car_tracker:
+		_car_tracker.done.connect(_on_unlock_check.bind(null, null))
+		_hybernate()
 	for each_dp in dependencys:
 		if each_dp:
 			_dependencys.append(each_dp)
@@ -87,6 +92,7 @@ func _hybernate() -> void:
 	queue_redraw()
 
 func _on_unlock_check(_ball: Ball, trap: Trap)-> void: 
+
 	if _dependency_condition == UTILITIES.Conditions.OR:
 		_dependencys = []
 	else:
@@ -102,8 +108,7 @@ func _do_unlock() -> void:
 
 func is_used() -> bool: return _used
 
-func turn(deg: int) -> void:
-	_angle_deg += deg
+func turn(deg: int) -> void: _angle_deg += deg
 
 func _on_body_entered(body: Node2D) -> void:
 	if is_used():

@@ -12,10 +12,10 @@ func _ready() -> void:
 		
 
 func _on_trigger(_thing: Ball, _trigger: Trap) -> void:
-	print("triggered")
 	if effected_trap:
 		effected_trap.turn(45)
 
 func _draw() -> void:
-	if trigger_trap and effected_trap:
-		draw_line(trigger_trap.position, effected_trap.position, Color.BLACK, 5)
+	if Engine.is_editor_hint():
+		if trigger_trap and effected_trap:
+			draw_line(trigger_trap.position, effected_trap.position, Color.BLACK, 5)

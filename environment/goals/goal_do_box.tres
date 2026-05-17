@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://dtsatad713jw6"]
 
+[ext_resource type="AudioStream" uid="uid://diibvpu05ms6f" path="res://assets/sounds/environment/Stationery_11_open_box.wav" id="1_jfiei"]
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_ni08f"]
 [ext_resource type="Texture2D" uid="uid://b4e4ws05wyvvl" path="res://assets/Furniture/Breakables/boxnbrokenbox.png" id="2_qyli8"]
 
@@ -18,4 +19,5 @@ ui_icon_init = SubResource("AtlasTexture_jfiei")
 ui_icon_broken = SubResource("AtlasTexture_qyli8")
 init_order = 30
 broke_order = 8
+break_sound = ExtResource("1_jfiei")
 metadata/_custom_type_script = "uid://dggw7ue6r5ma3"

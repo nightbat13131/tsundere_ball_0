@@ -13,6 +13,8 @@ static var sound : AudioStream
 @export var dependencys : Array[Area2D_Enhanced] = [null]
 var _dependencys : Array[Area2D_Enhanced] = []
 
+@export var _car_tracker : CarTracker
+
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 @export var alt_sprite: AnimatedSprite2D
 
@@ -32,6 +34,8 @@ func _ready() -> void:
 	animated_sprite_2d.set_process_mode.call_deferred(Node.PROCESS_MODE_ALWAYS)
 
 func _connect_interactions() -> void:
+	if _car_tracker:
+		_car_tracker.done.connect(_on_unlock_check.bind(null, null))
 	for each_dp in dependencys:
 		if each_dp:
 			_dependencys.append(each_dp)

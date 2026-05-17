@@ -1,7 +1,7 @@
 @tool
 class_name Breakable extends StaticBody2D
 
-signal used(ball: Ball)
+signal used(broken: Breakable)
 
 const ANIMATION_BREAK = &"broke"
 const ANIMATION_IDLE = &"default"
@@ -30,14 +30,12 @@ func _ready() -> void:
 		goal = goal.duplicate(false)
 		GoalTracker.goal_check_in.call_deferred(goal)
 
-#func is_break_good() -> bool: return goal.should_break
-
 func remote_hit(thing: Node2D) -> void:
 	if thing is Ball:
 		if thing.get_mass() > Ball_Player.MASS_WALKING:  # prevent player in walk mode from triggering the break when bad
-			_hit_by(thing)
+			_hit_by()
 		elif goal.should_break:
-			_hit_by(thing)
+			_hit_by()
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -47,19 +45,19 @@ func _physics_process(_delta: float) -> void:
 	if _break_next_frame:
 		_break()
 		_break_next_frame = false
-	if _is_used:
-		return
-	#if collision:
-		##print(collision, collision.get_collider())
-	#	_hit_by(collision.get_collider())
+	#if _is_used:
+		#return
+	##if collision:
+		###print(collision, collision.get_collider())
+	##	_hit_by(collision.get_collider())
 
-func _hit_by(thing: Node2D) -> void:
-	if thing is Ball:
-		#_break()
+#func _hit_by(thing: Node2D) -> void:
+func _hit_by() -> void:
+	#if thing is Ball:
 		_break_next_frame = true
 		_is_used = true
 		goal.broke()
-		used.emit(thing)
+		used.emit(self)
 
 func _break() -> void:
 	for each_child in get_children():

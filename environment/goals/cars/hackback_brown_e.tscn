@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cf5i6no4kiua0"]
+
+[ext_resource type="PackedScene" uid="uid://b0ienbt0uovna" path="res://environment/goals/cars/car_base.tscn" id="1_tjws1"]
+[ext_resource type="Texture2D" uid="uid://b7ti8to31yj7d" path="res://assets/car/Brown_HatchBack_CLEAN_8D_000-sheet.png" id="2_tquqy"]
+[ext_resource type="Texture2D" uid="uid://co0bee7kjcmxi" path="res://assets/car/HatchBack_Burnt_000-sheet.png" id="3_fdlv6"]
+
+[node name="Breakable_Car" unique_id=190911682 instance=ExtResource("1_tjws1")]
+
+[node name="CarSprite" parent="." index="0" unique_id=1279805942]
+texture = ExtResource("2_tquqy")
+region_rect = Rect2(10, 29, 85, 47)
+
+[node name="Broke_Sprite" parent="." index="1" unique_id=1515547006]
+texture = ExtResource("3_fdlv6")
+region_rect = Rect2(10, 29, 85, 47)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=173216956]
+position = Vector2(-1.5, 0.5)

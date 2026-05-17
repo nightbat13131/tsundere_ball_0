@@ -317,7 +317,6 @@ _tile_type = 1
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer_WallsOver_door4" type="TileMapLayer" parent="Floor and Walls" unique_id=737671701 node_paths=PackedStringArray("door")]
-visible = false
 z_index = 17
 z_as_relative = false
 material = SubResource("ShaderMaterial_p3jvo")
