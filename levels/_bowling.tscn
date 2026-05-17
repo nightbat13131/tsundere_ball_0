@@ -286,22 +286,18 @@ position = Vector2(610, 66)
 position = Vector2(580, 82)
 
 [node name="CollisionShape_speed_blocker" type="CollisionShape2D" parent="RoomObsticals and Decorations" unique_id=826090779]
-visible = false
 position = Vector2(-580, 246)
 shape = SubResource("RectangleShape2D_0aloy")
 
 [node name="CollisionShape_speed_blocker2" type="CollisionShape2D" parent="RoomObsticals and Decorations" unique_id=415897311]
-visible = false
 position = Vector2(1530, 288)
 shape = SubResource("RectangleShape2D_0aloy")
 
 [node name="CollisionShape_speed_blocker3" type="CollisionShape2D" parent="RoomObsticals and Decorations" unique_id=1673372549]
-visible = false
 position = Vector2(508, 928)
 shape = SubResource("RectangleShape2D_0aloy")
 
 [node name="CollisionShape_speed_blocker4" type="CollisionShape2D" parent="RoomObsticals and Decorations" unique_id=241008663]
-visible = false
 position = Vector2(530, -382)
 shape = SubResource("RectangleShape2D_0aloy")
 
@@ -555,35 +551,35 @@ metadata/_edit_lock_ = true
 position = Vector2(240, 288)
 
 [node name="Ball_NPC2" parent="Balls/BowlingPinFormation" unique_id=81204232 instance=ExtResource("30_yg5gi")]
-position = Vector2(210.90155, 271.2)
+position = Vector2(211.59436, 271.6)
 _npc_type = 1
 
 [node name="Ball_NPC5" parent="Balls/BowlingPinFormation" unique_id=964760348 instance=ExtResource("30_yg5gi")]
-position = Vector2(210.90155, 304.80002)
+position = Vector2(211.59436, 304.4)
 _npc_type = 1
 
 [node name="Ball_NPC6" parent="Balls/BowlingPinFormation" unique_id=869335061 instance=ExtResource("30_yg5gi")]
-position = Vector2(181.8031, 254.4)
+position = Vector2(183.18874, 255.2)
 
 [node name="Ball_NPC7" parent="Balls/BowlingPinFormation" unique_id=1923813607 instance=ExtResource("30_yg5gi")]
-position = Vector2(181.8031, 288)
+position = Vector2(183.18874, 288)
 _npc_type = 1
 
 [node name="Ball_NPC4" parent="Balls/BowlingPinFormation" unique_id=874767357 instance=ExtResource("30_yg5gi")]
-position = Vector2(181.8031, 321.6)
+position = Vector2(183.18874, 320.8)
 
 [node name="Ball_NPC8" parent="Balls/BowlingPinFormation" unique_id=1262834165 instance=ExtResource("30_yg5gi")]
-position = Vector2(152.70465, 237.6)
+position = Vector2(154.78311, 238.79999)
 _npc_type = 2
 
 [node name="Ball_NPC9" parent="Balls/BowlingPinFormation" unique_id=947676585 instance=ExtResource("30_yg5gi")]
-position = Vector2(152.70465, 271.2)
+position = Vector2(154.78311, 271.59998)
 _npc_type = 2
 
 [node name="Ball_NPC10" parent="Balls/BowlingPinFormation" unique_id=786480576 instance=ExtResource("30_yg5gi")]
-position = Vector2(152.70465, 304.80002)
+position = Vector2(154.78311, 304.39996)
 _npc_type = 2
 
 [node name="Ball_NPC11" parent="Balls/BowlingPinFormation" unique_id=1435443743 instance=ExtResource("30_yg5gi")]
-position = Vector2(152.70465, 338.40002)
+position = Vector2(154.78311, 337.19995)
 _npc_type = 2

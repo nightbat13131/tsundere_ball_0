@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="Goal_Info" format=3 uid="uid://p1axocqqsddv"]
 
 [ext_resource type="Script" uid="uid://dggw7ue6r5ma3" path="res://environment/goals/goal_info.gd" id="1_fk1tx"]
+[ext_resource type="Texture2D" uid="uid://b3pvkmporwed4" path="res://assets/car/ME_Singles_City_Props_16x16_Tire_2.png" id="2_mejsq"]
 
 [resource]
 script = ExtResource("1_fk1tx")
 should_break = true
+ui_icon_init = ExtResource("2_mejsq")
 metadata/_custom_type_script = "uid://dggw7ue6r5ma3"
