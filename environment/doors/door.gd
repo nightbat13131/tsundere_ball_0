@@ -57,6 +57,7 @@ func _do_unlock() -> void:
 	_is_unlocked = true
 	opening.emit()
 	animated_sprite_2d.play(ANIMATION_OPENING)
+	animated_sprite_2d.animation_finished.connect(_open_complete)
 	if alt_sprite:
 		alt_sprite.play(ANIMATION_OPENING)
 	_play_sound()
@@ -64,6 +65,9 @@ func _do_unlock() -> void:
 		if each_child is CollisionShape2D:
 			each_child.set_disabled.call_deferred(true)
 	#set_process_mode.call_deferred(Node.PROCESS_MODE_DISABLED) # breaks animation and not even removing the blocking
+
+func _open_complete() -> void:
+	queue_free()
 
 func _play_sound() -> void:
 	if sound == null:

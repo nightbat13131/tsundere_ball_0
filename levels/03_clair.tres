@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://gshv01j7uolu"]
 
 [ext_resource type="Script" uid="uid://dnatdka25e2wd" path="res://architecture/progress_save_stuff/level_info.gd" id="1_amll4"]
+[ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_spencer.tres" id="2_amll4"]
 
 [resource]
 script = ExtResource("1_amll4")
 level_uid = "uid://dm6k6og5oabc1"
+unlocked_by = ExtResource("2_amll4")
 metadata/_custom_type_script = "uid://dnatdka25e2wd"

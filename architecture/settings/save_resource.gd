@@ -1,4 +1,5 @@
 class_name SaveFileResource extends Resource
+## not updated for Magical girl ball game
 
 const KEY_0NAME = &'save_name'
 const KEY_0SETTINGS = &'settings'
@@ -14,9 +15,9 @@ const KEY_1GAME_LEVELS = &'level_ids_completed'
 var save_index := -1
 var name := 'New Game'
 var sound_mute_all := false
-var sound_master := .75
+var sound_master := .5
 var sound_music := .75
-var sound_sfx := .75
+var sound_sfx := .50
 var completed_levels : Array[String]
 var level_scores : Dictionary[String, Score.Scores] = {}
 

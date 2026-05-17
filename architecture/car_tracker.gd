@@ -15,6 +15,5 @@ func _ready() -> void:
 
 func _on_car_used(car: Breakable_Car) -> void:
 	_cars.erase(car)
-	print(_cars.size())
 	if _cars.is_empty():
 		done.emit()

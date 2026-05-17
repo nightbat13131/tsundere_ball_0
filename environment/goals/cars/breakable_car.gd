@@ -11,7 +11,7 @@ const MAX_HP = 4
 
 @onready var broke_sprite: Sprite2D = %Broke_Sprite
 @onready var car_sprite: Sprite2D = %CarSprite
-
+@export var damage_sounds : Array[AudioStream]
 
 
 var _hp := MAX_HP: set = _set_hp
@@ -24,10 +24,13 @@ func _set_hp(new_hp: int) -> void:
 			animated_sprite_2d.play(ANIMATION_IDLE)
 		3: 
 			animated_sprite_2d.play(ANIMATION_BOOM_1)
+			SoundManager.request_sfx(damage_sounds.pick_random())
 		2:
 			animated_sprite_2d.play(ANIMATION_BOOM_2)
+			SoundManager.request_sfx(damage_sounds.pick_random())
 		1:
 			animated_sprite_2d.play(ANIMATION_BOOM_3)
+			SoundManager.request_sfx(damage_sounds.pick_random())
 		0:
 			_hit_by()
 

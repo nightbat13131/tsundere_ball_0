@@ -22,8 +22,10 @@ func _set_speed(speed: float) -> void:
 	_update_animation()
 
 func set_velocity(velocity: Vector2) -> void:
-	_roll_direction(velocity.angle())
-	_set_speed(velocity.length())
+	var __speed = velocity.length()
+	if __speed > 0.0:
+		_roll_direction(velocity.angle())
+	_set_speed(__speed)
 
 func _roll_direction(radian: float) -> void:
 	set_global_rotation(radian + PI*-.5)

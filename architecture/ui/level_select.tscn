@@ -12,15 +12,15 @@
 [ext_resource type="AudioStream" uid="uid://dj5s35kjb0aei" path="res://assets/sounds/floraphonic-classic-game-action-positive-23-224561.mp3" id="6_fbxss"]
 [ext_resource type="Resource" uid="uid://sp7b4p3fsxj8" path="res://testing/test_levels/dev_lv_locks.tres" id="6_fmbur"]
 [ext_resource type="Resource" uid="uid://bgs66genfal2j" path="res://architecture/ui/cursors/level_enter.tres" id="6_ijyg7"]
-[ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/01_info.tres" id="7_05iph"]
+[ext_resource type="Resource" uid="uid://di4hlm4ci1vho" path="res://levels/01_groc.tres" id="7_05iph"]
 [ext_resource type="Resource" uid="uid://bwrdkqplj5q4q" path="res://testing/test_levels/dev_lv_goals.tres" id="8_0hgg1"]
-[ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_info.tres" id="8_05iph"]
+[ext_resource type="Resource" uid="uid://b0l5st8onqucp" path="res://levels/02_spencer.tres" id="8_05iph"]
 [ext_resource type="PackedScene" uid="uid://onpe1c4uu171" path="res://architecture/sound_sound_settins.tscn" id="9_2xmtt"]
-[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_info.tres" id="9_mx6xu"]
+[ext_resource type="Resource" uid="uid://gshv01j7uolu" path="res://levels/03_clair.tres" id="9_mx6xu"]
 [ext_resource type="Resource" uid="uid://c6c66opccp8nw" path="res://testing/test_levels/dev_lv_walk.tres" id="9_rnwp1"]
 [ext_resource type="Resource" uid="uid://c7c6uv8o12772" path="res://levels/04_info.tres" id="10_tva47"]
 [ext_resource type="Resource" uid="uid://cxnbj0dwef4ww" path="res://levels/05_info.tres" id="11_ynp5y"]
-[ext_resource type="Resource" uid="uid://bo4mwoak4jilo" path="res://levels/06_info.tres" id="12_fbxss"]
+[ext_resource type="Resource" uid="uid://bo4mwoak4jilo" path="res://levels/06_bowl.tres" id="12_fbxss"]
 [ext_resource type="Resource" uid="uid://bsiyhe5n3amtq" path="res://levels/07_garden.tres" id="13_ynp5y"]
 [ext_resource type="Resource" uid="uid://c7653fn1ma5vt" path="res://levels/08_parking.tres" id="14_fbxss"]
 
@@ -184,22 +184,6 @@ mouse_cursor = ExtResource("6_ijyg7")
 metadata/_custom_type_script = "uid://dij1pecfcavpi"
 
 [node name="_7" type="Button" parent="Control" unique_id=1580105737]
-layout_mode = 0
-offset_left = -248.0
-offset_top = -15.0
-offset_right = -210.0
-offset_bottom = 29.0
-focus_neighbor_top = NodePath("../_8")
-focus_neighbor_right = NodePath("../_6")
-focus_neighbor_bottom = NodePath("../Tutorial")
-icon = ExtResource("2_f5khk")
-script = ExtResource("1_jcfkq")
-level_info = ExtResource("13_ynp5y")
-sfx_sound = ExtResource("6_fbxss")
-mouse_cursor = ExtResource("6_ijyg7")
-metadata/_custom_type_script = "uid://dij1pecfcavpi"
-
-[node name="_9" type="Button" parent="Control" unique_id=1407040205]
 layout_mode = 0
 offset_left = -248.0
 offset_top = -15.0

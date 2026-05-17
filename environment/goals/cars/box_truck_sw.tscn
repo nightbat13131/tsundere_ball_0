@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://boorvfabtljk"]
+
+[ext_resource type="PackedScene" uid="uid://b0ienbt0uovna" path="res://environment/goals/cars/car_base.tscn" id="1_juj86"]
+[ext_resource type="Texture2D" uid="uid://74x4lp5suc3d" path="res://assets/car/Yellow_BOXTRUCK_CLEAN_8D_000-sheet.png" id="2_ancin"]
+[ext_resource type="Texture2D" uid="uid://vmkvvyk75dei" path="res://assets/car/BOXTRUCK_Burnt_000-sheet.png" id="3_8mymy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juj86"]
+radius = 21.931366
+height = 107.29607
+
+[node name="Breakable_Car" unique_id=190911682 instance=ExtResource("1_juj86")]
+
+[node name="CarSprite" parent="." index="0" unique_id=1279805942]
+texture = ExtResource("2_ancin")
+region_rect = Rect2(19, 150, 106, 116)
+
+[node name="Broke_Sprite" parent="." index="1" unique_id=1515547006]
+texture = ExtResource("3_8mymy")
+region_rect = Rect2(19, 150, 106, 116)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=173216956]
+position = Vector2(0, 0)
+rotation = 0.7475275
+shape = SubResource("CapsuleShape2D_juj86")

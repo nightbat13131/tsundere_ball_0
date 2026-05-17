@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_trigger(_thing: Ball, _trigger: Trap) -> void:
 	if effected_trap:
-		effected_trap.turn(45)
+		effected_trap.turn(90)
 
 func _draw() -> void:
 	if Engine.is_editor_hint():

@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://cihg6vwfstgmt" path="res://environment/goals/cars/breakable_car.gd" id="1_ck6vb"]
 [ext_resource type="Resource" uid="uid://p1axocqqsddv" path="res://environment/goals/cars/car_goal_0.tres" id="2_bgu7s"]
 [ext_resource type="Texture2D" uid="uid://cc4wgljkub64k" path="res://assets/car/White_LIMO_CLEAN_8D_000-sheet.png" id="2_ck6vb"]
+[ext_resource type="AudioStream" uid="uid://pub3duldau6k" path="res://assets/sounds/metal_interaction2.wav" id="2_yyohe"]
 [ext_resource type="SpriteFrames" uid="uid://chu0rqymqtju6" path="res://small_happy_man.tres" id="3_ck6vb"]
 [ext_resource type="Shader" uid="uid://b7j7jbih22bdw" path="res://assets/interactive_item_shader.gdshader" id="3_fpxgt"]
+[ext_resource type="AudioStream" uid="uid://yqpbvttgb7p7" path="res://assets/sounds/floraphonic-metal-hit-95-200424.mp3" id="3_ujxml"]
 [ext_resource type="Texture2D" uid="uid://kvfwjuuxg33i" path="res://assets/car/LIMO_Burnt_000-sheet.png" id="4_hr0m7"]
+[ext_resource type="AudioStream" uid="uid://bf4x4s0btixh3" path="res://assets/sounds/floraphonic-metal-hit-96-200425.mp3" id="4_i3nhw"]
 [ext_resource type="Texture2D" uid="uid://0r6d534q40sq" path="res://assets/Furniture/Animated/explode_small.png" id="4_vlfli"]
 [ext_resource type="Texture2D" uid="uid://bxi2yurwbqhnq" path="res://assets/Furniture/Animated/explode_small_long_duration.png" id="5_2b6ha"]
+[ext_resource type="AudioStream" uid="uid://fsgs6fbdhjjp" path="res://assets/sounds/floraphonic-metal-hit-97-200427.mp3" id="5_2fbqx"]
 [ext_resource type="Texture2D" uid="uid://cncby4681401l" path="res://assets/Furniture/Animated/explode_med_hollow.png" id="6_hr0m7"]
 [ext_resource type="Texture2D" uid="uid://du2wnxucvslan" path="res://assets/Furniture/Animated/explode_med_mushroom.png" id="7_fpxgt"]
 
@@ -403,6 +407,7 @@ collision_layer = 0
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_vdhqd")
 script = ExtResource("1_ck6vb")
+damage_sounds = Array[AudioStream]([ExtResource("2_yyohe"), ExtResource("3_ujxml"), ExtResource("4_i3nhw"), ExtResource("5_2fbqx")])
 goal = ExtResource("2_bgu7s")
 
 [node name="CarSprite" type="Sprite2D" parent="." unique_id=1279805942]
@@ -418,7 +423,7 @@ unique_name_in_owner = true
 position = Vector2(0, -1)
 texture = ExtResource("4_hr0m7")
 region_enabled = true
-region_rect = Rect2(145, 192, 132, 42)
+region_rect = Rect2(142, 188, 138, 48)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924608338]
 unique_name_in_owner = true

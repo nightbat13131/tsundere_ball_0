@@ -143,16 +143,6 @@ func request_draw(node: Node2D) -> void:
 		elif state_aiming_joystick.active:
 			_draw_joystick_aim(node)	
 
-#func _draw() -> void:
-	#if get_tree().paused:
-		#return
-	#if state_aiming.active: 
-		#_draw_power_indicator(self) 
-		#if state_aiming_mouse.active:
-			#_draw_mouse_aim(self)
-		#elif state_aiming_joystick.active:
-			#_draw_joystick_aim(self)
-
 func _draw_power_indicator(node: Node2D) -> void:
 	var visable_power := _get_power_ratio()
 	if is_equal_approx(visable_power, 0.0):
@@ -179,7 +169,7 @@ func _draw_power_indicator(node: Node2D) -> void:
 	node.draw_polygon( 	points, [color_power]) 
 
 func _draw_joystick_aim(node: Node2D) -> void:
-	var primary_center := to_local( Vector2.ONE * BALL_RADIUS * 2.0)  #  to_local(_screen_center)
+	var primary_center := node.to_local( Vector2.ONE * BALL_RADIUS * 2.0)  #  to_local(_screen_center)
 	node.draw_circle(primary_center, BALL_RADIUS, COLOR_OTHER, false, 5)
 	
 	if !action_joystick_aim.is_triggered():
@@ -190,7 +180,7 @@ func _draw_joystick_aim(node: Node2D) -> void:
 	node.draw_circle(primary_center + direction * _get_power_ratio() * BALL_RADIUS * 1.25, BALL_RADIUS * .75, COLOR_OTHER, true)
 
 func _draw_mouse_aim(node: Node2D) -> void:
-	var local_start : Vector2 = to_local(global_mouse_start)
+	var local_start : Vector2 = node.to_local(global_mouse_start)
 	node.draw_circle(local_start, BALL_RADIUS, COLOR_OTHER, false, 5)
 	var direction = get_shot_angle_vector()
 	if direction == DEFAULT_POS:
@@ -198,7 +188,7 @@ func _draw_mouse_aim(node: Node2D) -> void:
 	direction = direction.normalized()
 	## Mouse line
 	node.draw_line(local_start - direction*BALL_RADIUS, 
-		to_local(global_mouse_end), 
+		node.to_local(global_mouse_end), 
 		COLOR_OTHER, 2)
 
 func _send_event(event: String) -> void:

@@ -113,6 +113,7 @@ left_click={
 
 3d/physics_engine="Jolt Physics"
 2d/default_gravity=0.0
+common/physics_interpolation=true
 
 [rendering]
 

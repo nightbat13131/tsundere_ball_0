@@ -72,6 +72,7 @@ func _on_mute_change(is_mute: bool) -> void:
 func _pause_music(_is_pause: bool = true) -> void: audio_stream_player_bg_music.set_playing(!_is_pause)
 
 static func request_sfx(sound: AudioStream, pitch := 1.0) -> void: 
+	pitch += randf_range(-.15,.15)
 	if sound:
 		if _current_manager: # may be missing while testing scenes
 			_current_manager._request_sfx(sound, pitch)
